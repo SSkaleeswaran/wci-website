@@ -1,0 +1,330 @@
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section {
+  position: relative;
+
+  padding: 80px 0;
+
+  background: #f3f7ff;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: 0.95fr 1.05fr;
+
+  align-items: center;
+
+  gap: 70px;
+}
+
+
+/* =========================
+   IMAGE - LEFT
+========================= */
+
+.about-image-wrapper {
+  position: relative;
+
+  min-height: 440px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image-placeholder {
+  width: 85%;
+  max-width: 430px;
+
+  height: 410px;
+
+  border-radius: 24px;
+
+  background: #dbeafe;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #1769ff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  box-shadow:
+    0 20px 50px rgba(23, 105, 255, 0.12);
+}
+
+
+/* =========================
+   EXPERIENCE CARD
+========================= */
+
+.about-experience-card {
+  position: absolute;
+
+  right: 0;
+  bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 18px;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.about-experience-card strong {
+  color: #ff6b00;
+
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.about-experience-card span {
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+
+/* =========================
+   CONTENT - RIGHT
+========================= */
+
+.about-content {
+  max-width: 590px;
+}
+
+.about-content h2 {
+  margin: 0 0 20px;
+
+  color: #101f49;
+
+  font-size: clamp(2rem, 4vw, 3.1rem);
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+.about-content h2 span {
+  color: #1769ff;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.about-description {
+  max-width: 550px;
+
+  margin-bottom: 28px;
+
+  color: #64748b;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.about-features {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px 25px;
+
+  margin-bottom: 30px;
+}
+
+.about-feature {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 10px;
+}
+
+.about-check {
+  flex-shrink: 0;
+
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+
+  background: #1769ff;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.about-feature h3 {
+  margin: 0 0 4px;
+
+  color: #101f49;
+
+  font-size: 14px;
+
+  font-weight: 750;
+}
+
+.about-feature p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.about-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 18px;
+
+  border-radius: 8px;
+
+  background: #1769ff;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.about-button span {
+  color: #ff8a3d;
+
+  font-size: 18px;
+}
+
+.about-button:hover {
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(23, 105, 255, 0.18);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+  .about-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .about-image-wrapper {
+    min-height: 390px;
+  }
+
+  .about-image-placeholder {
+    height: 360px;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+  .about-section {
+    padding: 60px 0;
+  }
+
+  .about-image-wrapper {
+    min-height: 320px;
+  }
+
+  .about-image-placeholder {
+    width: 90%;
+    height: 300px;
+
+    border-radius: 18px;
+  }
+
+  .about-experience-card {
+    right: 0;
+    bottom: 15px;
+
+    padding: 10px 13px;
+  }
+
+  .about-experience-card strong {
+    font-size: 21px;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .about-content h2 {
+    font-size: 2rem;
+  }
+}

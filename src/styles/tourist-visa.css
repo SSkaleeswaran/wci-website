@@ -1,0 +1,288 @@
+/* =========================
+   TOURIST VISA PAGE
+========================= */
+
+.service-detail-page {
+  background: #ffffff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.service-detail-hero {
+  padding: 75px 0;
+
+  background: #f7faff;
+
+  text-align: center;
+}
+
+.service-detail-label {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #1769ff;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.service-detail-hero h1 {
+  margin: 0;
+
+  color: #101f49;
+
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+
+  font-weight: 800;
+}
+
+.service-detail-hero h1 span {
+  color: #1769ff;
+}
+
+.service-detail-hero p {
+  margin: 15px auto 0;
+
+  max-width: 600px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   MAIN SECTION
+========================= */
+
+.service-detail-section {
+  padding: 80px 0;
+}
+
+.service-detail-grid {
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.8fr);
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.service-detail-small-title {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #1769ff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.service-detail-content h2 {
+  margin: 0 0 20px;
+
+  color: #101f49;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  line-height: 1.25;
+}
+
+.service-detail-content p {
+  max-width: 700px;
+
+  margin-bottom: 16px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================
+   ASSISTANCE CARD
+========================= */
+
+.service-detail-card {
+  padding: 30px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5ebf5;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 10px 30px rgba(16, 31, 73, 0.06);
+}
+
+.service-detail-card h3 {
+  margin: 0 0 22px;
+
+  color: #101f49;
+
+  font-size: 20px;
+
+  font-weight: 800;
+}
+
+.service-detail-card ul {
+  margin: 0 0 25px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.service-detail-card li {
+  position: relative;
+
+  margin-bottom: 13px;
+
+  padding-left: 22px;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.service-detail-card li::before {
+  content: "✓";
+
+  position: absolute;
+
+  left: 0;
+
+  color: #1769ff;
+
+  font-weight: 800;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.service-detail-button {
+  width: 100%;
+
+  min-height: 46px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #1769ff;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.service-detail-button:hover {
+  background: #0d56dc;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+  .service-detail-hero {
+    padding: 60px 0;
+  }
+
+  .service-detail-section {
+    padding: 60px 0;
+  }
+
+  .service-detail-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .service-detail-content h2 {
+    font-size: 28px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+  .service-detail-hero {
+    padding: 50px 0;
+  }
+
+  .service-detail-hero h1 {
+    font-size: 2rem;
+  }
+
+  .service-detail-hero p {
+    font-size: 12px;
+  }
+
+  .service-detail-section {
+    padding: 50px 0;
+  }
+
+  .service-detail-content h2 {
+    font-size: 24px;
+  }
+
+  .service-detail-content p {
+    font-size: 13px;
+  }
+
+  .service-detail-card {
+    padding: 24px 20px;
+  }
+
+}

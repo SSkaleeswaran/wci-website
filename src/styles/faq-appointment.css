@@ -1,0 +1,635 @@
+/* =========================================
+   FAQ + BOOK APPOINTMENT
+========================================= */
+
+.faq-appointment-section {
+  padding: 75px 0;
+  background: #f3f6fb;
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.faq-appointment-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 55px;
+  align-items: stretch;
+}
+
+
+/* =========================================
+   FAQ — LEFT
+========================================= */
+
+.faq-content {
+  padding: 20px 0;
+}
+
+.faq-label {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #1769ff;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.faq-label::before {
+  content: "✦";
+
+  margin-right: 7px;
+
+  color: #ff6b00;
+}
+
+.faq-content h2 {
+  margin: 0;
+
+  color: #101f49;
+
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+
+  line-height: 1.12;
+
+  font-weight: 800;
+
+  letter-spacing: -0.8px;
+}
+
+.faq-content h2 span {
+  color: #1769ff;
+}
+
+.faq-description {
+  max-width: 540px;
+
+  margin: 15px 0 28px;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   FAQ LIST
+========================================= */
+
+.faq-list {
+  max-width: 620px;
+
+  border: 1px solid #d7e2f2;
+
+  background: #ffffff;
+}
+
+.faq-item {
+  border-bottom: 1px solid #d7e2f2;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+
+/* =========================================
+   QUESTION
+========================================= */
+
+.faq-question {
+  width: 100%;
+
+  min-height: 55px;
+
+  padding: 15px 18px;
+
+  border: none;
+
+  background: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  color: #18284f;
+
+  font-family: inherit;
+
+  font-size: 12.5px;
+
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+  background: #f8fbff;
+}
+
+.faq-item.faq-open .faq-question {
+  color: #1769ff;
+}
+
+
+/* =========================================
+   FAQ ARROW
+========================================= */
+
+.faq-arrow {
+  flex-shrink: 0;
+
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #1769ff;
+
+  font-size: 20px;
+
+  font-weight: 400;
+}
+
+.faq-item:not(.faq-open) .faq-arrow {
+  color: #64748b;
+}
+
+
+/* =========================================
+   ANSWER
+========================================= */
+
+.faq-answer {
+  padding: 0 45px 17px 18px;
+
+  background: #ffffff;
+}
+
+.faq-answer p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 11.5px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   MORE FAQ LINK
+========================================= */
+
+.faq-more-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin-top: 22px;
+
+  color: #1769ff;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition: gap 0.2s ease;
+}
+
+.faq-more-link span {
+  color: #ff6b00;
+
+  font-size: 18px;
+
+  line-height: 1;
+}
+
+.faq-more-link:hover {
+  color: #0d56dc;
+
+  gap: 10px;
+}
+
+
+/* =========================================
+   APPOINTMENT CARD — RIGHT
+========================================= */
+
+.appointment-card {
+  position: relative;
+
+  min-height: 600px;
+
+  padding: 34px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background: #1769ff;
+
+  box-shadow:
+    0 18px 40px rgba(23, 105, 255, 0.18);
+}
+
+
+/* Decorative circles */
+
+.appointment-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  top: -135px;
+  right: -95px;
+
+  border-radius: 50%;
+
+  border: 35px solid rgba(255, 255, 255, 0.07);
+}
+
+.appointment-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  right: -90px;
+  bottom: -90px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 107, 0, 0.8);
+}
+
+
+/* =========================================
+   APPOINTMENT CONTENT
+========================================= */
+
+.appointment-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.appointment-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #dbeafe;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.appointment-label::before {
+  content: "✦";
+
+  margin-right: 6px;
+
+  color: #ffb37a;
+}
+
+.appointment-card h2 {
+  margin: 0 0 10px;
+
+  color: #ffffff;
+
+  font-size: clamp(2rem, 3vw, 2.6rem);
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+.appointment-card h2 span {
+  color: #ffd4b3;
+}
+
+.appointment-description {
+  max-width: 430px;
+
+  margin: 0 0 25px;
+
+  color: #e4efff;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.appointment-form {
+  position: relative;
+
+  padding: 15px;
+
+  z-index: 3;
+}
+
+.appointment-form-row {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+.appointment-field {
+  margin-bottom: 28px;
+}
+
+.appointment-field label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.appointment-field input,
+.appointment-field select {
+  width: 100%;
+
+  height: 39px;
+
+  padding: 0 3px;
+
+  border: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+
+  border-radius: 0;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 16px;
+}
+
+.appointment-field input::placeholder {
+  color: #dbeafe;
+}
+
+.appointment-field select {
+  cursor: pointer;
+
+  appearance: auto;
+}
+
+.appointment-field select option {
+  color: #101f49;
+
+  background: #ffffff;
+}
+
+.appointment-field input:focus,
+.appointment-field select:focus {
+  border-bottom-color: #ffffff;
+}
+
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.appointment-submit {
+  width: 175px;
+
+  height: 45px;
+
+  margin: 5px auto 0;
+
+  border: none;
+
+  border-radius: 25px;
+
+  background: #ffffff;
+
+  color: #1769ff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.appointment-submit span {
+  color: #ff6b00;
+
+  font-size: 16px;
+}
+
+.appointment-submit:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   PHONE / CONTACT
+========================================= */
+
+.appointment-contact {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 25px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.appointment-contact span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #e4efff;
+
+  font-size: 14px;
+}
+
+.appointment-contact strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 22px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.appointment-contact small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #dbeafe;
+
+  font-size: 9px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .faq-appointment-layout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .faq-content {
+    padding: 0;
+  }
+
+  .faq-list {
+    max-width: 100%;
+  }
+
+  .appointment-card {
+    max-width: 650px;
+
+    width: 100%;
+
+    margin: 0 auto;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+  .faq-appointment-section {
+    padding: 55px 0;
+  }
+
+  .faq-content h2 {
+    font-size: 2rem;
+  }
+
+  .faq-description {
+    font-size: 12px;
+  }
+
+  .faq-question {
+    min-height: 52px;
+
+    padding: 14px 12px;
+
+    font-size: 11.5px;
+  }
+
+  .faq-answer {
+    padding: 0 35px 15px 12px;
+  }
+
+  .faq-answer p {
+    font-size: 10.5px;
+  }
+
+  .appointment-card {
+    min-height: auto;
+
+    padding: 28px 20px;
+
+    border-radius: 18px;
+  }
+
+  .appointment-card h2 {
+    font-size: 2rem;
+  }
+
+  .appointment-form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .appointment-field {
+    margin-bottom: 15px;
+  }
+
+  .appointment-submit {
+    width: 100%;
+  }
+
+  .appointment-contact strong {
+    font-size: 18px;
+  }
+}

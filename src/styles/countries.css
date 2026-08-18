@@ -1,0 +1,532 @@
+/* =========================================
+   COUNTRIES SECTION
+========================================= */
+
+.countries-section {
+  padding: 75px 0;
+  background: #ffffff;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.countries-heading {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.countries-heading .section-label {
+  display: inline-block;
+  margin-bottom: 10px;
+
+  color: #1769ff;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.countries-heading .section-label::before {
+  content: "✦";
+  margin-right: 6px;
+  color: #ff6b00;
+}
+
+.countries-heading h2 {
+  margin: 0;
+
+  color: #101f49;
+
+  font-size: clamp(2rem, 3.5vw, 2.7rem);
+  line-height: 1.15;
+
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.countries-heading h2 span {
+  color: #1769ff;
+}
+
+.countries-heading-line {
+  width: 45px;
+  height: 2px;
+
+  margin: 12px auto;
+
+  background: #ff6b00;
+
+  border-radius: 5px;
+}
+
+.countries-heading p {
+  max-width: 550px;
+
+  margin: 0 auto;
+
+  color: #64748b;
+
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   COUNTRIES GRID
+========================================= */
+
+.countries-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 22px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================
+   COUNTRY CARD
+========================================= */
+
+.country-card {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 420px;
+
+  padding: 22px 20px 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4ebf5;
+
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* Blue theme hover */
+
+.country-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #c9dcff;
+
+  box-shadow:
+    0 14px 32px rgba(23, 105, 255, 0.17),
+    0 4px 12px rgba(23, 105, 255, 0.08);
+}
+
+.country-card-expanded {
+  border-color: #1769ff;
+
+  box-shadow:
+    0 10px 28px rgba(23, 105, 255, 0.12);
+}
+
+
+/* =========================================
+   COUNTRY HEADER
+========================================= */
+
+.country-card-header {
+  min-height: 58px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+
+/* Actual flag */
+
+.country-flag {
+  display: block;
+
+  width: 77px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  object-fit: contain;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+
+/* Country name */
+
+.country-card-header h3 {
+  margin: 0;
+
+  color: #101f49;
+
+  font-size: 18px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+
+/* =========================================
+   COUNTRY CONTENT
+========================================= */
+
+.country-points {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  /*
+    Same content area on every card.
+    This keeps Show More in exactly
+    the same position.
+  */
+  min-height: 215px;
+}
+
+.country-points li {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 9px;
+
+  margin-bottom: 13px;
+
+  color: #4f607d;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.country-check {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: #1769ff;
+
+  font-size: 12px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================
+   EXPANDED DETAILS
+========================================= */
+
+.country-detail-point {
+  animation: countryDetailAppear 0.25s ease;
+}
+
+@keyframes countryDetailAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   SHOW MORE / SHOW LESS
+========================================= */
+
+.country-read-more {
+  align-self: flex-start;
+
+  margin-top: 0;
+  margin-bottom: 18px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #1769ff;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.country-read-more:hover {
+  color: #0d56dc;
+
+  gap: 10px;
+}
+
+.country-read-more span {
+  color: #ff6b00;
+
+  font-size: 15px;
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   CONTACT AREA
+========================================= */
+
+.country-card-actions {
+  margin-top: auto;
+
+  padding-top: 17px;
+
+  border-top: 1px solid #edf1f7;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+/* =========================================
+   CONTACT BUTTON
+========================================= */
+
+.country-contact-link {
+  width: 150px;
+
+  height: 40px;
+
+  padding: 0 18px;
+
+  border-radius: 22px;
+
+  background: #1769ff;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.country-contact-link span {
+  color: #ffd2b0;
+
+  font-size: 14px;
+}
+
+.country-contact-link:hover {
+  background: #0d56dc;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 16px rgba(23, 105, 255, 0.28);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .countries-section {
+    padding: 65px 0;
+  }
+
+  .countries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+  .country-card {
+    min-height: 420px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+  .countries-section {
+    padding: 55px 0;
+  }
+
+  .countries-heading {
+    margin-bottom: 30px;
+  }
+
+  .countries-heading h2 {
+    font-size: 1.9rem;
+  }
+
+  .countries-heading p {
+    font-size: 16px;
+  }
+
+
+  /* Two cards per row */
+
+  .countries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+  }
+
+
+  /* Same height */
+
+  .country-card {
+    min-height: 300px;
+
+    padding: 16px 12px 13px;
+
+    border-radius: 8px;
+  }
+
+
+  /* Header */
+
+  .country-card-header {
+    min-height: 48px;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+  }
+
+  .country-flag {
+    width: 54px;
+    height: 38px;
+  }
+
+  .country-card-header h3 {
+    font-size: 11px;
+  }
+
+
+  /* Content */
+
+  .country-points {
+    min-height: 205px;
+  }
+
+  .country-points li {
+    gap: 6px;
+
+    margin-bottom: 10px;
+
+    font-size: 9px;
+
+    line-height: 2;
+  }
+
+  .country-check {
+    font-size: 12px;
+  }
+
+
+  /* Show More */
+
+  .country-read-more {
+    margin-bottom: 13px;
+
+    font-size: 10px;
+
+    gap: 7px;
+  }
+
+  .country-read-more span {
+    font-size: 10px;
+  }
+
+
+  /* Contact */
+
+  .country-card-actions {
+    padding-top: 12px;
+  }
+
+  .country-contact-link {
+    width: 115px;
+
+    height: 32px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+
+    gap: 7px;
+  }
+
+  .country-contact-link span {
+    font-size: 11px;
+  }
+
+}

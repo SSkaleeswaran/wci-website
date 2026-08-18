@@ -1,0 +1,194 @@
+/* =========================================
+   TOP HEADER
+========================================= */
+
+.top-header {
+  width: 100%;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #edf1f7;
+}
+
+.top-header-inner {
+  min-height: 86px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 45px;
+}
+
+.top-header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: auto;
+}
+
+.top-header-logo img {
+  display: block;
+  width: 210px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================================
+   TOP HEADER ITEM
+========================================= */
+
+.top-header-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.top-header-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #eef4ff;
+
+  color: #1769ff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+}
+
+.top-header-item span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #8290a8;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.top-header-item a,
+.top-header-item strong {
+  display: block;
+
+  color: #101f49;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.top-header-item a:hover {
+  color: #1769ff;
+}
+
+
+/* =========================================
+   CONSULTATION BUTTON
+========================================= */
+
+.top-header-button {
+  min-width: 175px;
+
+  height: 43px;
+
+  padding: 0 18px;
+
+  border: 1px solid #1769ff;
+
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  color: #1769ff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.4s ease;
+}
+
+.top-header-button span {
+  color: #ff6b00;
+
+  font-size: 16px;
+}
+
+.top-header-button:hover {
+  background: #1769ff;
+
+  color: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+.top-header-button:hover span {
+  color: #ffd2b3;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .top-header-inner {
+    min-height: 75px;
+
+    gap: 20px;
+  }
+
+  .top-header-item:nth-child(3) {
+    display: none;
+  }
+
+  .top-header-button {
+    min-width: 150px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  /*
+    Top header completely disappears
+    on mobile.
+  */
+
+  .top-header {
+    display: none;
+  }
+}

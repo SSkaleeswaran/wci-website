@@ -1,0 +1,567 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.main-navbar {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 78px;
+
+  background: #1769ff;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  z-index: 1000;
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.3s ease;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.main-navbar > .container {
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+/*
+   Hidden in the normal Navbar because
+   the company logo is already in TopHeader.
+
+   It becomes visible when the user scrolls.
+*/
+
+.navbar-logo {
+  display: none !important;
+
+  align-items: center;
+
+  flex-shrink: 0;
+
+  margin-right: 35px;
+
+  text-decoration: none;
+}
+
+.navbar-logo img {
+  display: block;
+
+  width: 165px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+
+.main-navbar .navbar-collapse {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+.navbar-links {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 70px;
+
+  margin: 0 auto;
+}
+
+
+.navbar-links .nav-link {
+  position: relative;
+
+  padding: 8px 0 !important;
+
+  /* BLUE NAVBAR - NORMAL */
+  color: #000000 !important;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
+}
+
+
+/* =========================
+   BLUE NAVBAR
+   HOVER → WHITE
+========================= */
+
+.main-navbar:not(.navbar-scrolled)
+.navbar-links .nav-link:hover {
+  color: #ffffff !important;
+}
+
+
+/* =========================
+   BLUE NAVBAR
+   ACTIVE → WHITE
+========================= */
+
+.main-navbar:not(.navbar-scrolled)
+.navbar-links .nav-link.active {
+  color: #ffffff !important;
+}
+
+
+/* =========================
+   WHITE SCROLLED NAVBAR
+   NORMAL → DARK NAVY
+========================= */
+
+.main-navbar.navbar-scrolled
+.navbar-links .nav-link {
+  color: #101f49 !important;
+}
+
+
+/* =========================
+   WHITE SCROLLED NAVBAR
+   HOVER → BLUE
+========================= */
+
+.main-navbar.navbar-scrolled
+.navbar-links .nav-link:hover {
+  color: #1769ff !important;
+}
+
+
+/* =========================
+   WHITE SCROLLED NAVBAR
+   ACTIVE → BLUE
+========================= */
+
+.main-navbar.navbar-scrolled
+.navbar-links .nav-link.active {
+  color: #1769ff !important;
+}
+
+
+/* =========================
+   ACTIVE UNDERLINE
+========================= */
+
+.navbar-links .nav-link.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 2px;
+
+  border-radius: 3px;
+
+  background: currentColor;
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+.navbar-phone {
+  margin-left: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 205px;
+}
+
+.navbar-phone-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e4e6ea;
+
+  color: #1769ff;
+
+  font-size: 17px;
+}
+
+.navbar-phone span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #010f23;
+
+  font-size: 9px;
+
+  font-weight: 600;
+}
+
+
+.navbar-phone a {
+  display: block;
+  color: #101f49;
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar-phone a:hover {
+  color: #121111;
+}
+
+/* =========================
+   SCROLLED NAVBAR
+========================= */
+
+.main-navbar.navbar-scrolled {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 2000;
+
+  background: rgba(255, 255, 255, 0.98);
+
+  box-shadow:
+    0 6px 20px rgba(16, 31, 73, 0.10);
+
+  border-bottom: 1px solid #e8eef8;
+
+  transform: translateY(0);
+
+  animation: navbarDropDown 0.5s ease forwards;
+}
+
+
+/* Show logo after scrolling */
+
+.main-navbar.navbar-scrolled .navbar-logo {
+  display: flex !important;
+}
+
+
+/* =========================
+   DROP DOWN ANIMATION
+========================= */
+
+@keyframes navbarDropDown {
+
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================
+   MOBILE TOGGLE
+========================= */
+
+.navbar-toggler {
+  border: none !important;
+
+  box-shadow: none !important;
+
+  padding: 6px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none !important;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1199px) {
+
+  .navbar-links {
+    gap: 25px;
+  }
+
+  .navbar-phone {
+    min-width: 185px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 991px) {
+
+  /* =========================
+     NORMAL MOBILE NAVBAR
+     ========================= */
+
+  .main-navbar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    min-height: 64px;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    z-index: 2000;
+  }
+
+
+  .main-navbar > .container {
+    min-height: 64px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+  }
+
+
+  /*
+     Logo is hidden in the normal Navbar.
+
+     The logo visible at the top comes
+     from TopHeader.
+  */
+
+  .main-navbar .navbar-logo {
+    display: none !important;
+  }
+
+
+  /* =========================
+     MOBILE TOGGLE
+  ========================= */
+
+  .main-navbar .navbar-toggler {
+    display: block;
+
+    margin-left: auto;
+
+    border: none !important;
+
+    padding: 6px;
+
+    background: transparent;
+
+    box-shadow: none !important;
+  }
+
+
+  /*
+     IMPORTANT:
+     Bootstrap's collapse system needs
+     these rules.
+  */
+
+  .main-navbar .navbar-collapse.collapse:not(.show) {
+    display: none;
+  }
+
+
+  .main-navbar .navbar-collapse.collapse.show {
+    display: block;
+  }
+
+
+  /* =========================
+     MOBILE MENU
+  ========================= */
+
+  .main-navbar .navbar-collapse {
+    position: absolute;
+
+    top: 64px;
+    left: 0;
+
+    width: 100%;
+
+    padding: 15px 25px 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+      0 8px 20px rgba(16, 31, 73, 0.10);
+  }
+
+
+  .navbar-links {
+    width: 100%;
+
+    display: block;
+
+    margin: 0;
+
+    padding: 0;
+  }
+
+
+  .navbar-links .nav-link {
+    display: block;
+
+    width: 100%;
+
+    padding: 11px 0 !important;
+
+    color: #101f49 !important;
+
+    font-size: 14px;
+  }
+
+
+  .navbar-links .nav-link.active::after {
+    display: none;
+  }
+
+
+  /* Phone hidden */
+
+  .navbar-phone {
+    display: none;
+  }
+
+
+  /* =========================
+     SCROLLED MOBILE NAVBAR
+  ========================= */
+
+  .main-navbar.navbar-scrolled {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    min-height: 64px;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8eef8;
+
+    box-shadow:
+      0 6px 20px rgba(16, 31, 73, 0.10);
+
+    z-index: 2000;
+
+    animation: navbarDropDown 0.40s ease forwards;
+  }
+
+
+  .main-navbar.navbar-scrolled > .container {
+    min-height: 64px;
+
+    justify-content: space-between;
+  }
+
+
+  /* Show logo after scrolling */
+
+  .main-navbar.navbar-scrolled .navbar-logo {
+    display: flex !important;
+
+    align-items: center;
+
+    margin-right: auto;
+  }
+
+
+  .main-navbar.navbar-scrolled .navbar-logo img {
+    width: 145px;
+
+    height: auto;
+  }
+
+
+  /* Toggle stays on right */
+
+  .main-navbar.navbar-scrolled .navbar-toggler {
+    margin-left: auto;
+  }
+
+
+  /* =========================
+     SCROLLED MOBILE MENU
+  ========================= */
+
+  .main-navbar.navbar-scrolled .navbar-collapse {
+    position: absolute;
+
+    top: 64px;
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 15px 25px 20px;
+
+    background: #ffffff;
+
+    box-shadow:
+      0 8px 20px rgba(16, 31, 73, 0.10);
+  }
+
+}

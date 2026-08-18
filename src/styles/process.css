@@ -1,0 +1,242 @@
+/* =========================
+   PROCESS SECTION
+========================= */
+
+.process-section {
+  padding: 70px 0;
+
+  background: #f3f7ff;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.process-heading {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.process-heading h2 {
+  margin: 0;
+
+  color: #101f49;
+
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  letter-spacing: -0.8px;
+}
+
+.process-heading h2 span {
+  color: #1769ff;
+}
+
+.process-heading-line {
+  width: 48px;
+  height: 2px;
+
+  margin: 12px auto 14px;
+
+  background: #ff6b00;
+
+  border-radius: 10px;
+}
+
+.process-heading p {
+  max-width: 540px;
+
+  margin: 0 auto;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   PROCESS GRID
+========================= */
+
+.process-grid {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+
+  margin-top: 55px;
+}
+
+
+/* =========================
+   PROCESS ITEM
+========================= */
+
+.process-item {
+  position: relative;
+
+  text-align: center;
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.process-number {
+  position: relative;
+  z-index: 2;
+
+  width: 62px;
+  height: 62px;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  background: #1769ff;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 10px 25px rgba(23, 105, 255, 0.2);
+}
+
+
+/* =========================
+   CONNECTOR
+========================= */
+
+.process-connector {
+  position: absolute;
+
+  top: 31px;
+
+  left: calc(50% + 31px);
+
+  width: calc(100% - 62px);
+
+  height: 1px;
+
+  border-top: 1px dashed #9dbcf2;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.process-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.process-content h3 {
+  margin: 0 0 8px;
+
+  color: #101f49;
+
+  font-size: 17px;
+
+  font-weight: 750;
+}
+
+.process-content p {
+  max-width: 220px;
+
+  margin: 0 auto;
+
+  color: #64748b;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   ALTERNATING ACCENT
+========================= */
+
+.process-item:nth-child(2) .process-number {
+  background: #ff6b00;
+}
+
+.process-item:nth-child(4) .process-number {
+  background: #6aaa64;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 767px) {
+
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 40px 20px;
+
+    margin-top: 42px;
+  }
+
+  .process-connector {
+    display: none;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+  .process-section {
+    padding: 60px 0;
+  }
+
+  .process-grid {
+    gap: 30px 12px;
+  }
+
+  .process-number {
+    width: 54px;
+    height: 54px;
+
+    font-size: 14px;
+
+    margin-bottom: 14px;
+  }
+
+  .process-content h3 {
+    font-size: 15px;
+  }
+
+  .process-content p {
+    font-size: 11px;
+  }
+}
