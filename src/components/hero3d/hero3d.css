@@ -1,0 +1,382 @@
+/* =========================
+   HOME HERO
+========================= */
+
+.home-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 700px;
+
+  display: grid;
+
+  grid-template-columns: 45% 55%;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      #e8f3ff 0%,
+      #f5f9ff 45%,
+      #ffffff 78%
+    );
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.home-hero-content {
+  position: relative;
+
+  z-index: 10;
+
+  padding-left: 8vw;
+
+  max-width: 650px;
+
+  animation:
+    heroTextIn 0.9s ease-out;
+}
+
+
+@keyframes heroTextIn {
+
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.home-hero-label {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: #ff8517;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.home-hero-content h1 {
+  margin: 0;
+
+  color: #101f49;
+
+  font-size: clamp(
+    48px,
+    5vw,
+    76px
+  );
+
+  line-height: 0.98;
+
+  font-weight: 800;
+
+  letter-spacing: -2.5px;
+}
+
+
+.home-hero-content h1 span {
+  display: block;
+
+  color: #1769ff;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.home-hero-content p {
+  max-width: 500px;
+
+  margin:
+    26px 0 0;
+
+  color: #4a5b78;
+
+  font-size: 16px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.home-hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+
+.home-hero-primary {
+  min-height: 50px;
+
+  padding:
+    0 12px 0 22px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  color: #ffffff;
+
+  background: #1769ff;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 12px 28px
+    rgba(23, 105, 255, 0.20);
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.home-hero-primary:hover {
+  color: #ffffff;
+
+  background: #0d58dd;
+
+  transform:
+    translateY(-2px);
+}
+
+
+.home-hero-primary span {
+  font-size: 20px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.home-hero-primary:hover span {
+  transform:
+    translateX(4px);
+}
+
+
+.home-hero-secondary {
+  min-height: 50px;
+
+  padding:
+    0 20px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #101f49;
+
+  background: #ffffff;
+
+  border:
+    1px solid #dce5f2;
+
+  border-radius: 6px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    0.2s ease;
+}
+
+
+.home-hero-secondary:hover {
+  color: #1769ff;
+
+  border-color: #1769ff;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================
+   3D AREA
+========================= */
+
+.home-hero-visual {
+  position: relative;
+
+  width: 100%;
+  height: 700px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+.hero-3d {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+
+.hero-3d canvas {
+  display: block;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+  .home-hero {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding:
+      100px 0 30px;
+  }
+
+
+  .home-hero-content {
+    width: 100%;
+
+    max-width: 700px;
+
+    padding:
+      0 25px;
+
+    text-align: center;
+  }
+
+
+  .home-hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .home-hero-actions {
+    justify-content: center;
+  }
+
+
+  .home-hero-visual {
+    width: 100%;
+
+    height: 520px;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 575px) {
+
+  .home-hero {
+    padding: 80px 0 0;
+  }
+
+  .home-hero-content {
+    padding: 0 18px;
+  }
+
+  .home-hero-label {
+    font-size: 11px;
+  }
+
+  .home-hero-content h1 {
+    font-size: clamp(40px, 12vw, 52px);
+    letter-spacing: -1.5px;
+  }
+
+  .home-hero-content p {
+    margin-top: 18px;
+    font-size: 14px;
+  }
+
+  .home-hero-actions {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .home-hero-primary,
+  .home-hero-secondary {
+    width: 100%;
+  }
+
+  /* =========================
+     SMALLER 3D HERO
+  ========================= */
+
+  .home-hero-visual {
+    height: 280px;
+    margin-top: 0;
+  }
+
+  .hero-3d {
+    height: 280px;
+  }
+
+}
+
+.hero-3d canvas {
+  display: block;
+
+  touch-action: none;
+}
