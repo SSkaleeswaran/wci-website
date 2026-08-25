@@ -5,6 +5,7 @@ import {
   Navbar as BootstrapNavbar,
 } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
+import navbarBg from "../../assets/navbar-bg.jpg";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,11 +28,14 @@ function Navbar() {
 
   return (
     <BootstrapNavbar
-      expand="lg"
-      className={`main-navbar ${
-        isScrolled ? "navbar-scrolled" : ""
-      }`}
-    >
+  expand="lg"
+  style={{
+    "--navbar-bg": `url(${navbarBg})`,
+  }}
+  className={`main-navbar ${
+    isScrolled ? "navbar-scrolled" : ""
+  }`}
+>
       <Container>
 
         {/* Logo */}
