@@ -11,7 +11,7 @@ function TopHeader() {
 
             <Link to="/" className="top-header-logo">
   <img
-    src="/images/logo.png"
+    src="/images/headerLogo.png"
     alt="Immigration Consultancy"
   />
 </Link>

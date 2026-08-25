@@ -65,7 +65,7 @@
 .navbar-logo img {
   display: block;
 
-  width: 165px;
+  width: 230px;
   height: auto;
 
   object-fit: contain;
@@ -149,6 +149,17 @@
 .navbar-links .nav-link {
   color: #101f49 !important;
 }
+
+.main-navbar.navbar-scrolled
+.navbar-phone a  {
+  color: #101f49 !important;
+}
+
+.main-navbar.navbar-scrolled
+.navbar-phone span  {
+  color: #101f49 !important;
+}
+
 
 
 /* =========================
@@ -238,7 +249,7 @@
 
   color: #dfe5ed;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 600;
 }
@@ -257,6 +268,10 @@
   color: #01bb45;
 }
 
+.main-navbar.navbar-scrolled
+.navbar-phone a:hover {
+  color: #12a436 !important;
+}
 /* =========================
    SCROLLED NAVBAR
 ========================= */
@@ -271,10 +286,10 @@
 
   z-index: 2000;
 
-  background: rgba(224, 229, 239, 0.98);
+  background: rgba(255, 255, 255, 0.98);
 
   box-shadow:
-    0 6px 20px rgba(16, 31, 73, 0.10);
+    0 6px 20px rgba(19, 48, 193, 0.699);
 
   border-bottom: 1px solid #e8eef8;
 

@@ -45,7 +45,7 @@ function Navbar() {
           className="navbar-logo"
         >
           <img
-            src="/images/logo.png"
+            src="/images/headerLogo.png"
             alt="Immigration Consultancy"
           />
         </BootstrapNavbar.Brand>
@@ -106,7 +106,7 @@ function Navbar() {
           <div className="navbar-phone">
 
             <span className="navbar-phone-icon">
-              ☎
+              {/* ☎ */}
             </span>
 
             <div>
