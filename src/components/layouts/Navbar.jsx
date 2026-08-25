@@ -106,11 +106,12 @@ function Navbar() {
           <div className="navbar-phone">
 
             <span className="navbar-phone-icon">
-              {/* ☎ */}
+              <i className="bi bi-telephone-fill"></i>
+
             </span>
 
             <div>
-              <span>Call For Consultation</span>
+              <span className="icon-text">Call For Consultation</span>
 
               <a href="tel:+916379891812">
                 +91 637 989 1812
