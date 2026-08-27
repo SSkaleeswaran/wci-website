@@ -1,21 +1,24 @@
 import Hero3D from "../components/hero3d/Hero3d";
 import About from "../components/sections/About";
-import ConsultationBanner from "../components/sections/ConsultationBanner";
+// import ConsultationBanner from "../components/sections/ConsultationBanner";
 import Countries from "../components/sections/Countries";
 import FaqAppointment from "../components/sections/FaqAppointment";
 import Process from "../components/sections/Process";
 import Services from "../components/sections/Services";
 import Testimonials from "../components/sections/Testimonials";
 import WhyChooseUs from "../components/sections/WhyChooseUs";
+import PromoBanner from "../components/sections/PromoBanner";
 
 function Home() {
   return (
     <main>
-      <Hero3D />
+      <PromoBanner/>
+      
 
       <Services />
 
-      <ConsultationBanner />
+      {/* <ConsultationBanner /> */}
+      <Hero3D />
 
       <About />
 

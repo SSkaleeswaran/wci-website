@@ -19,9 +19,9 @@
   background:
     radial-gradient(
       circle at 75% 50%,
-      #e8f3ff 0%,
+      #f5f9ff 40%,
       #f5f9ff 45%,
-      #ffffff 78%
+      #f5f9ff 45%
     );
 }
 
