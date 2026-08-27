@@ -5,10 +5,10 @@ import {
   Navbar as BootstrapNavbar,
 } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import navbarBg from "../../assets/navbar-bg.jpg";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +16,7 @@ function Navbar() {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
+        setIsMenuOpen(false);
       }
     };
 
@@ -26,16 +27,19 @@ function Navbar() {
     };
   }, []);
 
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <BootstrapNavbar
-  expand="lg"
-  style={{
-    "--navbar-bg": `url(${navbarBg})`,
-  }}
-  className={`main-navbar ${
-    isScrolled ? "navbar-scrolled" : ""
-  }`}
->
+      expand="lg"
+      expanded={isMenuOpen}
+      onToggle={setIsMenuOpen}
+      className={`main-navbar ${
+        isScrolled ? "navbar-scrolled" : ""
+      } ${isMenuOpen ? "mobile-menu-open" : ""}`}
+    >
       <Container>
 
         {/* Logo */}
@@ -43,6 +47,7 @@ function Navbar() {
           as={NavLink}
           to="/"
           className="navbar-logo"
+          onClick={closeMenu}
         >
           <img
             src="/images/headerLogo.png"
@@ -55,7 +60,17 @@ function Navbar() {
         <BootstrapNavbar.Toggle
           aria-controls="main-navbar"
           className="navbar-toggler"
-        />
+        >
+          <span
+            className={`mobile-menu-icon ${
+              isMenuOpen ? "is-open" : ""
+            }`}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </BootstrapNavbar.Toggle>
 
 
         {/* Navigation */}
@@ -67,6 +82,7 @@ function Navbar() {
               as={NavLink}
               to="/"
               end
+              onClick={closeMenu}
             >
               Home
             </Nav.Link>
@@ -74,6 +90,7 @@ function Navbar() {
             <Nav.Link
               as={NavLink}
               to="/about"
+              onClick={closeMenu}
             >
               About
             </Nav.Link>
@@ -81,6 +98,7 @@ function Navbar() {
             <Nav.Link
               as={NavLink}
               to="/services"
+              onClick={closeMenu}
             >
               Services
             </Nav.Link>
@@ -88,6 +106,7 @@ function Navbar() {
             <Nav.Link
               as={NavLink}
               to="/countries"
+              onClick={closeMenu}
             >
               Countries
             </Nav.Link>
@@ -95,6 +114,7 @@ function Navbar() {
             <Nav.Link
               as={NavLink}
               to="/contact"
+              onClick={closeMenu}
             >
               Contact
             </Nav.Link>
@@ -107,11 +127,10 @@ function Navbar() {
 
             <span className="navbar-phone-icon">
               <i className="bi bi-telephone-fill"></i>
-
             </span>
 
             <div>
-              <span className="icon-text">Call For Consultation</span>
+              <span>Call For Consultation</span>
 
               <a href="tel:+916379891812">
                 +91 637 989 1812
