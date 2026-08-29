@@ -6,17 +6,25 @@ function About() {
       <div className="container">
         <div className="about-grid">
 
-          {/* Photo - LEFT */}
           <div className="about-image-wrapper">
-            <div className="about-image-placeholder">
-              <span>COMPANY IMAGE</span>
-            </div>
 
-            <div className="about-experience-card">
-              <strong>01</strong>
-              <span>Journey Starts<br />With Us</span>
-            </div>
-          </div>
+  <div className="about-image-placeholder">
+    <img
+      src="/images/company-img/visa-1.jpg"
+      alt="Well Career Immigration"
+    />
+  </div>
+
+  <div className="about-experience-card">
+    <strong>01</strong>
+    <span>
+      Journey Starts
+      <br />
+      With Us
+    </span>
+  </div>
+
+</div>
 
           {/* Content - RIGHT */}
           <div className="about-content">
