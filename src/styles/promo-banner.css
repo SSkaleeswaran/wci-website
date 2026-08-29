@@ -4,7 +4,7 @@
   height: 620px;
   min-height: 620px;
   overflow: hidden;
-  background: #101f49 url("/public/images/company-img/visa-1.jpg") center / cover no-repeat;
+  background: #101f49;
 }
 
 .promo-video {

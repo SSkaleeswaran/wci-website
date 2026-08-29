@@ -6,14 +6,11 @@ const banners = [
   { id: 2, video: "/videos/Nature-Village.mp4", title: "Your Journey Starts With the Right Destination." },
   { id: 3, video: "/videos/Building1.mp4", title: "Build Your Future in Another Country." },
   { id: 4, video: "/videos/Plane-Flying.mp4", title: "Make Your International Dreams Possible." },
-  { id: 5, video: "/videos/University-Zoomout.mp4", title: "Explore Your Future Beyond Borders." },
-
-  { id: 6, video: "/videos/University-Top.mp4", title: "Your Global Journey Starts Here." },
-  { id: 7, video: "/videos/Group-Hyfy.mp4", title: "Make Your International Dreams Possible." },
+  { id: 5, video: "/videos/University-Top.mp4", title: "Your Global Journey Starts Here." },
+  { id: 6, video: "/videos/Group-Hyfy.mp4", title: "Make Your International Dreams Possible." },
 ];
 
 const PLAYBACK_RATE = 4;
-// One branded fallback image, shown behind the video during any load gap
 const FALLBACK_BG = "/images/company-img/visa-1.jpg";
 
 function PromoBanner() {
@@ -22,7 +19,6 @@ function PromoBanner() {
   const [activeSlot, setActiveSlot] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Initial load: slot 0 plays banner 0, slot 1 preloads banner 1
   useEffect(() => {
     const v0 = videoRefs[0].current;
     const v1 = videoRefs[1].current;
@@ -34,7 +30,7 @@ function PromoBanner() {
     v0.play().catch(() => {});
 
     v1.src = banners[slotBannerIndex.current[1]].video;
-    v1.load(); // preload only, stays paused
+    v1.load();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -45,7 +41,6 @@ function PromoBanner() {
 
     incomingVideo.playbackRate = PLAYBACK_RATE;
 
-    // Reveal only once the incoming video is actually painting a frame
     const reveal = () => {
       incomingVideo.removeEventListener("playing", reveal);
       setActiveSlot(incomingSlot);
@@ -55,7 +50,6 @@ function PromoBanner() {
     incomingVideo.currentTime = 0;
     incomingVideo.play().catch(() => {});
 
-    // Queue up the banner after next into the slot that just finished
     const outgoingVideo = videoRefs[endedSlot].current;
     const upcomingIndex = (slotBannerIndex.current[incomingSlot] + 1) % banners.length;
     slotBannerIndex.current[endedSlot] = upcomingIndex;
