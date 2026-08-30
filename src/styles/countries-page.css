@@ -1,0 +1,977 @@
+/* =========================================================
+   COUNTRIES PAGE
+========================================================= */
+
+.countries-page {
+  width: 100%;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   COUNTRIES HERO BANNER
+========================================================= */
+
+.countries-page-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 420px;
+
+  display: flex;
+  align-items: center;
+
+  /* background-image:
+    url("/images/banners/bigBanner.jpeg"); */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO DARK OVERLAY
+========================================================= */
+
+.countries-page-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 20, 50, 0.84),
+      rgba(8, 20, 50, 0.62),
+      rgba(8, 20, 50, 0.42)
+    );
+}
+
+
+/* =========================================================
+   HERO CONTAINER
+========================================================= */
+
+.countries-page-hero .container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.countries-page-hero-content {
+  max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 80px 20px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   HERO LABEL
+========================================================= */
+
+.countries-page-label {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  color: #ff8517;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.countries-page-hero h1 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(
+    42px,
+    5vw,
+    64px
+  );
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+}
+
+
+.countries-page-hero h1 span {
+  color: #ff8517;
+}
+
+
+/* =========================================================
+   HERO LINE
+========================================================= */
+
+.countries-page-hero .countries-page-line {
+  width: 45px;
+
+  height: 3px;
+
+  margin: 20px auto;
+
+  border-radius: 5px;
+
+  background: #ff8517;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.countries-page-hero p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   COUNTRY LIST BACKGROUND
+========================================================= */
+
+.countries-page-list {
+  width: 100%;
+
+  padding: 70px 20px;
+
+  background: #f5f8fd;
+}
+
+
+/* =========================================================
+   COUNTRY CARD
+========================================================= */
+
+.country-page-row {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 0 auto 40px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: stretch;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #e5ebf5;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 35px
+    rgba(16, 31, 73, 0.07);
+}
+
+
+.country-page-row:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   COUNTRY CONTENT
+========================================================= */
+
+.country-page-content {
+  width: 100%;
+
+  padding: 45px 60px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   COUNTRY NUMBER
+========================================================= */
+
+.country-page-number {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #ff8517;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   COUNTRY TITLE
+========================================================= */
+
+.country-page-content h2 {
+  margin: 0;
+
+  color: #101f49;
+
+  font-size: 42px;
+
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+}
+
+
+/* =========================================================
+   COUNTRY LINE
+========================================================= */
+
+.country-page-content .country-page-line {
+  width: 45px;
+
+  height: 3px;
+
+  margin: 16px 0 23px;
+
+  border-radius: 5px;
+
+  background: #ff8517;
+}
+
+
+/* =========================================================
+   COUNTRY INFORMATION
+========================================================= */
+
+.country-page-points {
+  list-style: none;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+.country-page-points li {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin-bottom: 12px;
+
+  color: #667692;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CHECK ICON
+========================================================= */
+
+.country-page-check {
+  width: 21px;
+
+  height: 21px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: 1px;
+
+  border-radius: 50%;
+
+  background: #eaf2ff;
+
+  color: #1769ff;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   COUNTRY FOOTER
+========================================================= */
+
+.country-page-footer {
+  margin-top: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+
+/* =========================================================
+   FLAG + COUNTRY NAME
+========================================================= */
+
+.country-page-name {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.country-page-name img {
+  width: 42px;
+
+  height: 28px;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+
+  box-shadow:
+    0 2px 7px
+    rgba(0, 0, 0, 0.12);
+}
+
+
+.country-page-name strong {
+  color: #101f49;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   CONTACT BUTTON
+========================================================= */
+
+.country-page-contact {
+  min-width: 165px;
+
+  min-height: 46px;
+
+  padding: 0 20px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border-radius: 7px;
+
+  background: #1769ff;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.country-page-contact:hover {
+  background: #0d58df;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+.country-page-contact span {
+  font-size: 17px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+.country-page-contact:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   COUNTRY IMAGE
+========================================================= */
+
+.country-page-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #eef4ff;
+}
+
+
+.country-page-image img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+
+.country-page-row:hover
+.country-page-image img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   DESKTOP IMAGE / CONTENT ORDER
+========================================================= */
+
+/* IMAGE RIGHT */
+
+.country-image-right
+.country-page-content {
+  order: 1;
+}
+
+
+.country-image-right
+.country-page-image {
+  order: 2;
+}
+
+
+/* IMAGE LEFT */
+
+.country-image-left
+.country-page-image {
+  order: 1;
+}
+
+
+.country-image-left
+.country-page-content {
+  order: 2;
+}
+
+
+/* =========================================================
+   COUNTRIES CTA
+========================================================= */
+
+.countries-page-cta {
+  width: 100%;
+
+  padding: 95px 20px;
+
+  background: #ffffff;
+}
+
+
+.countries-page-cta-content {
+  max-width: 750px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+.countries-page-cta-content > span {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #ff8517;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+.countries-page-cta-content h2 {
+  margin: 0 auto 15px;
+
+  color: #101f49;
+
+  font-size: 40px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+
+.countries-page-cta-content p {
+  max-width: 600px;
+
+  margin: 0 auto 28px;
+
+  color: #71809b;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+
+.countries-page-cta-button {
+  min-width: 170px;
+
+  min-height: 50px;
+
+  padding: 0 24px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  border-radius: 7px;
+
+  background: #1769ff;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.countries-page-cta-button:hover {
+  background: #0d58df;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+.countries-page-cta-button span {
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  /* HERO */
+
+  .countries-page-hero {
+    min-height: 390px;
+  }
+
+
+  .countries-page-hero-content {
+    padding: 70px 20px;
+  }
+
+
+  /* COUNTRY LIST */
+
+  .countries-page-list {
+    padding: 55px 20px;
+  }
+
+
+  /* COUNTRY CARD */
+
+  .country-page-row {
+    margin-bottom: 30px;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  /* CONTENT */
+
+  .country-page-content {
+    padding: 40px 38px;
+  }
+
+
+  .country-page-content h2 {
+    font-size: 35px;
+  }
+
+
+  .country-page-points li {
+    font-size: 13px;
+
+    margin-bottom: 10px;
+  }
+
+
+  /* IMAGE */
+
+  .country-page-image {
+    aspect-ratio: 16 / 9;
+  }
+
+
+  .country-page-name strong {
+    font-size: 16px;
+  }
+
+
+  /* CTA */
+
+  .countries-page-cta {
+    padding: 75px 20px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  /* =======================================================
+     HERO
+  ======================================================= */
+
+  .countries-page-hero {
+    min-height: 360px;
+
+    background-position: center center;
+  }
+
+
+  .countries-page-hero-content {
+    padding: 65px 20px;
+  }
+
+
+  .countries-page-label {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+
+  .countries-page-hero h1 {
+    font-size: 38px;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.8px;
+  }
+
+
+  .countries-page-hero p {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  /* =======================================================
+     COUNTRY LIST
+  ======================================================= */
+
+  .countries-page-list {
+    padding: 40px 15px;
+  }
+
+
+  /* =======================================================
+     COUNTRY CARD
+  ======================================================= */
+
+  .country-page-row {
+    width: 100%;
+
+    margin-bottom: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+      0 7px 25px
+      rgba(16, 31, 73, 0.07);
+  }
+
+
+  /* =======================================================
+     IMAGE ALWAYS FIRST ON MOBILE
+  ======================================================= */
+
+  .country-image-right
+  .country-page-image,
+
+  .country-image-left
+  .country-page-image {
+    order: 1;
+  }
+
+
+  /* =======================================================
+     CONTENT SECOND ON MOBILE
+  ======================================================= */
+
+  .country-image-right
+  .country-page-content,
+
+  .country-image-left
+  .country-page-content {
+    order: 2;
+  }
+
+
+  /* =======================================================
+     MOBILE IMAGE
+  ======================================================= */
+
+  .country-page-image {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    height: auto;
+
+    min-height: 0;
+  }
+
+
+  .country-page-image img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  /* =======================================================
+     MOBILE CONTENT
+  ======================================================= */
+
+  .country-page-content {
+    width: 100%;
+
+    padding: 38px 25px 45px;
+
+    margin: 0 !important;
+  }
+
+
+  .country-page-number {
+    margin-bottom: 8px;
+
+    font-size: 12px;
+  }
+
+
+  .country-page-content h2 {
+    font-size: 31px;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.5px;
+  }
+
+
+  .country-page-content
+  .country-page-line {
+    margin: 14px 0 21px;
+  }
+
+
+  .country-page-points li {
+    gap: 9px;
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+
+  /* =======================================================
+     COUNTRY FOOTER
+  ======================================================= */
+
+  .country-page-footer {
+    margin-top: 22px;
+
+    gap: 16px;
+  }
+
+
+  .country-page-name img {
+    width: 38px;
+
+    height: 25px;
+  }
+
+
+  .country-page-name strong {
+    font-size: 17px;
+  }
+
+
+  .country-page-contact {
+    width: 100%;
+
+    max-width: 200px;
+  }
+
+
+  /* =======================================================
+     CTA
+  ======================================================= */
+
+  .countries-page-cta {
+    padding: 65px 20px;
+  }
+
+
+  .countries-page-cta-content h2 {
+    font-size: 30px;
+  }
+
+
+  .countries-page-cta-content p {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .countries-page-hero {
+    min-height: 340px;
+  }
+
+
+  .countries-page-hero h1 {
+    font-size: 33px;
+  }
+
+
+  .countries-page-hero-content {
+    padding: 55px 18px;
+  }
+
+
+  .country-page-content {
+    padding: 35px 20px 42px;
+  }
+
+
+  .country-page-content h2 {
+    font-size: 29px;
+  }
+
+
+  .countries-page-cta-content h2 {
+    font-size: 27px;
+  }
+
+}

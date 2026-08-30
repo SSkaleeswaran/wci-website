@@ -7,7 +7,9 @@ import services from "../data/servicesDataCard";
 function ServicesPage() {
   return (
     <main className="services-page">
-     <section className="services-page-hero">
+     <section className="services-page-hero"  style={{
+    backgroundImage: "url('/images/banners/hero-banner.png')",
+  }}>
         <div className="container">
           <span className="services-page-label">
             OUR SERVICES

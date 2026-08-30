@@ -5,6 +5,7 @@ import FAQPage from "../pages/FAQPage";
 import ContactPage from "../pages/ContactPage";
 import ServicesPage from "../pages/ServicesPage";
 import TouristVisaPage from "../pages/services/TouristVisaPage";
+import CountriesPage from "../pages/CountriesPage";
 
 
 function AppRoutes() {
@@ -14,7 +15,7 @@ function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<ServicesPage />} />
-      <Route path="/countries" element={<h1>Countries Page</h1>} />
+      <Route path="/countries" element={<CountriesPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route
         path="/book-consultation"
@@ -32,6 +33,7 @@ function AppRoutes() {
        <Route path="/services/study-visa" element={<StudyVisaPage/>}/> */}
 
 
+   
     </Routes>
 
   );

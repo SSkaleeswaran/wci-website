@@ -125,7 +125,8 @@ function TouristVisaPage() {
 
         <div className="tourist-hero-image">
           <img
-            src={`${ASSET}/hero-banner.png`}
+            src={'/images/banners/bannerVacation.jpeg'}
+              // backgroundImage: "url('/images/banners/bigBanner.jpeg')",
             alt="Tourist travelling abroad"
           />
         </div>

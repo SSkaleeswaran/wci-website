@@ -15,6 +15,9 @@
 @import "./styles/top-header.css";
 @import "./styles/services-page.css";
 @import "./styles/tourist-visa.css";
+@import "./styles/countries-page.css";
+
+
 
 * {
   margin: 0;
