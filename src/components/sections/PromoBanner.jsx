@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 const banners = [
   {
     id: 1,
-    video: "/videos/university-zoomout.mp4",
+    video: "/videos/zoomout-university.mp4",
     title: "Explore Your Future Beyond Borders.",
   },
 
   {
     id: 2,
-    video: "/videos/Nature-Village.mp4",
+    video: "/videos/village-nature.mp4",
     title: "Your Journey Starts With the Right Destination.",
   },
 
@@ -22,19 +22,19 @@ const banners = [
 
   {
     id: 4,
-    video: "/videos/plane-flying.mp4",
+    video: "/videos/flying-plane.mp4",
     title: "Make Your International Dreams Possible.",
   },
 
   {
     id: 5,
-    video: "/videos/university-top.mp4",
+    video: "/videos/top-university.mp4",
     title: "Your Global Journey Starts Here.",
   },
 
   {
     id: 6,
-    video: "/videos/group-hyfy.mp4",
+    video: "/videos/hyfy-group.mp4",
     title: "Make Your International Dreams Possible.",
   },
 ];
