@@ -7,31 +7,26 @@ const banners = [
     video: "/videos/zoomout-university.mp4",
     title: "Explore Your Future Beyond Borders.",
   },
-
   {
     id: 2,
     video: "/videos/village-nature.mp4",
     title: "Your Journey Starts With the Right Destination.",
   },
-
   {
     id: 3,
     video: "/videos/building1.mp4",
     title: "Build Your Future in Another Country.",
   },
-
   {
     id: 4,
     video: "/videos/flying-plane.mp4",
     title: "Make Your International Dreams Possible.",
   },
-
   {
     id: 5,
     video: "/videos/top-university.mp4",
     title: "Your Global Journey Starts Here.",
   },
-
   {
     id: 6,
     video: "/videos/hyfy-group.mp4",
@@ -40,446 +35,241 @@ const banners = [
 ];
 
 const PLAYBACK_RATE = 2;
-const SLIDE_DURATION = 5000;
+const VIDEO_TIME = 5000;
 
 const FALLBACK_BG = "/images/company-img/visa-1.jpg";
 
 function PromoBanner() {
-  const videoA = useRef(null);
-  const videoB = useRef(null);
-
-  const activeSlot = useRef(0);
-  const currentIndex = useRef(0);
+  const videoRef = useRef(null);
+  const nextVideoRef = useRef(null);
 
   const timerRef = useRef(null);
 
-  const [visibleSlot, setVisibleSlot] = useState(0);
-  const [slide, setSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
+  const currentVideo = banners[currentSlide];
 
-  /* =====================================================
-     GET NEXT INDEX
-  ===================================================== */
+  /*
+   * =====================================================
+   * PLAY CURRENT VIDEO
+   * =====================================================
+   */
 
-  const getNextIndex = (index) => {
-    return (index + 1) % banners.length;
-  };
-
-
-  /* =====================================================
-     GET VIDEO ELEMENT
-  ===================================================== */
-
-  const getVideo = (slot) => {
-    return slot === 0
-      ? videoA.current
-      : videoB.current;
-  };
-
-
-  /* =====================================================
-     PRELOAD VIDEO
-  ===================================================== */
-
-  const preloadVideo = (slot, index) => {
-    const video = getVideo(slot);
+  const playCurrentVideo = () => {
+    const video = videoRef.current;
 
     if (!video) {
       return;
     }
-
-    video.pause();
-
-    video.src = banners[index].video;
-
-    video.load();
 
     video.playbackRate = PLAYBACK_RATE;
-  };
-
-
-  /* =====================================================
-     PLAY CURRENT VIDEO
-  ===================================================== */
-
-  const playVideo = (slot, index) => {
-    const video = getVideo(slot);
-
-    if (!video) {
-      return;
-    }
 
     video.currentTime = 0;
 
-    video.playbackRate = PLAYBACK_RATE;
-
-    video.play().catch(() => {});
-
-    activeSlot.current = slot;
-
-    currentIndex.current = index;
-
-    setVisibleSlot(slot);
-
-    setSlide(index);
+    video
+      .play()
+      .catch((error) => {
+        console.log("Video play failed:", error);
+      });
   };
 
 
-  /* =====================================================
-     START SLIDE TIMER
-  ===================================================== */
+  /*
+   * =====================================================
+   * PRELOAD NEXT VIDEO
+   * =====================================================
+   */
 
-  const startTimer = () => {
-    clearTimeout(timerRef.current);
+  const preloadNextVideo = (index) => {
+    const nextVideo = nextVideoRef.current;
 
-    timerRef.current = setTimeout(() => {
-      goNext();
-    }, SLIDE_DURATION);
-  };
-
-
-  /* =====================================================
-     GO TO NEXT VIDEO
-  ===================================================== */
-
-  const goNext = () => {
-    const oldSlot = activeSlot.current;
-
-    const newSlot = oldSlot === 0 ? 1 : 0;
+    if (!nextVideo) {
+      return;
+    }
 
     const nextIndex =
-      getNextIndex(currentIndex.current);
+      (index + 1) % banners.length;
 
-    const incomingVideo =
-      getVideo(newSlot);
+    nextVideo.src =
+      banners[nextIndex].video;
 
-    const outgoingVideo =
-      getVideo(oldSlot);
-
-
-    if (!incomingVideo) {
-      return;
-    }
-
-
-    /*
-      If next video is already buffered,
-      switch immediately.
-    */
-
-    const switchVideo = () => {
-
-      incomingVideo.currentTime = 0;
-
-      incomingVideo.playbackRate =
-        PLAYBACK_RATE;
-
-      incomingVideo
-        .play()
-        .catch(() => {});
-
-
-      /*
-        Update active state.
-      */
-
-      activeSlot.current = newSlot;
-
-      currentIndex.current = nextIndex;
-
-      setVisibleSlot(newSlot);
-
-      setSlide(nextIndex);
-
-
-      /*
-        Prepare the video after the next one.
-      */
-
-      const upcomingIndex =
-        getNextIndex(nextIndex);
-
-
-      if (outgoingVideo) {
-
-        outgoingVideo.pause();
-
-        outgoingVideo.src =
-          banners[upcomingIndex].video;
-
-        outgoingVideo.load();
-
-      }
-
-
-      /*
-        Start another 5-second cycle.
-      */
-
-      startTimer();
-    };
-
-
-    /*
-      Wait for the incoming video if necessary.
-    */
-
-    if (incomingVideo.readyState >= 3) {
-
-      switchVideo();
-
-    } else {
-
-      incomingVideo.addEventListener(
-        "canplay",
-        switchVideo,
-        {
-          once: true,
-        }
-      );
-
-    }
+    nextVideo.load();
   };
 
 
-  /* =====================================================
-     INITIALIZE
-  ===================================================== */
+  /*
+   * =====================================================
+   * MOVE TO NEXT VIDEO
+   * =====================================================
+   */
+
+  const nextSlide = () => {
+    setCurrentSlide((previous) => {
+      const next =
+        (previous + 1) % banners.length;
+
+      return next;
+    });
+  };
+
+
+  /*
+   * =====================================================
+   * CURRENT VIDEO CHANGED
+   * =====================================================
+   */
 
   useEffect(() => {
-
-    const firstVideo = videoA.current;
-    const secondVideo = videoB.current;
-
-    if (!firstVideo || !secondVideo) {
-      return;
-    }
-
-
-    /*
-      Load first video.
-    */
-
-    firstVideo.src =
-      banners[0].video;
-
-    firstVideo.load();
-
-
-    /*
-      Load second video in advance.
-    */
-
-    secondVideo.src =
-      banners[1].video;
-
-    secondVideo.load();
-
-
-    /*
-      Start first video.
-    */
-
-    const startFirstVideo = () => {
-
-      firstVideo.currentTime = 0;
-
-      firstVideo.playbackRate =
-        PLAYBACK_RATE;
-
-      firstVideo
-        .play()
-        .catch(() => {});
-
-
-      startTimer();
-
-    };
-
-
-    if (firstVideo.readyState >= 3) {
-
-      startFirstVideo();
-
-    } else {
-
-      firstVideo.addEventListener(
-        "canplay",
-        startFirstVideo,
-        {
-          once: true,
-        }
-      );
-
-    }
-
-
-    return () => {
-
-      clearTimeout(timerRef.current);
-
-    };
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-
-  /* =====================================================
-     MANUAL DOT
-  ===================================================== */
-
-  const goToSlide = (index) => {
-
-    if (index === currentIndex.current) {
-      return;
-    }
-
-
-    clearTimeout(timerRef.current);
-
-
-    const oldSlot =
-      activeSlot.current;
-
-    const newSlot =
-      oldSlot === 0 ? 1 : 0;
-
-    const video =
-      getVideo(newSlot);
-
+    const video = videoRef.current;
 
     if (!video) {
       return;
     }
 
-
-    video.pause();
+    /*
+     * Load the new video
+     */
 
     video.src =
-      banners[index].video;
+      currentVideo.video;
 
     video.load();
 
 
-    const switchToSelected = () => {
+    /*
+     * Wait until browser can actually play it
+     */
 
-      video.currentTime = 0;
+    const handleCanPlay = () => {
 
       video.playbackRate =
         PLAYBACK_RATE;
 
+      video.currentTime = 0;
+
       video
         .play()
-        .catch(() => {});
+        .catch((error) => {
+          console.log(
+            "Autoplay failed:",
+            error
+          );
+        });
 
 
       /*
-        Update active slot.
-      */
+       * Preload the next video
+       */
 
-      activeSlot.current =
-        newSlot;
-
-      currentIndex.current =
-        index;
-
-      setVisibleSlot(newSlot);
-
-      setSlide(index);
+      preloadNextVideo(currentSlide);
 
 
       /*
-        Preload next video.
-      */
+       * Exactly 5 seconds
+       */
 
-      const nextIndex =
-        getNextIndex(index);
+      clearTimeout(timerRef.current);
 
-      const oldVideo =
-        getVideo(oldSlot);
-
-
-      if (oldVideo) {
-
-        oldVideo.pause();
-
-        oldVideo.src =
-          banners[nextIndex].video;
-
-        oldVideo.load();
-
-      }
-
-
-      startTimer();
-
+      timerRef.current =
+        setTimeout(() => {
+          nextSlide();
+        }, VIDEO_TIME);
     };
 
 
+    video.addEventListener(
+      "canplay",
+      handleCanPlay,
+      { once: true }
+    );
+
+
+    /*
+     * If browser already has enough data
+     */
+
     if (video.readyState >= 3) {
+      handleCanPlay();
+    }
 
-      switchToSelected();
 
-    } else {
-
-      video.addEventListener(
+    return () => {
+      video.removeEventListener(
         "canplay",
-        switchToSelected,
-        {
-          once: true,
-        }
+        handleCanPlay
       );
 
+      clearTimeout(
+        timerRef.current
+      );
+    };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentSlide]);
+
+
+  /*
+   * =====================================================
+   * MANUAL DOT
+   * =====================================================
+   */
+
+  const goToSlide = (index) => {
+
+    if (index === currentSlide) {
+      return;
     }
+
+    clearTimeout(
+      timerRef.current
+    );
+
+    setCurrentSlide(index);
   };
 
 
-  /* =====================================================
-     RENDER
-  ===================================================== */
+  /*
+   * =====================================================
+   * RENDER
+   * =====================================================
+   */
 
   return (
     <section className="promo-banner">
 
-
       {/* =================================================
-          VIDEO A
+          MAIN VIDEO
       ================================================= */}
 
       <video
-        ref={videoA}
-        className={`promo-video ${
-          visibleSlot === 0
-            ? "promo-video-active"
-            : ""
-        }`}
+        ref={videoRef}
+        className="promo-video promo-video-active"
         poster={FALLBACK_BG}
         muted
+        autoPlay
         playsInline
         preload="auto"
       />
 
 
       {/* =================================================
-          VIDEO B
+          HIDDEN PRELOAD VIDEO
       ================================================= */}
 
       <video
-        ref={videoB}
-        className={`promo-video ${
-          visibleSlot === 1
-            ? "promo-video-active"
-            : ""
-        }`}
-        poster={FALLBACK_BG}
+        ref={nextVideoRef}
         muted
         playsInline
         preload="auto"
+        aria-hidden="true"
+        style={{
+          display: "none",
+        }}
       />
 
 
       {/* =================================================
-          VIDEO OVERLAY
+          OVERLAY
       ================================================= */}
 
       <div className="promo-video-overlay" />
@@ -493,7 +283,6 @@ function PromoBanner() {
 
         <div className="promo-content">
 
-
           {/* FIXED COMPANY NAME */}
 
           <span className="promo-company-name">
@@ -501,10 +290,10 @@ function PromoBanner() {
           </span>
 
 
-          {/* CHANGING TITLE */}
+          {/* ONLY THIS CHANGES */}
 
           <h1 className="promo-title">
-            {banners[slide].title}
+            {currentVideo.title}
           </h1>
 
 
@@ -525,10 +314,7 @@ function PromoBanner() {
               className="promo-button promo-button-primary"
             >
               Countries
-
-              <span>
-                →
-              </span>
+              <span>→</span>
             </Link>
 
 
@@ -537,10 +323,7 @@ function PromoBanner() {
               className="promo-button promo-button-secondary"
             >
               Contact Us
-
-              <span>
-                →
-              </span>
+              <span>→</span>
             </Link>
 
           </div>
@@ -554,27 +337,25 @@ function PromoBanner() {
 
         <div className="promo-controls">
 
-          {banners.map(
-            (banner, index) => (
+          {banners.map((banner, index) => (
 
-              <button
-                key={banner.id}
-                type="button"
-                className={
-                  index === slide
-                    ? "active"
-                    : ""
-                }
-                onClick={() =>
-                  goToSlide(index)
-                }
-                aria-label={
-                  `Go to video ${index + 1}`
-                }
-              />
+            <button
+              key={banner.id}
+              type="button"
+              className={
+                index === currentSlide
+                  ? "active"
+                  : ""
+              }
+              onClick={() =>
+                goToSlide(index)
+              }
+              aria-label={
+                `Go to video ${index + 1}`
+              }
+            />
 
-            )
-          )}
+          ))}
 
         </div>
 

@@ -22,48 +22,29 @@
 /* =========================================================
    VIDEO
 ========================================================= */
-
 .promo-video {
   position: absolute;
 
   inset: 0;
 
   width: 100%;
-
   height: 100%;
 
   object-fit: cover;
-
   object-position: center;
 
   z-index: 0;
 
-  opacity: 0;
+  opacity: 1;
 
   pointer-events: none;
+
+  display: block;
 
   transform: translateZ(0);
 
   backface-visibility: hidden;
-
-  will-change: opacity;
 }
-
-
-/* =========================================================
-   ACTIVE VIDEO
-========================================================= */
-
-.promo-video-active {
-  opacity: 1;
-
-  z-index: 1;
-}
-
-
-/* =========================================================
-   VIDEO OVERLAY
-========================================================= */
 
 .promo-video-overlay {
   position: absolute;
@@ -83,47 +64,44 @@
   pointer-events: none;
 }
 
-
 /* =========================================================
-   CONTAINER
+   PROMO CONTAINER
 ========================================================= */
 
 .promo-container {
   position: relative;
-
   z-index: 2;
 
+  width: 100%;
   height: 100%;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
+
+  margin: 0 auto;
 }
 
 
 /* =========================================================
-   CONTENT
+   PROMO CONTENT - PERFECT CENTER
 ========================================================= */
 
 .promo-content {
   width: 100%;
-
   max-width: 850px;
+
+  margin: 0 auto;
+
+  padding: 40px 20px;
 
   text-align: center;
 
   display: flex;
-
   flex-direction: column;
-
   align-items: center;
-
   justify-content: center;
-
-  padding: 40px 20px;
-}
+} 
 
 
 /* =========================================================
