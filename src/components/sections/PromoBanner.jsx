@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const banners = [
   {
     id: 1,
-    video: "/videos/University-Zoomout.mp4",
+    video: "/videos/university-zoomout.mp4",
     title: "Explore Your Future Beyond Borders.",
   },
 
@@ -16,25 +16,25 @@ const banners = [
 
   {
     id: 3,
-    video: "/videos/Building1.mp4",
+    video: "/videos/building1.mp4",
     title: "Build Your Future in Another Country.",
   },
 
   {
     id: 4,
-    video: "/videos/Plane-Flying.mp4",
+    video: "/videos/plane-flying.mp4",
     title: "Make Your International Dreams Possible.",
   },
 
   {
     id: 5,
-    video: "/videos/University-Top.mp4",
+    video: "/videos/university-top.mp4",
     title: "Your Global Journey Starts Here.",
   },
 
   {
     id: 6,
-    video: "/videos/Group-Hyfy.mp4",
+    video: "/videos/group-hyfy.mp4",
     title: "Make Your International Dreams Possible.",
   },
 ];
