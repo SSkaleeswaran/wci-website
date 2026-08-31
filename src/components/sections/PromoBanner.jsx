@@ -72,7 +72,7 @@ function PromoBanner() {
         console.log("Video play failed:", error);
       });
   };
-
+ playCurrentVideo();
 
   /*
    * =====================================================
