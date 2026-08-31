@@ -418,7 +418,7 @@
 
   color: #1769ff;
 
-  font-size: 12px;
+  font-size: 15px;
 
   font-weight: 800;
 
@@ -874,6 +874,153 @@
   .countries-heading h2 {
 
     font-size: 25px;
+  }
+
+}
+
+
+/* new */
+/* =========================================================
+   COUNTRY SLIDER ARROWS
+========================================================= */
+
+.countries-slider-viewport {
+  position: relative;
+  margin: 2px;
+}
+
+
+/* =========================================================
+   COMMON ARROW
+========================================================= */
+
+.countries-slider-arrow {
+  position: absolute;
+
+  top: 60%;
+  transform: translateY(-50%);
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #3e56c4;
+  color: #d7d8dc;
+
+  font-size: 32px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   LEFT ARROW
+   LEFT = NEXT
+========================================================= */
+
+.countries-slider-arrow-left {
+  left: 5px;
+}
+
+
+/* =========================================================
+   RIGHT ARROW
+   RIGHT = PREVIOUS
+========================================================= */
+
+.countries-slider-arrow-right {
+  right: 5px;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.countries-slider-arrow:hover {
+  background: #1769ff;
+  color: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+.countries-slider-arrow-left:hover {
+  transform: translateY(-50%) translateX(-3px);
+}
+
+.countries-slider-arrow-right:hover {
+  transform: translateY(-50%) translateX(3px);
+}
+
+
+/* =========================================================
+   ACTIVE / CLICK
+========================================================= */
+
+.countries-slider-arrow:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .countries-slider-arrow {
+    width: 44px;
+    height: 44px;
+
+    font-size: 27px;
+  }
+
+  .countries-slider-arrow-left {
+    left: 5px;
+  }
+
+  .countries-slider-arrow-right {
+    right: 5px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .countries-slider-arrow {
+    width: 40px;
+    height: 40px;
+
+    font-size: 24px;
+  }
+
+  .countries-slider-arrow-left {
+    left: 2px;
+  }
+
+  .countries-slider-arrow-right {
+    right: 2px;
   }
 
 }

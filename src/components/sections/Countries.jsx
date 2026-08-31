@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Navigation } from "swiper/modules";
+import { EffectCoverflow } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/navigation";
 
 
 const countries = [
@@ -243,24 +242,16 @@ function CountryCard({
 
       {/* SHOW MORE */}
 
-      <button
-        type="button"
+      <Link
+        to="/countries"
         className="country-read-more"
-        onClick={onToggle}
-        aria-expanded={isExpanded}
       >
-
-        {isExpanded
-          ? "Show Less"
-          : "Show More"}
+        Show More
 
         <span>
-          {isExpanded
-            ? "↑"
-            : "↓"}
+          →
         </span>
-
-      </button>
+      </Link>
 
 
       {/* CONTACT */}
@@ -293,10 +284,10 @@ function CountryCard({
 
 function Countries() {
 
-  const [
-    expandedCountry,
-    setExpandedCountry,
-  ] = useState(null);
+  const [expandedCountry, setExpandedCountry] =
+    useState(null);
+
+  const swiperRef = useRef(null);
 
 
   /*
@@ -307,12 +298,10 @@ function Countries() {
     Touch/swipe enabled.
   */
 
-  const [
-    isMobile,
-    setIsMobile,
-  ] = useState(
-    window.innerWidth <= 767
-  );
+  const [isMobile, setIsMobile] =
+    useState(
+      window.innerWidth <= 767
+    );
 
 
   /* =========================================
@@ -414,18 +403,53 @@ function Countries() {
 
         <div className="countries-slider">
 
-          {/* IMPORTANT:
-              This controls the visible
-              viewport.
-          */}
-
           <div className="countries-slider-viewport">
+
+
+            {/* =================================
+                LEFT ARROW
+
+                LEFT = NEXT
+            ================================= */}
+
+            <button
+              type="button"
+              className="countries-slider-arrow countries-slider-arrow-left"
+              onClick={() =>
+                swiperRef.current?.slideNext()
+              }
+              aria-label="Next country"
+            >
+              ←
+            </button>
+
+
+            {/* =================================
+                RIGHT ARROW
+
+                RIGHT = PREVIOUS
+            ================================= */}
+
+            <button
+              type="button"
+              className="countries-slider-arrow countries-slider-arrow-right"
+              onClick={() =>
+                swiperRef.current?.slidePrev()
+              }
+              aria-label="Previous country"
+            >
+              →
+            </button>
+
+
+            {/* =================================
+                SWIPER
+            ================================= */}
 
             <Swiper
 
               modules={[
                 EffectCoverflow,
-                Navigation,
               ]}
 
 
@@ -439,10 +463,7 @@ function Countries() {
               centeredSlides={true}
 
 
-              /*
-                Auto is important because
-                cards have a fixed 300px width.
-              */
+              /* CARD WIDTH */
 
               slidesPerView="auto"
 
@@ -450,12 +471,10 @@ function Countries() {
               /* LOOP */
 
               loop={true}
-              loopedSlides={countries.length}
 
-
-              /* ARROWS */
-
-              navigation={true}
+              loopedSlides={
+                countries.length
+              }
 
 
               /* SPEED */
@@ -463,30 +482,28 @@ function Countries() {
               speed={700}
 
 
-              /*
-                Desktop = false
-                Mobile = true
-              */
+              /* SAVE SWIPER INSTANCE */
+
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+
+
+              /* MOBILE TOUCH */
 
               allowTouchMove={
                 isMobile
               }
 
 
-              /*
-                Prevent multiple clicks
-                while animation is running.
-              */
+              /* PREVENT MULTIPLE CLICKS */
 
               preventInteractionOnTransition={
                 true
               }
 
 
-              /*
-                Helps Swiper calculate
-                transformed slides.
-              */
+              /* TRACK TRANSFORMED SLIDES */
 
               watchSlidesProgress={
                 true
