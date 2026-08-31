@@ -8,7 +8,7 @@ function ServicesPage() {
   return (
     <main className="services-page">
      <section className="services-page-hero"  style={{
-    backgroundImage: "url('/images/banners/hero-banner.png')",
+    backgroundImage: "url('/images/banners/hero-banner.png ')",
   }}>
         <div className="container">
           <span className="services-page-label">
