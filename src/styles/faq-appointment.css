@@ -33,9 +33,9 @@
 
   margin-bottom: 12px;
 
-  color: #1769ff;
+  color: #2A8C8C;
 
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 800;
 
   letter-spacing: 1.5px;
@@ -46,7 +46,7 @@
 
   margin-right: 7px;
 
-  color: #ff6b00;
+  color: #2A8C8C;
 }
 
 .faq-content h2 {
@@ -64,7 +64,7 @@
 }
 
 .faq-content h2 span {
-  color: #1769ff;
+  color: #D9A441;
 }
 
 .faq-description {
@@ -143,7 +143,7 @@
 }
 
 .faq-item.faq-open .faq-question {
-  color: #1769ff;
+  color: #2A8C8C;
 }
 
 
@@ -162,7 +162,7 @@
   align-items: center;
   justify-content: center;
 
-  color: #1769ff;
+  color: #D9A441;
 
   font-size: 20px;
 
@@ -208,7 +208,7 @@
 
   margin-top: 22px;
 
-  color: #1769ff;
+  color: #061f47;
 
   font-size: 17px;
 
@@ -220,7 +220,7 @@
 }
 
 .faq-more-link span {
-  color: #ff6b00;
+  color: #D9A441;
 
   font-size: 18px;
 
@@ -228,7 +228,7 @@
 }
 
 .faq-more-link:hover {
-  color: #0d56dc;
+  color: #D9A441;
 
   gap: 10px;
 }
@@ -249,10 +249,10 @@
 
   overflow: hidden;
 
-  background: #1769ff;
+  background: #061f47;
 
   box-shadow:
-    0 18px 40px rgba(23, 105, 255, 0.18);
+    0 18px 40px rgba(35, 109, 247, 0.451);
 }
 
 
@@ -271,7 +271,7 @@
 
   border-radius: 50%;
 
-  border: 35px solid rgba(255, 255, 255, 0.07);
+  border: 35px solid #2A8C8C;
 }
 
 .appointment-card::after {
@@ -287,7 +287,7 @@
 
   border-radius: 50%;
 
-  background: rgba(255, 107, 0, 0.8);
+  background: #D9A441;
 }
 
 

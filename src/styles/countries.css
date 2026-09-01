@@ -31,7 +31,7 @@
 
   margin-bottom: 12px;
 
-  color: #ff8517;
+  color: #2A8C8C;
 
   font-size: 12px;
 
@@ -55,7 +55,7 @@
 
 
 .countries-heading h2 span {
-  color: #1769ff;
+  color: #D9A441;
 }
 
 
@@ -68,7 +68,7 @@
 
   border-radius: 5px;
 
-  background: #ff8517;
+  background: #2A8C8C;
 }
 
 
@@ -365,7 +365,7 @@
 
   background: #eaf2ff;
 
-  color: #1769ff;
+  color: #2A8C8C;
 
   font-size: 10px;
 
@@ -416,7 +416,7 @@
 
   background: transparent;
 
-  color: #1769ff;
+  color: #061f47;
 
   font-size: 15px;
 
@@ -432,14 +432,14 @@
 
 
 .country-read-more:hover {
-  color: #ff8517;
+  color: #D9A441;
 }
 
 
 .country-read-more span {
   margin-left: 6px;
 
-  color: #ff8517;
+  color: #D9A441;
 
   font-size: 14px;
 }
@@ -469,7 +469,7 @@
 
   border-radius: 9px;
 
-  background: #1769ff;
+  background: #061f47;
 
   color: #ffffff;
 
@@ -494,7 +494,7 @@
 
 
 .country-contact-link:hover {
-  background: #0d58df;
+  background: #D9A441;
 
   color: #ffffff;
 
@@ -910,7 +910,7 @@
   border: none;
   border-radius: 50%;
 
-  background: #3e56c4;
+  background: #061f47;
   color: #d7d8dc;
 
   font-size: 32px;
@@ -954,7 +954,7 @@
 ========================================================= */
 
 .countries-slider-arrow:hover {
-  background: #1769ff;
+  background: #D9A441;
   color: #ffffff;
 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);

@@ -1,6 +1,6 @@
-import Hero3D from "../components/hero3d/Hero3d";
+// import Hero3D from "../components/hero3d/Hero3d";
 import About from "../components/sections/About";
-// import ConsultationBanner from "../components/sections/ConsultationBanner";
+import ConsultationBanner from "../components/sections/ConsultationBanner";
 import Countries from "../components/sections/Countries";
 import FaqAppointment from "../components/sections/FaqAppointment";
 import Process from "../components/sections/Process";
@@ -17,8 +17,8 @@ function Home() {
 
       <Services />
 
-      {/* <ConsultationBanner /> */}
-      <Hero3D />
+      <ConsultationBanner />
+      {/* <Hero3D /> */}
 
       <About />
 

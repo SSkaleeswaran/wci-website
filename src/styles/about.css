@@ -12,7 +12,19 @@
   overflow: hidden;
 }
 
+.about-content .section-label{
+  display: inline-block;
 
+  margin-bottom: 12px;
+
+  color: #2A8C8C;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
 /* =========================
    MAIN GRID
 ========================= */
@@ -100,7 +112,7 @@
 }
 
 .about-experience-card strong {
-  color: #ff6b00;
+  color: #00ff00;
 
   font-size: 26px;
   font-weight: 800;
@@ -139,7 +151,7 @@
 }
 
 .about-content h2 span {
-  color: #1769ff;
+  color: #D9A441;
 }
 
 
@@ -190,7 +202,7 @@
 
   border-radius: 50%;
 
-  background: #1769ff;
+  background: #2A8C8C;
 
   color: #ffffff;
 
@@ -238,7 +250,7 @@
 
   border-radius: 8px;
 
-  background: #1769ff;
+  background: #061f47;
 
   color: #ffffff;
 
@@ -252,9 +264,9 @@
 }
 
 .about-button span {
-  color: #ff8a3d;
+  color: #D9A441;
 
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .about-button:hover {
@@ -263,7 +275,7 @@
   transform: translateY(-2px);
 
   box-shadow:
-    0 10px 25px rgba(23, 105, 255, 0.18);
+    0 10px 25px rgba(23, 104, 255, 0.347);
 }
 
 

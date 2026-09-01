@@ -13,8 +13,9 @@
   background-image:
   
     linear-gradient(
-      rgba(7, 19, 183, 0.492),
-      rgba(28, 60, 186, 0.15)
+      #061f4799,
+      /* rgba(7, 19, 183, 0.492), */
+      #061f478c
     ),
     url("../assets/navbar-bg.jpg");
 
@@ -169,7 +170,7 @@
 
 .main-navbar.navbar-scrolled
 .navbar-links .nav-link:hover {
-  color: #1769ff !important;
+  color: #D9A441 !important;
 }
 
 
@@ -180,7 +181,7 @@
 
 .main-navbar.navbar-scrolled
 .navbar-links .nav-link.active {
-  color: #1769ff !important;
+  color: #D9A441 !important;
 }
 
 

@@ -91,9 +91,9 @@
 
   margin-bottom: 15px;
 
-  color: #ff8517;
+  color: #D9A441;
 
-  font-size: 13px;
+  font-size: 18px;
 
   font-weight: 800;
 
@@ -127,7 +127,7 @@
 
 
 .countries-page-hero h1 span {
-  color: #ff8517;
+  color: #D9A441;
 }
 
 
@@ -140,11 +140,11 @@
 
   height: 3px;
 
-  margin: 20px auto;
+  margin: 16px auto;
 
   border-radius: 5px;
 
-  background: #ff8517;
+  background: #2A8C8C;
 }
 
 
@@ -284,7 +284,7 @@
 
   border-radius: 5px;
 
-  background: #ff8517;
+  background: #2A8C8C;
 }
 
 
@@ -341,7 +341,7 @@
 
   background: #eaf2ff;
 
-  color: #1769ff;
+  color: #2A8C8C;
 
   font-size: 11px;
 
@@ -395,7 +395,7 @@
 
 
 .country-page-name strong {
-  color: #101f49;
+  color: #2A8C8C;
 
   font-size: 18px;
 
@@ -424,7 +424,7 @@
 
   border-radius: 7px;
 
-  background: #1769ff;
+  background: #061f47;
 
   color: #ffffff;
 
@@ -441,7 +441,7 @@
 
 
 .country-page-contact:hover {
-  background: #0d58df;
+  background: #D9A441;
 
   color: #ffffff;
 

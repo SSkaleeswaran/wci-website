@@ -20,16 +20,27 @@
   max-width: 650px;
   margin: 0 auto;
   text-align: center;
+  
 }
 
 .services-heading .section-label {
-  margin-bottom: 8px;
+ display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #2A8C8C;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
 }
 
 .services-heading h2 {
   margin: 0;
 
-  color: #101f49;
+  color: #061f47;
 
   font-size: clamp(1.9rem, 3.2vw, 2.7rem);
   line-height: 1.15;
@@ -38,16 +49,16 @@
 }
 
 .services-heading h2 span {
-  color: #1769ff;
+  color: #D9A441;
 }
 
 .services-heading-line {
   width: 48px;
-  height: 2px;
+  height: 2px; 
 
   margin: 12px auto 14px;
 
-  background: #ff6b00;
+  background: #2A8C8C;
   border-radius: 10px;
 }
 
@@ -89,7 +100,7 @@
   right: -7px;
   top: -18px;
 
-  color: #1769ff;
+  color: #061f47;
 
   font-size: 28px;
 

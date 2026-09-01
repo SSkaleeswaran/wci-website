@@ -1,5 +1,5 @@
 /* =========================================================
-   PROMO BANNER
+   PROMO BANNER  D9A441   061f47  2A8C8C
 ========================================================= */
 
 .promo-banner {
@@ -13,7 +13,7 @@
 
   overflow: hidden;
 
-  background: #101f49;
+  background: #061f47;
 
   z-index: 1;
 }
@@ -113,9 +113,9 @@
 
   margin-bottom: 18px;
 
-  color: #D4AF37;
+  color: #D9A441;
 
-  font-size: 15px;
+  font-size: 25px;
 
   font-weight: 800;
 
@@ -235,9 +235,9 @@
 ========================================================= */
 
 .promo-button-primary {
-  background: #1769ff;
+  background: #061f47;
 
-  border: 1px solid #1769ff;
+  border: 1px solid #061f47;
 
   color: #ffffff;
 }
@@ -248,7 +248,7 @@
 
   border-color: #ffffff;
 
-  color: #1769ff;
+  color: #061f47;
 
   transform: translateY(-2px);
 }
@@ -272,7 +272,7 @@
 
   border-color: #ffffff;
 
-  color: #101f49;
+  color: #061f47;
 
   transform: translateY(-2px);
 }

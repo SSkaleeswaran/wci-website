@@ -14,7 +14,7 @@
 
   border-radius: 22px;
 
-  background: #1769ff;
+  background: #061f47;
 
   display: flex;
   align-items: center;
@@ -43,7 +43,7 @@
 
   border-radius: 50%;
 
-  background: #ff6b00;
+  background: #D9A441;
 
   opacity: 0.9;
 }
@@ -86,7 +86,7 @@
 }
 
 .consultation-content h2 strong {
-  color: #ffd7b5;
+  color: #D9A441;
 }
 
 .consultation-content p {
@@ -125,7 +125,7 @@
 
   background: #ffffff;
 
-  color: #1769ff;
+  color: #061f47;
 
   font-size: 13px;
   font-weight: 700;
@@ -136,7 +136,7 @@
 }
 
 .consultation-button span {
-  color: #ff6b00;
+  color: #D9A441;
 
   font-size: 18px;
 
@@ -144,7 +144,7 @@
 }
 
 .consultation-button:hover {
-  color: #1769ff;
+  color: #061f47;
 
   transform: translateY(-2px);
 

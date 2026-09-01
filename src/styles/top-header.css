@@ -58,7 +58,7 @@
 
   background: #eef4ff;
 
-  color: #1769ff;
+  color: #0B2A5B;
 
   display: flex;
 
@@ -94,7 +94,7 @@
 }
 
 .top-header-item a:hover {
-  color: #1769ff;
+  color: #061f47;
 }
 
 
@@ -109,13 +109,13 @@
 
   padding: 0 18px;
 
-  border: 1px solid #1769ff;
+  border: 1px solid #0B2A5B;
 
   border-radius: 24px;
 
   background: #ffffff;
 
-  color: #1769ff;
+  color: #0B2A5B;
 
   display: flex;
 
@@ -137,13 +137,13 @@
 }
 
 .top-header-button span {
-  color: #ff6b00;
+  color: #eb8b04;
 
   font-size: 16px;
 }
 
 .top-header-button:hover {
-  background: #1769ff;
+  background: #061f47;
 
   color: #ffffff;
 
