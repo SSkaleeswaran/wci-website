@@ -212,7 +212,7 @@
 
   margin: 10px 0 13px;
 
-  background: #1769ff;
+  background: #2A8C8C;
 
   border-radius: 10px;
 }
@@ -240,9 +240,9 @@
   margin-top: auto;
   padding-top: 18px;
 
-  color: #1769ff;
+  color: #061f47;
 
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
 
   transition: color 0.2s ease;
@@ -253,7 +253,7 @@
 
   margin-left: 6px;
 
-  color: #ff6b00;
+  color: #D9A441;
 
   font-size: 17px;
 
@@ -261,7 +261,7 @@
 }
 
 .service-link:hover {
-  color: #0d56dc;
+  color: #D9A441;
 }
 
 .service-link:hover span {

@@ -20,10 +20,10 @@ function ServicesPage() {
             <span> Services</span>
           </h1>
 
-          <p>
+          {/* <p>
             Professional guidance for your travel, study,
             and work visa requirements.
-          </p>
+          </p> */}
         </div>
       </section>
 

@@ -3,49 +3,123 @@
 ========================= */
 
 .services-page-hero {
-  padding: 80px 0 75px;
+  position: relative;
 
-  background: #f7faff;
+  min-height: 360px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 70px 0;
+
+  background-color: #f7faff;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   text-align: center;
+
+  overflow: hidden;
 }
+
+
+/* =========================
+   HERO OVERLAY
+========================= */
+
+.services-page-hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(105, 127, 171, 0.17);
+
+  z-index: 1;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.services-page-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+
+  padding: 0 20px;
+}
+
+
+/* =========================
+   HERO LABEL
+========================= */
 
 .services-page-label {
   display: inline-block;
 
   margin-bottom: 12px;
 
-  color: #1769ff;
+  color: #2A8C8C;
 
-  font-size: 11px;
+  font-size: 15px;
 
   font-weight: 800;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
 }
+
+
+/* =========================
+   HERO TITLE
+========================= */
 
 .services-page-hero h1 {
   margin: 0;
 
-  color: #101f49;
+  color: #061f47;
 
-  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
 
   font-weight: 800;
 
-  line-height: 1.15;
+  line-height: 1.12;
+
+  letter-spacing: -1px;
 }
+
+
+/* =========================
+   HERO TITLE BLUE
+========================= */
 
 .services-page-hero h1 span {
-  color: #1769ff;
+  color: #D9A441;
 }
 
+
+/* =========================
+   HERO DESCRIPTION
+========================= */
+
 .services-page-hero p {
-  max-width: 600px;
+  max-width: 650px;
 
   margin: 16px auto 0;
 
-  color: #64748b;
+  color: #52627a;
 
   font-size: 14px;
 
@@ -60,6 +134,11 @@
 .services-page-section {
   padding: 75px 0;
 }
+
+
+/* =========================
+   SERVICES HEADING
+========================= */
 
 .services-page-heading {
   margin-bottom: 40px;
@@ -200,7 +279,7 @@
 }
 
 .services-page-link span {
-  color: #ff6b00;
+  color: #D9A441;
 
   font-size: 16px;
 
@@ -223,6 +302,8 @@
 @media (max-width: 991px) {
 
   .services-page-hero {
+    min-height: 330px;
+
     padding: 65px 0;
   }
 
@@ -242,15 +323,31 @@
 @media (max-width: 576px) {
 
   .services-page-hero {
+    min-height: 300px;
+
     padding: 50px 0 55px;
+  }
+
+  .services-page-hero-content {
+    padding: 0 18px;
+  }
+
+  .services-page-label {
+    font-size: 10px;
+
+    letter-spacing: 1.8px;
   }
 
   .services-page-hero h1 {
     font-size: 2rem;
+
+    line-height: 1.1;
   }
 
   .services-page-hero p {
     font-size: 12px;
+
+    line-height: 1.6;
   }
 
   .services-page-section {
@@ -283,6 +380,23 @@
 
   .services-page-card p {
     font-size: 12px;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+  .services-page-hero {
+    min-height: 280px;
+  }
+
+  .services-page-hero h1 {
+    font-size: 1.8rem;
   }
 
 }
