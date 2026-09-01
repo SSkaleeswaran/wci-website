@@ -10,17 +10,17 @@ function About() {
 
   <div className="about-image-placeholder">
     <img
-      src="/images/company-img/visa-1.jpg"
+      src="/images/company-img/companyAbout.avif"
       alt="Well Career Immigration"
     />
   </div>
 
   <div className="about-experience-card">
-    <strong>01</strong>
+    <strong>02</strong>
     <span>
-      Journey Starts
+      Years of
       <br />
-      With Us
+      Experience
     </span>
   </div>
 

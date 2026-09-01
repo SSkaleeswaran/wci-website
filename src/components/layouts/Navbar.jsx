@@ -97,10 +97,10 @@ function Navbar() {
 
             <Nav.Link
               as={NavLink}
-              to="/services"
+              to="/visa-services"
               onClick={closeMenu}
             >
-              Services
+              Visa
             </Nav.Link>
 
             <Nav.Link

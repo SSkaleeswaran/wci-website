@@ -3,21 +3,21 @@ const services = [
     icon: "✈️",
     title: "Tourist Visa",
     description: "Travel for holidays, sightseeing, or visiting family and friends. We provide guidance with documentation and the visa application process for a smooth journey.",
-    path: "/services/tourist-visa",
+    path: "/visa-services/tourist-visa",
   },
   {
     icon: "🎓",
     title: "Study Abroad",
     description:
       "Find the right university and program. We guide you through admissions and visa processes.",
-    path: "/services/study-visa",
+    path: "/visa-services/study-visa",
   },
   {
     icon: "💼",
     title: "Work Visa",
     description:
       "Explore global career opportunities. We assist you with work visa guidance.",
-    path: "/services/work-visa",
+    path: "/visa-services/work-visa",
   },
 
   // {

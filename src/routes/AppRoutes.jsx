@@ -14,7 +14,7 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
-      <Route path="/services" element={<ServicesPage />} />
+      <Route path="/visa-services" element={<ServicesPage />} />
       <Route path="/countries" element={<CountriesPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route
@@ -25,7 +25,7 @@ function AppRoutes() {
 
       {/* services route */}
       <Route
-        path="/services/tourist-visa"
+        path="/visa-services/tourist-visa"
         element={<TouristVisaPage />}
       />
       {/* <Route path="/services/tourist-visa" element={<TouristVisaPage/>}/> */}
