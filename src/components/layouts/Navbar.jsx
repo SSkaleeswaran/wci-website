@@ -42,6 +42,41 @@ function Navbar() {
     >
       <Container>
 
+
+        {/* Mobile Top Info - visible before scrolling */}
+<div className="mobile-navbar-info">
+
+  <BootstrapNavbar.Brand
+    as={NavLink}
+    to="/"
+    className="mobile-navbar-logo"
+    onClick={closeMenu}
+  >
+    <img
+      src="/images/logoOnly.png"
+      alt="Well Career Immigration"
+    />
+  </BootstrapNavbar.Brand>
+
+
+  <a
+    href="tel:+916379891812"
+    className="mobile-navbar-phone"
+  >
+   
+
+    <span className="mobile-phone-icon">
+      <i className="bi bi-telephone-fill"></i>
+    </span>
+
+     <span className="mobile-phone-details">
+    <small>Call For Consultation</small>
+    <strong>+91 637 989 1812</strong>
+  </span>
+  </a>
+
+</div>
+
         {/* Logo */}
         <BootstrapNavbar.Brand
           as={NavLink}

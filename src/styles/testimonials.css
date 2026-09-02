@@ -2,6 +2,9 @@
    TESTIMONIALS
 ========================= */
 
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
+
+
 .testimonials-section {
   padding: 65px 0 70px;
   background: #f3f7ff;
@@ -13,17 +16,27 @@
 ========================= */
 
 .testimonials-heading {
-  max-width: 760px;
-  margin-bottom: 35px;
-  text-align: left;
+ display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #2A8C8C;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
 }
 
 .testimonials-heading h2 {
   margin: 0;
 
-  color: #101f49;
+  color: #061f47;
+     font-family: "Fraunces", serif;
 
-  font-size: clamp(2rem, 3.5vw, 2.7rem);
+
+  font-size: clamp(2.5rem, 4vw, 3.2rem);
   line-height: 1.15;
 
   font-weight: 800;
@@ -31,7 +44,7 @@
 }
 
 .testimonials-heading h2 span {
-  color: #1769ff;
+  color: #D9A441;
 }
 
 .testimonials-heading-line {
@@ -40,7 +53,7 @@
 
   margin: 11px 0 13px;
 
-  background: #ff6b00;
+  background: #2A8C8C;
   border-radius: 10px;
 }
 

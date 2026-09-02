@@ -1,6 +1,8 @@
 /* =========================
    ABOUT SECTION
 ========================= */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
+
 
 .about-section {
   position: relative;
@@ -140,7 +142,8 @@
   margin: 0 0 20px;
 
   color: #101f49;
-
+     font-family: "Fraunces", serif;
+ 
   font-size: clamp(2rem, 4vw, 3.1rem);
 
   line-height: 1.1;

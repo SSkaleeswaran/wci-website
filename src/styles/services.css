@@ -1,6 +1,8 @@
 /* =========================
    SERVICES SECTION
 ========================= */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
+
 
 .services-section {
   position: relative;
@@ -30,7 +32,7 @@
 
   color: #2A8C8C;
 
-  font-size: 12px;
+  font-size: 15px;
 
   font-weight: 800;
 
@@ -41,6 +43,8 @@
   margin: 0;
 
   color: #061f47;
+  font-family: "Fraunces", serif;
+
 
   font-size: clamp(1.9rem, 3.2vw, 2.7rem);
   line-height: 1.15;

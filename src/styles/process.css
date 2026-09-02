@@ -1,6 +1,8 @@
 /* =========================================================
    PROCESS SECTION
 ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
+
 
 .process-section {
   padding: 85px 0 90px;
@@ -45,6 +47,8 @@
   margin: 0;
 
   color: #0B2A5B;
+  font-family: "Fraunces", serif;
+
 
   font-size: clamp(
     2.1rem,
