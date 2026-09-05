@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import services from "../data/servicesDataCard";
 
@@ -34,6 +34,141 @@ const processSteps = [
 ];
 
 function ServicesPage() {
+  /* =====================================================
+     PROCESS ANIMATION STATE
+  ===================================================== */
+
+  const processRef = useRef(null);
+  const pathContainerRef = useRef(null);
+  const nodeRefs = useRef([]);
+
+  const [processInView, setProcessInView] = useState(false);
+  const [snakeD, setSnakeD] = useState("");
+  const [snakeViewBox, setSnakeViewBox] = useState("0 0 100 100");
+
+  /* =====================================================
+     PROCESS SECTION - INTERSECTION OBSERVER
+  ===================================================== */
+
+  useEffect(() => {
+    const element = processRef.current;
+
+    if (!element) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setProcessInView(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.25,
+      }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
+  /* =====================================================
+     PROCESS CONNECTING PATH
+  ===================================================== */
+
+  useEffect(() => {
+    const computePath = () => {
+      const container = pathContainerRef.current;
+
+      if (!container) return;
+
+      const containerRect = container.getBoundingClientRect();
+
+      const points = nodeRefs.current
+        .filter(Boolean)
+        .map((element) => {
+          const rect = element.getBoundingClientRect();
+
+          return {
+            x:
+              rect.left +
+              rect.width / 2 -
+              containerRect.left,
+
+            y:
+              rect.top +
+              rect.height / 2 -
+              containerRect.top,
+          };
+        });
+
+      if (points.length < 2) return;
+
+      let path = `M ${points[0].x} ${points[0].y}`;
+
+      for (let i = 1; i < points.length; i++) {
+        const previous = points[i - 1];
+        const current = points[i];
+
+        const midY =
+          (previous.y + current.y) / 2;
+
+        path +=
+          ` C ${previous.x} ${midY}` +
+          ` ${current.x} ${midY}` +
+          ` ${current.x} ${current.y}`;
+      }
+
+      setSnakeD(path);
+
+      setSnakeViewBox(
+        `0 0 ${containerRect.width} ${containerRect.height}`
+      );
+    };
+
+    computePath();
+
+    const animationFrame =
+      requestAnimationFrame(computePath);
+
+    const settleTimer = setTimeout(
+      computePath,
+      700
+    );
+
+    window.addEventListener(
+      "resize",
+      computePath
+    );
+
+    let resizeObserver;
+
+    if (window.ResizeObserver) {
+      resizeObserver =
+        new ResizeObserver(computePath);
+
+      if (pathContainerRef.current) {
+        resizeObserver.observe(
+          pathContainerRef.current
+        );
+      }
+    }
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      clearTimeout(settleTimer);
+
+      window.removeEventListener(
+        "resize",
+        computePath
+      );
+
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
+    };
+  }, [processInView]);
+
   return (
     <main className="services-page">
 
@@ -51,8 +186,8 @@ function ServicesPage() {
         <div className="services-hero-overlay"></div>
 
         <div className="container position-relative">
-          <div className="row">
-            <div className="col-lg-7">
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
 
               <div className="services-hero-content">
 
@@ -61,11 +196,11 @@ function ServicesPage() {
                 </span>
 
                 <h1>
-                  Visa & Immigration
+                  Visa
+                   <span className="andSimbal"> & </span>
+                    Immigration
                   <span> Services</span>
                 </h1>
-
-               
 
                 <div className="services-hero-line"></div>
 
@@ -78,28 +213,23 @@ function ServicesPage() {
 
 
       {/* =====================================================
-          SERVICES
+          SERVICES OPTIONS
       ===================================================== */}
 
       <section className="services-options-section">
 
-        {/* Decorative background */}
+        {/* Decorative Background */}
         <div className="services-bg-shape services-bg-shape-one"></div>
         <div className="services-bg-shape services-bg-shape-two"></div>
 
         <div className="container position-relative">
 
           {/* Heading */}
-
           <div className="row justify-content-between align-items-end mb-5">
 
             <div className="col-lg-6">
 
               <div className="services-options-heading">
-
-                {/* <span>
-                  OUR VISA & IMMIGRATION SERVICES
-                </span> */}
 
                 <h2>
                   Explore Your
@@ -110,12 +240,12 @@ function ServicesPage() {
 
             </div>
 
-
             <div className="col-lg-5">
-                
+
               <p className="services-options-intro">
                 Professional guidance for your travel, study,
-                  work and family immigration journey. <br></br>
+                work and family immigration journey.
+                <br />
                 We offer a wide range of visa and immigration
                 services to help you achieve your goals,
                 wherever you want to go.
@@ -143,7 +273,7 @@ function ServicesPage() {
                   className={`services-modern-card services-card-${index + 1}`}
                 >
 
-                  {/* Small visual */}
+                  {/* Visual */}
                   <div className="services-card-visual">
 
                     <div className="services-card-icon">
@@ -155,7 +285,7 @@ function ServicesPage() {
                   </div>
 
 
-                  {/* Card content */}
+                  {/* Content */}
                   <div className="services-card-content">
 
                     <span className="services-card-number">
@@ -183,7 +313,7 @@ function ServicesPage() {
                   </div>
 
 
-                  {/* Decorative corner */}
+                  {/* Decorative Corner */}
                   <div className="services-card-corner"></div>
 
                 </div>
@@ -202,88 +332,116 @@ function ServicesPage() {
           PROCESS
       ===================================================== */}
 
-      <section className="services-process-section">
+      <section
+        ref={processRef}
+        className={`services-process-section ${
+          processInView ? "in-view" : ""
+        }`}
+      >
 
         <div className="container">
 
-          <div className="row align-items-center">
+          {/* Process Heading */}
+          <div className="services-process-heading">
 
-            {/* Process heading */}
+            <span>
+              HOW IT WORKS
+            </span>
 
-            <div className="col-lg-4 mb-5 mb-lg-0">
+            <h2>
+              Your Journey,
+              <strong> Simplified.</strong>
+            </h2>
 
-              <div className="services-process-heading">
+            <div className="services-process-line"></div>
 
-                <span>
-                  HOW IT WORKS
+            <p>
+              From your first consultation to your next
+              step, we make the process easier to understand.
+            </p>
+
+          </div>
+
+
+          {/* Process Path */}
+          <div
+            className="services-process-path"
+            ref={pathContainerRef}
+          >
+
+            {/* Connecting Line */}
+            <svg
+              className="services-process-connector"
+              viewBox={snakeViewBox}
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                pathLength="1"
+                d={snakeD}
+                style={{
+                  strokeDasharray: 1,
+                  strokeDashoffset:
+                    processInView ? 0 : 1,
+                }}
+              />
+            </svg>
+
+
+            {/* Process Steps */}
+            {processSteps.map((step, index) => (
+
+              <div
+                className={`process-step ${
+                  processInView ? "step-visible" : ""
+                }`}
+                key={step.number}
+                style={{
+                  transitionDelay:
+                    `${index * 130}ms`,
+                }}
+              >
+
+                {/* Large Background Number */}
+                <span className="process-step-ghost">
+                  {step.number}
                 </span>
 
-                <h2>
-                  Your Journey,
-                  <strong> Simplified.</strong>
-                </h2>
 
-                <div className="services-process-line"></div>
-
-                <p>
-                  From your first consultation to your next
-                  step, we make the process easier to understand.
-                </p>
-
-              </div>
-
-            </div>
+                {/* Icon Node */}
+                <div
+                  className="process-step-node"
+                  ref={(element) => {
+                    nodeRefs.current[index] =
+                      element;
+                  }}
+                >
+                  <span className="process-step-icon">
+                    {step.icon}
+                  </span>
+                </div>
 
 
-            {/* Process steps */}
+                {/* Text */}
+                <div className="process-step-text">
 
-            <div className="col-lg-8">
+                  <h3>
+                    {step.title}
+                  </h3>
 
-              <div className="row g-3">
+                  <p>
+                    {step.description}
+                  </p>
 
-                {processSteps.map((step) => (
-
-                  <div
-                    className="col-sm-6"
-                    key={step.number}
-                  >
-
-                    <div className="services-process-card">
-
-                      <div className="services-process-top">
-
-                        <div className="services-process-number">
-                          {step.number}
-                        </div>
-
-                        <div className="services-process-icon">
-                          {step.icon}
-                        </div>
-
-                      </div>
-
-                      <h3>
-                        {step.title}
-                      </h3>
-
-                      <p>
-                        {step.description}
-                      </p>
-
-                    </div>
-
-                  </div>
-
-                ))}
+                </div>
 
               </div>
 
-            </div>
+            ))}
 
           </div>
 
         </div>
-
       </section>
 
 
@@ -325,7 +483,7 @@ function ServicesPage() {
                   to="/contact"
                   className="services-cta-button"
                 >
-                  Get in Touch Today
+                  Start Today
                   <span>→</span>
                 </Link>
 
