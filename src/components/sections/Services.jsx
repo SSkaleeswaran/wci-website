@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import services from "../../data/servicesDataCard";
 
-
 function Services() {
+  const loopServices = [...services, ...services];
+
   return (
     <section className="services-section">
       <div className="container">
@@ -25,42 +26,44 @@ function Services() {
         </div>
 
         {/* Flight Path */}
-        <div className="service-flight-path">
-          <span>✈</span>
-        </div>
-
-        {/* Cards */}
-        <div className="services-grid">
-          {services.map((service) => (
-            <div className="service-card" key={service.title}>
-
-              <div className="service-icon">
-                {service.icon}
-              </div>
-
-              <h3>{service.title}</h3>
-
-              <div className="service-card-line"></div>
-
-              <p>{service.description}</p>
-
-              <Link
-                to={service.path}
-                className="service-link"
-              >
-                Learn More
-                <span>→</span>
-              </Link>
-
-            </div>
-          ))}
+        <div className="service-flight-path" aria-hidden="true">
+          <span className="flight-plane">✈</span>
         </div>
 
       </div>
+
+      {/* Auto-scrolling marquee */}
+      <div className="services-marquee">
+        <div className="services-track">
+          {loopServices.map((service, i) => (
+            <div className="service-card" key={`${service.title}-${i}`}>
+
+              <Link to={service.path} key={`${service.title}-${i}`}>
+              <div className="service-image">
+                <img src={service.image} alt={service.title} loading="lazy" />
+                {/* <span className="service-image-icon">{service.icon}</span> */}
+              </div>
+
+              <div className="service-card-body">
+                <h3>{service.title}</h3>
+
+                <div className="service-card-line"></div>
+
+                <p>{service.description}</p>
+
+                <span className="service-link">
+                  Learn More
+                  <span>→</span>
+                </span>
+              </div>
+</Link>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </section>
   );
 }
 
 export default Services;
-
-

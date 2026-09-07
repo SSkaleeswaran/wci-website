@@ -1,39 +1,36 @@
 const services = [
-    {
+  {
+    image: "/images/services/tourist-visa.jpg",
     icon: "✈️",
     title: "Tourist Visa",
-    description: "Travel for holidays, sightseeing, or visiting family and friends. We provide guidance with documentation and the visa application process for a smooth journey.",
+    description:
+      "See the world without the paperwork stress. We handle your documentation end to end, so your trip starts with excitement, not confusion.",
     path: "/visa-services/tourist-visa",
   },
   {
+    image: "/images/services/study-visa.jpg",
     icon: "🎓",
     title: "Study Abroad",
     description:
-      "Find the right university and program. We guide you through admissions and visa processes.",
+      "Get into the right university, not just any university. We match your profile to programs that actually fit your goals, and guide every visa step.",
     path: "/visa-services/study-visa",
   },
   {
+    image: "/images/services/work-visa.jpg",
     icon: "💼",
-    title: "Work Visa",
+    title: "Business Visa",
     description:
-      "Explore global career opportunities. We assist you with work visa guidance.",
+      "Open doors to international markets and meetings. We prepare your business visa so opportunity doesn't wait on paperwork.",
     path: "/visa-services/work-visa",
   },
-
-  // {
-  //   icon: "👨‍👩‍👧",
-  //   title: "Family Migration",
-  //   description:
-  //     "Reunite with your loved ones. We make your family migration journey smooth and stress-free.",
-  //   path: "/services/family-migration",
-  // },
-  // {
-  //   icon: "✈️",
-  //   title: "Permanent Residency",
-  //   description:
-  //     "We help you achieve your dream of permanent residency and secure your future.",
-  //   path: "/services/permanent-residency",
-  // },
+  {
+    image: "/images/services/family-visit.jpg",
+    icon: "👨‍👩‍👧",
+    title: "Visiting Visa",
+    description:
+      "Distance shouldn't keep families apart. We make visiting the people you love simple, fast, and stress-free.",
+    path: "/services/family-migration",
+  },
 ];
 
 export default services;
