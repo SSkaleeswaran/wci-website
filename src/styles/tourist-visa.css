@@ -115,13 +115,13 @@
 
 .hero-plane {
   display: inline-block;
-  transform: rotate(45deg);
+  transform: rotate(40deg);
   animation: heroPlaneDrift 2.6s ease-in-out infinite;
 }
 
 @keyframes heroPlaneDrift {
-  0%, 100% { transform: rotate(45deg) translateX(0); }
-  50% { transform: rotate(45deg) translateX(5px); }
+  0%, 100% { transform: rotate(4deg) translateX(0); }
+  50% { transform: rotate(4deg) translateX(5px); }
 }
 
 .tourist-hero-content h1 {
@@ -278,7 +278,7 @@
   left: 8px;
   color: var(--navy);
   font-size: 14px;
-  transform: rotate(45deg);
+  transform: rotate(deg);
   animation: bpPlaneFly 3.2s linear infinite;
 }
 
@@ -644,8 +644,8 @@
   border-radius: 12px;
 
   opacity: 0;
-  transform: translateX(-14px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transform: translateX(-9px);
+  transition: opacity 1.20s ease, transform 2.20s ease;
 }
 
 .tourist-documents.in-view .checklist-row {

@@ -147,7 +147,7 @@ function Footer() {
         <div className="footer-bottom">
 
           <p>
-            © {new Date().getFullYear()} Immigration Consultancy.
+            © {new Date().getFullYear()} Well Career Immigration.
             All rights reserved.
           </p>
 

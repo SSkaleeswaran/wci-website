@@ -3,7 +3,7 @@
 ========================================= */
 
 .footer {
-  background: #0b1738;
+  background: #01081cf1;
   color: #ffffff;
 }
 
@@ -53,7 +53,7 @@
 
   border-radius: 50%;
 
-  background: #1769ff;
+  background: #D9A441;
 
   display: flex;
 
@@ -127,9 +127,9 @@
 }
 
 .footer-socials a:hover {
-  background: #1769ff;
+  background: #D9A441;
 
-  border-color: #1769ff;
+  border-color: #D9A441;
 
   color: #ffffff;
 }
@@ -173,7 +173,7 @@
 }
 
 .footer-column a:hover {
-  color: #ffffff;
+  color: #D9A441;
 }
 
 
@@ -192,6 +192,10 @@
   letter-spacing: 0.2px;
 }
 
+.footer-contact .footer-phone:hover{
+  color: #15c621;
+}
+
 .footer-contact-link {
   display: inline-flex !important;
 
@@ -201,13 +205,13 @@
 
   margin-top: 5px;
 
-  color: #ffffff !important;
+  color: #D9A441 !important;
 
   font-weight: 700;
 }
 
 .footer-contact-link span {
-  color: #ff6b00;
+  color: #D9A441;
 
   font-size: 15px;
 }
@@ -253,7 +257,7 @@
 }
 
 .footer-bottom a:hover {
-  color: #ffffff;
+  color: #D9A441;
 }
 
 
