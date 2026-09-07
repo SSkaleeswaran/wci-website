@@ -10,7 +10,7 @@ function About() {
 
   <div className="about-image-placeholder">
     <img
-      src="/images/company-img/companyAbout.avif"
+      src="/images/company-img/aboutImg.jpg"
       alt="Well Career Immigration"
     />
   </div>
