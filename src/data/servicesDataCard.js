@@ -18,7 +18,7 @@ const services = [
    {
     image: "/images/services/family-visit.jpg",
     icon: "👨‍👩‍👧",
-    title: "Visiting Visa",
+    title: "Visitor Visa",
     description:
       "Distance shouldn't keep families apart. We make visiting the people you love simple, fast, and stress-free.",
     path: "/services/family-migration",
