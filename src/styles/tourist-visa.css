@@ -1,6 +1,7 @@
 /* =========================================================
    TOURIST VISA PAGE
 ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
 
 .tourist-page {
   --navy: #061f47;
@@ -16,6 +17,13 @@
   color: var(--navy);
   background: #f4f8ff;
   font-family: inherit;
+}
+
+.tourist-page h1,
+.tourist-page h2,
+.tourist-page h3 {
+  font-family: inherit;
+  font-weight: 700;
 }
 
 .tourist-page .container {
@@ -107,7 +115,9 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 12px;
-  color: var(--gold);
+     
+
+  color: #2A8C8C;
   font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.8px;
@@ -115,21 +125,22 @@
 
 .hero-plane {
   display: inline-block;
-  transform: rotate(40deg);
+  transform: rotate(45deg);
   animation: heroPlaneDrift 2.6s ease-in-out infinite;
 }
 
 @keyframes heroPlaneDrift {
-  0%, 100% { transform: rotate(4deg) translateX(0); }
-  50% { transform: rotate(4deg) translateX(5px); }
+  0%, 100% { transform: rotate(45deg) translateX(0); }
+  50% { transform: rotate(45deg) translateX(5px); }
 }
 
 .tourist-hero-content h1 {
   margin: 0;
   color: var(--navy);
   font-size: clamp(40px, 4vw, 58px);
+       font-family: "Fraunces", serif;
+
   line-height: 0.98;
-  font-weight: 800;
   letter-spacing: -2px;
 }
 
@@ -308,14 +319,15 @@
 
 
 /* =========================================================
-   BENEFITS — TICKET STRIP
+   ISSUE 1 — BENEFITS TICKET STRIP
+   navy section bg, gold headings, bigger, cleaner icons
 ========================================================= */
 
 .tourist-benefits {
   position: relative;
   z-index: 20;
-  padding: 40px 0 25px;
-  background: #eaf4ff;
+  padding: 50px 0 40px;
+  background: var(--white);
 }
 
 .ticket-strip {
@@ -323,11 +335,11 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  min-height: 100px;
+  min-height: 130px;
 
-  background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 12px 32px rgba(6, 31, 71, 0.09);
+  background: #061f47;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
 }
 
 .ticket-notch {
@@ -336,7 +348,7 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: #eaf4ff;
+  background: var(--navy);
   transform: translateY(-50%);
   z-index: 2;
 }
@@ -348,8 +360,8 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 20px 26px;
+  gap: 18px;
+  padding: 30px 30px;
 
   border-right: 1px dashed #d7e2f2;
 
@@ -368,39 +380,43 @@
 }
 
 .ticket-icon {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   flex-shrink: 0;
   border-radius: 50%;
   background: var(--gold-tint);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .ticket-icon img {
-  width: 28px;
-  height: 28px;
+  width: 61px;
+  height: 60px;
   object-fit: contain;
+  display: block;
 }
 
 .ticket-text h3 {
   margin: 0 0 4px;
-  color: var(--navy);
-  font-size: 14px;
+  color: var(--gold);
+  font-size: 15px;
   font-weight: 800;
 }
 
 .ticket-text p {
   margin: 0;
-  color: #4a5b78;
-  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
   line-height: 1.4;
 }
 
 
 /* =========================================================
-   VISA JOURNEY — CURVED TIMELINE
+   ISSUE 2 — VISA JOURNEY
+   font consistency, real icons, gradient measured curve,
+   passport removed from this section
 ========================================================= */
 
 .tourist-journey {
@@ -415,10 +431,10 @@
   text-align: center;
 }
 
-.tourist-section-label {
+.tourist-section-label01   {
   display: block;
   margin-bottom: 10px;
-  color: var(--gold);
+  color: #2A8C8C;
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -427,9 +443,10 @@
 .journey-heading h2 {
   margin: 0;
   color: var(--navy);
+       font-family: "Fraunces", serif;
+
   font-size: clamp(28px, 3vw, 36px);
   line-height: 1.15;
-  font-weight: 800;
 }
 
 .journey-heading h2 span {
@@ -462,16 +479,16 @@
 
 .journey-curve path {
   fill: none;
-  stroke: #b9cdec;
-  stroke-width: 2;
+  stroke: url(#journeyGrad);
+  stroke-width: 2.5;
   stroke-linecap: round;
-  stroke-dasharray: 1400;
-  stroke-dashoffset: 1400;
   transition: stroke-dashoffset 1.6s ease;
+  animation: journeyLinePulse 2.5s ease-in-out infinite;
 }
 
-.tourist-journey.in-view .journey-curve path {
-  stroke-dashoffset: 0;
+@keyframes journeyLinePulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
 }
 
 .journey-stop {
@@ -518,31 +535,28 @@
 .journey-node {
   position: relative;
   z-index: 2;
-  width: 68px;
-  height: 68px;
+  width: 72px;
+  height: 72px;
   margin-bottom: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
 
   border-radius: 50%;
-  background: var(--navy);
-  box-shadow: 0 10px 22px rgba(6, 31, 71, 0.24), 0 0 0 6px #ffffff;
+  background: #ffffff;
+  border: 3px solid var(--navy);
+  box-shadow: 0 10px 22px rgba(6, 31, 71, 0.18), 0 0 0 6px #ffffff;
 }
 
 .stop-1 .journey-node, .stop-3 .journey-node {
-  background: var(--gold);
+  border-color: var(--gold);
 }
 
 .journey-node img {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-}
-
-.stop-1 .journey-node img, .stop-3 .journey-node img {
-  filter: brightness(0) saturate(100%);
+  filter: none;
 }
 
 .journey-stub {
@@ -571,31 +585,15 @@
   line-height: 1.5;
 }
 
-.journey-passport {
-  width: 140px;
-  margin: 60px auto 0;
-  opacity: 0.9;
-  animation: passportFloat 5s ease-in-out infinite;
-}
-
-@keyframes passportFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-.journey-passport img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 
 /* =========================================================
-   DOCUMENT CHECKLIST
+   ISSUE 3 — DOCUMENT CHECKLIST
+   passport moved here (in a circle badge), bigger icons,
+   green tick
 ========================================================= */
 
 .tourist-documents {
-  padding: 50px 0 60px;
+  padding: 50px 0 70px;
   background: #ffffff;
 }
 
@@ -604,17 +602,55 @@
   grid-template-columns: 280px 1fr;
   gap: 40px;
 
-  background: #f7faff;
-  border: 1px solid #e3eaf5;
+  background: #ffffff;
+  border: 2.5px solid #e3eaf5;
+  box-shadow: 0 10px 25px rgba(6, 31, 71, 0.22);
+  
   border-radius: 20px;
   padding: 40px;
+}
+
+.checklist-side {
+  position: relative;
+  padding-left: 30px;
+  min-height: 130px;
+}
+
+.checklist-passport-badge {
+  position: absolute;
+  top: 150px;
+  
+  left: 40px;
+  width: 190px;
+  height:110px;
+  /* border-radius: 50%; */
+  /* background: #ffffff; */
+  /* border: 3px solid var(--gold); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+  /* box-shadow: 0 10px 24px rgba(6, 31, 71, 0.12); */
+  animation: passportFloat 5s ease-in-out infinite;
+}
+
+@keyframes passportFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.checklist-passport-badge img {
+  width: 230px;
+  height: auto;
+  display: block;
 }
 
 .checklist-side h2 {
   margin: 0 0 4px;
   color: var(--navy);
+     font-family: "Fraunces", serif;
+
   font-size: 26px;
-  font-weight: 800;
   line-height: 1.2;
 }
 
@@ -644,8 +680,8 @@
   border-radius: 12px;
 
   opacity: 0;
-  transform: translateX(-9px);
-  transition: opacity 1.20s ease, transform 2.20s ease;
+  transform: translateX(-18px);
+  transition: opacity 1.2s ease, transform 2.55s ease;
 }
 
 .tourist-documents.in-view .checklist-row {
@@ -660,26 +696,26 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--gold);
-  color: var(--navy);
-  font-size: 11px;
+  background: #4ade80;
+  color: #14532d;
+  font-size: 10px;
   font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: center;
 
   transform: scale(0);
-  transition: transform 0.3s ease;
-  transition-delay: 0.3s;
+  transition: transform 0.2s ease;
+  transition-delay: 0.8s;
 }
 
 .tourist-documents.in-view .checklist-tick {
-  transform: scale(1);
+  transform: scale(1.5);
 }
 
 .checklist-icon {
-  width: 42px;
-  height: 42px;
+  width: 56px;
+  height: 56px;
   flex-shrink: 0;
   border-radius: 50%;
   background: var(--navy-tint);
@@ -689,8 +725,8 @@
 }
 
 .checklist-icon img {
-  width: 22px;
-  height: 22px;
+  width: 62px;
+  height: 62px;
   object-fit: contain;
 }
 
@@ -706,6 +742,10 @@
   color: #5a6b88;
   font-size: 11.5px;
   line-height: 1.4;
+}
+
+.tourist-section-label{
+  color: #D9A441;
 }
 
 
@@ -754,8 +794,9 @@
 .cta-pass-main h2 {
   margin: 0 0 6px;
   color: #ffffff;
+     font-family: "Fraunces", serif;
+
   font-size: 26px;
-  font-weight: 800;
   line-height: 1.2;
 }
 
@@ -807,8 +848,14 @@
 .cta-pass-plane {
   color: var(--gold-soft);
   font-size: 26px;
-  transform: rotate(45deg);
-  animation: heroPlaneDrift 2.6s ease-in-out infinite;
+  display: inline-block;
+  transform: scaleX(-1) rotate(45deg);
+  animation: ctaPlaneDrift 2.6s ease-in-out infinite;
+}
+
+@keyframes ctaPlaneDrift {
+  0%, 100% { transform: scaleX(1) rotate(5deg) translateX(0); }
+  50% { transform: scaleX(1) rotate(1deg) translateX(5px); }
 }
 
 .tourist-cta-button {
@@ -831,8 +878,8 @@
 
 .tourist-cta-button:hover {
   color: #ffffff;
-  background: var(--gold-soft);
-  transform: translateY(-2px);
+  /* background: var(--gold-soft); */
+  transform: translateY(-5px);
 }
 
 .tourist-cta-button span {
@@ -868,8 +915,8 @@
   }
 
   .ticket-item {
-    padding: 16px 18px;
-    gap: 10px;
+    padding: 22px 20px;
+    gap: 12px;
   }
 
   .checklist-card {
@@ -936,14 +983,14 @@
     display: none;
   }
 
-  .tourist-benefits { padding: 30px 0 20px; }
+  .tourist-benefits { padding: 34px 0 24px; }
 
   .ticket-strip {
-    grid-template-columns: 1fr 1fr;
-    border-radius: 14px;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-radius: 16px;
   }
 
-  .ticket-notch { display: none; }
+  .ticket-notch { display: block; }
 
   .ticket-item {
     border-right: 1px dashed #d7e2f2;
@@ -961,7 +1008,7 @@
     padding-top: 0;
   }
 
-  .journey-curve { display: none; }
+  .journey-curve { display: block; }
 
   .stop-1, .stop-3 { margin-top: 0; }
 
@@ -986,11 +1033,19 @@
     height: 56px;
   }
 
-  .journey-passport { display: none; }
-
   .checklist-card {
     grid-template-columns: 1fr;
     padding: 24px;
+  }
+
+  .checklist-side {
+    padding-left: 0;
+    padding-top: 120px;
+  }
+
+  .checklist-passport-badge {
+    top: 0;
+    left: 0;
   }
 
   .checklist-side p { max-width: none; }
@@ -1054,22 +1109,21 @@
   .hero-plane,
   .boarding-pass,
   .bp-plane,
-  .journey-passport,
-  .cta-pass-plane {
+  .checklist-passport-badge,
+  .cta-pass-plane,
+  .journey-curve path {
     animation: none !important;
   }
 
   .tourist-hero-content,
   .ticket-item,
   .journey-stop,
-  .journey-curve path,
   .checklist-row,
   .checklist-tick,
   .cta-pass {
     transition: none !important;
     opacity: 1 !important;
     transform: none !important;
-    stroke-dashoffset: 0 !important;
   }
 
 }

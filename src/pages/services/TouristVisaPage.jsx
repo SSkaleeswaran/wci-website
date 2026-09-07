@@ -118,6 +118,60 @@ function TouristVisaPage() {
   const [documentsRef, documentsInView] = useReveal(0.1);
   const [ctaRef, ctaInView] = useReveal(0.25);
 
+  const journeyPathRef = useRef(null);
+  const journeyNodeRefs = useRef([]);
+  const [journeyD, setJourneyD] = useState("");
+  const [journeyViewBox, setJourneyViewBox] = useState("0 0 100 100");
+
+  useEffect(() => {
+    const computePath = () => {
+      const container = journeyPathRef.current;
+      if (!container) return;
+
+      const rect = container.getBoundingClientRect();
+      const points = journeyNodeRefs.current
+        .filter(Boolean)
+        .map((el) => {
+          const r = el.getBoundingClientRect();
+          return {
+            x: r.left + r.width / 2 - rect.left,
+            y: r.top + r.height / 2 - rect.top,
+          };
+        });
+
+      if (points.length < 2) return;
+
+      let d = `M${points[0].x},${points[0].y}`;
+      for (let i = 1; i < points.length; i++) {
+        const prev = points[i - 1];
+        const curr = points[i];
+        const midY = (prev.y + curr.y) / 2;
+        d += ` C${prev.x},${midY} ${curr.x},${midY} ${curr.x},${curr.y}`;
+      }
+
+      setJourneyD(d);
+      setJourneyViewBox(`0 0 ${rect.width} ${rect.height}`);
+    };
+
+    computePath();
+    const raf = requestAnimationFrame(computePath);
+    const settleTimer = setTimeout(computePath, 700);
+    window.addEventListener("resize", computePath);
+
+    let ro;
+    if (window.ResizeObserver) {
+      ro = new ResizeObserver(computePath);
+      ro.observe(journeyPathRef.current);
+    }
+
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(settleTimer);
+      window.removeEventListener("resize", computePath);
+      if (ro) ro.disconnect();
+    };
+  }, [journeyInView]);
+
   return (
     <main className="tourist-page">
 
@@ -141,7 +195,8 @@ function TouristVisaPage() {
           <div className="tourist-hero-content">
 
             <span className="tourist-hero-label">
-              TOURIST VISA <span className="hero-plane">✈</span>
+              TOURIST VISA 
+              {/* <span className="hero-plane">✈</span> */}
             </span>
 
             <h1>
@@ -152,9 +207,8 @@ function TouristVisaPage() {
             <div className="tourist-accent-line"></div>
 
             <p>
-              Your dream destination is closer than you think. We handle
-              the visa process so your trip can start with excitement,
-              not paperwork.
+              Your dream destination is closer than you think.
+          
             </p>
 
             <Link to="/contact" className="tourist-primary-btn">
@@ -246,7 +300,7 @@ function TouristVisaPage() {
 
           <div className="journey-heading">
 
-            <span className="tourist-section-label">VISA JOURNEY</span>
+            <span className="tourist-section-label01">VISA JOURNEY</span>
 
             <h2>
               From planning <span>to exploring.</span>
@@ -261,15 +315,29 @@ function TouristVisaPage() {
 
           </div>
 
-          <div className="journey-timeline">
+          <div className="journey-timeline" ref={journeyPathRef}>
 
             <svg
               className="journey-curve"
-              viewBox="0 0 1000 260"
+              viewBox={journeyViewBox}
               preserveAspectRatio="none"
               aria-hidden="true"
             >
-              <path d="M60,60 C260,60 260,200 460,200 C660,200 660,60 860,60 C920,60 940,60 950,60" />
+              <defs>
+                <linearGradient id="journeyGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="var(--gold)" />
+                  <stop offset="50%" stopColor="var(--navy)" />
+                  <stop offset="100%" stopColor="var(--gold)" />
+                </linearGradient>
+              </defs>
+              <path
+                pathLength="1"
+                d={journeyD}
+                style={{
+                  strokeDasharray: 1,
+                  strokeDashoffset: journeyInView ? 0 : 1,
+                }}
+              />
             </svg>
 
             {processSteps.map((step, i) => (
@@ -281,7 +349,10 @@ function TouristVisaPage() {
 
                 <span className="journey-ghost">{step.number}</span>
 
-                <div className="journey-node">
+                <div
+                  className="journey-node"
+                  ref={(el) => (journeyNodeRefs.current[i] = el)}
+                >
                   <img src={step.icon} alt="" />
                 </div>
 
@@ -293,10 +364,6 @@ function TouristVisaPage() {
               </div>
             ))}
 
-          </div>
-
-          <div className="journey-passport">
-            <img src={`${ASSET}/passport-travel-decoration.png`} alt="" />
           </div>
 
         </div>
@@ -318,6 +385,11 @@ function TouristVisaPage() {
           <div className="checklist-card">
 
             <div className="checklist-side">
+
+              <div className="checklist-passport-badge">
+                <img src={`${ASSET}/passport-travel-decoration.png`} alt="" />
+              </div>
+
               <span className="tourist-section-label">
                 DOCUMENT CHECKLIST
               </span>
@@ -326,10 +398,10 @@ function TouristVisaPage() {
 
               <div className="tourist-accent-line"></div>
 
-              <p>
+              {/* <p>
                 Six things to have ready. We double-check every one
                 before your application goes anywhere.
-              </p>
+              </p> */}
             </div>
 
             <div className="checklist-list">
