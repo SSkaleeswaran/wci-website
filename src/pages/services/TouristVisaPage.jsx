@@ -2,16 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/tourist-visa.css";
 
-/* =========================================================
-   ASSETS
-========================================================= */
-
 const ASSET = "/images/tourist";
-
-
-/* =========================================================
-   REVEAL-ON-SCROLL HOOK
-========================================================= */
 
 function useReveal(threshold = 0.15) {
   const ref = useRef(null);
@@ -38,11 +29,6 @@ function useReveal(threshold = 0.15) {
   return [ref, inView];
 }
 
-
-/* =========================================================
-   BENEFITS
-========================================================= */
-
 const benefits = [
   {
     icon: `${ASSET}/expert-guidance.png`,
@@ -65,11 +51,6 @@ const benefits = [
     text: "You focus on the trip. We handle the process.",
   },
 ];
-
-
-/* =========================================================
-   VISA JOURNEY
-========================================================= */
 
 const processSteps = [
   {
@@ -97,11 +78,6 @@ const processSteps = [
     text: "We keep you posted and stay ready to help right up to your decision.",
   },
 ];
-
-
-/* =========================================================
-   DOCUMENTS
-========================================================= */
 
 const documents = [
   {
@@ -136,16 +112,11 @@ const documents = [
   },
 ];
 
-
-/* =========================================================
-   PAGE
-========================================================= */
-
 function TouristVisaPage() {
   const [benefitsRef, benefitsInView] = useReveal(0.1);
-  const [journeyRef, journeyInView] = useReveal(0.12);
-  const [documentsRef, documentsInView] = useReveal(0.08);
-  const [ctaRef, ctaInView] = useReveal(0.2);
+  const [journeyRef, journeyInView] = useReveal(0.1);
+  const [documentsRef, documentsInView] = useReveal(0.1);
+  const [ctaRef, ctaInView] = useReveal(0.25);
 
   return (
     <main className="tourist-page">
@@ -193,13 +164,35 @@ function TouristVisaPage() {
 
           </div>
 
+          {/* Boarding-pass floating widget */}
+          <div className="boarding-pass" aria-hidden="true">
+            <div className="boarding-pass-row">
+              <span className="bp-label">Passenger</span>
+              <span className="bp-value">You</span>
+            </div>
+            <div className="boarding-pass-row">
+              <span className="bp-label">From</span>
+              <span className="bp-value">Application</span>
+            </div>
+            <div className="bp-plane-track">
+              <span className="bp-dot"></span>
+              <span className="bp-plane">✈</span>
+              <span className="bp-dot end"></span>
+            </div>
+            <div className="boarding-pass-row">
+              <span className="bp-label">To</span>
+              <span className="bp-value">Approved</span>
+            </div>
+            <div className="bp-barcode"></div>
+          </div>
+
         </div>
 
       </section>
 
 
       {/* =====================================================
-          BENEFITS
+          BENEFITS — ticket strip
       ===================================================== */}
 
       <section
@@ -209,20 +202,23 @@ function TouristVisaPage() {
 
         <div className="container">
 
-          <div className="tourist-benefit-inner">
+          <div className="ticket-strip">
+
+            <span className="ticket-notch left"></span>
+            <span className="ticket-notch right"></span>
 
             {benefits.map((benefit, i) => (
               <div
-                className="tourist-benefit-item"
+                className="ticket-item"
                 key={benefit.title}
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
 
-                <div className="tourist-benefit-icon">
+                <div className="ticket-icon">
                   <img src={benefit.icon} alt="" />
                 </div>
 
-                <div className="tourist-benefit-content">
+                <div className="ticket-text">
                   <h3>{benefit.title}</h3>
                   <p>{benefit.text}</p>
                 </div>
@@ -238,7 +234,7 @@ function TouristVisaPage() {
 
 
       {/* =====================================================
-          VISA JOURNEY
+          VISA JOURNEY — curved flight-path timeline
       ===================================================== */}
 
       <section
@@ -248,82 +244,59 @@ function TouristVisaPage() {
 
         <div className="container">
 
-          <div className="tourist-journey-layout">
+          <div className="journey-heading">
 
-            {/* LEFT SIDE */}
+            <span className="tourist-section-label">VISA JOURNEY</span>
 
-            <div className="tourist-journey-intro">
+            <h2>
+              From planning <span>to exploring.</span>
+            </h2>
 
-              <span className="tourist-section-label">VISA JOURNEY</span>
+            <div className="tourist-accent-line center-line"></div>
 
-              <h2>
-                From planning
-                <span>to exploring.</span>
-              </h2>
+            <p>
+              We guide you through every step of your tourist visa
+              application with clarity and care.
+            </p>
 
-              <div className="tourist-accent-line"></div>
+          </div>
 
-              <p>
-                We guide you through every step of your tourist visa
-                application with clarity and care.
-              </p>
+          <div className="journey-timeline">
 
-              <div className="tourist-passport-decoration">
-                <img
-                  src={`${ASSET}/passport-travel-decoration.png`}
-                  alt=""
-                />
-              </div>
+            <svg
+              className="journey-curve"
+              viewBox="0 0 1000 260"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path d="M60,60 C260,60 260,200 460,200 C660,200 660,60 860,60 C920,60 940,60 950,60" />
+            </svg>
 
-            </div>
+            {processSteps.map((step, i) => (
+              <div
+                className={`journey-stop stop-${i}`}
+                key={step.number}
+                style={{ transitionDelay: `${i * 150}ms` }}
+              >
 
-            {/* RIGHT SIDE */}
+                <span className="journey-ghost">{step.number}</span>
 
-            <div className="tourist-process-area">
+                <div className="journey-node">
+                  <img src={step.icon} alt="" />
+                </div>
 
-              <div className="tourist-process-route">
-                <span className="route-line"></span>
-                <span className="route-dot dot-one"></span>
-                <span className="route-dot dot-two"></span>
-                <span className="route-dot dot-three"></span>
-                <span className="route-dot dot-four"></span>
-              </div>
-
-              <div className="tourist-process-grid">
-
-                {processSteps.map((step, index) => (
-
-                  <div
-                    className="tourist-process-wrapper"
-                    key={step.number}
-                    style={{ transitionDelay: `${index * 130}ms` }}
-                  >
-
-                    <div
-                      className={`tourist-step-number ${
-                        index % 2 !== 0 ? "gold-step" : ""
-                      }`}
-                    >
-                      {step.number}
-                    </div>
-
-                    <div className="tourist-process-card">
-                      <div className="tourist-process-icon">
-                        <img src={step.icon} alt="" />
-                      </div>
-
-                      <h3>{step.title}</h3>
-                      <p>{step.text}</p>
-                    </div>
-
-                  </div>
-
-                ))}
+                <div className="journey-stub">
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
 
               </div>
+            ))}
 
-            </div>
+          </div>
 
+          <div className="journey-passport">
+            <img src={`${ASSET}/passport-travel-decoration.png`} alt="" />
           </div>
 
         </div>
@@ -342,33 +315,40 @@ function TouristVisaPage() {
 
         <div className="container">
 
-          <div className="tourist-documents-box">
+          <div className="checklist-card">
 
-            <div className="tourist-documents-heading">
+            <div className="checklist-side">
               <span className="tourist-section-label">
                 DOCUMENT CHECKLIST
               </span>
 
-              <h2>Documents You May Need</h2>
+              <h2>Pack these before you apply</h2>
 
-              <div className="tourist-accent-line center-line"></div>
+              <div className="tourist-accent-line"></div>
+
+              <p>
+                Six things to have ready. We double-check every one
+                before your application goes anywhere.
+              </p>
             </div>
 
-            <div className="tourist-document-grid">
+            <div className="checklist-list">
 
               {documents.map((document, i) => (
 
                 <div
-                  className="tourist-document-item"
+                  className="checklist-row"
                   key={document.title}
-                  style={{ transitionDelay: `${i * 80}ms` }}
+                  style={{ transitionDelay: `${i * 90}ms` }}
                 >
 
-                  <div className="tourist-document-icon">
+                  <span className="checklist-tick">✓</span>
+
+                  <div className="checklist-icon">
                     <img src={document.icon} alt="" />
                   </div>
 
-                  <div className="tourist-document-content">
+                  <div className="checklist-content">
                     <h3>{document.title}</h3>
                     <p>{document.text}</p>
                   </div>
@@ -387,7 +367,7 @@ function TouristVisaPage() {
 
 
       {/* =====================================================
-          FINAL CTA
+          FINAL CTA — boarding pass banner
       ===================================================== */}
 
       <section
@@ -395,25 +375,31 @@ function TouristVisaPage() {
         ref={ctaRef}
       >
 
-        <div className="tourist-cta-background">
-          <img src={`${ASSET}/cta-section-bg.png`} alt="" />
-        </div>
-
         <div className="container">
 
-          <div className="tourist-cta-content">
+          <div className="cta-pass">
 
-            <div className="tourist-cta-spacer"></div>
-
-            <div className="tourist-cta-text">
+            <div className="cta-pass-main">
+              <span className="cta-pass-label">Next stop</span>
               <h2>Ready for your next journey?</h2>
               <p>Let WCI take care of the visa — you just pack your bags.</p>
             </div>
 
-            <Link to="/contact" className="tourist-cta-button">
-              Book Consultation
-              <span>→</span>
-            </Link>
+            <div className="cta-pass-divider">
+              <span className="cta-notch top"></span>
+              {Array.from({ length: 14 }).map((_, i) => (
+                <span className="cta-dash" key={i}></span>
+              ))}
+              <span className="cta-notch bottom"></span>
+            </div>
+
+            <div className="cta-pass-stub">
+              <span className="cta-pass-plane">✈</span>
+              <Link to="/contact" className="tourist-cta-button">
+                Book Consultation
+                <span>→</span>
+              </Link>
+            </div>
 
           </div>
 

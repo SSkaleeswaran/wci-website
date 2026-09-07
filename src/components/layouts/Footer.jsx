@@ -24,8 +24,8 @@ function Footer() {
               <span className="footer-logo-icon">◉</span>
 
               <span>
-                IMMIGRATION
-                <small>CONSULTANCY</small>
+                WELL CAREER
+                <small>IMMIGRATION</small>
               </span>
             </Link>
 
@@ -91,15 +91,15 @@ function Footer() {
             </Link>
 
             <Link to="/services">
-              Work Visa
+              Business Visa
             </Link>
 
             <Link to="/services">
-              Family Migration
+              Tourist Visa
             </Link>
 
             <Link to="/services">
-              Permanent Residency
+              Visitor Visa
             </Link>
 
           </div>
