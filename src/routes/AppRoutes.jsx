@@ -5,7 +5,10 @@ import FAQPage from "../pages/FAQPage";
 import ContactPage from "../pages/ContactPage";
 import ServicesPage from "../pages/ServicesPage";
 import TouristVisaPage from "../pages/services/TouristVisaPage";
+import StudyVisaPage from "../pages/services/StudyVisaPage";
+
 import CountriesPage from "../pages/CountriesPage";
+import VisitorVisaPage from "../pages/services/VisitorVisaPage";
 
 
 function AppRoutes() {
@@ -28,6 +31,9 @@ function AppRoutes() {
         path="/visa-services/tourist-visa"
         element={<TouristVisaPage />}
       />
+      <Route path="/visa-services/study-visa" element={<StudyVisaPage/>}/>
+      <Route path="/visa-services/visitor-visa" element={<VisitorVisaPage/>}/>
+
       {/* <Route path="/services/tourist-visa" element={<TouristVisaPage/>}/> */}
       {/* <Route path="/services/work-visa" element={<WorkVisaPage/>}/>
        <Route path="/services/study-visa" element={<StudyVisaPage/>}/> */}

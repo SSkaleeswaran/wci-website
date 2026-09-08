@@ -1,0 +1,815 @@
+/* =========================================
+   VISITOR VISA
+   Elegant / Compact / Interactive
+========================================= */
+
+.visitor-page {
+  --navy: #0b2a5b;
+  --blue: #040a6f;
+  --gold: #d9a441;
+  --cream: #f8f7f3;
+  --text: #263247;
+  --muted: #717b8b;
+
+  background: #fff;
+  color: var(--navy);
+  overflow: hidden;
+}
+
+.visitor-page a {
+  text-decoration: none;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.visitor-hero {
+  position: relative;
+  min-height: 535px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.visitor-hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 10, 111, 0.9),
+      rgba(4, 10, 111, 0.52),
+      rgba(4, 10, 111, 0.15)
+    );
+}
+
+.visitor-hero-inner {
+  position: relative;
+  z-index: 2;
+  min-height: 535px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.visitor-hero-copy {
+  transform: translate(
+    var(--mouse-x, 0px),
+    var(--mouse-y, 0px)
+  );
+  transition: transform 0.25s ease-out;
+}
+
+.visitor-hero-copy > span {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.visitor-hero h1 {
+  margin: 13px 0 18px;
+  font-size: clamp(44px, 6vw, 68px);
+  line-height: 0.98;
+  letter-spacing: -2px;
+  font-weight: 700;
+}
+
+.visitor-hero p {
+  max-width: 450px;
+  margin: 0 0 25px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.visitor-gold-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 47px;
+  padding: 0 22px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 800;
+  transition: 0.3s ease;
+}
+
+.visitor-gold-button:hover {
+  background: #fff;
+  color: var(--navy);
+  transform: translateY(-2px);
+}
+
+/* floating card */
+
+.visitor-floating-card {
+  width: 215px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transform: translate(
+    calc(var(--mouse-x, 0px) * -0.6),
+    calc(var(--mouse-y, 0px) * -0.6)
+  );
+  transition: transform 0.3s ease-out;
+}
+
+.visitor-floating-card small {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.visitor-floating-card strong {
+  display: block;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.floating-line {
+  width: 45px;
+  height: 1px;
+  margin: 17px 0;
+  background: var(--gold);
+}
+
+.visitor-floating-card span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+/* decorative movement */
+
+.visitor-orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.visitor-orbit-one {
+  width: 300px;
+  height: 300px;
+  right: -120px;
+  top: 80px;
+  animation: visitorFloat 7s ease-in-out infinite;
+}
+
+.visitor-orbit-two {
+  width: 190px;
+  height: 190px;
+  right: 30px;
+  bottom: -90px;
+  animation: visitorFloat 5s ease-in-out infinite reverse;
+}
+
+@keyframes visitorFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* =========================================
+   COMMON HEADINGS
+========================================= */
+
+.visitor-destination-section,
+.visitor-purpose-section,
+.visitor-desk-section,
+.visitor-route-section,
+.visitor-file-section,
+.visitor-question-section {
+  padding: 82px 0;
+}
+
+.visitor-small-heading {
+  margin-bottom: 38px;
+}
+
+.visitor-small-heading > span,
+.purpose-intro > span,
+.visitor-desk span,
+.visitor-file span,
+.visitor-question-layout > div:first-child > span,
+.visitor-end-inner > span {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.visitor-small-heading h2,
+.purpose-intro h2,
+.visitor-question-layout h2 {
+  margin: 10px 0 0;
+  font-size: 37px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+/* =========================================
+   DESTINATION
+========================================= */
+
+.visitor-destination-section {
+  background: var(--cream);
+}
+
+.visitor-destination-wrap {
+  border-top: 1px solid #d9d9d3;
+  border-bottom: 1px solid #d9d9d3;
+}
+
+.visitor-destination-nav {
+  display: flex;
+  gap: 8px;
+  padding: 13px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.visitor-destination-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.destination-pill {
+  flex: 0 0 auto;
+  border: 1px solid #d8d9dc;
+  background: transparent;
+  padding: 9px 13px;
+  color: var(--text);
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.destination-pill span {
+  margin-right: 8px;
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.destination-pill:hover,
+.destination-pill.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+.visitor-destination-info {
+  min-height: 155px;
+  padding: 30px 0;
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  align-items: center;
+  gap: 25px;
+}
+
+.destination-mini-stamp {
+  width: 62px;
+  height: 62px;
+  border: 1px dashed var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 800;
+  transform: rotate(-8deg);
+}
+
+.visitor-destination-info > div:nth-child(2) > span {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.visitor-destination-info h3 {
+  margin: 5px 0;
+  font-size: 24px;
+}
+
+.visitor-destination-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.visitor-destination-info > a {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.visitor-destination-info > a:hover {
+  color: var(--gold);
+}
+
+/* =========================================
+   PURPOSE
+========================================= */
+
+.visitor-purpose-section {
+  background: #fff;
+}
+
+.purpose-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.purpose-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #e1e3e6;
+}
+
+.purpose-choice {
+  padding: 25px 22px;
+  border-right: 1px solid #e1e3e6;
+  transition: 0.25s ease;
+}
+
+.purpose-choice:last-child {
+  border-right: 0;
+}
+
+.purpose-choice:hover {
+  background: var(--cream);
+  transform: translateY(-3px);
+}
+
+.purpose-choice b {
+  display: block;
+  margin-bottom: 25px;
+  color: var(--gold);
+  font-size: 10px;
+}
+
+.purpose-choice strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+
+.purpose-choice span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* =========================================
+   WCI DESK
+========================================= */
+
+.visitor-desk-section {
+  background: var(--navy);
+  color: #fff;
+}
+
+.visitor-desk {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
+}
+
+.visitor-desk h2 {
+  margin: 12px 0 18px;
+  font-size: 39px;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+.desk-heading p {
+  max-width: 360px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.desk-services {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.desk-services > div {
+  padding: 25px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.desk-services > div:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.desk-services span {
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.desk-services p {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   JOURNEY
+========================================= */
+
+.visitor-route {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.route-path {
+  position: absolute;
+  top: 45px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: #d9a441;
+}
+
+.route-stop {
+  position: relative;
+  z-index: 1;
+}
+
+.route-stop > div {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 800;
+  transition: 0.3s ease;
+}
+
+.route-stop:hover > div {
+  background: var(--gold);
+  transform: scale(1.08);
+}
+
+.route-stop span {
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.route-stop p {
+  margin: 5px 0 0;
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* =========================================
+   TRAVEL FILE
+========================================= */
+
+.visitor-file-section {
+  background: var(--cream);
+}
+
+.visitor-file {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  max-width: 900px;
+  margin: auto;
+  box-shadow: 0 15px 45px rgba(11, 42, 91, 0.08);
+}
+
+.file-cover {
+  min-height: 300px;
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  background: var(--blue);
+  color: #fff;
+}
+
+.file-circle {
+  width: 65px;
+  height: 65px;
+  margin-bottom: auto;
+  border: 1px dashed var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.file-cover span {
+  color: var(--gold);
+  font-size: 9px;
+}
+
+.file-cover strong {
+  margin-top: 7px;
+  font-size: 22px;
+}
+
+.file-cover small {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+}
+
+.file-content {
+  padding: 45px;
+  background: #fff;
+}
+
+.file-content h2 {
+  margin: 10px 0 28px;
+  font-size: 31px;
+  letter-spacing: -1px;
+}
+
+.document-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.document-list div {
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e6e8;
+  color: var(--text);
+  font-size: 13px;
+}
+
+.document-list div::before {
+  content: "✓";
+  margin-right: 10px;
+  color: var(--gold);
+  font-weight: 800;
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.visitor-question-layout {
+  display: grid;
+  grid-template-columns: 0.65fr 1.35fr;
+  gap: 90px;
+}
+
+.visitor-question-layout h2 {
+  font-size: 38px;
+}
+
+.visitor-faq-item {
+  border-top: 1px solid #dfe2e6;
+}
+
+.visitor-faq-item:last-child {
+  border-bottom: 1px solid #dfe2e6;
+}
+
+.visitor-faq-item button {
+  width: 100%;
+  padding: 20px 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--navy);
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.visitor-faq-item button b {
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.visitor-faq-item p {
+  max-width: 700px;
+  padding: 0 30px 20px 0;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   END CTA
+========================================= */
+
+.visitor-end {
+  padding: 85px 0;
+  background: var(--blue);
+  color: #fff;
+  text-align: center;
+}
+
+.visitor-end-inner {
+  max-width: 650px;
+  margin: auto;
+}
+
+.visitor-end h2 {
+  margin: 12px 0;
+  font-size: 42px;
+  letter-spacing: -1px;
+}
+
+.visitor-end p {
+  margin: 0 auto 25px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+}
+
+.visitor-end small {
+  display: block;
+  max-width: 550px;
+  margin: 25px auto 0;
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 991px) {
+  .visitor-floating-card {
+    width: 185px;
+  }
+
+  .visitor-desk {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .visitor-question-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .visitor-hero,
+  .visitor-hero-inner {
+    min-height: 510px;
+  }
+
+  .visitor-hero-inner {
+    align-items: flex-end;
+    padding-bottom: 55px;
+  }
+
+  .visitor-floating-card {
+    display: none;
+  }
+
+  .visitor-hero h1 {
+    font-size: 46px;
+  }
+
+  .visitor-destination-section,
+  .visitor-purpose-section,
+  .visitor-desk-section,
+  .visitor-route-section,
+  .visitor-file-section,
+  .visitor-question-section {
+    padding: 65px 0;
+  }
+
+  .visitor-destination-info {
+    grid-template-columns: 62px 1fr;
+  }
+
+  .visitor-destination-info > a {
+    grid-column: 2;
+  }
+
+  .purpose-intro {
+    display: block;
+  }
+
+  .purpose-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .purpose-choice:nth-child(2) {
+    border-right: 0;
+  }
+
+  .purpose-choice {
+    border-bottom: 1px solid #e1e3e6;
+  }
+
+  .visitor-route {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .route-path {
+    top: 25px;
+    bottom: 25px;
+    left: 24px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+
+  .route-stop {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    column-gap: 20px;
+  }
+
+  .route-stop > div {
+    grid-row: span 2;
+    margin: 0;
+  }
+
+  .route-stop span {
+    align-self: end;
+  }
+
+  .route-stop p {
+    align-self: start;
+  }
+
+  .visitor-file {
+    grid-template-columns: 1fr;
+  }
+
+  .file-cover {
+    min-height: 190px;
+  }
+
+  .document-list {
+    grid-template-columns: 1fr;
+  }
+
+  .visitor-question-layout h2 {
+    font-size: 32px;
+  }
+
+  .visitor-end h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .visitor-hero h1 {
+    font-size: 40px;
+  }
+
+  .purpose-row {
+    grid-template-columns: 1fr;
+  }
+
+  .purpose-choice {
+    border-right: 0;
+  }
+
+  .visitor-destination-info {
+    padding: 25px 0;
+  }
+
+  .file-content {
+    padding: 30px 22px;
+  }
+}

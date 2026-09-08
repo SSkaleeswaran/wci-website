@@ -1,6 +1,6 @@
 const services = [
   {
-    image: "/images/services/tourist-visa.jpg",
+    image: "/images/services/tourisr-visa2.png",
     icon: "✈️",
     title: "Tourist Visa",
     description:
@@ -21,7 +21,7 @@ const services = [
     title: "Visitor Visa",
     description:
       "Distance shouldn't keep families apart. We make visiting the people you love simple, fast, and stress-free.",
-    path: "/services/family-migration",
+    path: "/visa-services/visitor-visa",
   },
   {
     image: "/images/services/work-visa.jpg",
@@ -29,7 +29,7 @@ const services = [
     title: "Business Visa",
     description:
       "Open doors to international markets and meetings. We prepare your business visa so opportunity doesn't wait on paperwork.",
-    path: "/visa-services/work-visa",
+    path: "/visa-services/business-visa",
   },
  
 ];
