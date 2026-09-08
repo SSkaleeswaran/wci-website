@@ -9,6 +9,19 @@ const initialForm = {
   message: "",
 };
 
+// Live Google Maps embed for "Well career immigration" — built from the CID
+// in your Maps share link, so it points at the exact pin (not just a text search).
+const MAP_EMBED_SRC =
+  "https://www.google.com/maps?cid=13508895320001886105&output=embed";
+
+// Opens Google Maps (app on mobile, web on desktop) with turn-by-turn
+// directions pre-filled to the office.
+const MAP_DIRECTIONS_HREF =
+  "https://www.google.com/maps/dir/?api=1&destination=" +
+  encodeURIComponent(
+    "Well Career Immigration, 5th Street Extension, Gandhipuram, Coimbatore, Tamil Nadu 641012"
+  );
+
 function ContactPage() {
   const [form, setForm] = useState(initialForm);
   const [submitted, setSubmitted] = useState(false);
@@ -139,13 +152,25 @@ function ContactPage() {
           </div>
 
           <section className="contact-location" aria-label="Office location">
-            <div className="contact-map-placeholder">
-              <span className="contact-map-pin" aria-hidden="true">●</span>
-              <div>
-                <span>OUR OFFICE LOCATION</span>
-                <strong>Map coming soon</strong>
-                <p>Replace this area with your Google Maps embed once the final office address is confirmed.</p>
-              </div>
+            <div className="contact-map-embed">
+              <iframe
+                title="Well Career Immigration office location"
+                src={MAP_EMBED_SRC}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                className="contact-map-directions"
+                href={MAP_DIRECTIONS_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Directions <span aria-hidden="true">→</span>
+              </a>
             </div>
             <div className="contact-location-copy">
               <span>VISIT OUR OFFICE</span>

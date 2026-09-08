@@ -306,7 +306,7 @@ function StudyVisaPage() {
           className="study-hero-image"
           style={{
             backgroundImage:
-              "url('/images/banners/bannerStudyNew.jpeg')",
+              "url('/images/banners/eduBanner.png')",
           }}
         />
 
