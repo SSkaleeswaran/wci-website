@@ -334,7 +334,7 @@ function StudyVisaPage() {
             <div className="study-hero-actions">
 
               <Link
-                to="/book-consultation"
+                to="/contact"
                 className="study-btn-primary"
               >
                 Book a Consultation
@@ -1095,19 +1095,19 @@ function StudyVisaPage() {
             <div className="study-final-actions">
 
               <Link
-                to="/book-consultation"
+                to="/contact"
                 className="study-final-primary"
               >
                 Book a Consultation
                 <span>→</span>
               </Link>
 
-              <Link
+              {/* <Link
                 to="/contact"
                 className="study-final-secondary"
               >
                 Contact WCI
-              </Link>
+              </Link> */}
 
             </div>
 

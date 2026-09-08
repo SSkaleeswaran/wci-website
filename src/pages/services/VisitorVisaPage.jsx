@@ -85,7 +85,7 @@ function VisitorVisaPage() {
         className="visitor-hero"
         style={{
           backgroundImage:
-            "url('/images/banners/bannerVacation.jpeg')",
+            "url('/images/banners/visitBanner.png')",
         }}
       >
         <div className="visitor-hero-shade"></div>

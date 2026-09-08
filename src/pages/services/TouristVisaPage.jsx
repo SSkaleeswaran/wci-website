@@ -183,7 +183,7 @@ function TouristVisaPage() {
 
         <div className="tourist-hero-image">
           <img
-            src={'/images/banners/bannerTorist.jpeg'}
+            src={'/images/banners/tourBanner.png'}
             alt="Tourist travelling abroad"
           />
         </div>

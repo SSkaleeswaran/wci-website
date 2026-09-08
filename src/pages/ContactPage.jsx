@@ -1,50 +1,102 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 const initialForm = {
   name: "",
   email: "",
   phone: "",
   service: "",
+  subject: "",
   message: "",
+  company: "", // honeypot — real users never fill this
 };
 
-// Live Google Maps embed for "Well career immigration" — built from the CID
-// in your Maps share link, so it points at the exact pin (not just a text search).
 const MAP_EMBED_SRC =
   "https://www.google.com/maps?cid=13508895320001886105&output=embed";
 
-// Opens Google Maps (app on mobile, web on desktop) with turn-by-turn
-// directions pre-filled to the office.
 const MAP_DIRECTIONS_HREF =
   "https://www.google.com/maps/dir/?api=1&destination=" +
   encodeURIComponent(
     "Well Career Immigration, 5th Street Extension, Gandhipuram, Coimbatore, Tamil Nadu 641012"
   );
 
+// ── EmailJS config ───────────────────────────────────────────
+// Replace these three with the values from your EmailJS dashboard.
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+
+// Basic front-end rate limit: block resubmission for 60s
+const RATE_LIMIT_MS = 60000;
+
 function ContactPage() {
   const [form, setForm] = useState(initialForm);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+  const [errorMsg, setErrorMsg] = useState("");
 
   const updateField = (event) => {
     const { name, value } = event.target;
     setForm((currentForm) => ({ ...currentForm, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setSubmitted(true);
-    setForm(initialForm);
+
+    // Honeypot check — bots fill every field, real users never see this one
+    if (form.company) {
+      return;
+    }
+
+    // Simple rate limit using localStorage
+    const lastSent = Number(localStorage.getItem("wci_last_contact_send") || 0);
+    if (Date.now() - lastSent < RATE_LIMIT_MS) {
+      setStatus("error");
+      setErrorMsg("Please wait a moment before sending another message.");
+      return;
+    }
+
+    setStatus("sending");
+    setErrorMsg("");
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          phone: form.phone,
+          service: form.service || "Not specified",
+          subject: form.subject,
+          message: form.message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+
+      localStorage.setItem("wci_last_contact_send", String(Date.now()));
+      setStatus("success");
+      setForm(initialForm);
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg("Something went wrong sending your message. Please try again, or call us directly.");
+    }
   };
 
   return (
     <main className="contact-page">
-      <section className="contact-hero">
-        <div className="container">
+
+      <section
+        className="contact-hero"
+        style={{ backgroundImage: "url('/images/banners/contactBanner.png')" }}
+      >
+        <div className="contact-hero-overlay"></div>
+
+        <div className="container contact-hero-inner">
           <span className="contact-eyebrow">GET IN TOUCH</span>
           <h1>
             Let&apos;s plan your
-            <span> next chapter.</span>
+            <span className="one"> next chapter.</span>
           </h1>
           <p>
             Tell us about your goals and our team will help you understand
@@ -56,6 +108,7 @@ function ContactPage() {
       <section className="contact-content">
         <div className="container">
           <div className="contact-layout">
+
             <div className="contact-details">
               <span className="contact-section-label">CONTACT DETAILS</span>
               <h2>We&apos;re here to help.</h2>
@@ -82,7 +135,7 @@ function ContactPage() {
                 </a>
 
                 <div className="contact-method">
-                  <span className="contact-icon contact-icon-green" aria-hidden="true">⌖</span>
+                  <span className="contact-icon contact-icon-gold" aria-hidden="true">⌖</span>
                   <span>
                     <small>VISIT US</small>
                     <strong>Our Company Address</strong>
@@ -102,13 +155,32 @@ function ContactPage() {
               <h2>Start the conversation.</h2>
               <p>Fields marked with <b>*</b> are required.</p>
 
-              {submitted && (
-                <div className="contact-success" role="status">
+              {status === "success" && (
+                <div className="contact-alert contact-alert-success" role="status">
                   Thank you. Your message has been received and we&apos;ll be in touch soon.
                 </div>
               )}
 
+              {status === "error" && (
+                <div className="contact-alert contact-alert-error" role="alert">
+                  {errorMsg}
+                </div>
+              )}
+
               <form className="contact-form" onSubmit={handleSubmit}>
+
+                {/* Honeypot — hidden from real users via CSS */}
+                <label className="contact-honeypot" aria-hidden="true">
+                  Company
+                  <input
+                    name="company"
+                    value={form.company}
+                    onChange={updateField}
+                    tabIndex="-1"
+                    autoComplete="off"
+                  />
+                </label>
+
                 <div className="contact-form-grid">
                   <label>
                     Full name <b>*</b>
@@ -132,6 +204,7 @@ function ContactPage() {
                     <select name="service" value={form.service} onChange={updateField}>
                       <option value="">Select a service</option>
                       <option value="study-abroad">Study Abroad</option>
+                      <option value="tourist-visa">Tourist Visa</option>
                       <option value="work-visa">Work Visa</option>
                       <option value="family-migration">Family Migration</option>
                       <option value="permanent-residency">Permanent Residency</option>
@@ -140,15 +213,22 @@ function ContactPage() {
                 </div>
 
                 <label>
+                  Subject <b>*</b>
+                  <input name="subject" value={form.subject} onChange={updateField} required placeholder="What's this about?" />
+                </label>
+
+                <label>
                   How can we help? <b>*</b>
                   <textarea name="message" value={form.message} onChange={updateField} required rows="5" placeholder="Tell us a little about your goals" />
                 </label>
 
-                <button className="contact-submit" type="submit">
-                  Send Message <span aria-hidden="true">→</span>
+                <button className="contact-submit" type="submit" disabled={status === "sending"}>
+                  {status === "sending" ? "Sending..." : "Send Message"}
+                  {status !== "sending" && <span aria-hidden="true">→</span>}
                 </button>
               </form>
             </div>
+
           </div>
 
           <section className="contact-location" aria-label="Office location">
@@ -163,8 +243,8 @@ function ContactPage() {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />
-              <a
-                className="contact-map-directions"
+              
+               <a className="contact-map-directions"
                 href={MAP_DIRECTIONS_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
