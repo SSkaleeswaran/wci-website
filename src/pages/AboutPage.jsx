@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import About from "../components/sections/About.jsx"
 
 const services = [
-  { title: "Visitor Visa", text: "Guidance for visiting family, friends and destinations abroad.", icon: "✈" },
-  { title: "Tourist Visa", text: "Support for holiday and leisure travel applications.", icon: "◉" },
-  { title: "Business Visa", text: "Assistance for professional visits, meetings and business travel.", icon: "↗" },
-  { title: "Study Visa", text: "Guidance for students planning to study and build their future overseas.", icon: "⌘" },
+  { title: "Visitor Visa", text: "Guidance for visiting family, friends and destinations abroad.", icon: "✈", img: "/images/banners/visitBanner.png" },
+  { title: "Tourist Visa", text: "Support for holiday and leisure travel applications.", icon: "◉" , img: "/images/banners/tourBanner.png"},
+  { title: "Business Visa", text: "Assistance for professional visits, meetings and business travel.", icon: "↗", img: "/images/banners/businessBanner.png" },
+  { title: "Study Visa", text: "Guidance for students planning to study and build their future overseas.", icon: "⌘",img: "/images/banners/eduBanner.png" },
 ];
 
 const countries = ["Canada", "USA", "UK", "Japan", "Australia", "Schengen", "South Korea", "Netherlands"];
@@ -15,7 +16,7 @@ function AboutPage() {
   return (
     <main className="wci-about">
       <section className="about-orbit-hero"
-      style={{
+        style={{
           backgroundImage:
             "url('/images/banners/aboutPage.png')",
         }}>
@@ -82,8 +83,26 @@ function AboutPage() {
               </button>
             ))}
           </div>
-          <div className="service-detail">
-            <span className="service-icon">{services[activeService].icon}</span>
+          <div
+            className="service-detail"
+            style={
+              services[activeService].img
+                ? {
+                  backgroundImage: `linear-gradient(
+            90deg,
+            rgba(11, 42, 91, 0.43),
+            rgba(11, 42, 91, 0.39)
+          ), url("${services[activeService].img}")`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }
+                : {}
+            }
+          >
+            <span className="service-icon">
+              {services[activeService].icon}
+            </span>
+
             <div>
               <small>WCI SERVICE / 0{activeService + 1}</small>
               <h3>{services[activeService].title}</h3>
@@ -92,6 +111,8 @@ function AboutPage() {
           </div>
         </div>
       </section>
+
+      <About/>
 
       <section className="about-reach">
         <div className="reach-heading">

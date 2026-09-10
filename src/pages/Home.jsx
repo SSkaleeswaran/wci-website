@@ -5,7 +5,7 @@ import Countries from "../components/sections/Countries";
 import FaqAppointment from "../components/sections/FaqAppointment";
 import Process from "../components/sections/Process";
 import Services from "../components/sections/Services";
-import Testimonials from "../components/sections/Testimonials";
+// import Testimonials from "../components/sections/Testimonials";
 import WhyChooseUs from "../components/sections/WhyChooseUs";
 import PromoBanner from "../components/sections/PromoBanner";
 
@@ -28,7 +28,7 @@ function Home() {
 
       <WhyChooseUs />
 
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       <FaqAppointment />
     </main>

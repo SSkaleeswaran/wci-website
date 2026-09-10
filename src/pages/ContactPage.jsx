@@ -205,8 +205,8 @@ function ContactPage() {
                       <option value="">Select a service</option>
                       <option value="study-abroad">Study Abroad</option>
                       <option value="tourist-visa">Tourist Visa</option>
-                      <option value="work-visa">Work Visa</option>
-                      <option value="family-migration">Family Migration</option>
+                      <option value="work-visa">Business Visa</option>
+                      <option value="family-migration">Visitor visa</option>
                       <option value="permanent-residency">Permanent Residency</option>
                     </select>
                   </label>
