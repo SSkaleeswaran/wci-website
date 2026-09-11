@@ -2,7 +2,7 @@
 
 const SocialButtons = () => {
   const whatsappNumber = "916379891812";
-  const instagramUrl = "https://www.instagram.com/your_instagram/";
+  const instagramUrl = "https://www.instagram.com/wellcareerimmigration__/";
 
   return (
     <div className="social-buttons">
