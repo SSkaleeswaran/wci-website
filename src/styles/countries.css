@@ -1,17 +1,68 @@
 /* =========================================
    COUNTRIES SECTION
 ========================================= */
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 .countries-section {
+  position: relative;
   width: 100%;
-
   padding: 90px 0 100px;
-
   background: #f7f5ef;
-
   overflow: hidden;
+}
+
+.countries-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================
+   ANIMATED WAVE BACKGROUND
+   Stretches across the FULL section height,
+   not just a band near the top.
+========================================= */
+
+.countries-wave {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.countries-wave-svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 260%;
+  height: 100%;
+}
+
+.countries-wave-svg path {
+  fill: rgba(71, 64, 6, 0.214);
+}
+
+.wave-back {
+  animation: waveDriftBack 7s linear infinite;
+}
+
+.wave-front path {
+  fill: rgba(217, 164, 65, 0.159);
+}
+
+.wave-front {
+  animation: waveDriftFront 5s linear infinite;
+}
+
+@keyframes waveDriftBack {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes waveDriftFront {
+  from { transform: translateX(-40%); }
+  to { transform: translateX(0); }
 }
 
 
@@ -21,569 +72,263 @@
 
 .countries-heading {
   max-width: 850px;
-
   margin: 0 auto 30px;
-
   text-align: center;
 }
 
-
 .countries-heading .section-label {
   display: inline-block;
-
   margin-bottom: 12px;
-
-  color: #2A8C8C;
-
-  font-size: 15px;
-
+  color: #D9A441;
+  font-size: 12px;
   font-weight: 800;
-
   letter-spacing: 1.8px;
 }
 
-
 .countries-heading h2 {
   margin: 0;
-
   color: #061f47;
-  font-family: "Fraunces", serif;
-
-
-  font-size: 40px;
-
+  font-family: inherit;
+  font-size: 38px;
   line-height: 1.2;
-
   font-weight: 800;
 }
-
 
 .countries-heading h2 span {
   color: #D9A441;
 }
 
-
 .countries-heading-line {
   width: 42px;
-
   height: 3px;
-
-  margin: 15px auto;
-
+  margin: 16px auto;
   border-radius: 5px;
-
-  background: #2A8C8C;
+  background: #D9A441;
 }
-
 
 .countries-heading p {
   max-width: 650px;
-
   margin: 0 auto;
-
   color: #71809b;
-
   font-size: 14px;
-
   line-height: 1.7;
 }
 
 
 /* =========================================
-   SLIDER OUTER
+   SLIDER
 ========================================= */
 
 .countries-slider {
   width: 100%;
-
-  padding: 45px 0 70px;
-
-  /*
-    Outer section controls clipping.
-  */
-
+  padding: 45px 0 40px;
   overflow: hidden;
 }
-
-
-/* =========================================
-   SLIDER VIEWPORT
-
-   IMPORTANT:
-   This is where we clip the extra
-   looped slides.
-
-   DO NOT put overflow:hidden
-   directly on .countries-swiper.
-========================================= */
 
 .countries-slider-viewport {
+  position: relative;
   width: 100%;
-
-  max-width: 1700px;
-
+  max-width: 1300px;
   margin: 0 auto;
-
   overflow: hidden;
 }
-
-
-/* =========================================
-   SWIPER
-
-   IMPORTANT:
-   Coverflow needs overflow visible.
-========================================= */
 
 .countries-swiper {
   width: 100%;
-
-  padding: 30px 0 65px;
-
   overflow: visible;
 }
 
 
 /* =========================================
-   SWIPER SLIDES
+   CARD — flat, no shadow
 ========================================= */
 
-.countries-swiper .swiper-slide {
-  /*
-    IMPORTANT:
-    Same width as the card.
-  */
-
-  width: 300px;
-
-  height: auto;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: stretch;
-
-
-  backface-visibility: hidden;
-
-  -webkit-backface-visibility: hidden;
-
-
-  transform-style: preserve-3d;
-}
-
-
-/* =========================================
-   COUNTRY CARD
-========================================= */
-
-.countries-swiper .country-card {
-  width: 300px;
-
-  min-height: 495px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  overflow: hidden;
-
-  background: #ffffff;
-
-  border: 1px solid #e7edf7;
-
-  border-radius: 25px;
-
-  /*
-    Soft shadow.
-  */
-
-  box-shadow:
-    0 8px 30px
-    rgba(16, 31, 73, 0.10);
-
-
-  backface-visibility: hidden;
-
-  -webkit-backface-visibility: hidden;
-
-
-  transform-style: preserve-3d;
-
-
-  /*
-    GPU optimization.
-  */
-
-  will-change: transform;
-}
-
-
-/* =========================================
-   ACTIVE CENTER CARD
-========================================= */
-
-.countries-swiper
-.swiper-slide-active
-.country-card {
-
-  /*
-    Keep the center card elevated,
-    but don't create a huge shadow.
-  */
-  margin-bottom: 25px;
-  box-shadow:
-    0 8px 25px
-    rgba(16, 31, 73, 0.13);
-
-  z-index: 5;
-}
-
-
-/* =========================================
-   COUNTRY IMAGE
-========================================= */
-
-.country-card-image {
-  width: 100%;
-
-  height: 190px;
-
-  overflow: hidden;
-
-  background: #eef4ff;
-}
-
-
-.country-card-image img {
-  display: block;
-
-  width: 100%;
-
+.wave-card {
   height: 100%;
-
-  object-fit: cover;
-
-
-  backface-visibility: hidden;
-
-  -webkit-backface-visibility: hidden;
-}
-
-
-/* =========================================
-   COUNTRY HEADER
-========================================= */
-
-.country-card-header {
   display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 19px 20px 12px;
-}
-
-
-.country-card-header h3 {
-  margin: 0;
-
-  color: #101f49;
-
-  font-size: 20px;
-
-  line-height: 1.2;
-
-  font-weight: 800;
-}
-
-
-.country-flag {
-  width: 32px;
-
-  height: 22px;
-
-  flex-shrink: 0;
-
-  object-fit: cover;
-
-  border-radius: 3px;
-
-
-  box-shadow:
-    0 2px 5px
-    rgba(0, 0, 0, 0.12);
-}
-
-
-/* =========================================
-   COUNTRY POINTS
-========================================= */
-
-.country-points {
-  flex: 1;
-
-  list-style: none;
-
-  margin: 0;
-
-  padding: 8px 20px 0;
-}
-
-
-.country-points li {
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 8px;
-
-  margin-bottom: 11px;
-
-  color: #71809b;
-
-  font-size: 12px;
-
-  line-height: 1.5;
-}
-
-
-.country-check {
-  width: 18px;
-
-  height: 18px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  margin-top: 1px;
-
-  border-radius: 50%;
-
-  background: #eaf2ff;
-
-  color: #2A8C8C;
-
-  font-size: 10px;
-
-  font-weight: 800;
-}
-
-
-/* =========================================
-   EXPANDED DETAILS
-========================================= */
-
-.country-detail-point {
-  animation:
-    countryDetailIn
-    0.2s ease;
-}
-
-
-@keyframes countryDetailIn {
-
-  from {
-    opacity: 0;
-
-    transform:
-      translateY(-4px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateY(0);
-  }
-
-}
-
-
-/* =========================================
-   SHOW MORE
-========================================= */
-
-.country-read-more {
-  margin: 6px 20px 15px;
-
-  padding: 0;
-
-  border: none;
-
-  background: transparent;
-
-  color: #061f47;
-
-  font-size: 15px;
-
-  font-weight: 800;
-
-  text-align: left;
-
-  cursor: pointer;
-
-  transition:
-    color 0.2s ease;
-}
-
-
-.country-read-more:hover {
-  color: #D9A441;
-}
-
-
-.country-read-more span {
-  margin-left: 6px;
-
-  color: #D9A441;
-
-  font-size: 14px;
-}
-
-
-/* =========================================
-   CONTACT BUTTON
-========================================= */
-
-.country-card-actions {
-  padding: 0 20px 20px;
-}
-
-
-.country-contact-link {
-  width: 100%;
-
-  min-height: 42px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 9px;
-
-  border-radius: 9px;
-
-  background: #061f47;
-
-  color: #ffffff;
-
-  font-size: 12px;
-
-  font-weight: 800;
-
-  text-decoration: none;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease;
-}
-
-
-.country-contact-link span {
-  font-size: 15px;
-
-  transition:
-    transform 0.2s ease;
-}
-
-
-.country-contact-link:hover {
-  background: #D9A441;
-
-  color: #ffffff;
-
-  transform:
-    translateY(-2px);
-}
-
-
-.country-contact-link:hover span {
-  transform:
-    translateX(4px);
-}
-
-
-/* =========================================
-   SWIPER NAVIGATION
-========================================= */
-
-.countries-swiper
-.swiper-button-prev,
-
-.countries-swiper
-.swiper-button-next {
-
-  width: 44px;
-
-  height: 44px;
-
-  margin-top: 0;
-
-  border-radius: 50%;
-
+  flex-direction: column;
+  overflow: hidden;
   background: #ffffff;
-
-  box-shadow:
-    0 8px 25px
-    rgba(16, 31, 73, 0.15);
-
-  color: #1769ff;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  border-radius: 18px;
+  border: 1px solid #ece7d9;
+  box-shadow: none;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
+.wave-card:hover {
+  transform: translateY(-6px);
+  border-color: #D9A441;
+  box-shadow: none;
+}
 
-.countries-swiper
-.swiper-button-prev:hover,
+.wave-card-image {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
 
-.countries-swiper
-.swiper-button-next:hover {
+.wave-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
 
-  background: #1769ff;
+.wave-card:hover .wave-card-image img {
+  transform: scale(1.06);
+}
 
+.wave-card-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  padding: 6px 14px;
+  border-radius: 30px;
   color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
 }
 
+.badge-navy { background: #061f47; }
+.badge-gold { background: #D9A441; }
+.badge-teal { background: #2A8C8C; }
 
-.countries-swiper
-.swiper-button-prev::after,
+.wave-card-hover {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6, 31, 71, 0.721);
+  opacity: 0;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
 
-.countries-swiper
-.swiper-button-next::after {
+.wave-card:hover .wave-card-hover {
+  opacity: 1;
+}
 
-  font-size: 15px;
+.wave-card-hover span {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 6px;
+}
 
-  font-weight: 900;
+.wave-card-hover span::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 36px;
+  height: 2px;
+  background: #D9A441;
+  transform: translateX(-50%);
 }
 
 
 /* =========================================
-   NAVIGATION POSITION
+   CARD BODY
 ========================================= */
 
-.countries-swiper
-.swiper-button-prev {
+.wave-card-body {
+  padding: 22px 22px 24px;
+}
 
-  left: 15px;
+.wave-card-body h3 {
+  margin: 0;
+  color: #101f49;
+  font-size: 21px;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.wave-card-line {
+  width: 40px;
+  height: 3px;
+  margin: 12px 0 18px;
+  border-radius: 5px;
+}
+
+.wave-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wave-card-flag {
+  width: 38px;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #f0f0f0;
+  flex-shrink: 0;
+}
+
+.wave-card-footer small {
+  display: block;
+  color: #9aa5ba;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.wave-card-footer strong {
+  display: block;
+  margin-top: 2px;
+  color: #344766;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 
-.countries-swiper
-.swiper-button-next {
+/* =========================================
+   ARROWS — no shadow
+========================================= */
 
-  right: 15px;
+.countries-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: #061f47;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 400;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: none;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.countries-slider-arrow-left { right: -8px;  }
+.countries-slider-arrow-right { left: -8px; }
+
+.countries-slider-arrow:hover {
+  background: #D9A441;
+  box-shadow: none;
+}
+
+.countries-slider-arrow-left:hover { transform: translateY(-50%) translateX(3px); }
+.countries-slider-arrow-right:hover { transform: translateY(-50%) translateX(-3px); }
+
+.countries-slider-arrow:active {
+  transform: translateY(-50%) scale(0.94);
 }
 
 
@@ -593,81 +338,10 @@
 
 @media (max-width: 1199px) {
 
-  .countries-section {
-
-    padding:
-      75px 0 85px;
-  }
-
-
-  .countries-heading h2 {
-
-    font-size: 34px;
-  }
-
-
-  .countries-swiper
-  .swiper-slide {
-
-    width: 280px;
-  }
-
-
-  .countries-swiper
-  .country-card {
-
-    width: 280px;
-  }
-
-}
-
-
-/* =========================================
-   SMALL TABLET
-========================================= */
-
-@media (max-width: 991px) {
-
-  .countries-swiper {
-
-    padding-top: 25px;
-  }
-
-
-  .countries-swiper
-  .swiper-slide {
-
-    width: 270px;
-  }
-
-
-  .countries-swiper
-  .country-card {
-
-    width: 270px;
-
-    min-height: 460px;
-  }
-
-
-  .country-card-image {
-
-    height: 180px;
-  }
-
-
-  .countries-swiper
-  .swiper-button-prev {
-
-    left: 10px;
-  }
-
-
-  .countries-swiper
-  .swiper-button-next {
-
-    right: 10px;
-  }
+  .countries-section { padding: 75px 0 85px; }
+  .countries-heading h2 { font-size: 32px; }
+  .countries-slider-arrow-left { right: 4px; }
+  .countries-slider-arrow-right { left: 4px; }
 
 }
 
@@ -678,353 +352,36 @@
 
 @media (max-width: 767px) {
 
-  .countries-section {
+  .countries-section { padding: 60px 0 70px; }
 
-    padding:
-      60px 0 70px;
+  .countries-heading { padding: 0 20px; margin-bottom: 15px; }
+  .countries-heading h2 { font-size: 27px; line-height: 1.25; }
+  .countries-heading p { font-size: 13px; line-height: 1.6; }
+
+  .countries-slider { padding: 30px 0 20px; }
+
+  .wave-card-image { height: 190px; }
+  .wave-card-body { padding: 18px 18px 20px; }
+  .wave-card-body h3 { font-size: 19px; }
+
+  .countries-slider-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
   }
 
-
-  /* =========================
-     HEADING
-  ========================= */
-
-  .countries-heading {
-
-    padding:
-      0 20px;
-
-    margin-bottom: 15px;
-  }
-
-
-  .countries-heading
-  .section-label {
-
-    font-size: 11px;
-  }
-
-
-  .countries-heading h2 {
-
-    font-size: 28px;
-
-    line-height: 1.25;
-  }
-
-
-  .countries-heading p {
-
-    font-size: 13px;
-
-    line-height: 1.6;
-  }
-
-
-  /* =========================
-     SLIDER
-  ========================= */
-
-  .countries-slider {
-
-    padding:
-      30px 0 50px;
-  }
-
-
-  .countries-swiper {
-
-    padding:
-      20px 0 50px;
-  }
-
-
-  /*
-    Only one main card on mobile.
-  */
-
-  .countries-swiper
-  .swiper-slide {
-
-    width: 290px;
-  }
-
-
-  .countries-swiper
-  .country-card {
-
-    width: 290px;
-
-    min-height: 470px;
-
-    border-radius: 18px;
-  }
-
-
-  /* =========================
-     IMAGE
-  ========================= */
-
-  .country-card-image {
-
-    height: 190px;
-  }
-
-
-  /* =========================
-     HEADER
-  ========================= */
-
-  .country-card-header {
-
-    padding:
-      18px 18px 10px;
-  }
-
-
-  .country-card-header h3 {
-
-    font-size: 19px;
-  }
-
-
-  /* =========================
-     POINTS
-  ========================= */
-
-  .country-points {
-
-    padding-left: 18px;
-
-    padding-right: 18px;
-  }
-
-
-  .country-points li {
-
-    font-size: 12px;
-
-    margin-bottom: 10px;
-  }
-
-
-  /* =========================
-     BUTTONS
-  ========================= */
-
-  .country-read-more {
-
-    margin-left: 18px;
-
-    margin-right: 18px;
-  }
-
-
-  .country-card-actions {
-
-    padding-left: 18px;
-
-    padding-right: 18px;
-  }
-
-
-  /* =========================
-     MOBILE ARROWS
-  ========================= */
-
-  /*
-    We use touch/swipe on mobile,
-    therefore hide arrow buttons.
-  */
-
-  .countries-swiper
-  .swiper-button-prev,
-
-  .countries-swiper
-  .swiper-button-next {
-
-    display: none;
-  }
+  .countries-slider-arrow-left { right: -2px; }
+  .countries-slider-arrow-right { left: -2px; }
 
 }
 
 
 /* =========================================
-   VERY SMALL PHONES
+   MOTION SAFETY
 ========================================= */
 
-@media (max-width: 380px) {
-
-  .countries-swiper
-  .swiper-slide {
-
-    width: 270px;
+@media (prefers-reduced-motion: reduce) {
+  .wave-back, .wave-front {
+    animation: none;
   }
-
-
-  .countries-swiper
-  .country-card {
-
-    width: 270px;
-  }
-
-
-  .country-card-image {
-
-    height: 175px;
-  }
-
-
-  .countries-heading h2 {
-
-    font-size: 25px;
-  }
-
-}
-
-
-/* new */
-/* =========================================================
-   COUNTRY SLIDER ARROWS
-========================================================= */
-
-.countries-slider-viewport {
-  position: relative;
-  margin: 2px;
-}
-
-
-/* =========================================================
-   COMMON ARROW
-========================================================= */
-
-.countries-slider-arrow {
-  position: absolute;
-
-  top: 60%;
-  transform: translateY(-50%);
-
-  width: 52px;
-  height: 52px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border: none;
-  border-radius: 50%;
-
-  background: #061f47;
-  color: #d7d8dc;
-
-  font-size: 32px;
-  font-weight: 400;
-
-  cursor: pointer;
-
-  z-index: 20;
-
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-
-/* =========================================================
-   LEFT ARROW
-   LEFT = NEXT
-========================================================= */
-
-.countries-slider-arrow-left {
-  left: 5px;
-}
-
-
-/* =========================================================
-   RIGHT ARROW
-   RIGHT = PREVIOUS
-========================================================= */
-
-.countries-slider-arrow-right {
-  right: 5px;
-}
-
-
-/* =========================================================
-   HOVER
-========================================================= */
-
-.countries-slider-arrow:hover {
-  background: #D9A441;
-  color: #ffffff;
-
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
-}
-
-.countries-slider-arrow-left:hover {
-  transform: translateY(-50%) translateX(-3px);
-}
-
-.countries-slider-arrow-right:hover {
-  transform: translateY(-50%) translateX(3px);
-}
-
-
-/* =========================================================
-   ACTIVE / CLICK
-========================================================= */
-
-.countries-slider-arrow:active {
-  transform: translateY(-50%) scale(0.94);
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 767px) {
-
-  .countries-slider-arrow {
-    width: 44px;
-    height: 44px;
-
-    font-size: 27px;
-  }
-
-  .countries-slider-arrow-left {
-    left: 5px;
-  }
-
-  .countries-slider-arrow-right {
-    right: 5px;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-
-  .countries-slider-arrow {
-    width: 40px;
-    height: 40px;
-
-    font-size: 24px;
-  }
-
-  .countries-slider-arrow-left {
-    left: 2px;
-  }
-
-  .countries-slider-arrow-right {
-    right: 2px;
-  }
-
 }
