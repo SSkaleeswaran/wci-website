@@ -75,7 +75,7 @@
   height: 10px;
   margin: 38px 6% 0;
 
-  border-top: 1px dashed #a9c7ff;
+  border-top: 1px dashed #cddaf1;
 }
 
 .flight-plane {
@@ -152,7 +152,7 @@
 
 /* =========================
    SERVICE CARD
-   (static — no hover effects)
+
 ========================= */
 
 .service-card {
@@ -286,7 +286,7 @@
   right: -5%;
   bottom: -60px;
   height: 100px;
-  background: #f5f9ff 45%;
+  background: #f7f5ef 45%;
   border-radius: 50% 50% 0 0 / 70% 70% 0 0;
   z-index: 0;
 }

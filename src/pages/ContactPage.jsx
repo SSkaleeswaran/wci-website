@@ -118,7 +118,7 @@ function ContactPage() {
               </p>
 
               <div className="contact-methods">
-                <a className="contact-method" href="tel:+91XXXXXXXXXX">
+                <a className="contact-method" href="tel:+91637 989 1812">
                   <span className="contact-icon" aria-hidden="true">☎</span>
                   <span>
                     <small>CALL US</small>
@@ -130,7 +130,7 @@ function ContactPage() {
                   <span className="contact-icon" aria-hidden="true">✉</span>
                   <span>
                     <small>EMAIL US</small>
-                    <strong>wellcareerimmigration.com</strong>
+                    <strong>wellcareerimmigration@gmail.com</strong>
                   </span>
                 </a>
 
@@ -203,7 +203,7 @@ function ContactPage() {
                     Interested service
                     <select name="service" value={form.service} onChange={updateField}>
                       <option value="">Select a service</option>
-                      <option value="study-abroad">Study Abroad</option>
+                      <option value="study-abroad">Study Visa</option>
                       <option value="tourist-visa">Tourist Visa</option>
                       <option value="work-visa">Business Visa</option>
                       <option value="family-migration">Visitor visa</option>
