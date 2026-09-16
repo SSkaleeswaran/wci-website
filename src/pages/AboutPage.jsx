@@ -8,7 +8,7 @@ const services = [
   { title: "Study Visa", text: "Guidance for students planning to study and build their future overseas.", icon: "⌘",img: "/images/banners/eduBanner.png" },
 ];
 
-const countries = ["Canada", "USA", "UK", "Japan", "Australia", "Schengen", "South Korea", "Netherlands"];
+const countries = ["Canada", "USA", "UK", "Japan", "Australia", "Schengen", "South Korea", "Taiwan", "New Zealand","Russia"];
 
 function AboutPage() {
   const [activeService, setActiveService] = useState(0);

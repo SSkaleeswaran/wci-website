@@ -181,6 +181,10 @@
 .country-5 { bottom: 14%; left: 0%; }
 .country-6 { top: 40%; right: 5%; }
 .country-7 { bottom: 44%; right: -4%; }
+.country-8 { bottom: -1%; right: 30%; }
+.country-9 { bottom: 16%; right: 35%; }
+.country-10 { bottom: 70%; right: -4%; }
+
 
 @keyframes orbitSpin { to { transform: rotate(360deg); } }
 

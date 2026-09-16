@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import {
-  FaFacebookF,
+
   FaInstagram,
-  FaLinkedinIn,
-  FaXTwitter,
+  FaWhatsapp,
+  
 } from "react-icons/fa6";
+
+// FaLinkedinIn,
+//   FaXTwitter,
+//     FaFacebookF,
 
 function Footer() {
   return (
@@ -36,21 +40,24 @@ function Footer() {
 
             <div className="footer-socials">
 
-              <a href="#!" aria-label="Facebook">
+              {/* <a href="#!" aria-label="Facebook">
                 <FaFacebookF aria-hidden="true" />
-              </a>
+              </a> */}
 
               <a href="#!" aria-label="Instagram">
                 <FaInstagram aria-hidden="true" />
               </a>
+              <a href="#!" aria-label="Whatsapp">
+                <FaWhatsapp aria-hidden="true"/>
+              </a>
 
-              <a href="#!" aria-label="LinkedIn">
+              {/* <a href="#!" aria-label="LinkedIn">
                 <FaLinkedinIn aria-hidden="true" />
-              </a>
+              </a> */}
 
-              <a href="#!" aria-label="X">
+              {/* <a href="#!" aria-label="X">
                 <FaXTwitter aria-hidden="true" />
-              </a>
+              </a> */}
 
             </div>
 
@@ -167,7 +174,13 @@ function Footer() {
 
       </div>
 
+
+      <div style={{display:"none"}}>
+        <h1>helo</h1>
+      </div>
+
     </footer>
+    
   );
 }
 

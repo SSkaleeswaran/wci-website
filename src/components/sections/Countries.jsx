@@ -56,6 +56,28 @@ const countries = [
     region: "Oceania",
     tagline: "Study, work & tourism visas",
   },
+ 
+  {
+    flag: "/images/flags/taiwan-flag.png",
+    image: "/images/countries/taiwan.jpg",
+    name: "Taiwan",
+    region:"Taiwan",
+    tagline: "Tourism & business",
+  },
+   {
+    flag: "/images/flags/new-z-flag.png",
+    image: "/images/countries/new-zland.jpg",
+    name: "New Zealand",
+    region: "zealand",
+    tagline: "Study, work & tourism",
+  },
+  {
+    flag: "/images/flags/russia-flag.png",
+    image: "/images/countries/russia.jpg",
+    name: "Russia",
+    region: "Russia",
+    tagline: "Tourism & business",
+  }
 ];
 
 const badgeClasses = ["badge-navy", "badge-gold", "badge-teal"];

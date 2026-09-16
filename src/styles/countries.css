@@ -79,8 +79,8 @@
 .countries-heading .section-label {
   display: inline-block;
   margin-bottom: 12px;
-  color: #D9A441;
-  font-size: 12px;
+  color: #2A8C8C;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 1.8px;
 }
@@ -89,6 +89,8 @@
   margin: 0;
   color: #061f47;
   font-family: inherit;
+     font-family: "Fraunces", serif;
+
   font-size: 38px;
   line-height: 1.2;
   font-weight: 800;
@@ -99,11 +101,11 @@
 }
 
 .countries-heading-line {
-  width: 42px;
+  width: 48px;
   height: 3px;
   margin: 16px auto;
   border-radius: 5px;
-  background: #D9A441;
+  background: #2A8C8C;
 }
 
 .countries-heading p {
