@@ -56,7 +56,7 @@ function AboutPage() {
               step internationally.
             </p>
             <p>
-              With <strong>2+ years in the field</strong>, we provide guidance
+              With <strong>4+ years in the field</strong>, we provide guidance
               across visitor, tourist, business, study, career and immigration
               requirements. Our approach is simple: understand the applicant,
               clarify the process and help prepare the journey carefully.

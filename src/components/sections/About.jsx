@@ -16,7 +16,7 @@ function About() {
   </div>
 
   <div className="about-experience-card">
-    <strong>02</strong>
+    <strong>04</strong>
     <span>
       Years of
       <br />
