@@ -79,7 +79,7 @@ const countries = [
   {
     id: 5,
     flag: "/images/flags/south-korea.png",
-    image: "/images/countries/southkorea.jpg",
+    image: "/images/countries/s-korea4.avif",
     name: "South Korea",
     code: "KOR",
     tagline: "Tourism & business",
