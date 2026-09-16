@@ -25,7 +25,12 @@ function Footer() {
           <div className="footer-brand">
 
             <Link to="/" className="footer-logo">
+             
               <span className="footer-logo-icon">◉</span>
+              {/* <span className="footer-logo-icon"><img
+            src="/images/logo-footer1.png"
+            alt="well career Immigration"
+          /></span> */}
 
               <span>
                 WELL CAREER

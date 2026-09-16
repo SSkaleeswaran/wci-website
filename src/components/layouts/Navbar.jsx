@@ -86,7 +86,7 @@ function Navbar() {
         >
           <img
             src="/images/headerLogo.png"
-            alt="Immigration Consultancy"
+            alt="well career Immigration"
           />
         </BootstrapNavbar.Brand>
 
