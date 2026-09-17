@@ -37,7 +37,7 @@ const countries = [
   },
   {
     flag: "/images/flags/south-korea.png",
-    image: "/images/countries/southkorea.jpg",
+    image: "/images/countries/s-korea4.avif",
     name: "South Korea",
     region: "Asia",
     tagline: "Tourism & business visas",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/countries-page.css";
@@ -186,11 +186,104 @@ const countries = [
   },
 ];
 
-function CountriesPage() {
-  const [activeId, setActiveId] = useState(countries[0].id);
-  const active = countries.find((c) => c.id === activeId);
-  const activeIndex = countries.findIndex((c) => c.id === activeId);
+function useReveal(threshold = 0.2) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
 
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return [ref, inView];
+}
+
+function CountryBlock({ country, index }) {
+  const [ref, inView] = useReveal(0.15);
+  const isReversed = index % 2 === 1;
+
+  return (
+    <section
+      className={`country-block${isReversed ? " reversed" : ""}${inView ? " in-view" : ""}`}
+      ref={ref}
+    >
+      <div className="container country-block-inner">
+
+        <div className="country-block-image">
+          <img src={country.image} alt={country.name} loading="lazy" />
+          <div className="country-block-image-overlay"></div>
+
+          <div className="country-block-flagchip">
+            <img src={country.flag} alt="" />
+            <span>{country.code}</span>
+          </div>
+        </div>
+
+        <div className="country-block-content">
+
+          <span className="country-block-index">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+
+          <span className="country-block-eyebrow">{country.tagline}</span>
+
+          <h2>{country.name}</h2>
+
+          <div className="country-block-line"></div>
+
+          <div className="country-block-columns">
+
+            <div className="country-block-col">
+              <span className="country-block-col-label">Visa Overview</span>
+              <ul>
+                {country.summary.map((point, i) => (
+                  <li key={i}>
+                    <span className="country-block-check">✓</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="country-block-col">
+              <span className="country-block-col-label">Good to Know</span>
+              <ul>
+                {country.details.map((point, i) => (
+                  <li key={i}>
+                    <span className="country-block-check">✓</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+
+          <Link to="/contact" className="country-block-cta">
+            Contact Us <span>→</span>
+          </Link>
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+function CountriesPage() {
   return (
     <main className="countries-page">
 
@@ -226,117 +319,14 @@ function CountriesPage() {
 
 
       {/* =====================================================
-          DEPARTURES BOARD EXPLORER
+          COUNTRY BLOCKS — one section per country
       ===================================================== */}
 
-      <section className="board-section">
-        <div className="container">
-
-          <div className="board-heading">
-            <span className="board-eyebrow">SELECT A DESTINATION</span>
-            <h2>Where are you headed?</h2>
-          </div>
-
-          <div className="board-layout">
-
-            {/* LIST */}
-            <div className="board-list" role="tablist" aria-label="Destinations">
-              <div className="board-list-header">
-                <span>Destination</span>
-                <span className="board-list-header-status">Guidance</span>
-              </div>
-
-              {countries.map((country, i) => (
-                <button
-                  key={country.id}
-                  role="tab"
-                  aria-selected={country.id === activeId}
-                  className={`board-row${country.id === activeId ? " active" : ""}`}
-                  onClick={() => setActiveId(country.id)}
-                >
-                  <span className="board-row-index">{String(i + 1).padStart(2, "0")}</span>
-
-                  <span className="board-row-flag">
-                    <img src={country.flag} alt="" />
-                  </span>
-
-                  <span className="board-row-name">
-                    <strong>{country.name}</strong>
-                    <small>{country.tagline}</small>
-                  </span>
-
-                  <span className="board-row-status">
-                    <span className="board-dot"></span>
-                    Open
-                  </span>
-                </button>
-              ))}
-            </div>
-
-            {/* DETAIL PANEL */}
-            <div className="board-panel" key={active.id}>
-
-              <div className="board-panel-image">
-                <img src={active.image} alt={active.name} />
-                <div className="board-panel-image-overlay"></div>
-
-                <div className="board-panel-flagchip">
-                  <img src={active.flag} alt="" />
-                  <span>{active.code}</span>
-                </div>
-              </div>
-
-              <div className="board-panel-body">
-
-                <h3>{active.name}</h3>
-                <p className="board-panel-tagline">{active.tagline}</p>
-
-                <div className="board-panel-columns">
-
-                  <div className="board-panel-col">
-                    <span className="board-panel-col-label">Visa Overview</span>
-                    <ul>
-                      {active.summary.map((point, i) => (
-                        <li key={i}>
-                          <span className="board-check">✓</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="board-panel-col">
-                    <span className="board-panel-col-label">Good to Know</span>
-                    <ul>
-                      {active.details.map((point, i) => (
-                        <li key={i}>
-                          <span className="board-check">✓</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                </div>
-
-                <div className="board-panel-footer">
-                  <span className="board-panel-count">
-                    {String(activeIndex + 1).padStart(2, "0")} / {String(countries.length).padStart(2, "0")}
-                  </span>
-
-                  <Link to="/contact" className="board-panel-cta">
-                    Contact Us <span>→</span>
-                  </Link>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-      </section>
+      <div className="country-blocks">
+        {countries.map((country, index) => (
+          <CountryBlock country={country} index={index} key={country.id} />
+        ))}
+      </div>
 
 
       {/* =====================================================

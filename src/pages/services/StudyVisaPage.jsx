@@ -517,7 +517,7 @@ function StudyVisaPage() {
               <span> journey take you?</span>
             </h2>
 
-            <p>
+            <p className="ptag">
               Explore some of the destinations students choose
               for international education.
             </p>
