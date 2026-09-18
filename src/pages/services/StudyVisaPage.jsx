@@ -808,7 +808,7 @@ function StudyVisaPage() {
               </p>
 
               <Link
-                to="/book-consultation"
+                to="/contact"
                 className="study-text-link"
               >
                 Discuss your timeline

@@ -11,6 +11,7 @@ import StudyVisaPage from "../pages/services/StudyVisaPage";
 
 import CountriesPage from "../pages/CountriesPage";
 import VisitorVisaPage from "../pages/services/VisitorVisaPage";
+import BusinessVisaPage from "../pages/services/BusinessVisaPage";
 
 
 function AppRoutes() {
@@ -35,8 +36,9 @@ function AppRoutes() {
       />
       <Route path="/visa-services/study-visa" element={<StudyVisaPage/>}/>
       <Route path="/visa-services/visitor-visa" element={<VisitorVisaPage/>}/>
+      <Route path="/visa-services/business-visa" element={<BusinessVisaPage/>}/>
 
-      {/* <Route path="/services/tourist-visa" element={<TouristVisaPage/>}/> */}
+      {/* <Route path="/services/" element={}/> */}
       {/* <Route path="/services/work-visa" element={<WorkVisaPage/>}/>
        <Route path="/services/study-visa" element={<StudyVisaPage/>}/> */}
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 const destinations = [
   {
     code: "UK",
@@ -49,10 +48,44 @@ const faqs = [
   },
 ];
 
+// Reusable scroll-reveal hook — works in every browser, no CSS-only limitations
+function useReveal(threshold = 0.2) {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [threshold]);
+
+  return [ref, inView];
+}
+
 function VisitorVisaPage() {
   const heroRef = useRef(null);
   const [destination, setDestination] = useState(destinations[0]);
   const [faqOpen, setFaqOpen] = useState(null);
+
+  const [destRef, destInView] = useReveal(0.15);
+  const [purposeRef, purposeInView] = useReveal(0.15);
+  const [deskRef, deskInView] = useReveal(0.15);
+  const [routeRef, routeInView] = useReveal(0.15);
+  const [fileRef, fileInView] = useReveal(0.15);
+  const [faqRef, faqInView] = useReveal(0.15);
+  const [ctaRef, ctaInView] = useReveal(0.25);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -100,7 +133,7 @@ function VisitorVisaPage() {
             <h1>
               Travel with
               <br />
-              confidence.
+             <h1 className="h1class"> confidence.</h1> 
             </h1>
 
             <p>
@@ -126,7 +159,10 @@ function VisitorVisaPage() {
       </section>
 
       {/* DESTINATIONS */}
-      <section className="visitor-destination-section">
+      <section
+        className={`visitor-destination-section reveal-unfold${destInView ? " in-view" : ""}`}
+        ref={destRef}
+      >
         <div className="container">
           <div className="visitor-small-heading">
             <span>DESTINATION</span>
@@ -136,15 +172,16 @@ function VisitorVisaPage() {
           <div className="visitor-destination-wrap">
 
             <div className="visitor-destination-nav">
-              {destinations.map((item) => (
+              {destinations.map((item, i) => (
                 <button
                   type="button"
                   key={item.code}
                   className={
                     destination.code === item.code
-                      ? "destination-pill active"
-                      : "destination-pill"
+                      ? "destination-pill active reveal-pill"
+                      : "destination-pill reveal-pill"
                   }
+                  style={{ transitionDelay: `${i * 70}ms` }}
                   onClick={() => setDestination(item)}
                 >
                   <span>{item.code}</span>
@@ -153,7 +190,7 @@ function VisitorVisaPage() {
               ))}
             </div>
 
-            <div className="visitor-destination-info">
+            <div className="visitor-destination-info reveal-slide-right">
               <div className="destination-mini-stamp">
                 {destination.code}
               </div>
@@ -174,33 +211,36 @@ function VisitorVisaPage() {
       </section>
 
       {/* PURPOSE */}
-      <section className="visitor-purpose-section">
+      <section
+        className={`visitor-purpose-section reveal-section${purposeInView ? " in-view" : ""}`}
+        ref={purposeRef}
+      >
         <div className="container">
-          <div className="purpose-intro">
+          <div className="purpose-intro reveal-slide-up">
             <span>WHY ARE YOU TRAVELLING?</span>
             <h2>Your reason matters.</h2>
           </div>
 
           <div className="purpose-row">
-            <div className="purpose-choice">
+            <div className="purpose-choice reveal-flip" style={{ transitionDelay: "0ms" }}>
               <b>01</b>
               <strong>Holiday</strong>
               <span>Explore somewhere new.</span>
             </div>
 
-            <div className="purpose-choice">
+            <div className="purpose-choice reveal-flip" style={{ transitionDelay: "90ms" }}>
               <b>02</b>
               <strong>Family</strong>
               <span>Spend time with loved ones.</span>
             </div>
 
-            <div className="purpose-choice">
+            <div className="purpose-choice reveal-flip" style={{ transitionDelay: "180ms" }}>
               <b>03</b>
               <strong>Business</strong>
               <span>Attend eligible short visits.</span>
             </div>
 
-            <div className="purpose-choice">
+            <div className="purpose-choice reveal-flip" style={{ transitionDelay: "270ms" }}>
               <b>04</b>
               <strong>Events</strong>
               <span>Attend conferences or events.</span>
@@ -210,11 +250,14 @@ function VisitorVisaPage() {
       </section>
 
       {/* WCI DESK */}
-      <section className="visitor-desk-section">
+      <section
+        className={`visitor-desk-section reveal-section${deskInView ? " in-view" : ""}`}
+        ref={deskRef}
+      >
         <div className="container">
           <div className="visitor-desk">
 
-            <div className="desk-heading">
+            <div className="desk-heading reveal-slide-left">
               <span>THE WCI TRAVEL DESK</span>
 
               <h2>
@@ -230,22 +273,22 @@ function VisitorVisaPage() {
             </div>
 
             <div className="desk-services">
-              <div>
+              <div className="reveal-wipe" style={{ transitionDelay: "0ms" }}>
                 <span>Eligibility</span>
                 <p>Understand your visa requirements.</p>
               </div>
 
-              <div>
+              <div className="reveal-wipe" style={{ transitionDelay: "90ms" }}>
                 <span>Documents</span>
                 <p>Organise your supporting evidence.</p>
               </div>
 
-              <div>
+              <div className="reveal-wipe" style={{ transitionDelay: "180ms" }}>
                 <span>Application</span>
                 <p>Get guidance through the process.</p>
               </div>
 
-              <div>
+              <div className="reveal-wipe" style={{ transitionDelay: "270ms" }}>
                 <span>Interview</span>
                 <p>Prepare when an interview is required.</p>
               </div>
@@ -256,7 +299,10 @@ function VisitorVisaPage() {
       </section>
 
       {/* JOURNEY */}
-      <section className="visitor-route-section">
+      <section
+        className={`visitor-route-section reveal-section${routeInView ? " in-view" : ""}`}
+        ref={routeRef}
+      >
         <div className="container">
           <div className="visitor-small-heading">
             <span>THE JOURNEY</span>
@@ -265,33 +311,33 @@ function VisitorVisaPage() {
 
           <div className="visitor-route">
 
-            <div className="route-path"></div>
+            <div className="route-path reveal-path-draw"></div>
 
-            <div className="route-stop">
+            <div className="route-stop reveal-stop-bounce" style={{ transitionDelay: "0ms" }}>
               <div>01</div>
               <span>CHECK</span>
               <p>Eligibility</p>
             </div>
 
-            <div className="route-stop">
+            <div className="route-stop reveal-stop-bounce" style={{ transitionDelay: "100ms" }}>
               <div>02</div>
               <span>PREPARE</span>
               <p>Documents</p>
             </div>
 
-            <div className="route-stop">
+            <div className="route-stop reveal-stop-bounce" style={{ transitionDelay: "200ms" }}>
               <div>03</div>
               <span>APPLY</span>
               <p>Application</p>
             </div>
 
-            <div className="route-stop">
+            <div className="route-stop reveal-stop-bounce" style={{ transitionDelay: "300ms" }}>
               <div>04</div>
               <span>COMPLETE</span>
               <p>Biometrics</p>
             </div>
 
-            <div className="route-stop">
+            <div className="route-stop reveal-stop-bounce" style={{ transitionDelay: "400ms" }}>
               <div>05</div>
               <span>TRAVEL</span>
               <p>Decision</p>
@@ -302,9 +348,12 @@ function VisitorVisaPage() {
       </section>
 
       {/* DOCUMENTS */}
-      <section className="visitor-file-section">
+      <section
+        className={`visitor-file-section reveal-section${fileInView ? " in-view" : ""}`}
+        ref={fileRef}
+      >
         <div className="container">
-          <div className="visitor-file">
+          <div className="visitor-file reveal-folder">
 
             <div className="file-cover">
               <div className="file-circle">WCI</div>
@@ -319,12 +368,12 @@ function VisitorVisaPage() {
               <h2>Your essential documents.</h2>
 
               <div className="document-list">
-                <div>Passport</div>
-                <div>Financial evidence</div>
-                <div>Employment / business proof</div>
-                <div>Travel itinerary</div>
-                <div>Accommodation details</div>
-                <div>Invitation letter, if applicable</div>
+                <div className="reveal-doc-row" style={{ transitionDelay: "0ms" }}>Passport</div>
+                <div className="reveal-doc-row" style={{ transitionDelay: "60ms" }}>Financial evidence</div>
+                <div className="reveal-doc-row" style={{ transitionDelay: "120ms" }}>Employment / business proof</div>
+                <div className="reveal-doc-row" style={{ transitionDelay: "180ms" }}>Travel itinerary</div>
+                <div className="reveal-doc-row" style={{ transitionDelay: "240ms" }}>Accommodation details</div>
+                <div className="reveal-doc-row" style={{ transitionDelay: "300ms" }}>Invitation letter, if applicable</div>
               </div>
             </div>
 
@@ -333,11 +382,14 @@ function VisitorVisaPage() {
       </section>
 
       {/* FAQ */}
-      <section className="visitor-question-section">
+      <section
+        className={`visitor-question-section reveal-section${faqInView ? " in-view" : ""}`}
+        ref={faqRef}
+      >
         <div className="container">
           <div className="visitor-question-layout">
 
-            <div>
+            <div className="reveal-slide-left">
               <span>QUESTIONS</span>
               <h2>Before you travel.</h2>
             </div>
@@ -347,9 +399,10 @@ function VisitorVisaPage() {
                 <div
                   className={
                     faqOpen === index
-                      ? "visitor-faq-item open"
-                      : "visitor-faq-item"
+                      ? "visitor-faq-item open reveal-faq-item"
+                      : "visitor-faq-item reveal-faq-item"
                   }
+                  style={{ transitionDelay: `${index * 80}ms` }}
                   key={faq.q}
                 >
                   <button
@@ -374,9 +427,12 @@ function VisitorVisaPage() {
       </section>
 
       {/* CTA */}
-      <section className="visitor-end">
+      <section
+        className={`visitor-end reveal-section${ctaInView ? " in-view" : ""}`}
+        ref={ctaRef}
+      >
         <div className="container">
-          <div className="visitor-end-inner">
+          <div className="visitor-end-inner reveal-pop">
             <span>READY WHEN YOU ARE</span>
 
             <h2>Where will you go next?</h2>
@@ -387,7 +443,7 @@ function VisitorVisaPage() {
             </p>
 
             <Link
-              to="/book-consultation"
+              to="/contact"
               className="visitor-gold-button"
             >
               Book Consultation →
