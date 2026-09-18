@@ -1,35 +1,43 @@
-/* =========================
-   ABOUT SECTION
-========================= */
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
+/* =====================================================
+   WCI ABOUT SECTION
+   Elegant Global Journey Design
+===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap");
 
 
 .about-section {
   position: relative;
-
-  padding: 80px 0;
-
+  padding: 88px 0;
   background: #f7f5ef;
-
   overflow: hidden;
 }
 
-.about-content .section-label{
-  display: inline-block;
 
-  margin-bottom: 12px;
+/* subtle background circle */
 
-  color: #2A8C8C;
+.about-section::before {
+  content: "";
+  position: absolute;
 
-  font-size: 12px;
+  width: 420px;
+  height: 420px;
 
-  font-weight: 800;
+  right: -240px;
+  top: 50%;
 
-  letter-spacing: 1.8px;
+  border: 1px solid rgba(217, 164, 65, 0.13);
+  border-radius: 50%;
+
+  transform: translateY(-50%);
+
+  pointer-events: none;
 }
-/* =========================
+
+
+/* =====================================================
    MAIN GRID
-========================= */
+===================================================== */
 
 .about-grid {
   display: grid;
@@ -38,279 +46,608 @@
 
   align-items: center;
 
-  gap: 70px;
+  gap: 75px;
 }
 
 
-/* =========================
-   IMAGE - LEFT
-========================= */
+/* =====================================================
+   IMAGE SIDE
+===================================================== */
 
 .about-image-wrapper {
   position: relative;
 
-  min-height: 440px;
+  min-height: 450px;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  opacity: 0;
+  transform: translateY(35px);
+
+  animation: aboutImageReveal 1.2s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
 }
+
+
+/* image */
 
 .about-image-placeholder {
-  width: 85%;
-  max-width: 430px;
+  position: relative;
 
-  height: 410px;
+  width: 87%;
+  max-width: 440px;
 
-  border-radius: 24px;
+  height: 415px;
 
-  /* background: #dbeafe; */
+  border-radius: 4px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 
-  color: #1769ff;
+  background: #e8e6df;
 
-  font-size: 13px;
-  font-weight: 700;
-
-  letter-spacing: 2px;
-    overflow: hidden;
   box-shadow:
-    0 20px 50px rgba(23, 105, 255, 0.12);
+    0 22px 55px rgba(11, 42, 91, 0.13);
+
+  isolation: isolate;
 }
 
+
+/* image slow zoom */
 
 .about-image-placeholder img {
   width: 100%;
-  height: 100%;
+  height: 108%;
+
   display: block;
+
   object-fit: cover;
+
+  transform: translateY(0) scale(1.04);
+
+  transition:
+    transform 1.5s
+    cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: transform;
 }
 
-/* =========================
+
+/* image hover */
+
+.about-image-placeholder:hover img {
+  transform:
+    translateY(-7px)
+    scale(1.07);
+}
+
+
+/* subtle image overlay */
+
+.about-image-placeholder::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(4, 10, 111, 0.15)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   GOLD CORNER DETAILS
+===================================================== */
+
+.about-image-wrapper::before,
+.about-image-wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  width: 55px;
+  height: 55px;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.about-image-wrapper::before {
+  top: 7px;
+  right: 1px;
+
+  border-top: 2px solid #d9a441;
+  border-right: 2px solid #d9a441;
+}
+
+.about-image-wrapper::after {
+  bottom: 22px;
+  left: 1px;
+
+  border-bottom: 2px solid #d9a441;
+  border-left: 2px solid #d9a441;
+}
+
+
+/* =====================================================
    EXPERIENCE CARD
-========================= */
+===================================================== */
 
 .about-experience-card {
   position: absolute;
 
   right: 0;
-  bottom: 30px;
+  bottom: 22px;
+
+  z-index: 5;
 
   display: flex;
   align-items: center;
-  gap: 12px;
 
-  padding: 14px 18px;
+  gap: 13px;
 
-  background: #ffffff;
+  padding: 16px 20px;
 
-  border-radius: 12px;
+  background: #0b2a5b;
+
+  border-radius: 0;
 
   box-shadow:
-    0 12px 30px rgba(15, 23, 42, 0.12);
+    0 15px 35px rgba(4, 10, 111, 0.2);
+
+  animation:
+    aboutBadgeFloat 5s
+    ease-in-out
+    infinite;
 }
+
 
 .about-experience-card strong {
-  color: #D9A441;
+  color: #d9a441;
 
-  font-size: 26px;
-  font-weight: 800;
+  font-size: 32px;
+
+  line-height: 1;
+
+  font-weight: 700;
 }
 
-.about-experience-card span {
-  color: #475569;
 
-  font-size: 11px;
-  font-weight: 700;
+.about-experience-card span {
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 10px;
+
+  font-weight: 600;
 
   line-height: 1.35;
 }
 
 
-/* =========================
-   CONTENT - RIGHT
-========================= */
+@keyframes aboutBadgeFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
 
 .about-content {
   max-width: 590px;
+
+  opacity: 0;
+
+  transform: translateY(35px);
+
+  animation:
+    aboutContentReveal 1.2s
+    0.15s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
 }
+
+
+.about-content .section-label {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 13px;
+
+  color: #2A8C8C;
+
+  font-size: 15px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+
+/* gold line */
+
+.about-content .section-label::after {
+  content: "";
+
+  width: 38px;
+  height: 1px;
+
+  background: #d9a441;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
 
 .about-content h2 {
   margin: 0 0 20px;
 
-  color: #101f49;
-     font-family: "Fraunces", serif;
- 
-  font-size: clamp(2rem, 4vw, 3.1rem);
+  color: #0b2a5b;
 
-  line-height: 1.1;
+  font-family: "Fraunces", serif;
 
-  font-weight: 800;
+  font-size: clamp(2.1rem, 4vw, 3.15rem);
 
-  letter-spacing: -1px;
+  line-height: 1.08;
+
+  font-weight: 600;
+
+  letter-spacing: -1.5px;
 }
+
 
 .about-content h2 span {
-  color: #D9A441;
+  color: #d9a441;
+
+  font-weight: 400;
 }
 
 
-/* =========================
+/* =====================================================
    DESCRIPTION
-========================= */
+===================================================== */
 
 .about-description {
-  max-width: 550px;
+  max-width: 520px;
 
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 
-  color: #64748b;
+  color: #697486;
 
-  font-size: 15px;
+  font-family: "Inter", sans-serif;
 
-  line-height: 1.7;
+  font-size: 14px;
+
+  line-height: 1.8;
 }
 
 
-/* =========================
+/* =====================================================
    FEATURES
-========================= */
+===================================================== */
 
 .about-features {
   display: grid;
 
   grid-template-columns: repeat(2, 1fr);
 
-  gap: 20px 25px;
+  gap: 0;
 
   margin-bottom: 30px;
+
+  border-top: 1px solid #dedfdc;
 }
 
+
 .about-feature {
+  position: relative;
+
   display: flex;
 
   align-items: flex-start;
 
-  gap: 10px;
+  gap: 12px;
+
+  padding: 17px 15px 17px 0;
+
+  border-bottom: 1px solid #dedfdc;
+
+  transition:
+    background 0.35s ease,
+    padding-left 0.35s ease,
+    transform 0.35s ease;
 }
+
+
+/* vertical divider */
+
+.about-feature:nth-child(odd) {
+  border-right: 1px solid #dedfdc;
+
+  padding-right: 20px;
+}
+
+
+.about-feature:nth-child(even) {
+  padding-left: 20px;
+}
+
+
+/* hover */
+
+.about-feature:hover {
+  background: rgba(255, 255, 255, 0.5);
+
+  transform: translateY(-2px);
+}
+
+
+.about-feature:nth-child(odd):hover {
+  padding-left: 7px;
+}
+
+
+/* =====================================================
+   CHECK
+===================================================== */
 
 .about-check {
   flex-shrink: 0;
 
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
 
   border-radius: 50%;
 
-  background: #2A8C8C;
+  background: #0b2a5b;
 
-  color: #ffffff;
+  color: #d9a441;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 12px;
+  font-size: 11px;
+
+  font-weight: 800;
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+
+.about-feature:hover .about-check {
+  background: #d9a441;
+
+  color: #0b2a5b;
+
+  transform: rotate(8deg) scale(1.08);
+}
+
+
+/* =====================================================
+   FEATURE TEXT
+===================================================== */
+
+.about-feature h3 {
+  margin: 1px 0 5px;
+
+  color: #0b2a5b;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
   font-weight: 700;
 }
 
-.about-feature h3 {
-  margin: 0 0 4px;
-
-  color: #101f49;
-
-  font-size: 14px;
-
-  font-weight: 750;
-}
 
 .about-feature p {
   margin: 0;
 
-  color: #64748b;
+  color: #7b8492;
 
-  font-size: 12px;
+  font-size: 11px;
 
   line-height: 1.5;
 }
 
 
-/* =========================
+/* =====================================================
    BUTTON
-========================= */
+===================================================== */
 
 .about-button {
+  position: relative;
+
   display: inline-flex;
 
   align-items: center;
 
-  gap: 8px;
+  gap: 12px;
 
-  padding: 11px 18px;
+  padding: 11px 17px;
+
+  border: 1px solid #0b2a5b;
 
   border-radius: 8px;
 
-  background: #061f47;
+  background: transparent;
 
-  color: #ffffff;
+  color: #D9A441  ;
 
-  font-size: 13px;
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
 
   font-weight: 700;
 
+  overflow: hidden;
+
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    color 0.35s ease,
+    transform 0.35s ease;
 }
 
-.about-button span {
+
+/* button fill */
+
+.about-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: #092148;
+
+  transform: translateX(-101%);
   color: #D9A441;
 
-  font-size: 20px;
+  transition:
+    transform 0.4s
+    cubic-bezier(0.16, 1, 0.3, 1);
+
+  z-index: 0;
 }
 
+
+.about-button span,
+.about-button {
+  z-index: 1;
+}
+
+
+.about-button span {
+  color: #d9a441;
+
+  font-size: 15px;
+
+  line-height: 1;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
 .about-button:hover {
-  color: #ffffff;
+  color: #fff;
 
   transform: translateY(-2px);
 
   box-shadow:
-    0 10px 25px rgba(23, 104, 255, 0.347);
+    0 10px 25px rgba(11, 42, 91, 0.16);
 }
 
 
-/* =========================
+.about-button:hover::before {
+  transform: translateX(0);
+}
+
+
+.about-button:hover span {
+  transform: translateX(4px);
+}
+
+
+/* =====================================================
+   INITIAL REVEAL
+===================================================== */
+
+@keyframes aboutImageReveal {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes aboutContentReveal {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =====================================================
    TABLET
-========================= */
+===================================================== */
 
 @media (max-width: 991px) {
+
+  .about-section {
+    padding: 75px 0;
+  }
 
   .about-grid {
     grid-template-columns: 1fr;
 
-    gap: 45px;
+    gap: 55px;
   }
 
   .about-image-wrapper {
-    min-height: 390px;
-  }
+    min-height: 400px;
 
-  .about-image-placeholder {
-    height: 360px;
+    max-width: 650px;
+
+    margin: auto;
   }
 
   .about-content {
-    max-width: 100%;
+    max-width: 700px;
   }
+
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 576px) {
 
@@ -318,35 +655,93 @@
     padding: 60px 0;
   }
 
+  .about-grid {
+    gap: 42px;
+  }
+
   .about-image-wrapper {
-    min-height: 320px;
+    min-height: 330px;
   }
 
   .about-image-placeholder {
     width: 90%;
-    height: 300px;
 
-    border-radius: 18px;
+    height: 305px;
+
+    border-radius: 3px;
   }
 
   .about-experience-card {
     right: 0;
-    bottom: 15px;
 
-    padding: 10px 13px;
+    bottom: 10px;
+
+    padding: 12px 15px;
   }
 
   .about-experience-card strong {
-    font-size: 21px;
+    font-size: 25px;
   }
 
-  .about-features {
-    grid-template-columns: 1fr;
-
-    gap: 15px;
+  .about-experience-card span {
+    font-size: 9px;
   }
 
   .about-content h2 {
     font-size: 2rem;
+
+    letter-spacing: -0.8px;
   }
+
+  .about-description {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .about-feature,
+  .about-feature:nth-child(odd),
+  .about-feature:nth-child(even) {
+    border-right: 0;
+
+    padding-left: 0;
+
+    padding-right: 0;
+  }
+
+  .about-feature:hover,
+  .about-feature:nth-child(odd):hover {
+    padding-left: 5px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-image-wrapper,
+  .about-content {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none;
+  }
+
+  .about-experience-card {
+    animation: none;
+  }
+
+  .about-image-placeholder img {
+    transition: none;
+  }
+
 }

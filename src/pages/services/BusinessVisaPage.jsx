@@ -471,7 +471,7 @@ function BusinessVisaPage() {
               <h2>Take the next step globally.</h2>
               <p>Discuss your business travel plans with our team.</p>
 
-              <Link to="/book-consultation" className="business-main-btn">
+              <Link to="/contact" className="business-main-btn">
                 Book a Consultation →
               </Link>
             </div>

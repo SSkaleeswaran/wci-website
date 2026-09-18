@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function About() {
+function About( {showLearnMore = true} ) {
   return (
     <section className="about-section">
       <div className="container">
@@ -88,11 +88,15 @@ function About() {
               </div>
 
             </div>
+       {
+          showLearnMore && (
 
             <Link to="/about" className="about-button">
-              Learn More
+             <span> Learn More</span>
+
               <span>→</span>
             </Link>
+            )}
 
           </div>
 

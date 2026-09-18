@@ -112,7 +112,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <About/>
+      <About showLearnMore={false}/>
 
       <section className="about-reach">
         <div className="reach-heading">

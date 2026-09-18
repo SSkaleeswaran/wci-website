@@ -11,7 +11,7 @@
 }
 
 .contact-page {
-  background: #ffffff;
+  background: #f7f5ef;
 }
 
 
@@ -162,6 +162,13 @@ a.contact-method:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(6, 31, 71, 0.09);
 }
+div.contact-method:hover {
+  color: var(--navy);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(6, 31, 71, 0.09);
+}
+
 
 .contact-icon {
   width: 42px;
@@ -357,7 +364,7 @@ a.contact-method:hover {
   border: 0;
   border-radius: 26px;
   background: var(--navy);
-  color: #fff;
+  color: #ece8e8;
   font: inherit;
   font-size: 12px;
   font-weight: 800;
@@ -379,7 +386,7 @@ a.contact-method:hover {
 }
 
 .contact-submit:hover:not(:disabled) {
-  background: var(--navy-soft);
+  background: #D9A441;
   transform: translateY(-2px);
   box-shadow: 0 12px 26px rgba(6, 31, 71, 0.28);
 }
