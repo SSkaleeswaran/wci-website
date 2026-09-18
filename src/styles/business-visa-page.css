@@ -1,6 +1,6 @@
 /* =========================================
    BUSINESS VISA PAGE
-   Corporate / Elegant / Compact
+   Boardroom / Dashboard / Corporate
 ========================================= */
 
 .business-page {
@@ -11,6 +11,7 @@
   --business-text: #273348;
   --business-muted: #707b8c;
   --business-border: #dfe2e7;
+  --business-slate: #eef1f6;
 
   color: var(--business-text);
   background: #fff;
@@ -27,7 +28,8 @@
 
 .business-hero {
   position: relative;
-  min-height: 520px;
+  min-height: 480px;
+  padding-bottom: 110px;
   display: flex;
   align-items: center;
   background-size: cover;
@@ -39,13 +41,12 @@
 .business-hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(4, 10, 111, 0.94) 0%,
-      rgba(4, 10, 111, 0.73) 43%,
-      rgba(4, 10, 111, 0.18) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(4, 9, 111, 0.405) 0%,
+    rgba(4, 9, 111, 0.24) 43%,
+    rgba(4, 10, 111, 0.18) 100%
+  );
 }
 
 .business-hero-grid {
@@ -53,55 +54,38 @@
   inset: 0;
   opacity: 0.15;
   background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.12) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.12) 1px,
-      transparent 1px
-    );
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
   background-size: 70px 70px;
-  mask-image: linear-gradient(
-    to right,
-    black,
-    transparent 75%
-  );
+  mask-image: linear-gradient(to right, black, transparent 75%);
 }
 
 .business-hero-content {
   position: relative;
   z-index: 2;
-  min-height: 520px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
+  width: 100%;
+  padding: 90px 0 40px;
 }
 
 .business-hero-copy {
-  transform:
-    translate(
-      var(--business-x, 0px),
-      var(--business-y, 0px)
-    );
+  max-width: 640px;
+  transform: translate(var(--business-x, 0px), var(--business-y, 0px));
   transition: transform 0.25s ease-out;
 }
 
 .business-kicker {
   display: inline-block;
   color: var(--business-gold);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 3px;
 }
 
 .business-hero h1 {
   margin: 13px 0 18px;
-  font-size: clamp(43px, 6vw, 67px);
-  line-height: 0.98;
-  letter-spacing: -2px;
+  font-size: clamp(38px, 5.6vw, 62px);
+  line-height: 1;
+  letter-spacing: -1.5px;
   font-weight: 700;
 }
 
@@ -132,84 +116,48 @@
   transform: translateY(-2px);
 }
 
-/* Hero floating panel */
+/* KPI stat bar — floats over hero bottom edge */
 
-.business-hero-panel {
-  width: 205px;
-  padding: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
-
-  transform:
-    translate(
-      calc(var(--business-x, 0px) * -0.7),
-      calc(var(--business-y, 0px) * -0.7)
-    );
-
-  transition: transform 0.3s ease-out;
+.business-stat-bar {
+ position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  z-index: 3;
 }
 
-.business-hero-panel > span {
-  color: var(--business-gold);
-  font-size: 9px;
+.business-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #fff;
+  box-shadow: 0 20px 50px rgba(4, 10, 71, 0.18);
+  border-radius: 10px;
+
+}
+
+.business-stat {
+  padding: 10px 20px;
+  border-right: 1px solid var(--business-border);
+  text-align: center;
+}
+
+.business-stat:last-child {
+  border-right: 0;
+}
+
+.business-stat strong {
+  display: block;
+  color: var(--business-navy);
+  font-size: 26px;
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: -0.5px;
 }
 
-.business-panel-line {
-  width: 38px;
-  height: 1px;
-  margin: 15px 0;
-  background: var(--business-gold);
-}
-
-.business-hero-panel strong {
+.business-stat span {
   display: block;
-  font-size: 27px;
-  line-height: 1.15;
-}
-
-.business-hero-panel small {
-  display: block;
-  margin-top: 20px;
-  color: rgba(255, 255, 255, 0.58);
-  font-size: 10px;
-  line-height: 1.6;
-}
-
-.business-hero-orbit {
-  position: absolute;
-  right: -90px;
-  top: 50%;
-  width: 300px;
-  height: 300px;
-  border: 1px solid rgba(217, 164, 65, 0.22);
-  border-radius: 50%;
-  transform: translateY(-50%);
-  animation: businessOrbit 8s ease-in-out infinite;
-}
-
-.business-hero-orbit::after {
-  content: "";
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  top: 30px;
-  left: 50px;
-  border-radius: 50%;
-  background: var(--business-gold);
-}
-
-@keyframes businessOrbit {
-  0%,
-  100% {
-    transform: translateY(-50%) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-50%) rotate(8deg);
-  }
+  margin-top: 6px;
+  color: var(--business-muted);
+  font-size: 11px;
 }
 
 /* =========================================
@@ -226,144 +174,134 @@
   padding: 80px 0;
 }
 
-.business-heading > span,
-.business-heading-row span,
-.business-support-intro > span,
-.business-document-content > span,
-.business-document-side > span,
-.business-note-inner span,
-.business-faq-layout .business-heading > span,
-.business-final-inner > div:nth-child(2) > span {
+.business-purpose {
+  padding-top: 130px;
+}
+
+.business-heading > span {
   color: var(--business-gold);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 2.5px;
 }
 
-.business-heading h2,
-.business-heading-row h2 {
+.business-heading h2 {
   margin: 10px 0 0;
   color: var(--business-navy);
-  font-size: 36px;
-  line-height: 1.08;
+  font-size: 34px;
+  line-height: 1.1;
   letter-spacing: -1px;
 }
 
-.business-heading-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  gap: 50px;
-  margin-bottom: 35px;
-}
+.business-heading.light > span { color: var(--business-gold); }
+.business-heading.light h2 { color: #fff; }
 
-.business-heading-row p {
-  max-width: 400px;
-  margin: 0;
+.business-heading p {
+  max-width: 420px;
+  margin: 14px 0 0;
   color: var(--business-muted);
   font-size: 13px;
   line-height: 1.7;
 }
 
+.business-heading.light p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /* =========================================
-   PURPOSE
+   PURPOSE — TAB STRIP
 ========================================= */
 
 .business-purpose {
   background: var(--business-cream);
 }
 
-.business-purpose-layout {
-  display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  border-top: 1px solid var(--business-border);
-  border-bottom: 1px solid var(--business-border);
+.business-tab-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 36px 0 0;
 }
 
-.business-purpose-menu {
-  border-right: 1px solid var(--business-border);
-}
-
-.business-purpose-item {
-  width: 100%;
-  min-height: 70px;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: 35px 1fr 20px;
+.business-tab {
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
-
-  border: 0;
-  border-bottom: 1px solid var(--business-border);
-
-  background: transparent;
+  gap: 10px;
+  padding: 13px 20px;
+  border: 1px solid var(--business-border);
+  background: #fff;
   color: var(--business-navy);
-  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
   transition: 0.25s ease;
+  border-radius: 30px;
 }
 
-.business-purpose-item:last-child {
-  border-bottom: 0;
-}
-
-.business-purpose-item span {
+.business-tab em {
   color: var(--business-gold);
-  font-size: 9px;
+  font-style: normal;
+  font-size: 10px;
   font-weight: 800;
 }
 
-.business-purpose-item strong {
-  font-size: 14px;
+.business-tab:hover {
+  border-color: var(--business-gold);
 }
 
-.business-purpose-item b {
-  font-size: 17px;
-  font-weight: 400;
-}
-
-.business-purpose-item:hover,
-.business-purpose-item.active {
+.business-tab.active {
   background: var(--business-navy);
+  border-color: var(--business-navy);
   color: #fff;
 }
 
-.business-purpose-preview {
-  min-height: 280px;
-  padding: 45px;
+.business-tab.active em {
+  color: var(--business-gold);
+}
+
+.business-tab-panel {
+  margin-top: 30px;
+  padding: 40px;
   display: flex;
   align-items: center;
   gap: 30px;
   background: #fff;
+  border: 1px solid var(--business-border);
+  animation: tabPanelFade 0.35s ease;
 }
 
-.business-preview-mark {
+@keyframes tabPanelFade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.business-tab-panel-mark {
   flex: 0 0 auto;
-  width: 75px;
-  height: 75px;
+  width: 72px;
+  height: 72px;
   border: 1px solid var(--business-gold);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--business-gold);
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
 }
 
-.business-purpose-preview > div:last-child > span {
+.business-tab-panel > div:last-child > span {
   color: var(--business-gold);
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 2px;
 }
 
-.business-purpose-preview h3 {
+.business-tab-panel h3 {
   margin: 7px 0 10px;
   color: var(--business-navy);
-  font-size: 28px;
+  font-size: 26px;
 }
 
-.business-purpose-preview p {
+.business-tab-panel p {
   max-width: 480px;
   margin: 0;
   color: var(--business-muted);
@@ -372,59 +310,58 @@
 }
 
 /* =========================================
-   DESTINATIONS
+   DESTINATIONS — SCROLLING TICKER
 ========================================= */
 
 .business-destinations {
   background: #fff;
+  padding-bottom: 60px;
 }
 
-.business-destination-strip {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+.business-ticker {
+  margin-top: 34px;
   border-top: 1px solid var(--business-border);
   border-bottom: 1px solid var(--business-border);
+  overflow: hidden;
 }
 
-.business-destination {
-  min-height: 145px;
-  padding: 22px 18px;
+.business-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerScroll 24s linear infinite;
+}
+
+.business-destinations:hover .business-ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.business-ticker-item {
+  flex: 0 0 auto;
+  width: 260px;
+  padding: 26px 24px;
   border-right: 1px solid var(--business-border);
-  transition: 0.25s ease;
 }
 
-.business-destination:last-child {
-  border-right: 0;
-}
-
-.business-destination:hover {
-  background: var(--business-cream);
-  transform: translateY(-3px);
-}
-
-.business-destination small {
-  display: block;
-  margin-bottom: 35px;
-  color: var(--business-gold);
-  font-size: 9px;
-  font-weight: 800;
-}
-
-.business-destination strong {
+.business-ticker-item strong {
   display: block;
   color: var(--business-navy);
-  font-size: 14px;
+  font-size: 16px;
 }
 
-.business-destination span {
+.business-ticker-item span {
   display: block;
   margin-top: 6px;
   color: var(--business-muted);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 /* =========================================
-   SUPPORT
+   SUPPORT — KANBAN BOARD
 ========================================= */
 
 .business-support {
@@ -432,200 +369,208 @@
   color: #fff;
 }
 
-.business-support-layout {
+.business-kanban {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 80px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.business-support-intro h2 {
-  margin: 12px 0 18px;
-  color: #fff;
-  font-size: 40px;
-  line-height: 1;
-  letter-spacing: -1px;
+.business-kanban-col {
+  padding: 26px 22px;
+  background: #0d3068;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.business-support-intro p {
-  max-width: 350px;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 13px;
-  line-height: 1.7;
+.business-kanban-col:hover {
+  background: #123a80;
+  transform: translateY(-4px);
 }
 
-.business-support-list {
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.business-support-row {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 20px;
-  padding: 22px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.business-support-row > span {
+.business-kanban-tag {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 4px 10px;
+  border: 1px solid var(--business-gold);
   color: var(--business-gold);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 800;
 }
 
-.business-support-row h3 {
-  margin: 0 0 5px;
+.business-kanban-col h3 {
+  margin: 0 0 8px;
   color: #fff;
   font-size: 16px;
 }
 
-.business-support-row p {
+.business-kanban-col p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.52);
-  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 12px;
   line-height: 1.6;
 }
 
 /* =========================================
-   JOURNEY
+   JOURNEY — AGENDA LIST
 ========================================= */
 
 .business-journey {
   background: var(--business-cream);
 }
 
-.business-timeline {
-  position: relative;
+.business-agenda {
+  margin-top: 36px;
+  border-top: 1px solid var(--business-border);
+}
+
+.business-agenda-row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  padding-top: 15px;
-}
-
-.business-timeline-line {
-  position: absolute;
-  top: 40px;
-  left: 8%;
-  right: 8%;
-  height: 1px;
-  background: var(--business-gold);
-}
-
-.business-timeline-step {
-  position: relative;
-  z-index: 1;
-}
-
-.business-step-dot {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 18px;
-  border: 1px solid var(--business-gold);
-  border-radius: 50%;
-  display: flex;
+  grid-template-columns: 110px 20px 1fr;
   align-items: center;
-  justify-content: center;
-  background: var(--business-cream);
-  color: var(--business-navy);
-  font-size: 9px;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--business-border);
+  transition: background 0.2s ease;
+}
+
+.business-agenda-row:hover {
+  background: rgba(217, 164, 65, 0.06);
+}
+
+.business-agenda-time {
+  color: var(--business-gold);
+  font-size: 11px;
   font-weight: 800;
-  transition: 0.25s ease;
+  letter-spacing: 1px;
 }
 
-.business-timeline-step:hover .business-step-dot {
-  background: var(--business-gold);
-  transform: scale(1.08);
+.business-agenda-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--business-navy);
+  justify-self: center;
 }
 
-.business-timeline-step strong {
-  display: block;
-  margin-bottom: 4px;
+.business-agenda-body {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.business-agenda-body strong {
   color: var(--business-navy);
-  font-size: 14px;
+  font-size: 16px;
 }
 
-.business-timeline-step span {
+.business-agenda-body span {
   color: var(--business-muted);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 /* =========================================
-   DOCUMENTS
+   DOCUMENTS — CONTRACT CARD
 ========================================= */
 
 .business-documents {
   background: #fff;
 }
 
-.business-document-card {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  max-width: 950px;
-  margin: auto;
-  box-shadow: 0 15px 45px rgba(11, 42, 91, 0.08);
+.business-contract {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 46px;
+  background: var(--business-slate);
+  border: 1px solid var(--business-border);
 }
 
-.business-document-side {
-  min-height: 310px;
-  padding: 30px;
+.business-contract-stamp {
+  position: absolute;
+  top: 36px;
+  right: 40px;
+  width: 104px;
+  height: 104px;
+  border: 2px dashed var(--business-gold);
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
-  background: var(--business-blue);
-  color: #fff;
-}
-
-.business-document-icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: auto;
-  border: 1px solid var(--business-gold);
-  display: flex;
   align-items: center;
   justify-content: center;
+  transform: rotate(-10deg);
   color: var(--business-gold);
-  font-size: 25px;
-  font-weight: 700;
 }
 
-.business-document-side > span {
-  margin-bottom: 8px;
+.business-contract-stamp span {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.business-document-side strong {
-  font-size: 21px;
-  line-height: 1.15;
+.business-contract-stamp small {
+  margin-top: 4px;
+  font-size: 8px;
+  letter-spacing: 0.6px;
+  color: var(--business-navy);
 }
 
-.business-document-content {
-  padding: 40px;
+.business-contract-label {
+  display: block;
+  color: var(--business-gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
-.business-document-content h2 {
-  margin: 9px 0 25px;
+.business-contract h2 {
+  margin: 8px 0 30px;
+  max-width: 500px;
   color: var(--business-navy);
   font-size: 30px;
   letter-spacing: -1px;
 }
 
-.business-document-grid {
+.business-contract-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.business-document-grid > div {
-  padding: 14px 15px 14px 0;
-  border-bottom: 1px solid #e4e6e9;
+.business-contract-grid > div {
+  padding: 14px 20px 14px 0;
+  border-bottom: 1px solid #dfe1e6;
 }
 
-.business-document-grid b {
+.business-contract-grid b {
   display: block;
   margin-bottom: 4px;
   color: var(--business-navy);
-  font-size: 12px;
+  font-size: 13px;
 }
 
-.business-document-grid span {
+.business-contract-grid span {
   color: var(--business-muted);
-  font-size: 10px;
+  font-size: 11px;
+}
+
+.business-contract-signature {
+  margin-top: 34px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--business-border);
+}
+
+.business-signature-line {
+  width: 200px;
+  height: 1px;
+  margin-bottom: 8px;
+  background: var(--business-navy);
+}
+
+.business-contract-signature span {
+  color: var(--business-muted);
+  font-size: 11px;
+  font-style: italic;
 }
 
 /* =========================================
@@ -660,6 +605,13 @@
   font-weight: 800;
 }
 
+.business-note-inner span {
+  color: var(--business-gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
 .business-note-inner h2 {
   margin: 8px 0 8px;
   color: var(--business-navy);
@@ -676,118 +628,135 @@
 }
 
 /* =========================================
-   FAQ
+   FAQ — FLIP CARDS
 ========================================= */
 
 .business-faq {
   background: #fff;
 }
 
-.business-faq-layout {
+.business-faq-grid {
   display: grid;
-  grid-template-columns: 0.65fr 1.35fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 36px;
 }
 
-.business-faq-layout .business-heading h2 {
-  font-size: 37px;
+.business-faq-card {
+  padding: 22px 24px;
+  border: 1px solid var(--business-border);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.business-faq-list {
-  border-top: 1px solid var(--business-border);
+.business-faq-card:hover {
+  border-color: var(--business-gold);
 }
 
-.business-faq-item {
-  border-bottom: 1px solid var(--business-border);
+.business-faq-card.open {
+  background: var(--business-cream);
+  border-color: var(--business-navy);
 }
 
-.business-faq-item button {
-  width: 100%;
-  padding: 19px 0;
-  border: 0;
-  background: transparent;
+.business-faq-card-head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  color: var(--business-navy);
-  text-align: left;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
+  gap: 16px;
 }
 
-.business-faq-item button b {
+.business-faq-card-head span {
+  color: var(--business-navy);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.business-faq-card-head b {
+  flex: 0 0 auto;
   color: var(--business-gold);
   font-size: 19px;
   font-weight: 400;
 }
 
-.business-faq-item p {
-  max-width: 700px;
-  padding: 0 30px 18px 0;
-  margin: 0;
+.business-faq-card p {
+  margin: 14px 0 0;
   color: var(--business-muted);
-  font-size: 12px;
+  font-size: 12.5px;
   line-height: 1.7;
 }
 
 /* =========================================
-   FINAL
+   FINAL — BUSINESS CARD
 ========================================= */
 
 .business-final {
-  padding: 75px 0 35px;
-  background:
-    linear-gradient(
-      135deg,
-      var(--business-navy),
-      #06183a
-    );
+  padding: 80px 0 40px;
+  background: linear-gradient(135deg, var(--business-navy), #06183a);
   color: #fff;
 }
 
-.business-final-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 60px;
+.business-card-cta {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: stretch;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
 }
 
-.business-final-mark {
-  width: 105px;
-  height: 105px;
-  border: 1px solid rgba(217, 164, 65, 0.65);
-  border-radius: 50%;
+.business-card-front {
+  padding: 36px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #123a80, var(--business-navy));
+  border: 1px solid rgba(217, 164, 65, 0.4);
+}
+
+.business-card-front > span {
   color: var(--business-gold);
-  font-size: 27px;
+  font-size: 22px;
   font-weight: 800;
-  animation: finalMarkFloat 5s ease-in-out infinite;
+  letter-spacing: 2px;
 }
 
-@keyframes finalMarkFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-7px);
-  }
+.business-card-front strong {
+  display: block;
+  margin-top: 30px;
+  font-size: 17px;
+  line-height: 1.4;
 }
 
-.business-final-inner h2 {
+.business-card-front small {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+}
+
+.business-card-text {
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 0;
+}
+
+.business-card-text > span {
+  color: var(--business-gold);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.business-card-text h2 {
   margin: 10px 0 12px;
-  font-size: 40px;
-  line-height: 1;
+  font-size: 32px;
+  line-height: 1.1;
   letter-spacing: -1px;
 }
 
-.business-final-inner p {
-  margin: 0 0 20px;
+.business-card-text p {
+  margin: 0 0 22px;
   color: rgba(255, 255, 255, 0.6);
   font-size: 13px;
 }
@@ -795,7 +764,7 @@
 .business-disclaimer {
   display: block;
   max-width: 600px;
-  margin: 55px auto 0;
+  margin: 45px auto 0;
   color: rgba(255, 255, 255, 0.35);
   text-align: center;
   font-size: 9px;
@@ -807,63 +776,75 @@
 ========================================= */
 
 @media (max-width: 991px) {
-  .business-hero-panel {
-    width: 180px;
+
+  .business-stat-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .business-purpose-layout {
+  .business-stat:nth-child(2) { border-right: 0; }
+  .business-stat:nth-child(3), .business-stat:nth-child(4) {
+    border-top: 1px solid var(--business-border);
+  }
+
+  .business-tab-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .business-kanban {
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .business-contract-grid {
     grid-template-columns: 1fr;
   }
 
-  .business-purpose-menu {
-    border-right: 0;
-    border-bottom: 1px solid var(--business-border);
-  }
-
-  .business-destination-strip {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .business-destination:nth-child(3) {
-    border-right: 0;
-  }
-
-  .business-destination:nth-child(-n + 3) {
-    border-bottom: 1px solid var(--business-border);
-  }
-
-  .business-support-layout {
+  .business-faq-grid {
     grid-template-columns: 1fr;
-    gap: 45px;
   }
 
-  .business-faq-layout {
+  .business-card-cta {
     grid-template-columns: 1fr;
-    gap: 40px;
   }
+
+  .business-card-text {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 0;
+  }
+
 }
 
 @media (max-width: 767px) {
+
   .business-hero {
-    min-height: 500px;
+    min-height: 460px;
+    padding-bottom: 130px;
   }
 
   .business-hero-content {
-    min-height: 500px;
-    align-items: flex-end;
-    padding-bottom: 55px;
-  }
-
-  .business-hero-panel {
-    display: none;
+    padding: 70px 0 20px;
   }
 
   .business-hero h1 {
-    font-size: 45px;
+    font-size: 40px;
   }
 
-  .business-hero-orbit {
-    right: -180px;
+  .business-stat-bar {
+    bottom: -90px;
+  }
+
+  .business-stat {
+    padding: 20px 14px;
+  }
+
+  .business-stat strong {
+    font-size: 20px;
+  }
+
+  .business-purpose {
+    padding-top: 150px;
   }
 
   .business-purpose,
@@ -872,138 +853,271 @@
   .business-journey,
   .business-documents,
   .business-faq {
-    padding: 65px 0;
+    padding: 60px 0;
   }
 
-  .business-heading-row {
-    display: block;
+  .business-tab-strip {
+    gap: 8px;
   }
 
-  .business-heading-row p {
-    margin-top: 18px;
+  .business-tab {
+    padding: 10px 16px;
+    font-size: 12px;
   }
 
-  .business-purpose-preview {
-    min-height: 230px;
-    padding: 30px;
+  .business-ticker-item {
+    width: 220px;
+    padding: 20px 18px;
   }
 
-  .business-purpose-preview h3 {
-    font-size: 24px;
-  }
-
-  .business-destination-strip {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .business-destination {
-    border-bottom: 1px solid var(--business-border);
-  }
-
-  .business-destination:nth-child(odd) {
-    border-right: 1px solid var(--business-border);
-  }
-
-  .business-destination:nth-child(even) {
-    border-right: 0;
-  }
-
-  .business-destination:last-child {
-    border-bottom: 0;
-  }
-
-  .business-timeline {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .business-timeline-line {
-    top: 25px;
-    bottom: 25px;
-    left: 24px;
-    right: auto;
-    width: 1px;
-    height: auto;
-  }
-
-  .business-timeline-step {
-    display: grid;
-    grid-template-columns: 50px 1fr;
-    column-gap: 20px;
-  }
-
-  .business-step-dot {
-    grid-row: span 2;
-    margin: 0;
-  }
-
-  .business-timeline-step strong {
-    align-self: end;
-  }
-
-  .business-timeline-step span {
-    align-self: start;
-  }
-
-  .business-document-card {
+  .business-kanban {
     grid-template-columns: 1fr;
   }
 
-  .business-document-side {
-    min-height: 190px;
+  .business-agenda-row {
+    grid-template-columns: 90px 16px 1fr;
+    gap: 14px;
   }
 
-  .business-document-grid {
-    grid-template-columns: 1fr;
+  .business-contract {
+    padding: 30px 24px;
   }
 
-  .business-final-inner {
-    flex-direction: column;
-    gap: 30px;
-    text-align: center;
+  .business-contract-stamp {
+    position: static;
+    margin-bottom: 24px;
+    transform: none;
   }
 
-  .business-final-inner h2 {
-    font-size: 35px;
+  .business-card-front,
+  .business-card-text {
+    padding: 28px;
   }
+
+  .business-card-text h2 {
+    font-size: 26px;
+  }
+
 }
 
 @media (max-width: 480px) {
-  .business-hero h1 {
-    font-size: 40px;
-  }
 
-  .business-purpose-item {
-    min-height: 64px;
-  }
-
-  .business-purpose-preview {
-    display: block;
-  }
-
-  .business-preview-mark {
-    margin-bottom: 20px;
-  }
-
-  .business-destination-strip {
+  .business-stat-grid {
     grid-template-columns: 1fr;
   }
 
-  .business-destination,
-  .business-destination:nth-child(odd),
-  .business-destination:nth-child(even) {
+  .business-stat {
     border-right: 0;
+    border-bottom: 1px solid var(--business-border);
   }
 
-  .business-destination:last-child {
-    border-bottom: 0;
+  .business-stat:last-child { border-bottom: 0; }
+
+  .business-agenda-body {
+    flex-direction: column;
+    gap: 4px;
   }
 
-  .business-document-content {
-    padding: 30px 22px;
-  }
+}
 
-  .business-note-inner {
-    padding: 20px;
+
+
+
+/* =========================================================
+   SCROLL REVEAL ANIMATIONS
+   Each section gets distinct motion tied to its content.
+========================================================= */
+
+.reveal-hero-copy {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroCopyIn 0.8s ease forwards;
+}
+
+@keyframes heroCopyIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- STAT BAR — cards rise + count up ---------- */
+
+.reveal-stat {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.business-stat-bar.in-view .reveal-stat {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- PURPOSE — heading + tabs slide ---------- */
+
+.reveal-slide-up {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-section.in-view .reveal-slide-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-tab {
+  opacity: 0;
+  transform: translateY(14px) scale(0.94);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-section.in-view .reveal-tab {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ---------- DESTINATIONS — ticker fades/scales in ---------- */
+
+.reveal-ticker {
+  opacity: 0;
+  transform: scaleX(0.96);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal-section.in-view .reveal-ticker {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* ---------- SUPPORT — kanban cards "dealt" in ---------- */
+
+.reveal-deal {
+  opacity: 0;
+  transform: translateY(-30px) rotate(-2deg);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-section.in-view .reveal-deal {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+
+/* ---------- JOURNEY — agenda rows slide from alternating sides ---------- */
+
+.reveal-slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-section.in-view .reveal-slide-left,
+.reveal-section.in-view .reveal-slide-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- DOCUMENTS — contract lifts, stamp thumps in ---------- */
+
+.reveal-contract {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-section.in-view .reveal-contract {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stamp {
+  opacity: 0;
+  transform: rotate(-30deg) scale(1.6);
+  transition: opacity 0.5s ease 0.5s,
+              transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s;
+}
+
+.reveal-section.in-view .reveal-stamp {
+  opacity: 1;
+  transform: rotate(-10deg) scale(1);
+}
+
+.reveal-doc-item {
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-section.in-view .reveal-doc-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ---------- NOTE — pop in ---------- */
+
+.reveal-pop {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-section.in-view .reveal-pop {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------- FAQ — cards flip open ---------- */
+
+.reveal-faq-flip {
+  opacity: 0;
+  transform: perspective(600px) rotateX(-12deg) translateY(16px);
+  transform-origin: top center;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-section.in-view .reveal-faq-flip {
+  opacity: 1;
+  transform: perspective(600px) rotateX(0deg) translateY(0);
+}
+
+/* ---------- CTA — card slides + tilts into place ---------- */
+
+.reveal-card-cta {
+  opacity: 0;
+  transform: translateY(30px) rotateX(6deg);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal-section.in-view .reveal-card-cta {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* ---------- MOTION SAFETY ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hero-copy,
+  .reveal-stat,
+  .reveal-slide-up,
+  .reveal-tab,
+  .reveal-ticker,
+  .reveal-deal,
+  .reveal-slide-left,
+  .reveal-slide-right,
+  .reveal-contract,
+  .reveal-stamp,
+  .reveal-doc-item,
+  .reveal-pop,
+  .reveal-faq-flip,
+  .reveal-card-cta {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
