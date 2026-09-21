@@ -23,10 +23,10 @@ function AppRoutes() {
       <Route path="/visa-services" element={<ServicesPage />} />
       <Route path="/countries" element={<CountriesPage />} />
       <Route path="/contact" element={<ContactPage />} />
-      <Route
+      {/* <Route
         path="/book-consultation"
         element={<h1>Book Consultation Page</h1>}
-      />
+      /> */}
       <Route path="/faq" element={<FAQPage />} />
 
       {/* services route */}

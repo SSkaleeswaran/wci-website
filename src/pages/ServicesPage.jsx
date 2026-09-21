@@ -180,7 +180,7 @@ function ServicesPage() {
         className="services-page-hero"
         style={{
           backgroundImage:
-            "url('/images/banners/skyPlane.jpeg')",
+            "url('/images/banners/hero-banner.png')",
         }}
       >
         <div className="services-hero-overlay"></div>
