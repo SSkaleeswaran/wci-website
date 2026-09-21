@@ -81,7 +81,7 @@ function Footer() {
 
             <Link to="/about">About Us</Link>
 
-            <Link to="/services">Services</Link>
+            <Link to="/visa-services">Services</Link>
 
             <Link to="/countries">Countries</Link>
 
@@ -98,19 +98,19 @@ function Footer() {
 
             <h3>Services</h3>
 
-            <Link to="/services">
+            <Link to="/visa-services/study-visa">
               Study Abroad
             </Link>
 
-            <Link to="/services">
+            <Link to="/visa-services/business-visa">
               Business Visa
             </Link>
 
-            <Link to="/services">
+            <Link to="/visa-services/tourist-visa">
               Tourist Visa
             </Link>
 
-            <Link to="/services">
+            <Link to="/visa-services/visitor-visa">
               Visitor Visa
             </Link>
 
