@@ -108,7 +108,7 @@ function FaqAppointment() {
           </div>
 
 
-          {/*  RIGHT — APPOINTMENT*/}
+           {/* RIGHT — APPOINTMENT */}
 
           <div className="appointment-card">
 

@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
 
 ========================================================= */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
 
 .promo-banner {
   position: relative;
@@ -140,6 +141,8 @@
   color: #ffffff;
 
   font-size: clamp(38px, 5vw, 68px);
+     font-family: "Fraunces", serif;
+
 
   line-height: 1.08;
 
@@ -172,12 +175,13 @@
    DESCRIPTION
 ========================================================= */
 
-.promo-description {
+.promo-container p {
+  display: block;
   max-width: 650px;
 
   margin: 0 auto 30px;
 
-  color: rgba(255, 255, 255, 0.90);
+  color: #ad9718d9;
 
   font-size: 16px;
 
@@ -247,9 +251,9 @@
 
 
 .promo-button-primary:hover {
-  background: #ffffff;
+  background: #D9A441;
 
-  border-color: #ffffff;
+  border-color: #D9A441;
 
   color: #061f47;
 
@@ -401,7 +405,7 @@
 
 
   .promo-title {
-    font-size: 35px;
+    font-size: 40px;
 
     line-height: 1.12;
 
@@ -415,7 +419,7 @@
     max-width: 330px;
 
     font-size: 14px;
-
+    color: #2A8C8C;
     line-height: 1.6;
 
     margin-bottom: 24px;
