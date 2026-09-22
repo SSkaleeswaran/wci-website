@@ -90,8 +90,8 @@
 
 .faq-list {
   max-width: 620px;
-
-  border: 1px solid #d7e2f2;
+  
+  border: 2px solid #d7e2f2;
 
   background: #ffffff;
 }
@@ -208,7 +208,7 @@
 
   align-items: center;
 
-  gap: 7px;
+  gap: 8px;
 
   margin-top: 22px;
 
@@ -638,4 +638,29 @@
   .appointment-contact strong {
     font-size: 18px;
   }
+}
+
+/* FAQ visibility fix */
+.faq-list {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.faq-item {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.faq-question {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.faq-answer {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
