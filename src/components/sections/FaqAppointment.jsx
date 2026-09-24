@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Scene3DCanvas } from "../hero3d/Hero3d";
 
 const faqs = [
   {
@@ -96,7 +97,7 @@ function FaqAppointment() {
               ))}
 
             </div>
-{/* route link of faq */}
+
             <Link
               to="/faq"
               className="faq-more-link"
@@ -108,191 +109,16 @@ function FaqAppointment() {
           </div>
 
 
-           {/* RIGHT — APPOINTMENT */}
+          {/* =========================
+              RIGHT — 3D VISUAL
+          ========================= */}
 
-          <div className="appointment-card">
+          <div className="faq-visual">
 
-            <div className="appointment-decoration"></div>
+            <div className="faq-hero-3d">
 
-            <div className="appointment-content">
-{/* 
-              <span className="appointment-label">
-                CONSULTATION
-              </span> */}
-
-              <h2>
-                Book An
-                <br />
-                <span>Appointment</span>
-              </h2>
-
-              {/* <p className="appointment-description">
-                Tell us about your goals and choose a convenient
-                time to speak with our team.
-              </p> */}
-
-
-              <form className="appointment-form">
-
-                {/* Country + Service */}
-
-                <div className="appointment-form-row">
-
-                  <div className="appointment-field">
-                    <label htmlFor="appointment-country">
-                      Select Country
-                    </label>
-
-                    <select
-                      id="appointment-country"
-                      defaultValue=""
-                    >
-                      <option value="" disabled>
-                        Choose Country
-                      </option>
-
-                      <option value="usa">
-                        United States
-                      </option>
-
-                      <option value="canada">
-                        Canada
-                      </option>
-
-                      <option value="uk">
-                        United Kingdom
-                      </option>
-
-                      <option value="australia">
-                        Australia
-                      </option>
-                    </select>
-                  </div>
-
-
-                  <div className="appointment-field">
-                    <label htmlFor="appointment-service">
-                      Select Service
-                    </label>
-
-                    <select
-                      id="appointment-service"
-                      defaultValue=""
-                    >
-                      <option value="" disabled>
-                        Choose Service
-                      </option>
-
-                      <option value="study-abroad">
-                        Study Abroad
-                      </option>
-
-                      <option value="work-visa">
-                        Work Visa
-                      </option>
-
-                      <option value="tourist-visa">
-                        Tourist Visa
-                      </option>
-
-                      <option value="permanent-residency">
-                        Permanent Residency
-                      </option>
-                    </select>
-                  </div>
-
-                </div>
-
-
-                {/* Name + Phone */}
-
-                <div className="appointment-form-row">
-
-                  <div className="appointment-field">
-                    <label htmlFor="appointment-name">
-                      Your Full Name
-                    </label>
-
-                    <input
-                      id="appointment-name"
-                      type="text"
-                      placeholder="Enter your name"
-                    />
-                  </div>
-
-
-                  <div className="appointment-field">
-                    <label htmlFor="appointment-phone">
-                      Phone
-                    </label>
-
-                    <input
-                      id="appointment-phone"
-                      type="tel"
-                      placeholder="Enter phone number"
-                    />
-                  </div>
-
-                </div>
-
-
-                {/* Date + Time */}
-
-                <div className="appointment-form-row">
-
-                  <div className="appointment-field">
-                    <label htmlFor="appointment-date">
-                      Select Date
-                    </label>
-
-                    <input
-                      id="appointment-date"
-                      type="date"
-                    />
-                  </div>
-
-
-                  <div className="appointment-field">
-                    <label htmlFor="appointment-time">
-                      Select Time
-                    </label>
-
-                    <input
-                      id="appointment-time"
-                      type="time"
-                    />
-                  </div>
-
-                </div>
-
-
-                <button
-                  type="submit"
-                  className="appointment-submit"
-                >
-                  Book Appointment
-                  <span>→</span>
-                </button>
-
-              </form>
-
-
-              <div className="appointment-contact">
-
-                <span>
-                  Or just give us a call
-                </span>
-
-                <strong>
-                  +91 637 989 1812
-                </strong>
-
-                <small>
-                  Our support team is ready to help.
-                </small>
-
-              </div>
-
+              <Scene3DCanvas />
+              
             </div>
 
           </div>

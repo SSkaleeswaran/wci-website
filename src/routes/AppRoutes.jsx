@@ -38,11 +38,8 @@ function AppRoutes() {
       <Route path="/visa-services/visitor-visa" element={<VisitorVisaPage/>}/>
       <Route path="/visa-services/business-visa" element={<BusinessVisaPage/>}/>
 
-      {/* <Route path="/services/" element={}/> */}
-      {/* <Route path="/services/work-visa" element={<WorkVisaPage/>}/>
-       <Route path="/services/study-visa" element={<StudyVisaPage/>}/> */}
-
-
+    
+       {/* <Route path="/services/work-visa" element={<WorkVisaPage/>}/> */}
    
     </Routes>
 
