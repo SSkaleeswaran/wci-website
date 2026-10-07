@@ -3,7 +3,7 @@ import {
 
   FaInstagram,
   FaWhatsapp,
-  
+
 } from "react-icons/fa6";
 
 // FaLinkedinIn,
@@ -23,19 +23,11 @@ function Footer() {
           ========================= */}
 
           <div className="footer-brand">
-
             <Link to="/" className="footer-logo">
-             
-              <span className="footer-logo-icon">◉</span>
-              {/* <span className="footer-logo-icon"><img
-            src="/images/logo-footer1.png"
-            alt="well career Immigration"
-          /></span> */}
-
-              <span>
-                WELL CAREER
-                <small>IMMIGRATION</small>
-              </span>
+              <img
+                src="/images/headerLogo.png"
+                alt="Well Career Immigration"
+              />
             </Link>
 
             <p>
@@ -53,7 +45,7 @@ function Footer() {
                 <FaInstagram aria-hidden="true" />
               </a>
               <a href="#!" aria-label="Whatsapp">
-                <FaWhatsapp aria-hidden="true"/>
+                <FaWhatsapp aria-hidden="true" />
               </a>
 
               {/* <a href="#!" aria-label="LinkedIn">
@@ -180,12 +172,12 @@ function Footer() {
       </div>
 
 
-      <div style={{display:"none"}}>
+      <div style={{ display: "none" }}>
         <h1>helo</h1>
       </div>
 
     </footer>
-    
+
   );
 }
 

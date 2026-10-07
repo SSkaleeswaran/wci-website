@@ -1,284 +1,71 @@
-/* =========================================
-   FAQ + BOOK APPOINTMENT
-========================================= */
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
+/* =========================================================
+   FAQ + MAP
+   WCI - Well Career Immigration
+========================================================= */
 
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap");
+
+
+/* =========================================================
+   SECTION
+========================================================= */
 
 .faq-appointment-section {
+  position: relative;
+
   padding: 75px 0;
+
   background: #f3f6fb;
-}
 
-
-/* =========================================
-   MAIN LAYOUT
-========================================= */
-
-.faq-appointment-layout {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 55px;
-  align-items: stretch;
-}
-
-
-/* =========================================
-   FAQ — LEFT
-========================================= */
-
-.faq-content {
-  padding: 20px 0;
-}
-
-.faq-label {
-  display: inline-block;
-
-  margin-bottom: 12px;
-
-  color: #2A8C8C;
-
-  font-size: 14px;
-  font-weight: 800;
-
-  letter-spacing: 1.5px;
-}
-
-.faq-label::before {
-  content: "✦";
-
-  margin-right: 7px;
-
-  color: #2A8C8C;
-}
-
-.faq-content h2 {
-  margin: 0;
-
-  color: #101f49;
-     font-family: "Fraunces", serif;
-
-
-  font-size: clamp(2.5rem, 4vw, 3.2rem);
-
-  line-height: 1.12;
-
-  font-weight: 800;
-
-  letter-spacing: -0.8px;
-}
-
-.faq-content h2 span {
-  color: #D9A441;
-}
-
-.faq-description {
-  max-width: 540px;
-
-  margin: 15px 0 28px;
-
-  color: #64748b;
-
-  font-size: 13px;
-
-  line-height: 1.65;
-}
-
-
-/* =========================================
-   FAQ LIST
-========================================= */
-
-.faq-list {
-  max-width: 620px;
-  
-  border: 2px solid #d7e2f2;
-
-  background: #ffffff;
-}
-
-.faq-item {
-  border-bottom: 1px solid #d7e2f2;
-}
-
-.faq-item:last-child {
-  border-bottom: none;
-}
-
-
-/* =========================================
-   QUESTION
-========================================= */
-
-.faq-question {
-  width: 100%;
-
-  min-height: 55px;
-
-  padding: 15px 18px;
-
-  border: none;
-
-  background: #ffffff;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-
-  color: #18284f;
-
-  font-family: inherit;
-
-  font-size: 12.5px;
-
-  font-weight: 600;
-
-  text-align: left;
-
-  cursor: pointer;
-
-  transition: background 0.2s ease;
-}
-
-.faq-question:hover {
-  background: #f8fbff;
-}
-
-.faq-item.faq-open .faq-question {
-  color: #2A8C8C;
-}
-
-
-/* =========================================
-   FAQ ARROW
-========================================= */
-
-.faq-arrow {
-  flex-shrink: 0;
-
-  width: 25px;
-  height: 25px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  color: #D9A441;
-
-  font-size: 20px;
-
-  font-weight: 400;
-}
-
-.faq-item:not(.faq-open) .faq-arrow {
-  color: #64748b;
-}
-
-
-/* =========================================
-   ANSWER
-========================================= */
-
-.faq-answer {
-  padding: 0 45px 17px 18px;
-
-  background: #ffffff;
-}
-
-.faq-answer p {
-  margin: 0;
-
-  color: #64748b;
-
-  font-size: 11.5px;
-
-  line-height: 1.65;
-}
-
-
-/* =========================================
-   MORE FAQ LINK
-========================================= */
-
-.faq-more-link {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  margin-top: 22px;
-
-  color: #061f47;
-
-  font-size: 17px;
-
-  font-weight: 800;
-
-  text-decoration: none;
-
-  transition: gap 0.2s ease;
-}
-
-.faq-more-link span {
-  color: #D9A441;
-
-  font-size: 18px;
-
-  line-height: 1;
-}
-
-.faq-more-link:hover {
-  color: #D9A441;
-
-  gap: 10px;
-}
-
-
-/* =========================================
-   FAQ + 3D VISUAL
-========================================= */
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap");
-
-
-.faq-appointment-section {
-  padding: 75px 0;
-  background: #f3f6fb;
   overflow: hidden;
 }
 
 
-/* =========================================
+/* =========================================================
    MAIN LAYOUT
-========================================= */
+========================================================= */
 
 .faq-appointment-layout {
+  position: relative;
+
   display: grid;
+
   grid-template-columns: 1.05fr 0.95fr;
+
   gap: 55px;
+
   align-items: center;
 }
 
 
-/* =========================================
-   FAQ — LEFT
-========================================= */
+/* =========================================================
+   LEFT FAQ CONTENT
+========================================================= */
 
 .faq-content {
+  position: relative;
+
+  z-index: 5;
+
   padding: 20px 0;
 }
+
+
+/* =========================================================
+   LABEL
+========================================================= */
 
 .faq-label {
   display: inline-block;
 
   margin-bottom: 12px;
 
-  color: #2A8C8C;
+  color: #2a8c8c;
 
-  font-size: 15px;
+  font-family: "Inter", sans-serif;
+
+  font-size: 14px;
+
   font-weight: 800;
 
   letter-spacing: 1.5px;
@@ -289,35 +76,55 @@
 
   margin-right: 7px;
 
-  color: #2A8C8C;
+  color: #2a8c8c;
 }
 
+
+/* =========================================================
+   HEADING
+========================================================= */
+
 .faq-content h2 {
+  position: relative;
+
+  z-index: 5;
+
   margin: 0;
 
   color: #101f49;
-     font-family: "Fraunces", serif;
 
+  font-family: "Fraunces", serif;
 
   font-size: clamp(2.5rem, 4vw, 3.2rem);
 
   line-height: 1.12;
 
-  font-weight: 800;
+  font-weight: 600;
 
   letter-spacing: -0.8px;
 }
 
 .faq-content h2 span {
-  color: #D9A441;
+  color: #d9a441;
 }
 
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
 .faq-description {
+  position: relative;
+
+  z-index: 5;
+
   max-width: 540px;
 
   margin: 15px 0 28px;
 
   color: #64748b;
+
+  font-family: "Inter", sans-serif;
 
   font-size: 13px;
 
@@ -325,135 +132,260 @@
 }
 
 
-/* =========================================
+/* =========================================================
    FAQ LIST
-========================================= */
+========================================================= */
 
 .faq-list {
+  position: relative;
+
+  z-index: 20;
+
+  display: block;
+
+  width: 100%;
+
   max-width: 620px;
+
+  margin: 0;
+
+  padding: 0;
 
   border: 2px solid #d7e2f2;
 
   background: #ffffff;
+
+  box-sizing: border-box;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+
+  overflow: hidden;
 }
 
-.faq-item {
+
+/* =========================================================
+   FAQ ITEM
+========================================================= */
+
+.faq-list .faq-item {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
+
   border-bottom: 1px solid #d7e2f2;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
 }
 
-.faq-item:last-child {
+.faq-list .faq-item:last-child {
   border-bottom: none;
 }
 
 
-/* =========================================
-   QUESTION
-========================================= */
+/* =========================================================
+   QUESTION BUTTON
+========================================================= */
 
-.faq-question {
+.faq-list .faq-question {
+  position: relative;
+
+  z-index: 21;
+
   width: 100%;
 
   min-height: 55px;
 
+  margin: 0;
+
   padding: 15px 18px;
 
-  border: none;
+  border: 0;
+
+  outline: none;
 
   background: #ffffff;
 
-  display: flex;
+  display: flex !important;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 20px;
 
   color: #18284f;
 
-  font-family: inherit;
+  font-family: "Inter", sans-serif;
 
   font-size: 12.5px;
 
   font-weight: 600;
 
+  line-height: 1.4;
+
   text-align: left;
 
   cursor: pointer;
 
-  transition: background 0.2s ease;
+  box-sizing: border-box;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-.faq-question:hover {
+.faq-list .faq-question:hover {
   background: #f8fbff;
 }
 
-.faq-item.faq-open .faq-question {
-  color: #2A8C8C;
-}
-
-
-/* =========================================
-   FAQ ARROW
-========================================= */
-
-.faq-arrow {
-  flex-shrink: 0;
-
-  width: 25px;
-  height: 25px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  color: #D9A441;
-
-  font-size: 20px;
-
-  font-weight: 400;
-}
-
-.faq-item:not(.faq-open) .faq-arrow {
-  color: #64748b;
-}
-
-
-/* =========================================
-   ANSWER
-========================================= */
-
-.faq-answer {
-  padding: 0 45px 17px 18px;
+.faq-list .faq-item.faq-open .faq-question {
+  color: #2a8c8c;
 
   background: #ffffff;
 }
 
-.faq-answer p {
+
+/* =========================================================
+   QUESTION TEXT
+========================================================= */
+
+.faq-list .faq-question > span:first-child {
+  display: block;
+
+  flex: 1;
+
+  color: inherit;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.faq-list .faq-arrow {
+  position: relative;
+
+  flex-shrink: 0;
+
+  width: 25px;
+
+  height: 25px;
+
+  display: flex !important;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #d9a441;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+}
+
+.faq-list .faq-item:not(.faq-open) .faq-arrow {
+  color: #64748b;
+}
+
+
+/* =========================================================
+   ANSWER
+========================================================= */
+
+.faq-list .faq-answer {
+  position: relative;
+
+  z-index: 21;
+
+  display: block !important;
+
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0 45px 17px 18px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+}
+
+.faq-list .faq-answer p {
+  display: block;
+
   margin: 0;
 
   color: #64748b;
 
+  font-family: "Inter", sans-serif;
+
   font-size: 11.5px;
 
   line-height: 1.65;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
 }
 
 
-/* =========================================
+/* =========================================================
    MORE FAQ LINK
-========================================= */
+========================================================= */
 
 .faq-more-link {
+  position: relative;
+
+  z-index: 10;
+
   display: inline-flex;
 
   align-items: center;
 
-  gap: 8px;
+  gap: 10px;
 
-  margin-top: 22px;
+  margin-top: 28px;
 
   color: #061f47;
+
+  font-family: "Inter", sans-serif;
 
   font-size: 17px;
 
@@ -461,11 +393,13 @@
 
   text-decoration: none;
 
-  transition: gap 0.2s ease;
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
 }
 
 .faq-more-link span {
-  color: #D9A441;
+  color: #d9a441;
 
   font-size: 18px;
 
@@ -473,47 +407,259 @@
 }
 
 .faq-more-link:hover {
-  color: #D9A441;
+  color: #d9a441;
 
   gap: 10px;
 }
 
 
-/* =========================================
-   3D VISUAL — RIGHT
-========================================= */
+/* =========================================================
+   RIGHT — MAP
+========================================================= */
 
-.faq-visual {
+.faq-map-wrapper {
   position: relative;
 
-  width: 550px;
-  height: 550px;
+  z-index: 5;
+
+  width: 100%;
+
+  height: 100%;
 
   display: flex;
 
   align-items: center;
-  justify-content: center;
+
+  justify-content: flex-end;
 }
 
-.faq-hero-3d {
-  width: 500px;
-  height: 500px;
 
-  overflow: visible;
+/* =========================================================
+   MAP CARD
+========================================================= */
+
+.faq-map-card {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 560px;
+
+  margin-left: auto;
+
+  background: #ffffff;
+
+  border: 1px solid #d7e2f2;
+
+  box-shadow: 0 20px 50px rgba(16, 31, 73, 0.08);
+
+  overflow: hidden;
 }
 
-.faq-hero-3d canvas {
+
+/* =========================================================
+   MAP HEADER
+========================================================= */
+
+.faq-map-header {
+  padding: 25px 28px 20px;
+
+  background: #ffffff;
+}
+
+.faq-map-header > span {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #2a8c8c;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.faq-map-header h3 {
+  margin: 0;
+
+  color: #101f49;
+
+  font-family: "Fraunces", serif;
+
+  font-size: clamp(1.7rem, 2.5vw, 2.25rem);
+
+  line-height: 1.12;
+
+  font-weight: 600;
+
+  letter-spacing: -0.4px;
+}
+
+.faq-map-header p {
+  max-width: 430px;
+
+  margin: 10px 0 0;
+
+  color: #64748b;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   GOOGLE MAP
+========================================================= */
+
+.faq-map-embed {
+  position: relative;
+
+  width: 100%;
+
+  height: 310px;
+
+  overflow: hidden;
+
+  background: #e8eef5;
+}
+
+.faq-map-embed iframe {
   display: block;
 
-  touch-action: none;
+  width: 100%;
+
+  height: 100%;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
 }
 
 
-/* =========================================
+/* =========================================================
+   MAP FOOTER
+========================================================= */
+
+.faq-map-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 18px 24px;
+
+  border-top: 1px solid #e4ebf4;
+
+  background: #ffffff;
+}
+
+.faq-map-footer div {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.faq-map-footer strong {
+  color: #101f49;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.faq-map-footer div span {
+  color: #64748b;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10.5px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   CONTACT BUTTON
+========================================================= */
+
+.faq-map-footer a {
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 9px 14px;
+
+  background: #0b2a5b;
+
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.faq-map-footer a span {
+  color: #d9a441;
+
+  font-size: 15px;
+
+  line-height: 1;
+
+  transition: color 0.2s ease;
+}
+
+.faq-map-footer a:hover {
+  background: #d9a441;
+
+  color: #0b2a5b;
+}
+
+.faq-map-footer a:hover span {
+  color: #0b2a5b;
+}
+
+
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
 @media (max-width: 991px) {
+
+  .faq-appointment-section {
+    padding: 65px 0;
+  }
 
   .faq-appointment-layout {
     grid-template-columns: 1fr;
@@ -529,16 +675,29 @@
     max-width: 100%;
   }
 
-  .faq-visual {
+  .faq-map-wrapper {
     width: 100%;
-    height: 440px;
+
+    height: auto;
+
+    justify-content: center;
+  }
+
+  .faq-map-card {
+    max-width: 100%;
+
+    margin: 0;
+  }
+
+  .faq-map-embed {
+    height: 360px;
   }
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 576px) {
 
@@ -546,56 +705,234 @@
     padding: 55px 0;
   }
 
+
+  /* Label */
+
+  .faq-label {
+    margin-bottom: 10px;
+
+    font-size: 12px;
+
+    letter-spacing: 1.2px;
+  }
+
+
+  /* Heading */
+
   .faq-content h2 {
     font-size: 2rem;
+
+    line-height: 1.15;
   }
+
+
+  /* Description */
 
   .faq-description {
+    margin: 13px 0 23px;
+
     font-size: 12px;
+
+    line-height: 1.6;
   }
 
-  .faq-question {
+
+  /* FAQ */
+
+  .faq-list {
+    border-width: 1px;
+  }
+
+  .faq-list .faq-question {
     min-height: 52px;
 
     padding: 14px 12px;
 
+    gap: 12px;
+
     font-size: 11.5px;
   }
 
-  .faq-answer {
+  .faq-list .faq-arrow {
+    width: 22px;
+
+    height: 22px;
+
+    font-size: 18px;
+  }
+
+  .faq-list .faq-answer {
     padding: 0 35px 15px 12px;
   }
 
-  .faq-answer p {
+  .faq-list .faq-answer p {
     font-size: 10.5px;
+
+    line-height: 1.6;
   }
 
-  .faq-visual {
-    height: 300px;
+
+  /* More FAQs */
+
+  .faq-more-link {
+    margin-top: 18px;
+
+    font-size: 15px;
   }
+
+
+  /* Map */
+
+  .faq-map-header {
+    padding: 22px 18px 17px;
+  }
+
+  .faq-map-header > span {
+    font-size: 10px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .faq-map-header h3 {
+    font-size: 1.65rem;
+
+    line-height: 1.15;
+  }
+
+  .faq-map-header p {
+    margin-top: 9px;
+
+    font-size: 11px;
+  }
+
+  .faq-map-embed {
+    height: 260px;
+  }
+
+
+  /* Map footer */
+
+  .faq-map-footer {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    padding: 16px 18px;
+  }
+
+  .faq-map-footer strong {
+    font-size: 11.5px;
+  }
+
+  .faq-map-footer div span {
+    font-size: 10px;
+  }
+
+  .faq-map-footer a {
+    width: 100%;
+
+    padding: 10px 14px;
+
+    font-size: 11px;
+  }
+  .faq-more-link {
+  position: relative;
+
+  z-index: 10;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 28px;
+
+  color: #061f47;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
 }
 
-/* FAQ visibility fix */
-.faq-list {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
 
-.faq-item {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
 
-.faq-question {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
+@media (max-width: 380px) {
 
-.faq-answer {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  .faq-appointment-section {
+    padding: 45px 0;
+  }
+
+  .faq-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .faq-list .faq-question {
+    padding: 13px 10px;
+
+    font-size: 11px;
+  }
+
+  .faq-list .faq-answer {
+    padding-left: 10px;
+
+    padding-right: 25px;
+  }
+
+  .faq-map-header {
+    padding: 20px 15px 15px;
+  }
+
+  .faq-map-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .faq-map-embed {
+    height: 230px;
+  }
+
+  .faq-map-footer {
+    padding: 14px 15px;
+  }
+  .faq-more-link {
+  position: relative;
+
+  z-index: 10;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 28px;
+
+  color: #061f47;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
 }
