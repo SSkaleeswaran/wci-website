@@ -1,0 +1,1370 @@
+/* =========================================================
+   WCI — AUSTRALIA PAGE
+   ========================================================= */
+
+.australia-page {
+  --aus-blue: #0b2a5b;
+  --aus-dark: #041a38;
+  --aus-gold: #d9a441;
+  --aus-cream: #f7f5ef;
+  --aus-paper: #eeece5;
+  --aus-text: #233146;
+  --aus-muted: #697484;
+
+  font-family: "Inter", sans-serif;
+  color: var(--aus-text);
+  background: var(--aus-cream);
+  overflow: hidden;
+}
+
+.australia-page h1,
+.australia-page h2,
+.australia-page h3 {
+  font-family: "Fraunces", serif;
+}
+
+.australia-page a {
+  text-decoration: none;
+}
+
+/* =========================================================
+   COMMON
+   ========================================================= */
+
+.australia-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--aus-gold);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.australia-section-label::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--aus-gold);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.australia-hero {
+  min-height: 88vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.australia-hero-grid {
+  position: absolute;
+  inset: 0;
+  opacity: .08;
+  background-image:
+    linear-gradient(rgba(255,255,255,.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.4) 1px, transparent 1px);
+  background-size: 100px 100px;
+  animation: australiaGrid 20s linear infinite;
+}
+
+@keyframes australiaGrid {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 100px 100px;
+  }
+}
+
+.australia-hero-content {
+  width: min(1250px, 88%);
+  margin: auto;
+  padding: 120px 0 90px;
+  position: relative;
+  z-index: 2;
+}
+
+.australia-hero-label {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+  padding-bottom: 14px;
+  color: rgba(255,255,255,.65);
+  font-size: .62rem;
+  letter-spacing: .2em;
+}
+
+.australia-eyebrow {
+  display: block;
+  margin-bottom: 22px;
+  color: var(--aus-gold);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+}
+
+.australia-hero h1 {
+  margin: 0;
+  max-width: 850px;
+  font-size: clamp(4.3rem, 8vw, 8rem);
+  line-height: .84;
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+
+.australia-hero h1 em {
+  color: var(--aus-gold);
+  font-weight: 400;
+}
+
+.australia-hero-content p {
+  max-width: 540px;
+  margin: 35px 0;
+  color: rgba(255,255,255,.72);
+  font-size: .92rem;
+  line-height: 1.85;
+}
+
+.australia-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.australia-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 18px 15px 24px;
+  background: var(--aus-gold);
+  color: var(--aus-dark);
+  font-size: .77rem;
+  font-weight: 700;
+  transition: .35s ease;
+}
+
+.australia-primary-btn span,
+.australia-final-button span {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(4,26,56,.35);
+  border-radius: 50%;
+}
+
+.australia-primary-btn:hover {
+  color: var(--aus-dark);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,.2);
+}
+
+.australia-scroll-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: .72rem;
+}
+
+.australia-scroll-link:hover {
+  color: var(--aus-gold);
+}
+
+.australia-scroll-link span {
+  color: var(--aus-gold);
+}
+
+.australia-hero-coordinates {
+  position: absolute;
+  right: 6%;
+  bottom: 19%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: rgba(255,255,255,.45);
+  font-size: .55rem;
+  letter-spacing: .15em;
+  writing-mode: vertical-rl;
+}
+
+.australia-hero-bottom {
+  position: absolute;
+  bottom: 25px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 13px;
+  border-top: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.45);
+  font-size: .58rem;
+  letter-spacing: .18em;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.australia-intro {
+  position: relative;
+  padding: 150px 7%;
+  background: var(--aus-cream);
+}
+
+.australia-big-number {
+  position: absolute;
+  top: 35px;
+  right: 7%;
+  color: rgba(11,42,91,.07);
+  font-family: "Fraunces", serif;
+  font-size: 11rem;
+}
+
+.australia-intro-layout {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 80px;
+}
+
+.australia-intro-label {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--aus-blue);
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .17em;
+}
+
+.australia-intro-label small {
+  color: #9198a1;
+  font-size: .55rem;
+}
+
+.australia-line {
+  width: 1px;
+  height: 70px;
+  background: var(--aus-gold);
+}
+
+.australia-intro-main {
+  display: grid;
+  grid-template-columns: 1fr .72fr;
+  gap: 90px;
+}
+
+.australia-intro-main h2 {
+  margin: 0;
+  color: var(--aus-blue);
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
+  line-height: .87;
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+
+.australia-intro-main h2 em {
+  color: var(--aus-gold);
+  font-weight: 400;
+}
+
+.australia-intro-text {
+  padding-top: 10px;
+}
+
+.australia-intro-text p {
+  margin: 0 0 25px;
+  color: var(--aus-muted);
+  font-size: .89rem;
+  line-height: 1.9;
+}
+
+.australia-stats {
+  max-width: 1250px;
+  margin: 100px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #d3d1ca;
+}
+
+.australia-stats > div {
+  padding: 30px;
+  border-right: 1px solid #d3d1ca;
+}
+
+.australia-stats > div:last-child {
+  border-right: 0;
+}
+
+.australia-stats strong {
+  display: block;
+  color: var(--aus-blue);
+  font-family: "Fraunces", serif;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.australia-stats span {
+  color: #7d8490;
+  font-size: .63rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   EXPERIENCES
+   ========================================================= */
+
+.australia-experiences {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 720px;
+  background: var(--aus-blue);
+  color: #fff;
+}
+
+.australia-experience-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.australia-experience-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s ease;
+}
+
+.australia-experience-image:hover img {
+  transform: scale(1.06);
+}
+
+.australia-image-caption {
+  position: absolute;
+  left: 35px;
+  right: 35px;
+  bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255,255,255,.8);
+  font-size: .58rem;
+  letter-spacing: .18em;
+}
+
+.australia-experience-content {
+  padding: 110px 10%;
+}
+
+.australia-experience-content h2 {
+  margin: 25px 0;
+  font-size: clamp(3.3rem, 5.5vw, 6rem);
+  line-height: .87;
+  font-weight: 500;
+  letter-spacing: -.05em;
+}
+
+.australia-experience-content h2 em {
+  color: var(--aus-gold);
+  font-weight: 400;
+}
+
+.australia-experience-content > p {
+  max-width: 520px;
+  color: rgba(255,255,255,.64);
+  font-size: .87rem;
+  line-height: 1.85;
+}
+
+.australia-experience-list {
+  margin-top: 50px;
+}
+
+.australia-experience-list > div {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 15px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.australia-experience-list > div > span {
+  color: var(--aus-gold);
+  font-size: .65rem;
+}
+
+.australia-experience-list h3 {
+  margin: 0 0 6px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.australia-experience-list p {
+  margin: 0;
+  color: rgba(255,255,255,.55);
+  font-size: .76rem;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.australia-services {
+  padding: 150px 7%;
+  background: #fff;
+}
+
+.australia-services-heading {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr .6fr;
+  gap: 100px;
+  align-items: end;
+}
+
+.australia-services-heading h2 {
+  margin: 25px 0 0;
+  color: var(--aus-blue);
+  font-size: clamp(3.7rem, 6vw, 6.5rem);
+  line-height: .86;
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+
+.australia-services-heading h2 em {
+  color: var(--aus-gold);
+  font-weight: 400;
+}
+
+.australia-services-heading > p {
+  margin: 0;
+  color: var(--aus-muted);
+  font-size: .86rem;
+  line-height: 1.8;
+}
+
+.australia-services-grid {
+  max-width: 1250px;
+  margin: 90px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: #d7d9dc;
+}
+
+.australia-service-card {
+  position: relative;
+  min-height: 290px;
+  padding: 35px;
+  background: #fff;
+  overflow: hidden;
+  transition: .4s ease;
+}
+
+.australia-service-card:hover {
+  background: var(--aus-blue);
+  color: #fff;
+}
+
+.australia-service-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.australia-service-top span {
+  color: var(--aus-gold);
+  font-size: .65rem;
+}
+
+.australia-service-top i {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d1d4d7;
+  border-radius: 50%;
+  font-style: normal;
+  transition: .35s ease;
+}
+
+.australia-service-card:hover .australia-service-top i {
+  border-color: var(--aus-gold);
+  color: var(--aus-gold);
+  transform: rotate(45deg);
+}
+
+.australia-service-card h3 {
+  margin: 70px 0 14px;
+  color: var(--aus-blue);
+  font-size: 2rem;
+  font-weight: 500;
+  transition: .3s ease;
+}
+
+.australia-service-card:hover h3 {
+  color: #fff;
+}
+
+.australia-service-card p {
+  max-width: 480px;
+  margin: 0;
+  color: #707987;
+  font-size: .82rem;
+  line-height: 1.75;
+  transition: .3s ease;
+}
+
+.australia-service-card:hover p {
+  color: rgba(255,255,255,.63);
+}
+
+.australia-service-line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: var(--aus-gold);
+  transition: .5s ease;
+}
+
+.australia-service-card:hover .australia-service-line {
+  width: 100%;
+}
+
+/* =========================================================
+   DESTINATIONS
+   ========================================================= */
+
+.australia-destinations {
+  padding: 150px 7%;
+  background: var(--aus-paper);
+}
+
+.australia-destination-heading {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr .55fr;
+  gap: 100px;
+  align-items: end;
+}
+
+.australia-destination-heading h2 {
+  margin: 25px 0 0;
+  color: var(--aus-blue);
+  font-size: clamp(3.5rem, 6vw, 6.5rem);
+  line-height: .87;
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+
+.australia-destination-heading h2 em {
+  color: var(--aus-gold);
+  font-weight: 400;
+}
+
+.australia-destination-heading > p {
+  color: var(--aus-muted);
+  font-size: .85rem;
+  line-height: 1.8;
+}
+
+.australia-destination-grid {
+  max-width: 1250px;
+  margin: 85px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.australia-destination-card {
+  height: 430px;
+  position: relative;
+  overflow: hidden;
+  background: var(--aus-blue);
+}
+
+.australia-destination-offset {
+  margin-top: 65px;
+}
+
+.australia-destination-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.australia-destination-card:hover img {
+  transform: scale(1.08);
+}
+
+.australia-destination-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    transparent 25%,
+    rgba(4,26,56,.92)
+  );
+}
+
+.australia-destination-number {
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  color: var(--aus-gold);
+  font-size: .62rem;
+  letter-spacing: .15em;
+}
+
+.australia-destination-info {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 15px;
+  color: #fff;
+}
+
+.australia-destination-info h3 {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.australia-destination-info p {
+  margin: 5px 0 0;
+  color: rgba(255,255,255,.6);
+  font-size: .66rem;
+}
+
+.australia-destination-info > span {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 50%;
+  transition: .35s ease;
+}
+
+.australia-destination-card:hover .australia-destination-info > span {
+  background: var(--aus-gold);
+  color: var(--aus-blue);
+  border-color: var(--aus-gold);
+  transform: rotate(45deg);
+}
+
+/* =========================================================
+   GUIDE
+   ========================================================= */
+
+.australia-guide {
+  position: relative;
+  padding: 150px 7%;
+  background: var(--aus-blue);
+  color: #fff;
+  overflow: hidden;
+}
+
+.australia-guide-watermark {
+  position: absolute;
+  right: -20px;
+  top: 20px;
+  color: rgba(255,255,255,.035);
+  font-family: "Fraunces", serif;
+  font-size: 18rem;
+  line-height: 1;
+}
+
+.australia-guide-inner {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: .38fr 1fr;
+  gap: 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.australia-guide-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--aus-gold);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .17em;
+}
+
+.australia-guide-meta small {
+  color: rgba(255,255,255,.4);
+  font-size: .53rem;
+}
+
+.australia-guide-kicker {
+  color: var(--aus-gold);
+  font-size: .62rem;
+  letter-spacing: .18em;
+  font-weight: 700;
+}
+
+.australia-guide-content h2 {
+  margin: 25px 0 35px;
+  font-size: clamp(3.8rem, 6vw, 6.5rem);
+  line-height: .86;
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+
+.australia-guide-content h2 em {
+  color: var(--aus-gold);
+  font-weight: 400;
+}
+
+.australia-guide-content p {
+  max-width: 650px;
+  margin: 0 0 20px;
+  color: rgba(255,255,255,.64);
+  font-size: .87rem;
+  line-height: 1.9;
+}
+
+.australia-guide-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 25px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--aus-gold);
+  color: #fff;
+  font-size: .76rem;
+  font-weight: 600;
+}
+
+.australia-guide-link span {
+  color: var(--aus-gold);
+}
+
+/* =========================================================
+   PROCESS
+   ========================================================= */
+
+.australia-process {
+  padding: 150px 7%;
+  background: #fff;
+}
+
+.australia-process-heading {
+  max-width: 1250px;
+  margin: auto;
+}
+
+.australia-process-heading h2 {
+  margin: 25px 0 0;
+  color: var(--aus-blue);
+  font-size: clamp(3.8rem, 6vw, 6.5rem);
+  line-height: .86;
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+
+.australia-process-heading h2 em {
+  color: var(--aus-gold);
+  font-weight: 400;
+}
+
+.australia-process-grid {
+  max-width: 1250px;
+  margin: 100px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+}
+
+.australia-process-grid::before {
+  content: "";
+  position: absolute;
+  top: 47px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #d4d6d9;
+}
+
+.australia-process-item {
+  position: relative;
+  padding-right: 35px;
+}
+
+.australia-process-number {
+  color: var(--aus-gold);
+  font-size: .64rem;
+  margin-bottom: 25px;
+}
+
+.australia-process-dot {
+  position: relative;
+  z-index: 2;
+  width: 12px;
+  height: 12px;
+  margin-bottom: 35px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: var(--aus-gold);
+  box-shadow: 0 0 0 1px var(--aus-gold);
+}
+
+.australia-process-item h3 {
+  margin: 0 0 12px;
+  color: var(--aus-blue);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.australia-process-item p {
+  max-width: 250px;
+  margin: 0;
+  color: #707987;
+  font-size: .77rem;
+  line-height: 1.75;
+}
+
+/* =========================================================
+   DOCUMENTS
+   ========================================================= */
+
+.australia-documents {
+  padding: 130px 7%;
+  background: var(--aus-paper);
+}
+
+.australia-documents-inner {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: .8fr 1fr;
+  gap: 120px;
+}
+
+.australia-documents-inner h2 {
+  margin: 25px 0;
+  color: var(--aus-blue);
+  font-size: clamp(3.7rem, 6vw, 6.3rem);
+  line-height: .86;
+  font-weight: 500;
+}
+
+.australia-documents-inner h2 em {
+  color: var(--aus-gold);
+  font-weight: 400;
+}
+
+.australia-documents-inner > div:first-child p {
+  max-width: 450px;
+  color: var(--aus-muted);
+  font-size: .86rem;
+  line-height: 1.8;
+}
+
+.australia-document-list {
+  border-top: 1px solid #cecfcb;
+}
+
+.australia-document-list > div {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 15px;
+  align-items: center;
+  padding: 23px 0;
+  border-bottom: 1px solid #cecfcb;
+  transition: .3s ease;
+}
+
+.australia-document-list > div:hover {
+  padding-left: 15px;
+}
+
+.australia-document-list span {
+  color: var(--aus-gold);
+  font-size: .65rem;
+}
+
+.australia-document-list strong {
+  color: var(--aus-blue);
+  font-family: "Fraunces", serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+
+.australia-faq {
+  padding: 150px 7%;
+  background: var(--aus-cream);
+}
+
+.australia-faq-inner {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: .55fr 1fr;
+  gap: 100px;
+}
+
+.australia-faq-heading h2 {
+  margin: 25px 0;
+  color: var(--aus-blue);
+  font-size: clamp(3.8rem, 6vw, 6.5rem);
+  line-height: .86;
+  font-weight: 500;
+}
+
+.australia-faq-heading h2 em {
+  color: var(--aus-gold);
+  font-weight: 400;
+}
+
+.australia-faq-heading p {
+  max-width: 370px;
+  color: var(--aus-muted);
+  font-size: .84rem;
+  line-height: 1.8;
+}
+
+.australia-faq-list {
+  border-top: 1px solid #d0cec7;
+}
+
+.australia-faq-list details {
+  border-bottom: 1px solid #d0cec7;
+}
+
+.australia-faq-list summary {
+  display: grid;
+  grid-template-columns: 40px 1fr 35px;
+  align-items: center;
+  gap: 15px;
+  padding: 25px 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.australia-faq-list summary::-webkit-details-marker {
+  display: none;
+}
+
+.australia-faq-list summary > span {
+  color: var(--aus-gold);
+  font-size: .65rem;
+}
+
+.australia-faq-list summary strong {
+  color: var(--aus-blue);
+  font-family: "Fraunces", serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.australia-faq-list summary i {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #c9c9c5;
+  border-radius: 50%;
+  font-style: normal;
+  transition: .3s ease;
+}
+
+.australia-faq-list details[open] summary i {
+  transform: rotate(45deg);
+  background: var(--aus-gold);
+  border-color: var(--aus-gold);
+}
+
+.australia-faq-list details > div {
+  padding: 0 45px 25px 55px;
+}
+
+.australia-faq-list details p {
+  max-width: 650px;
+  margin: 0;
+  color: #6d7582;
+  font-size: .82rem;
+  line-height: 1.8;
+}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.australia-final {
+  min-height: 700px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.australia-final-content {
+  width: min(900px, 85%);
+  margin-left: 8%;
+  position: relative;
+  z-index: 3;
+}
+
+.australia-final-content > span {
+  color: var(--aus-gold);
+  font-size: .68rem;
+  letter-spacing: .2em;
+  font-weight: 700;
+}
+
+.australia-final-content h2 {
+  margin: 25px 0;
+  font-size: clamp(4rem, 7vw, 7.5rem);
+  line-height: .83;
+  font-weight: 500;
+  letter-spacing: -.055em;
+}
+
+.australia-final-content h2 em {
+  color: var(--aus-gold);
+  font-weight: 400;
+}
+
+.australia-final-content p {
+  max-width: 520px;
+  color: rgba(255,255,255,.65);
+  font-size: .87rem;
+  line-height: 1.8;
+}
+
+.australia-final-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 25px;
+  padding: 15px 18px 15px 24px;
+  background: var(--aus-gold);
+  color: var(--aus-dark);
+  font-size: .76rem;
+  font-weight: 700;
+  transition: .35s ease;
+}
+
+.australia-final-button:hover {
+  color: var(--aus-dark);
+  transform: translateY(-4px);
+}
+
+.australia-final-circle {
+  position: absolute;
+  border: 1px solid rgba(217,164,65,.2);
+  border-radius: 50%;
+}
+
+.australia-circle-one {
+  width: 650px;
+  height: 650px;
+  right: -220px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: australiaOrbit 18s linear infinite;
+}
+
+.australia-circle-two {
+  width: 450px;
+  height: 450px;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-color: rgba(255,255,255,.1);
+  animation: australiaOrbitReverse 14s linear infinite;
+}
+
+@keyframes australiaOrbit {
+  from {
+    transform: translateY(-50%) rotate(0);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@keyframes australiaOrbitReverse {
+  from {
+    transform: translateY(-50%) rotate(360deg);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(0);
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 992px) {
+  .australia-intro-layout,
+  .australia-intro-main,
+  .australia-services-heading,
+  .australia-destination-heading,
+  .australia-guide-inner,
+  .australia-documents-inner,
+  .australia-faq-inner {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .australia-experiences {
+    grid-template-columns: 1fr;
+  }
+
+  .australia-experience-image {
+    height: 520px;
+  }
+
+  .australia-experience-content {
+    padding: 90px 8%;
+  }
+
+  .australia-destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .australia-destination-offset {
+    margin-top: 0;
+  }
+
+  .australia-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 60px;
+  }
+
+  .australia-process-grid::before {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .australia-hero {
+    min-height: 80vh;
+    background-position: 65% center !important;
+  }
+
+  .australia-hero-content {
+    width: 88%;
+    padding: 115px 0 75px;
+  }
+
+  .australia-hero h1 {
+    font-size: clamp(3.7rem, 15vw, 5.5rem);
+  }
+
+  .australia-hero-content p {
+    font-size: .84rem;
+  }
+
+  .australia-hero-coordinates,
+  .australia-hero-bottom {
+    display: none;
+  }
+
+  .australia-hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .australia-intro,
+  .australia-services,
+  .australia-destinations,
+  .australia-guide,
+  .australia-process,
+  .australia-faq {
+    padding: 95px 6%;
+  }
+
+  .australia-big-number,
+  .australia-guide-watermark {
+    font-size: 7rem;
+  }
+
+  .australia-intro-main h2,
+  .australia-services-heading h2,
+  .australia-destination-heading h2,
+  .australia-guide-content h2,
+  .australia-process-heading h2,
+  .australia-documents-inner h2,
+  .australia-faq-heading h2 {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .australia-stats {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+
+  .australia-stats > div {
+    border-right: 0;
+    border-bottom: 1px solid #d3d1ca;
+  }
+
+  .australia-stats > div:last-child {
+    border-bottom: 0;
+  }
+
+  .australia-experience-image {
+    height: 380px;
+  }
+
+  .australia-experience-content {
+    padding: 75px 7%;
+  }
+
+  .australia-services-grid {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+
+  .australia-destination-grid {
+    grid-template-columns: 1fr;
+    margin-top: 60px;
+  }
+
+  .australia-destination-card {
+    height: 350px;
+  }
+
+  .australia-guide-inner {
+    gap: 35px;
+  }
+
+  .australia-process-grid {
+    grid-template-columns: 1fr;
+    margin-top: 65px;
+  }
+
+  .australia-process-item {
+    padding-right: 0;
+  }
+
+  .australia-documents {
+    padding: 100px 6%;
+  }
+
+  .australia-documents-inner {
+    gap: 60px;
+  }
+
+  .australia-faq-inner {
+    gap: 55px;
+  }
+
+  .australia-faq-list summary {
+    grid-template-columns: 30px 1fr 30px;
+    gap: 10px;
+  }
+
+  .australia-faq-list summary strong {
+    font-size: 1rem;
+  }
+
+  .australia-faq-list details > div {
+    padding-left: 40px;
+  }
+
+  .australia-final {
+    min-height: 650px;
+    background-position: 62% center !important;
+  }
+
+  .australia-final-content {
+    width: 88%;
+    margin: auto;
+  }
+
+  .australia-final-content h2 {
+    font-size: clamp(3.6rem, 15vw, 5.5rem);
+  }
+
+  .australia-circle-one {
+    width: 450px;
+    height: 450px;
+    right: -240px;
+  }
+
+  .australia-circle-two {
+    width: 300px;
+    height: 300px;
+    right: -160px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .australia-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .australia-primary-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .australia-experience-image {
+    height: 320px;
+  }
+
+  .australia-service-card {
+    padding: 28px;
+  }
+
+  .australia-service-card h3 {
+    margin-top: 55px;
+    font-size: 1.6rem;
+  }
+
+  .australia-destination-card {
+    height: 320px;
+  }
+
+  .australia-final-content {
+    width: 88%;
+  }
+}

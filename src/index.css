@@ -28,7 +28,10 @@
 
 @import "./styles/taiwan-page.css";
 @import "./styles/canada-page.css";
-
+@import "./styles/usa-page.css"; 
+@import "./styles/uk-page.css";
+@import "./styles/australia-page.css";
+@import "./styles/japan-page.css";
 
 
 

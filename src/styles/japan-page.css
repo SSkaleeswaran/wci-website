@@ -1,0 +1,1198 @@
+/* =========================================================
+   JAPAN PAGE
+   Compact editorial design + scroll animation
+========================================================= */
+
+.japan-page {
+  --japan-navy: #0b2a5b;
+  --japan-deep: #061f47;
+  --japan-gold: #d9a441;
+  --japan-cream: #f7f5ef;
+  --japan-soft: #efede6;
+  --japan-text: #27364d;
+  --japan-muted: #687386;
+
+  background: #ffffff;
+  color: var(--japan-text);
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+.japan-page h1,
+.japan-page h2,
+.japan-page h3 {
+  font-family: "Fraunces", serif;
+}
+
+.japan-container {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.section-compact {
+  padding: 76px 0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.japan-hero {
+  min-height: 650px;
+  height: 78vh;
+  max-height: 760px;
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.japan-hero::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+
+  right: 8%;
+  top: 18%;
+
+  border: 1px solid rgba(217, 164, 65, 0.35);
+  border-radius: 50%;
+
+  animation: japanRotate 16s linear infinite;
+}
+
+@keyframes japanRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.japan-hero-inner {
+  width: min(1160px, calc(100% - 48px));
+  margin: auto;
+
+  position: relative;
+  z-index: 2;
+}
+
+.japan-hero-content {
+  width: min(620px, 100%);
+}
+
+.japan-eyebrow,
+.japan-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--japan-gold);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.japan-eyebrow::before,
+.japan-label::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--japan-gold);
+}
+
+.japan-hero h1 {
+  color: white;
+
+  font-size: clamp(58px, 8vw, 100px);
+  line-height: 0.9;
+
+  margin: 22px 0;
+  font-weight: 600;
+}
+
+.japan-hero h1 span {
+  display: block;
+  color: var(--japan-gold);
+  font-style: italic;
+}
+
+.japan-hero p {
+  max-width: 520px;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  margin-bottom: 28px;
+}
+
+.japan-hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.japan-gold-btn,
+.japan-outline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 13px 20px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.japan-gold-btn {
+  background: var(--japan-gold);
+  color: var(--japan-deep);
+}
+
+.japan-gold-btn:hover {
+  color: var(--japan-deep);
+  transform: translateY(-3px);
+}
+
+.japan-gold-btn span {
+  font-size: 18px;
+}
+
+.japan-outline-btn {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+}
+
+.japan-outline-btn:hover {
+  color: white;
+  border-color: var(--japan-gold);
+}
+
+.japan-hero-stamp {
+  position: absolute;
+
+  right: 8%;
+  bottom: 15%;
+
+  width: 105px;
+  height: 105px;
+
+  border: 1px solid rgba(217, 164, 65, 0.6);
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--japan-gold);
+
+  transform: rotate(-12deg);
+}
+
+.japan-hero-stamp span {
+  font-family: "Fraunces", serif;
+  font-size: 32px;
+}
+
+.japan-hero-stamp small {
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.japan-intro {
+  background: white;
+}
+
+.japan-intro-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 80px;
+
+  align-items: center;
+}
+
+.japan-section-heading h2 {
+  margin: 16px 0 0;
+
+  color: var(--japan-navy);
+
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1.05;
+}
+
+.japan-section-heading h2 em,
+.japan-two-column-heading h2 em,
+.japan-story-content h2 em,
+.japan-documents-grid h2 em,
+.japan-final-inner h2 em {
+  display: block;
+
+  color: var(--japan-gold);
+  font-style: italic;
+}
+
+.japan-intro-copy p {
+  color: var(--japan-muted);
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  margin: 0 0 15px;
+}
+
+.japan-mini-line {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+.japan-mini-line span {
+  width: 35px;
+  height: 2px;
+  background: var(--japan-gold);
+}
+
+.japan-mini-line strong {
+  color: var(--japan-navy);
+  font-size: 9px;
+  letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   FACTS
+========================================================= */
+
+.japan-facts {
+  background: var(--japan-deep);
+  padding: 28px 0;
+}
+
+.japan-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.japan-facts-grid > div {
+  padding: 10px 24px;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+.japan-facts-grid > div:last-child {
+  border-right: 0;
+}
+
+.japan-facts span {
+  display: block;
+
+  color: var(--japan-gold);
+
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.japan-facts strong {
+  display: block;
+
+  color: white;
+
+  font-size: 13px;
+  margin-top: 7px;
+}
+
+.japan-facts p {
+  color: rgba(255,255,255,.62);
+
+  font-size: 12px;
+  margin: 4px 0 0;
+}
+
+
+/* =========================================================
+   WHY JAPAN
+========================================================= */
+
+.japan-why {
+  background: var(--japan-cream);
+}
+
+.centered {
+  text-align: center;
+}
+
+.centered .japan-label {
+  justify-content: center;
+}
+
+.japan-section-heading.centered > p {
+  color: var(--japan-muted);
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.japan-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 40px;
+
+  border-top: 1px solid #ddd8ca;
+  border-bottom: 1px solid #ddd8ca;
+}
+
+.japan-experience-grid article {
+  padding: 28px 22px;
+
+  border-right: 1px solid #ddd8ca;
+}
+
+.japan-experience-grid article:last-child {
+  border-right: 0;
+}
+
+.japan-experience-grid span {
+  color: var(--japan-gold);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.japan-experience-grid h3 {
+  color: var(--japan-navy);
+
+  font-size: 22px;
+
+  margin: 13px 0 8px;
+}
+
+.japan-experience-grid p {
+  color: var(--japan-muted);
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   VISA
+========================================================= */
+
+.japan-visa {
+  background: white;
+}
+
+.japan-two-column-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 70px;
+
+  align-items: end;
+}
+
+.japan-two-column-heading h2 {
+  color: var(--japan-navy);
+
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.05;
+
+  margin: 15px 0 0;
+}
+
+.japan-two-column-heading > p {
+  color: var(--japan-muted);
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+.japan-visa-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+
+  margin-top: 38px;
+}
+
+.japan-visa-card {
+  background: var(--japan-cream);
+
+  padding: 28px;
+
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+
+  border-left: 3px solid transparent;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.japan-visa-card:hover {
+  transform: translateY(-5px);
+  border-left-color: var(--japan-gold);
+}
+
+.visa-number {
+  color: var(--japan-gold);
+
+  font-family: "Fraunces", serif;
+  font-size: 22px;
+}
+
+.japan-visa-card h3 {
+  color: var(--japan-navy);
+
+  font-size: 24px;
+
+  margin: 0 0 7px;
+}
+
+.japan-visa-card p {
+  color: var(--japan-muted);
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+.japan-visa-card a {
+  grid-column: 2;
+
+  color: var(--japan-navy);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-decoration: none;
+  letter-spacing: 0.5px;
+
+  margin-top: 5px;
+}
+
+.japan-visa-card a span {
+  margin-left: 8px;
+  color: var(--japan-gold);
+}
+
+
+/* =========================================================
+   DESTINATIONS
+========================================================= */
+
+.japan-destinations {
+  background: #faf9f6;
+}
+
+.japan-destination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-top: 38px;
+}
+
+.japan-destination-card {
+  background: white;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.japan-destination-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 45px rgba(6,31,71,.12);
+}
+
+.destination-image {
+  height: 205px;
+  overflow: hidden;
+}
+
+.destination-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.japan-destination-card:hover img {
+  transform: scale(1.07);
+}
+
+.destination-content {
+  position: relative;
+  padding: 20px 21px 22px;
+}
+
+.destination-content > span {
+  color: var(--japan-gold);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.destination-content h3 {
+  color: var(--japan-navy);
+
+  font-size: 25px;
+
+  margin: 6px 0;
+}
+
+.destination-content p {
+  color: var(--japan-muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+
+  margin: 0;
+
+  max-width: 310px;
+}
+
+.destination-arrow {
+  position: absolute;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #ddd;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--japan-navy);
+
+  transition: 0.3s ease;
+}
+
+.japan-destination-card:hover .destination-arrow {
+  background: var(--japan-gold);
+  border-color: var(--japan-gold);
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.japan-story {
+  background: white;
+}
+
+.japan-story-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.japan-story-image {
+  position: relative;
+
+  height: 390px;
+
+  overflow: hidden;
+}
+
+.japan-story-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 1.2s ease;
+}
+
+.japan-story-image:hover img {
+  transform: scale(1.04);
+}
+
+.story-caption {
+  position: absolute;
+
+  left: 18px;
+  bottom: 18px;
+
+  background: white;
+
+  padding: 12px 16px;
+
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+}
+
+.story-caption span {
+  display: block;
+
+  color: var(--japan-gold);
+
+  font-size: 8px;
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+}
+
+.story-caption strong {
+  color: var(--japan-navy);
+
+  font-family: "Fraunces", serif;
+  font-size: 20px;
+}
+
+.japan-story-content h2 {
+  color: var(--japan-navy);
+
+  font-size: clamp(32px, 4vw, 47px);
+  line-height: 1.05;
+
+  margin: 15px 0 20px;
+}
+
+.japan-story-content p {
+  color: var(--japan-muted);
+
+  font-size: 13px;
+  line-height: 1.8;
+
+  margin-bottom: 13px;
+}
+
+.japan-text-link {
+  display: inline-flex;
+  gap: 12px;
+
+  color: var(--japan-navy);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  margin-top: 10px;
+
+  border-bottom: 1px solid var(--japan-gold);
+  padding-bottom: 4px;
+}
+
+.japan-text-link span {
+  color: var(--japan-gold);
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.japan-process {
+  background: var(--japan-cream);
+}
+
+.japan-process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  margin-top: 42px;
+}
+
+.japan-process-grid article {
+  padding: 0 20px;
+
+  border-right: 1px dashed #d4cdbb;
+}
+
+.japan-process-grid article:first-child {
+  padding-left: 0;
+}
+
+.japan-process-grid article:last-child {
+  border-right: 0;
+}
+
+.process-number {
+  color: var(--japan-gold);
+
+  font-family: "Fraunces", serif;
+  font-size: 30px;
+}
+
+.process-line {
+  height: 1px;
+
+  background: var(--japan-navy);
+
+  margin: 13px 0 18px;
+
+  opacity: 0.25;
+}
+
+.japan-process-grid h3 {
+  color: var(--japan-navy);
+
+  font-size: 20px;
+
+  margin-bottom: 7px;
+}
+
+.japan-process-grid p {
+  color: var(--japan-muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.japan-documents {
+  background: white;
+}
+
+.japan-documents-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.japan-documents-grid h2 {
+  color: var(--japan-navy);
+
+  font-size: 44px;
+  line-height: 1.05;
+
+  margin: 15px 0;
+}
+
+.japan-documents-grid > div:first-child p {
+  color: var(--japan-muted);
+
+  font-size: 13px;
+  line-height: 1.8;
+
+  max-width: 420px;
+}
+
+.document-list {
+  border-top: 1px solid #ddd;
+}
+
+.document-item {
+  display: grid;
+  grid-template-columns: 45px 1fr auto;
+
+  align-items: center;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.document-item span {
+  color: var(--japan-gold);
+
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.document-item strong {
+  color: var(--japan-navy);
+
+  font-size: 13px;
+}
+
+.document-item i {
+  color: var(--japan-gold);
+
+  font-style: normal;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.japan-faq {
+  background: #faf9f6;
+}
+
+.japan-faq-list {
+  width: min(850px, 100%);
+
+  margin: 38px auto 0;
+}
+
+.japan-faq details {
+  background: white;
+
+  border-bottom: 1px solid #e1ddd3;
+
+  padding: 0 20px;
+}
+
+.japan-faq summary {
+  list-style: none;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 0;
+
+  color: var(--japan-navy);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.japan-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.japan-faq summary b {
+  color: var(--japan-gold);
+
+  font-size: 22px;
+  font-weight: 400;
+
+  transition: transform 0.3s ease;
+}
+
+.japan-faq details[open] summary b {
+  transform: rotate(45deg);
+}
+
+.japan-faq details p {
+  color: var(--japan-muted);
+
+  font-size: 13px;
+  line-height: 1.8;
+
+  max-width: 720px;
+
+  padding: 0 0 20px;
+  margin: 0;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.japan-final-cta {
+  min-height: 360px;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.japan-final-inner {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.japan-final-inner .japan-label {
+  justify-content: center;
+}
+
+.japan-final-inner h2 {
+  color: white;
+
+  font-size: clamp(38px, 5vw, 58px);
+  line-height: 1;
+
+  margin: 15px 0;
+}
+
+.japan-final-inner p {
+  color: rgba(255,255,255,.72);
+
+  font-size: 14px;
+
+  margin-bottom: 25px;
+}
+
+.japan-final-inner .japan-gold-btn {
+  margin: auto;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .section-compact {
+    padding: 60px 0;
+  }
+
+  .japan-intro-grid,
+  .japan-story-grid,
+  .japan-documents-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .japan-two-column-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .japan-facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .japan-facts-grid > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .japan-experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .japan-experience-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .japan-experience-grid article:nth-child(3),
+  .japan-experience-grid article:nth-child(4) {
+    border-top: 1px solid #ddd8ca;
+  }
+
+  .japan-visa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .japan-destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .japan-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+
+  .japan-process-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .japan-process-grid article:nth-child(3),
+  .japan-process-grid article:nth-child(4) {
+    border-top: 1px dashed #d4cdbb;
+    padding-top: 25px;
+  }
+
+  .japan-story-image {
+    height: 330px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .japan-container,
+  .japan-hero-inner {
+    width: min(100% - 30px, 1160px);
+  }
+
+  .section-compact {
+    padding: 48px 0;
+  }
+
+  .japan-hero {
+    height: 650px;
+    min-height: 0;
+
+    background-position: 58% center;
+  }
+
+  .japan-hero::after {
+    width: 210px;
+    height: 210px;
+
+    right: -70px;
+    top: 18%;
+  }
+
+  .japan-hero h1 {
+    font-size: 58px;
+  }
+
+  .japan-hero p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .japan-hero-stamp {
+    display: none;
+  }
+
+  .japan-hero-actions {
+    gap: 8px;
+  }
+
+  .japan-gold-btn,
+  .japan-outline-btn {
+    padding: 12px 15px;
+    font-size: 11px;
+  }
+
+  .japan-section-heading h2,
+  .japan-two-column-heading h2 {
+    font-size: 34px;
+  }
+
+  .japan-facts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .japan-facts-grid > div {
+    padding: 10px 12px;
+  }
+
+  .japan-experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .japan-experience-grid article,
+  .japan-experience-grid article:nth-child(2),
+  .japan-experience-grid article:nth-child(3),
+  .japan-experience-grid article:nth-child(4) {
+    border-right: 0;
+    border-top: 1px solid #ddd8ca;
+  }
+
+  .japan-experience-grid article:first-child {
+    border-top: 0;
+  }
+
+  .japan-destination-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .destination-image {
+    height: 190px;
+  }
+
+  .japan-story-image {
+    height: 270px;
+  }
+
+  .japan-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .japan-process-grid article,
+  .japan-process-grid article:first-child,
+  .japan-process-grid article:nth-child(2),
+  .japan-process-grid article:nth-child(3),
+  .japan-process-grid article:nth-child(4) {
+    border-right: 0;
+    border-top: 1px dashed #d4cdbb;
+    padding: 22px 0 0;
+  }
+
+  .japan-process-grid article:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .japan-documents-grid {
+    gap: 28px;
+  }
+
+  .japan-documents-grid h2 {
+    font-size: 36px;
+  }
+
+  .japan-final-cta {
+    min-height: 330px;
+  }
+
+  .japan-final-inner h2 {
+    font-size: 40px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .japan-page *,
+  .japan-page *::before,
+  .japan-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

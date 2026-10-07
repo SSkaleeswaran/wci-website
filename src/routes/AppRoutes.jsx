@@ -15,7 +15,10 @@ import BusinessVisaPage from "../pages/services/BusinessVisaPage";
 
 import CanadaPage from "../pages/countries/CanadaPage";
 import TaiwanPage from "../pages/countries/TaiwanPage";
-
+import USAPage from "../pages/countries/USAPage";
+import UKPage from "../pages/countries/UKPage";
+import AustraliaPage from "../pages/countries/AustraliaPage";
+import JapanPage from "../pages/countries/JapanPage";
 
 
 
@@ -49,14 +52,14 @@ function AppRoutes() {
 
 
        {/* countries pages */}
-      <Route path="/countries/usa" element={<h1>USA Page</h1>} />
+      <Route path="/countries/usa" element={<USAPage />} />
       <Route path="/countries/canada" element={<CanadaPage />} />
-      <Route path="/countries/uk" element={<h1>UK Page</h1>} />
+      <Route path="/countries/uk" element={<UKPage />} />
 
       <Route path="/countries/schengen" element={<h1>Schengen Page</h1>} />
       <Route path="/countries/south-korea" element={<h1>South Korea Page</h1>} />
-      <Route path="/countries/japan" element={<h1>Japan Page</h1>} />
-      <Route path="/countries/australia" element={<h1>Australia Page</h1>} />
+      <Route path="/countries/japan" element={<JapanPage />} />
+      <Route path="/countries/australia" element={<AustraliaPage />} />
       <Route path="/countries/new-zealand" element={<h1>New Zealand Page</h1>} />
       <Route path="/countries/taiwan" element={<TaiwanPage />} />
       <Route path="/countries/russia" element={<h1>Russia Page</h1>} />
