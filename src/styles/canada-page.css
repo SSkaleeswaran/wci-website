@@ -1,0 +1,1419 @@
+/* =========================================================
+   CANADA PAGE
+   WCI - Well Career Immigration
+========================================================= */
+
+.canada-page {
+  --canada-blue: #0b2a5b;
+  --canada-dark: #061f47;
+  --canada-gold: #d9a441;
+  --canada-cream: #f7f5ef;
+  --canada-beige: #e3ded2;
+  --canada-text: #1d2b3a;
+  --canada-muted: #697381;
+  --canada-white: #ffffff;
+
+  font-family: "Inter", sans-serif;
+  color: var(--canada-text);
+  background: var(--canada-cream);
+  overflow: hidden;
+}
+
+.canada-page h1,
+.canada-page h2,
+.canada-page h3 {
+  font-family: "Fraunces", serif;
+}
+
+.canada-page a {
+  text-decoration: none;
+}
+
+.canada-container {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+.section-padding {
+  padding: 105px 0;
+}
+
+.canada-small-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  color: var(--canada-blue);
+}
+
+.canada-small-label::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--canada-gold);
+}
+
+.canada-small-label.light {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.canada-small-label.light::before {
+  background: var(--canada-gold);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.canada-hero {
+  position: relative;
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+}
+
+.canada-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 75% 30%,
+      rgba(217, 164, 65, 0.13),
+      transparent 30%
+    );
+}
+
+.canada-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+
+  padding-top: 45px;
+}
+
+.canada-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 22px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.canada-eyebrow span {
+  width: 32px;
+  height: 1px;
+  background: var(--canada-gold);
+}
+
+.canada-hero h1 {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-size: clamp(60px, 7vw, 96px);
+  line-height: 0.9;
+  font-weight: 400;
+  letter-spacing: -3px;
+}
+
+.canada-hero h1 strong {
+  display: block;
+
+  color: var(--canada-gold);
+  font-weight: 400;
+}
+
+.canada-hero-content > p {
+  max-width: 500px;
+
+  margin: 30px 0 32px;
+
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.canada-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.canada-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+
+  padding: 14px 20px;
+
+  background: var(--canada-gold);
+  color: var(--canada-dark);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  transition: 0.3s ease;
+}
+
+.canada-primary-btn span {
+  font-size: 18px;
+}
+
+.canada-primary-btn:hover {
+  background: white;
+  color: var(--canada-blue);
+  transform: translateY(-2px);
+}
+
+.canada-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.canada-text-link span {
+  color: var(--canada-gold);
+  transition: 0.3s ease;
+}
+
+.canada-text-link:hover span {
+  transform: translateY(4px);
+}
+
+.canada-hero-country {
+  position: absolute;
+  right: 7%;
+  bottom: 52px;
+
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.canada-hero-country img {
+  width: 38px;
+  height: 25px;
+  object-fit: cover;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.canada-hero-scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  z-index: 2;
+}
+
+.canada-hero-scroll span {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.canada-hero-scroll div {
+  width: 1px;
+  height: 35px;
+  background: var(--canada-gold);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.canada-about {
+  background: var(--canada-cream);
+}
+
+.canada-section-heading {
+  margin-bottom: 60px;
+}
+
+.canada-section-heading h2 {
+  max-width: 620px;
+
+  margin: 15px 0 0;
+
+  font-size: clamp(42px, 5vw, 65px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.canada-section-heading h2 em {
+  display: block;
+
+  color: var(--canada-blue);
+  font-style: italic;
+}
+
+.canada-about-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.canada-about-image {
+  position: relative;
+}
+
+.canada-about-image img {
+  display: block;
+
+  width: 100%;
+  height: 480px;
+
+  object-fit: cover;
+}
+
+.canada-image-caption {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+
+  width: calc(100% - 44px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 17px;
+
+  background: rgba(6, 31, 71, 0.9);
+
+  color: white;
+}
+
+.canada-image-caption span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.canada-image-caption strong {
+  color: var(--canada-gold);
+  font-family: "Fraunces", serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.canada-about-content {
+  max-width: 510px;
+}
+
+.canada-about-content p {
+  margin: 0 0 22px;
+
+  color: var(--canada-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.canada-about-content .canada-lead {
+  color: var(--canada-blue);
+
+  font-family: "Fraunces", serif;
+  font-size: 23px;
+  line-height: 1.45;
+}
+
+.canada-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 10px;
+
+  color: var(--canada-blue);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  border-bottom: 1px solid var(--canada-gold);
+  padding-bottom: 6px;
+}
+
+.canada-inline-link span {
+  color: var(--canada-gold);
+}
+
+
+/* =========================================================
+   WHY CANADA
+========================================================= */
+
+.canada-why {
+  padding: 100px 0;
+
+  background: var(--canada-blue);
+  color: white;
+}
+
+.canada-why-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 60px;
+
+  padding-bottom: 55px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.canada-why-top h2 {
+  margin: 15px 0 0;
+
+  font-size: clamp(40px, 5vw, 60px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.canada-why-top p {
+  max-width: 400px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.63);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.canada-benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.canada-benefit {
+  padding: 40px 30px 15px 0;
+}
+
+.canada-benefit:not(:last-child) {
+  margin-right: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.canada-benefit span {
+  display: block;
+
+  margin-bottom: 55px;
+
+  color: var(--canada-gold);
+
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.canada-benefit h3 {
+  margin: 0 0 14px;
+
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.canada-benefit p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   VISA SERVICES
+========================================================= */
+
+.canada-visas {
+  background: var(--canada-cream);
+}
+
+.canada-section-heading.split {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 70px;
+}
+
+.canada-section-heading.split > p {
+  max-width: 390px;
+  margin: 0;
+
+  color: var(--canada-muted);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.canada-visa-list {
+  border-top: 1px solid var(--canada-beige);
+}
+
+.canada-visa-item {
+  display: grid;
+  grid-template-columns: 90px 1fr 60px;
+  align-items: center;
+
+  padding: 28px 0;
+
+  border-bottom: 1px solid var(--canada-beige);
+
+  transition: 0.3s ease;
+}
+
+.canada-visa-item:hover {
+  padding-left: 12px;
+  padding-right: 12px;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.canada-visa-number {
+  color: var(--canada-gold);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.canada-visa-main h3 {
+  margin: 0 0 7px;
+
+  color: var(--canada-blue);
+
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.canada-visa-main p {
+  max-width: 670px;
+  margin: 0;
+
+  color: var(--canada-muted);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.canada-visa-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  border: 1px solid var(--canada-beige);
+  border-radius: 50%;
+
+  color: var(--canada-blue);
+
+  font-size: 17px;
+
+  transition: 0.3s ease;
+}
+
+.canada-visa-item:hover .canada-visa-arrow {
+  background: var(--canada-gold);
+  border-color: var(--canada-gold);
+}
+
+
+/* =========================================================
+   DESTINATIONS
+========================================================= */
+
+.canada-destinations {
+  padding: 105px 0;
+
+  background: #eeebe3;
+}
+
+.canada-destination-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 55px;
+}
+
+.canada-destination-heading h2 {
+  margin: 14px 0 0;
+
+  font-size: clamp(43px, 5vw, 65px);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.canada-destination-heading h2 em {
+  color: var(--canada-blue);
+  font-style: italic;
+}
+
+.canada-destination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.canada-destination-card {
+  background: var(--canada-cream);
+
+  transition: 0.35s ease;
+}
+
+.canada-destination-card:hover {
+  transform: translateY(-7px);
+}
+
+.canada-destination-image {
+  position: relative;
+
+  height: 230px;
+
+  overflow: hidden;
+}
+
+.canada-destination-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.6s ease;
+}
+
+.canada-destination-card:hover
+.canada-destination-image img {
+  transform: scale(1.05);
+}
+
+.canada-destination-image > span {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--canada-blue);
+
+  color: white;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.canada-destination-content {
+  padding: 25px 25px 27px;
+}
+
+.canada-destination-content h3 {
+  margin: 0 0 10px;
+
+  color: var(--canada-blue);
+
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.canada-destination-content p {
+  min-height: 65px;
+
+  margin: 0 0 22px;
+
+  color: var(--canada-muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.canada-discover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--canada-blue);
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.canada-discover b {
+  color: var(--canada-gold);
+
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   TRAVEL GUIDE
+========================================================= */
+
+.canada-guide {
+  background: var(--canada-cream);
+}
+
+.canada-guide-layout {
+  display: grid;
+  grid-template-columns: 0.25fr 0.75fr;
+  gap: 80px;
+}
+
+.canada-guide-index {
+  margin-top: 60px;
+
+  font-family: "Fraunces", serif;
+  font-size: 90px;
+  line-height: 1;
+
+  color: var(--canada-beige);
+}
+
+.canada-guide-content h2 {
+  max-width: 650px;
+
+  margin: 0 0 25px;
+
+  color: var(--canada-blue);
+
+  font-size: clamp(43px, 5vw, 65px);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.canada-guide-content h2 em {
+  display: block;
+
+  color: var(--canada-gold);
+  font-style: italic;
+}
+
+.canada-guide-intro {
+  max-width: 620px;
+
+  margin: 0 0 50px;
+
+  color: var(--canada-muted);
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.canada-guide-points {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px 45px;
+}
+
+.canada-guide-points > div {
+  padding-top: 20px;
+
+  border-top: 1px solid var(--canada-beige);
+}
+
+.canada-guide-points span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--canada-gold);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.canada-guide-points h3 {
+  margin: 0 0 9px;
+
+  color: var(--canada-blue);
+
+  font-size: 21px;
+  font-weight: 400;
+}
+
+.canada-guide-points p {
+  margin: 0;
+
+  color: var(--canada-muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.canada-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+
+  margin-top: 45px;
+  padding: 14px 20px;
+
+  background: var(--canada-blue);
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.canada-guide-btn span {
+  color: var(--canada-gold);
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.canada-process {
+  padding: 100px 0;
+
+  background: var(--canada-dark);
+  color: white;
+}
+
+.canada-process-header {
+  margin-bottom: 65px;
+}
+
+.canada-process-header h2 {
+  margin: 15px 0 0;
+
+  font-size: clamp(43px, 5vw, 62px);
+  line-height: 1;
+  font-weight: 400;
+}
+
+.canada-process-header h2 em {
+  color: var(--canada-gold);
+  font-style: italic;
+}
+
+.canada-process-line {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.canada-process-step {
+  position: relative;
+
+  padding: 35px 25px 0 0;
+}
+
+.canada-process-step:not(:last-child) {
+  margin-right: 25px;
+  border-right: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.canada-process-step > span {
+  display: block;
+
+  margin-bottom: 45px;
+
+  color: var(--canada-gold);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.canada-process-step h3 {
+  margin: 0 0 12px;
+
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.canada-process-step p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.57);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.canada-documents {
+  background: var(--canada-cream);
+}
+
+.canada-documents-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.canada-documents-grid h2 {
+  max-width: 500px;
+
+  margin: 15px 0 22px;
+
+  color: var(--canada-blue);
+
+  font-size: clamp(43px, 5vw, 62px);
+  line-height: 1;
+  font-weight: 400;
+}
+
+.canada-documents-grid h2 em {
+  display: block;
+
+  color: var(--canada-gold);
+  font-style: italic;
+}
+
+.canada-documents-grid > div:first-child > p {
+  max-width: 480px;
+
+  margin: 0;
+
+  color: var(--canada-muted);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.canada-outline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+
+  margin-top: 32px;
+  padding: 13px 18px;
+
+  border: 1px solid var(--canada-blue);
+
+  color: var(--canada-blue);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.canada-outline-btn span {
+  color: var(--canada-gold);
+  font-size: 17px;
+}
+
+.canada-document-list {
+  border-top: 1px solid var(--canada-beige);
+}
+
+.canada-document-list > div {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  padding: 19px 0;
+
+  border-bottom: 1px solid var(--canada-beige);
+}
+
+.canada-document-list span {
+  color: var(--canada-gold);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.canada-document-list strong {
+  color: var(--canada-blue);
+
+  font-family: "Fraunces", serif;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.canada-faq {
+  background: #eeebe3;
+}
+
+.canada-faq-header {
+  margin-bottom: 50px;
+}
+
+.canada-faq-header h2 {
+  margin: 14px 0 0;
+
+  color: var(--canada-blue);
+
+  font-size: clamp(43px, 5vw, 62px);
+  line-height: 1;
+  font-weight: 400;
+}
+
+.canada-faq-header h2 em {
+  color: var(--canada-gold);
+  font-style: italic;
+}
+
+.canada-faq-list {
+  border-top: 1px solid #d3cdbf;
+}
+
+.canada-faq-item {
+  border-bottom: 1px solid #d3cdbf;
+}
+
+.canada-faq-item summary {
+  display: grid;
+  grid-template-columns: 60px 1fr 30px;
+  align-items: center;
+
+  padding: 22px 0;
+
+  cursor: pointer;
+  list-style: none;
+
+  color: var(--canada-blue);
+
+  font-family: "Fraunces", serif;
+  font-size: 19px;
+}
+
+.canada-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.canada-faq-item summary > span {
+  color: var(--canada-gold);
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.canada-faq-item summary b {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+
+  transition: transform 0.25s ease;
+}
+
+.canada-faq-item[open] summary b {
+  transform: rotate(45deg);
+}
+
+.canada-faq-answer {
+  padding: 0 60px 24px;
+}
+
+.canada-faq-answer p {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: var(--canada-muted);
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.canada-final-cta {
+  position: relative;
+
+  min-height: 450px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.canada-final-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(217, 164, 65, 0.1),
+      transparent 45%
+    );
+}
+
+.canada-final-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 700px;
+  padding: 60px 20px;
+}
+
+.canada-final-content h2 {
+  margin: 17px 0 20px;
+
+  color: white;
+
+  font-size: clamp(45px, 5vw, 68px);
+  line-height: 0.98;
+  font-weight: 400;
+  letter-spacing: -2px;
+}
+
+.canada-final-content h2 em {
+  display: block;
+
+  color: var(--canada-gold);
+  font-style: italic;
+}
+
+.canada-final-content p {
+  max-width: 500px;
+
+  margin: 0 auto 30px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.canada-final-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+
+  padding: 14px 21px;
+
+  background: var(--canada-gold);
+  color: var(--canada-dark);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.canada-final-btn span {
+  font-size: 17px;
+}
+
+.canada-final-btn:hover {
+  background: white;
+  color: var(--canada-blue);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 992px) {
+
+  .canada-container,
+  .canada-hero-content {
+    width: min(100% - 45px, 850px);
+  }
+
+  .section-padding {
+    padding: 80px 0;
+  }
+
+  .canada-about-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .canada-about-content {
+    max-width: 700px;
+  }
+
+  .canada-about-image img {
+    height: 400px;
+  }
+
+  .canada-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .canada-benefit:nth-child(2) {
+    border-right: none;
+  }
+
+  .canada-benefit:nth-child(3),
+  .canada-benefit:nth-child(4) {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .canada-section-heading.split {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .canada-destination-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .canada-guide-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .canada-guide-index {
+    display: none;
+  }
+
+  .canada-process-line {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .canada-process-step:nth-child(2) {
+    border-right: none;
+  }
+
+  .canada-process-step:nth-child(n + 3) {
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+  }
+
+  .canada-documents-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+}
+
+
+@media (max-width: 640px) {
+
+  .canada-container,
+  .canada-hero-content {
+    width: calc(100% - 32px);
+  }
+
+  .section-padding {
+    padding: 65px 0;
+  }
+
+  .canada-hero {
+    min-height: 590px;
+    background-position: 62% center;
+  }
+
+  .canada-hero h1 {
+    font-size: 58px;
+    letter-spacing: -2px;
+  }
+
+  .canada-hero-content > p {
+    font-size: 14px;
+  }
+
+  .canada-hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .canada-hero-country {
+    right: 18px;
+    bottom: 30px;
+  }
+
+  .canada-hero-scroll {
+    display: none;
+  }
+
+  .canada-section-heading {
+    margin-bottom: 38px;
+  }
+
+  .canada-section-heading h2,
+  .canada-destination-heading h2,
+  .canada-guide-content h2,
+  .canada-documents-grid h2,
+  .canada-faq-header h2 {
+    font-size: 42px;
+  }
+
+  .canada-about-image img {
+    height: 300px;
+  }
+
+  .canada-about-content .canada-lead {
+    font-size: 20px;
+  }
+
+  .canada-why {
+    padding: 70px 0;
+  }
+
+  .canada-why-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .canada-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .canada-benefit,
+  .canada-benefit:not(:last-child) {
+    margin: 0;
+    padding: 28px 0;
+
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .canada-benefit:last-child {
+    border-bottom: none;
+  }
+
+  .canada-benefit span {
+    margin-bottom: 25px;
+  }
+
+  .canada-visa-item {
+    grid-template-columns: 45px 1fr 45px;
+    gap: 10px;
+  }
+
+  .canada-visa-main h3 {
+    font-size: 21px;
+  }
+
+  .canada-visa-main p {
+    font-size: 12px;
+  }
+
+  .canada-destination-heading {
+    display: block;
+  }
+
+  .canada-destination-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .canada-destination-image {
+    height: 210px;
+  }
+
+  .canada-guide-points {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .canada-process {
+    padding: 70px 0;
+  }
+
+  .canada-process-line {
+    grid-template-columns: 1fr;
+  }
+
+  .canada-process-step,
+  .canada-process-step:not(:last-child) {
+    margin: 0;
+    padding: 27px 0;
+
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  }
+
+  .canada-process-step:last-child {
+    border-bottom: none;
+  }
+
+  .canada-process-step > span {
+    margin-bottom: 22px;
+  }
+
+  .canada-document-list strong {
+    font-size: 17px;
+  }
+
+  .canada-faq-item summary {
+    grid-template-columns: 35px 1fr 25px;
+
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .canada-faq-answer {
+    padding: 0 35px 22px;
+  }
+
+  .canada-final-cta {
+    min-height: 430px;
+  }
+}

@@ -37,7 +37,7 @@
 
   color: #2A8C8C;
 
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 800;
 
   letter-spacing: 1.5px;
@@ -486,8 +486,8 @@
 .faq-visual {
   position: relative;
 
-  width: 100%;
-  height: 560px;
+  width: 550px;
+  height: 550px;
 
   display: flex;
 
@@ -496,10 +496,10 @@
 }
 
 .faq-hero-3d {
-  width: 100%;
-  height: 100%;
+  width: 500px;
+  height: 500px;
 
-  overflow: hidden;
+  overflow: visible;
 }
 
 .faq-hero-3d canvas {

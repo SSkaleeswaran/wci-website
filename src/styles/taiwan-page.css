@@ -1,0 +1,1032 @@
+/* =========================================================
+   TAIWAN COUNTRY PAGE
+   WCI IMMIGRATION
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap");
+
+
+.taiwan-page {
+  --wci-blue: #0B2A5B;
+  --wci-dark: #061f47;
+  --wci-gold: #D9A441;
+  --wci-cream: #f7f5ef;
+  --wci-beige: #e3ded2;
+  --wci-text: #25344d;
+  --wci-muted: #667085;
+
+  font-family: "Inter", sans-serif;
+  color: var(--wci-text);
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.taiwan-page h1,
+.taiwan-page h2,
+.taiwan-page h3 {
+  font-family: "Fraunces", serif;
+}
+
+.taiwan-page a {
+  text-decoration: none;
+}
+
+.taiwan-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--wci-gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.taiwan-eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--wci-gold);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.taiwan-hero {
+  position: relative;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.taiwan-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 31, 71, 0.94) 0%,
+      rgba(6, 31, 71, 0.78) 38%,
+      rgba(6, 31, 71, 0.25) 75%,
+      rgba(6, 31, 71, 0.1) 100%
+    );
+}
+
+.taiwan-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  padding: 100px 0;
+}
+
+.taiwan-hero-country {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 20px;
+}
+
+.taiwan-hero-country img {
+  width: 38px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.taiwan-hero-country span {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.taiwan-hero h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 0.88;
+  font-weight: 500;
+  letter-spacing: -4px;
+}
+
+.taiwan-hero h1 span {
+  color: var(--wci-gold);
+}
+
+.taiwan-hero-content > p {
+  max-width: 500px;
+  margin: 28px 0 32px;
+  color: #e8edf5;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.taiwan-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.taiwan-primary-button,
+.taiwan-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 21px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.3s ease;
+}
+
+.taiwan-primary-button {
+  background: var(--wci-gold);
+  color: var(--wci-dark);
+}
+
+.taiwan-primary-button span {
+  font-size: 18px;
+}
+
+.taiwan-primary-button:hover {
+  color: var(--wci-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(217, 164, 65, 0.25);
+}
+
+.taiwan-secondary-button {
+  border: 1px solid rgba(255,255,255,0.45);
+  color: #ffffff;
+  background: rgba(255,255,255,0.04);
+}
+
+.taiwan-secondary-button:hover {
+  color: #ffffff;
+  background: rgba(255,255,255,0.1);
+  border-color: #ffffff;
+}
+
+.taiwan-hero-scroll {
+  position: absolute;
+  right: 50px;
+  bottom: 38px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transform: rotate(90deg);
+  transform-origin: right center;
+}
+
+.taiwan-hero-scroll span {
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.taiwan-hero-scroll div {
+  width: 55px;
+  height: 1px;
+  background: var(--wci-gold);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.taiwan-intro {
+  padding: 110px 0;
+  background: var(--wci-cream);
+}
+
+.taiwan-intro-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.taiwan-section-heading h2,
+.taiwan-section-top h2,
+.taiwan-attractions-heading h2,
+.taiwan-process-heading h2,
+.taiwan-documents-heading h2,
+.taiwan-faq-heading h2 {
+  margin: 18px 0 0;
+  color: var(--wci-blue);
+  font-size: clamp(2.5rem, 4.5vw, 4.3rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.taiwan-section-heading h2 span,
+.taiwan-section-top h2 span,
+.taiwan-attractions-heading h2 span,
+.taiwan-process-heading h2 span,
+.taiwan-documents-heading h2 span,
+.taiwan-faq-heading h2 span {
+  color: var(--wci-gold);
+}
+
+.taiwan-intro-text {
+  padding-top: 35px;
+}
+
+.taiwan-intro-text p {
+  margin: 0 0 20px;
+  color: var(--wci-muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.taiwan-intro-line {
+  width: 100%;
+  height: 1px;
+  margin: 30px 0 15px;
+  background: var(--wci-beige);
+}
+
+.taiwan-intro-text > span {
+  color: var(--wci-blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   WHY TAIWAN
+========================================================= */
+
+.taiwan-why {
+  padding: 110px 0;
+  background: #ffffff;
+}
+
+.taiwan-section-top {
+  max-width: 700px;
+  margin-bottom: 55px;
+}
+
+.taiwan-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--wci-beige);
+  border-left: 1px solid var(--wci-beige);
+}
+
+.taiwan-experience-card {
+  position: relative;
+  min-height: 260px;
+  padding: 30px;
+  border-right: 1px solid var(--wci-beige);
+  border-bottom: 1px solid var(--wci-beige);
+  background: #ffffff;
+  transition: 0.4s ease;
+}
+
+.taiwan-experience-card:hover {
+  background: var(--wci-cream);
+  transform: translateY(-7px);
+}
+
+.taiwan-experience-number {
+  display: block;
+  margin-bottom: 65px;
+  color: var(--wci-gold);
+  font-family: "Fraunces", serif;
+  font-size: 25px;
+}
+
+.taiwan-experience-card h3 {
+  margin: 0 0 12px;
+  color: var(--wci-blue);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.taiwan-experience-card p {
+  margin: 0;
+  color: var(--wci-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.taiwan-card-arrow {
+  position: absolute;
+  right: 25px;
+  top: 28px;
+  color: var(--wci-blue);
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   VISA
+========================================================= */
+
+.taiwan-visa {
+  padding: 110px 0;
+  background: var(--wci-blue);
+}
+
+.taiwan-visa-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 90px;
+  align-items: center;
+}
+
+.taiwan-visa-heading h2 {
+  margin: 18px 0 25px;
+  color: #ffffff;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.taiwan-visa-heading h2 span {
+  color: var(--wci-gold);
+}
+
+.taiwan-visa-heading > p {
+  max-width: 500px;
+  margin: 0 0 30px;
+  color: #d8e1ee;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.taiwan-dark-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 47px;
+  padding: 0 20px;
+  background: var(--wci-gold);
+  color: var(--wci-dark);
+  font-size: 12px;
+  font-weight: 800;
+  transition: 0.3s ease;
+}
+
+.taiwan-dark-button:hover {
+  color: var(--wci-dark);
+  transform: translateY(-3px);
+}
+
+.taiwan-dark-button span {
+  font-size: 18px;
+}
+
+.taiwan-visa-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.taiwan-visa-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 65px 1fr;
+  gap: 25px;
+  padding: 32px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.17);
+}
+
+.taiwan-visa-card > span {
+  color: var(--wci-gold);
+  font-family: "Fraunces", serif;
+  font-size: 20px;
+}
+
+.taiwan-visa-card h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.taiwan-visa-card p {
+  max-width: 550px;
+  margin: 0;
+  color: #cbd7e7;
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   ATTRACTIONS
+========================================================= */
+
+.taiwan-attractions {
+  padding: 110px 0;
+  background: var(--wci-cream);
+}
+
+.taiwan-attractions-heading {
+  display: grid;
+  grid-template-columns: 1fr 0.65fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 55px;
+}
+
+.taiwan-attractions-heading > p {
+  margin: 0;
+  color: var(--wci-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.taiwan-attraction-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.taiwan-attraction-card {
+  position: relative;
+  min-height: 260px;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid var(--wci-beige);
+  transition: 0.4s ease;
+}
+
+.taiwan-attraction-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--wci-gold);
+  box-shadow: 0 20px 40px rgba(11,42,91,0.08);
+}
+
+.taiwan-attraction-number {
+  color: var(--wci-gold);
+  font-family: "Fraunces", serif;
+  font-size: 18px;
+}
+
+.taiwan-attraction-card h3 {
+  margin: 55px 0 12px;
+  color: var(--wci-blue);
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.taiwan-attraction-card p {
+  margin: 0;
+  color: var(--wci-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.taiwan-attraction-link {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 22px;
+  color: var(--wci-blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.taiwan-attraction-link span {
+  color: var(--wci-gold);
+}
+
+
+/* =========================================================
+   ARTICLE
+========================================================= */
+
+.taiwan-article {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.taiwan-article-grid {
+  display: grid;
+  grid-template-columns: 0.35fr 1fr;
+  gap: 80px;
+}
+
+.taiwan-article-label {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.taiwan-article-label strong {
+  margin-top: 30px;
+  color: var(--wci-blue);
+  font-family: "Fraunces", serif;
+  font-size: 70px;
+  font-weight: 500;
+}
+
+.taiwan-article-label > span:last-child {
+  color: var(--wci-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.taiwan-article-content {
+  max-width: 850px;
+}
+
+.taiwan-article-content h2 {
+  margin: 0 0 30px;
+  color: var(--wci-blue);
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.taiwan-article-content h2 span {
+  color: var(--wci-gold);
+}
+
+.taiwan-article-content > p {
+  max-width: 780px;
+  margin-bottom: 20px;
+  color: var(--wci-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.taiwan-article-highlight {
+  margin-top: 35px;
+  padding: 25px 30px;
+  border-left: 3px solid var(--wci-gold);
+  background: var(--wci-cream);
+}
+
+.taiwan-article-highlight span {
+  color: var(--wci-blue);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.taiwan-article-highlight p {
+  margin: 10px 0 0;
+  color: var(--wci-blue);
+  font-family: "Fraunces", serif;
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.taiwan-process {
+  padding: 110px 0;
+  background: var(--wci-beige);
+}
+
+.taiwan-process-heading {
+  max-width: 700px;
+  margin-bottom: 65px;
+}
+
+.taiwan-process-line {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(11,42,91,0.25);
+}
+
+.taiwan-process-step {
+  position: relative;
+  padding: 30px 30px 0 0;
+  margin-right: 30px;
+}
+
+.taiwan-process-step::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--wci-gold);
+}
+
+.taiwan-process-step > span {
+  display: block;
+  margin: 20px 0 35px;
+  color: var(--wci-blue);
+  font-family: "Fraunces", serif;
+  font-size: 18px;
+}
+
+.taiwan-process-step h3 {
+  margin: 0 0 10px;
+  color: var(--wci-blue);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.taiwan-process-step p {
+  margin: 0;
+  color: #596778;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.taiwan-documents {
+  padding: 110px 0;
+  background: var(--wci-cream);
+}
+
+.taiwan-documents-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.taiwan-documents-heading > p {
+  max-width: 500px;
+  margin-top: 25px;
+  color: var(--wci-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.taiwan-document-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--wci-beige);
+  border-left: 1px solid var(--wci-beige);
+}
+
+.taiwan-document-list > div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 90px;
+  padding: 20px;
+  border-right: 1px solid var(--wci-beige);
+  border-bottom: 1px solid var(--wci-beige);
+  background: #ffffff;
+}
+
+.taiwan-document-list span {
+  color: var(--wci-gold);
+  font-family: "Fraunces", serif;
+  font-size: 16px;
+}
+
+.taiwan-document-list p {
+  margin: 0;
+  color: var(--wci-blue);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.taiwan-faq {
+  padding: 110px 0;
+  background: #ffffff;
+}
+
+.taiwan-faq-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 100px;
+}
+
+.taiwan-faq-heading > p {
+  max-width: 430px;
+  margin: 25px 0;
+  color: var(--wci-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.taiwan-faq-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--wci-blue);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.taiwan-faq-link span {
+  color: var(--wci-gold);
+  font-size: 18px;
+}
+
+.taiwan-faq-item {
+  border-top: 1px solid var(--wci-beige);
+}
+
+.taiwan-faq-item:last-child {
+  border-bottom: 1px solid var(--wci-beige);
+}
+
+.taiwan-faq-item button {
+  width: 100%;
+  min-height: 70px;
+  padding: 15px 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: var(--wci-blue);
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.taiwan-faq-item button strong {
+  color: var(--wci-gold);
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.taiwan-faq-answer {
+  padding: 0 45px 22px 0;
+}
+
+.taiwan-faq-answer p {
+  margin: 0;
+  color: var(--wci-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.taiwan-final-cta {
+  position: relative;
+  padding: 115px 0;
+  overflow: hidden;
+  background: var(--wci-blue);
+}
+
+.taiwan-final-cta::before,
+.taiwan-final-cta::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(217,164,65,0.3);
+}
+
+.taiwan-final-cta::before {
+  width: 500px;
+  height: 500px;
+  right: -220px;
+  top: -220px;
+}
+
+.taiwan-final-cta::after {
+  width: 300px;
+  height: 300px;
+  left: -160px;
+  bottom: -170px;
+}
+
+.taiwan-final-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.taiwan-final-cta-content h2 {
+  margin: 18px 0 22px;
+  color: #ffffff;
+  font-size: clamp(2.8rem, 5vw, 4.7rem);
+  line-height: 0.98;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.taiwan-final-cta-content h2 span {
+  color: var(--wci-gold);
+}
+
+.taiwan-final-cta-content p {
+  max-width: 550px;
+  margin-bottom: 30px;
+  color: #d5deea;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.taiwan-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 0 22px;
+  background: var(--wci-gold);
+  color: var(--wci-dark);
+  font-size: 12px;
+  font-weight: 800;
+  transition: 0.3s ease;
+}
+
+.taiwan-cta-button:hover {
+  color: var(--wci-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.taiwan-cta-button span {
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .taiwan-hero {
+    min-height: 600px;
+    background-attachment: scroll;
+  }
+
+  .taiwan-intro-grid,
+  .taiwan-visa-grid,
+  .taiwan-documents-grid,
+  .taiwan-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .taiwan-experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .taiwan-attractions-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .taiwan-attraction-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .taiwan-article-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .taiwan-process-line {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+  .taiwan-hero {
+    min-height: 570px;
+  }
+
+  .taiwan-hero-content {
+    padding: 80px 0;
+  }
+
+  .taiwan-hero h1 {
+    font-size: 4rem;
+    letter-spacing: -2px;
+  }
+
+  .taiwan-hero-content > p {
+    font-size: 13px;
+  }
+
+  .taiwan-hero-scroll {
+    display: none;
+  }
+
+  .taiwan-primary-button,
+  .taiwan-secondary-button {
+    width: 100%;
+  }
+
+  .taiwan-intro,
+  .taiwan-why,
+  .taiwan-visa,
+  .taiwan-attractions,
+  .taiwan-article,
+  .taiwan-process,
+  .taiwan-documents,
+  .taiwan-faq {
+    padding: 75px 0;
+  }
+
+  .taiwan-section-heading h2,
+  .taiwan-section-top h2,
+  .taiwan-attractions-heading h2,
+  .taiwan-process-heading h2,
+  .taiwan-documents-heading h2,
+  .taiwan-faq-heading h2 {
+    font-size: 2.6rem;
+    letter-spacing: -1px;
+  }
+
+  .taiwan-experience-grid,
+  .taiwan-attraction-grid,
+  .taiwan-document-list {
+    grid-template-columns: 1fr;
+  }
+
+  .taiwan-experience-card {
+    min-height: 230px;
+  }
+
+  .taiwan-experience-number {
+    margin-bottom: 45px;
+  }
+
+  .taiwan-visa-grid {
+    gap: 50px;
+  }
+
+  .taiwan-visa-card {
+    grid-template-columns: 45px 1fr;
+    gap: 12px;
+  }
+
+  .taiwan-visa-card h3 {
+    font-size: 21px;
+  }
+
+  .taiwan-process-line {
+    grid-template-columns: 1fr;
+  }
+
+  .taiwan-process-step {
+    margin-right: 0;
+  }
+
+  .taiwan-article-label strong {
+    font-size: 50px;
+  }
+
+  .taiwan-article-content h2 {
+    font-size: 2.6rem;
+  }
+
+  .taiwan-final-cta {
+    padding: 80px 0;
+  }
+
+  .taiwan-final-cta-content h2 {
+    font-size: 2.8rem;
+    letter-spacing: -1px;
+  }
+
+}

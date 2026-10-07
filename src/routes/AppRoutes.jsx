@@ -13,6 +13,11 @@ import CountriesPage from "../pages/CountriesPage";
 import VisitorVisaPage from "../pages/services/VisitorVisaPage";
 import BusinessVisaPage from "../pages/services/BusinessVisaPage";
 
+import CanadaPage from "../pages/countries/CanadaPage";
+import TaiwanPage from "../pages/countries/TaiwanPage";
+
+
+
 
 function AppRoutes() {
   return (
@@ -38,8 +43,23 @@ function AppRoutes() {
       <Route path="/visa-services/visitor-visa" element={<VisitorVisaPage/>}/>
       <Route path="/visa-services/business-visa" element={<BusinessVisaPage/>}/>
 
+       
     
        {/* <Route path="/services/work-visa" element={<WorkVisaPage/>}/> */}
+
+
+       {/* countries pages */}
+      <Route path="/countries/usa" element={<h1>USA Page</h1>} />
+      <Route path="/countries/canada" element={<CanadaPage />} />
+      <Route path="/countries/uk" element={<h1>UK Page</h1>} />
+
+      <Route path="/countries/schengen" element={<h1>Schengen Page</h1>} />
+      <Route path="/countries/south-korea" element={<h1>South Korea Page</h1>} />
+      <Route path="/countries/japan" element={<h1>Japan Page</h1>} />
+      <Route path="/countries/australia" element={<h1>Australia Page</h1>} />
+      <Route path="/countries/new-zealand" element={<h1>New Zealand Page</h1>} />
+      <Route path="/countries/taiwan" element={<TaiwanPage />} />
+      <Route path="/countries/russia" element={<h1>Russia Page</h1>} />
    
     </Routes>
 

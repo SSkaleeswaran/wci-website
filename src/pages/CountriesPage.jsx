@@ -6,6 +6,7 @@ import "../styles/countries-page.css";
 const countries = [
   {
     id: 1,
+    slug: "usa",
     flag: "/images/flags/united-states-of-america.png",
     image: "/images/countries/usa-statue.avif",
     name: "United States",
@@ -24,6 +25,7 @@ const countries = [
   },
   {
     id: 2,
+    slug: "uk",
     flag: "/images/flags/united-kingdom.png",
     image: "/images/countries/london-clock.jpg",
     name: "United Kingdom",
@@ -42,6 +44,7 @@ const countries = [
   },
   {
     id: 3,
+    slug: "canada",
     flag: "/images/flags/canada.png",
     image: "/images/countries/canada-toronto.jpg",
     name: "Canada",
@@ -60,6 +63,7 @@ const countries = [
   },
   {
     id: 4,
+    slug: "schengen",
     flag: "/images/flags/schengen.png",
     image: "/images/countries/schengen-nature.jpg",
     name: "Schengen Area",
@@ -78,6 +82,7 @@ const countries = [
   },
   {
     id: 5,
+    slug: "south-korea",
     flag: "/images/flags/south-korea.png",
     image: "/images/countries/s-korea4.avif",
     name: "South Korea",
@@ -96,6 +101,7 @@ const countries = [
   },
   {
     id: 6,
+    slug: "japan",
     flag: "/images/flags/japan.png",
     image: "/images/countries/japan.jpg",
     name: "Japan",
@@ -114,6 +120,7 @@ const countries = [
   },
   {
     id: 7,
+    slug: "australia",
     flag: "/images/flags/australia.png",
     image: "/images/countries/aus-sydny.jpg",
     name: "Australia",
@@ -132,6 +139,7 @@ const countries = [
   },
   {
     id: 8,
+    slug: "new-zealand",
     flag: "/images/flags/new-z-flag.png",
     image: "/images/countries/new-zland.jpg",
     name: "New Zealand",
@@ -150,6 +158,7 @@ const countries = [
   },
   {
     id: 9,
+    slug: "taiwan",
     flag: "/images/flags/taiwan-flag.png",
     image: "/images/countries/taiwan.jpg",
     name: "Taiwan",
@@ -168,6 +177,7 @@ const countries = [
   },
   {
     id: 10,
+    slug: "russia",
     flag: "/images/flags/russia-flag.png",
     image: "/images/countries/russia.jpg",
     name: "Russia",
@@ -272,7 +282,7 @@ function CountryBlock({ country, index }) {
 
           </div>
 
-          <Link to="/contact" className="country-block-cta">
+          <Link to={`/countries/${country.slug}`} className="country-block-cta">
             Contact Us <span>→</span>
           </Link>
 
@@ -348,7 +358,8 @@ function CountriesPage() {
               education, career or immigration goals.
             </p>
 
-            <Link to="/contact" className="countries-page-cta-button">
+            <Link to={"/contact"}
+             className="countries-page-cta-button">
               Contact Us <span>→</span>
             </Link>
           </div>
