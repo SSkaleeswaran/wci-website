@@ -1,0 +1,1314 @@
+/* =========================================================
+   NEW ZEALAND PAGE
+   Compact editorial layout
+========================================================= */
+
+.new-zealand-page {
+  --nz-navy: #0b2a5b;
+  --nz-deep: #061f47;
+  --nz-gold: #d9a441;
+  --nz-cream: #f7f5ef;
+  --nz-text: #27364d;
+  --nz-muted: #687386;
+
+  width: 100%;
+  overflow: hidden;
+
+  background: #ffffff;
+  color: var(--nz-text);
+
+  font-family: "Inter", sans-serif;
+}
+
+.new-zealand-page h1,
+.new-zealand-page h2,
+.new-zealand-page h3 {
+  font-family: "Fraunces", serif;
+}
+
+.nz-container {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.nz-section {
+  padding: 76px 0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.nz-hero {
+  height: 78vh;
+  min-height: 640px;
+  max-height: 760px;
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.nz-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 340px;
+  height: 340px;
+
+  right: 8%;
+  top: 18%;
+
+  border: 1px solid rgba(217,164,65,.35);
+
+  border-radius: 50%;
+
+  animation: nzOrbit 16s linear infinite;
+}
+
+@keyframes nzOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nz-hero-inner {
+  width: min(1160px, calc(100% - 48px));
+
+  margin: auto;
+
+  position: relative;
+  z-index: 2;
+}
+
+.nz-hero-content {
+  width: min(620px, 100%);
+}
+
+.nz-eyebrow,
+.nz-label {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 10px;
+
+  color: var(--nz-gold);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+}
+
+.nz-eyebrow::before,
+.nz-label::before {
+  content: "";
+
+  width: 28px;
+  height: 1px;
+
+  background: var(--nz-gold);
+}
+
+.nz-hero h1 {
+  color: white;
+
+  font-size: clamp(55px, 7.5vw, 96px);
+
+  line-height: .9;
+
+  margin: 22px 0;
+
+  font-weight: 600;
+}
+
+.nz-hero h1 span {
+  display: block;
+
+  color: var(--nz-gold);
+
+  font-style: italic;
+}
+
+.nz-hero p {
+  max-width: 520px;
+
+  color: rgba(255,255,255,.86);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  margin-bottom: 28px;
+}
+
+.nz-hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.nz-gold-btn,
+.nz-outline-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 13px 20px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition: .3s ease;
+}
+
+.nz-gold-btn {
+  background: var(--nz-gold);
+
+  color: var(--nz-deep);
+}
+
+.nz-gold-btn:hover {
+  color: var(--nz-deep);
+
+  transform: translateY(-3px);
+}
+
+.nz-gold-btn span {
+  font-size: 18px;
+}
+
+.nz-outline-btn {
+  color: white;
+
+  border: 1px solid rgba(255,255,255,.45);
+}
+
+.nz-outline-btn:hover {
+  color: white;
+
+  border-color: var(--nz-gold);
+}
+
+.nz-symbol {
+  position: absolute;
+
+  right: 8%;
+  bottom: 15%;
+
+  width: 105px;
+  height: 105px;
+
+  border: 1px solid rgba(217,164,65,.6);
+
+  border-radius: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--nz-gold);
+
+  transform: rotate(-10deg);
+}
+
+.nz-symbol span {
+  font-family: "Fraunces", serif;
+
+  font-size: 30px;
+}
+
+.nz-symbol small {
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.nz-intro-grid {
+  display: grid;
+
+  grid-template-columns: .95fr 1.05fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.nz-heading h2 {
+  color: var(--nz-navy);
+
+  font-size: clamp(34px,4vw,50px);
+
+  line-height: 1.05;
+
+  margin: 16px 0 0;
+}
+
+.nz-heading h2 em,
+.nz-two-heading h2 em,
+.nz-story-content h2 em,
+.nz-documents-grid h2 em,
+.nz-final-inner h2 em {
+  display: block;
+
+  color: var(--nz-gold);
+
+  font-style: italic;
+}
+
+.nz-intro-copy p {
+  color: var(--nz-muted);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  margin: 0 0 15px;
+}
+
+.nz-mini-line {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+.nz-mini-line span {
+  width: 35px;
+  height: 2px;
+
+  background: var(--nz-gold);
+}
+
+.nz-mini-line strong {
+  color: var(--nz-navy);
+
+  font-size: 9px;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   FACTS
+========================================================= */
+
+.nz-facts {
+  background: var(--nz-deep);
+
+  padding: 28px 0;
+}
+
+.nz-facts-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+}
+
+.nz-facts-grid > div {
+  padding: 10px 24px;
+
+  border-right: 1px solid rgba(255,255,255,.15);
+}
+
+.nz-facts-grid > div:last-child {
+  border-right: 0;
+}
+
+.nz-facts span {
+  display: block;
+
+  color: var(--nz-gold);
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.nz-facts strong {
+  display: block;
+
+  color: white;
+
+  font-size: 13px;
+
+  margin-top: 7px;
+}
+
+.nz-facts p {
+  color: rgba(255,255,255,.62);
+
+  font-size: 12px;
+
+  margin: 4px 0 0;
+}
+
+
+/* =========================================================
+   EXPERIENCES
+========================================================= */
+
+.nz-experiences {
+  background: var(--nz-cream);
+}
+
+.nz-centered {
+  text-align: center;
+}
+
+.nz-centered .nz-label {
+  justify-content: center;
+}
+
+.nz-centered > p {
+  color: var(--nz-muted);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  max-width: 550px;
+
+  margin: 12px auto 0;
+}
+
+.nz-experience-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  margin-top: 40px;
+
+  border-top: 1px solid #ddd8ca;
+
+  border-bottom: 1px solid #ddd8ca;
+}
+
+.nz-experience-grid article {
+  padding: 28px 22px;
+
+  border-right: 1px solid #ddd8ca;
+}
+
+.nz-experience-grid article:last-child {
+  border-right: 0;
+}
+
+.nz-experience-grid span {
+  color: var(--nz-gold);
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+}
+
+.nz-experience-grid h3 {
+  color: var(--nz-navy);
+
+  font-size: 22px;
+
+  margin: 13px 0 8px;
+}
+
+.nz-experience-grid p {
+  color: var(--nz-muted);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   VISA
+========================================================= */
+
+.nz-visa {
+  background: white;
+}
+
+.nz-two-heading {
+  display: grid;
+
+  grid-template-columns: 1fr .8fr;
+
+  gap: 70px;
+
+  align-items: end;
+}
+
+.nz-two-heading h2 {
+  color: var(--nz-navy);
+
+  font-size: clamp(32px,4vw,46px);
+
+  line-height: 1.05;
+
+  margin: 15px 0 0;
+}
+
+.nz-two-heading > p {
+  color: var(--nz-muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+.nz-visa-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 18px;
+
+  margin-top: 38px;
+}
+
+.nz-visa-card {
+  background: var(--nz-cream);
+
+  padding: 28px;
+
+  display: grid;
+
+  grid-template-columns: auto 1fr;
+
+  gap: 22px;
+
+  border-left: 3px solid transparent;
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease;
+}
+
+.nz-visa-card:hover {
+  transform: translateY(-5px);
+
+  border-left-color: var(--nz-gold);
+}
+
+.nz-visa-number {
+  color: var(--nz-gold);
+
+  font-family: "Fraunces", serif;
+
+  font-size: 22px;
+}
+
+.nz-visa-card h3 {
+  color: var(--nz-navy);
+
+  font-size: 24px;
+
+  margin: 0 0 7px;
+}
+
+.nz-visa-card p {
+  color: var(--nz-muted);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+.nz-visa-card a {
+  grid-column: 2;
+
+  color: var(--nz-navy);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  margin-top: 5px;
+}
+
+.nz-visa-card a span {
+  color: var(--nz-gold);
+
+  margin-left: 8px;
+}
+
+
+/* =========================================================
+   DESTINATIONS
+========================================================= */
+
+.nz-destinations {
+  background: #faf9f6;
+}
+
+.nz-destination-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 18px;
+
+  margin-top: 38px;
+}
+
+.nz-destination-card {
+  background: white;
+
+  overflow: hidden;
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+.nz-destination-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 18px 45px rgba(6,31,71,.12);
+}
+
+.nz-destination-image {
+  height: 205px;
+
+  overflow: hidden;
+}
+
+.nz-destination-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform .8s ease;
+}
+
+.nz-destination-card:hover img {
+  transform: scale(1.07);
+}
+
+.nz-destination-content {
+  position: relative;
+
+  padding: 20px 21px 22px;
+}
+
+.nz-destination-content > span {
+  color: var(--nz-gold);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+.nz-destination-content h3 {
+  color: var(--nz-navy);
+
+  font-size: 25px;
+
+  margin: 6px 0;
+}
+
+.nz-destination-content p {
+  color: var(--nz-muted);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  margin: 0;
+
+  max-width: 310px;
+}
+
+.nz-destination-arrow {
+  position: absolute;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #ddd;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--nz-navy);
+
+  transition: .3s ease;
+}
+
+.nz-destination-card:hover .nz-destination-arrow {
+  background: var(--nz-gold);
+
+  border-color: var(--nz-gold);
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.nz-story {
+  background: white;
+}
+
+.nz-story-grid {
+  display: grid;
+
+  grid-template-columns: .95fr 1.05fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.nz-story-image {
+  position: relative;
+
+  height: 390px;
+
+  overflow: hidden;
+}
+
+.nz-story-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 1.2s ease;
+}
+
+.nz-story-image:hover img {
+  transform: scale(1.04);
+}
+
+.nz-story-caption {
+  position: absolute;
+
+  left: 18px;
+  bottom: 18px;
+
+  background: white;
+
+  padding: 12px 16px;
+
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+}
+
+.nz-story-caption span {
+  display: block;
+
+  color: var(--nz-gold);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+}
+
+.nz-story-caption strong {
+  color: var(--nz-navy);
+
+  font-family: "Fraunces",serif;
+
+  font-size: 20px;
+}
+
+.nz-story-content h2 {
+  color: var(--nz-navy);
+
+  font-size: clamp(32px,4vw,47px);
+
+  line-height: 1.05;
+
+  margin: 15px 0 20px;
+}
+
+.nz-story-content p {
+  color: var(--nz-muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  margin-bottom: 13px;
+}
+
+.nz-text-link {
+  display: inline-flex;
+
+  gap: 12px;
+
+  color: var(--nz-navy);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  margin-top: 10px;
+
+  border-bottom: 1px solid var(--nz-gold);
+
+  padding-bottom: 4px;
+}
+
+.nz-text-link span {
+  color: var(--nz-gold);
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.nz-process {
+  background: var(--nz-cream);
+}
+
+.nz-process-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  margin-top: 42px;
+}
+
+.nz-process-grid article {
+  padding: 0 20px;
+
+  border-right: 1px dashed #d4cdbb;
+}
+
+.nz-process-grid article:first-child {
+  padding-left: 0;
+}
+
+.nz-process-grid article:last-child {
+  border-right: 0;
+}
+
+.nz-process-number {
+  color: var(--nz-gold);
+
+  font-family: "Fraunces",serif;
+
+  font-size: 30px;
+}
+
+.nz-process-line {
+  height: 1px;
+
+  background: var(--nz-navy);
+
+  margin: 13px 0 18px;
+
+  opacity: .25;
+}
+
+.nz-process-grid h3 {
+  color: var(--nz-navy);
+
+  font-size: 20px;
+
+  margin-bottom: 7px;
+}
+
+.nz-process-grid p {
+  color: var(--nz-muted);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.nz-documents {
+  background: white;
+}
+
+.nz-documents-grid {
+  display: grid;
+
+  grid-template-columns: .9fr 1.1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.nz-documents-grid h2 {
+  color: var(--nz-navy);
+
+  font-size: 44px;
+
+  line-height: 1.05;
+
+  margin: 15px 0;
+}
+
+.nz-documents-grid > div:first-child p {
+  color: var(--nz-muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  max-width: 420px;
+}
+
+.nz-document-list {
+  border-top: 1px solid #ddd;
+}
+
+.nz-document-item {
+  display: grid;
+
+  grid-template-columns: 45px 1fr auto;
+
+  align-items: center;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.nz-document-item span {
+  color: var(--nz-gold);
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.nz-document-item strong {
+  color: var(--nz-navy);
+
+  font-size: 13px;
+}
+
+.nz-document-item i {
+  color: var(--nz-gold);
+
+  font-style: normal;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.nz-faq {
+  background: #faf9f6;
+}
+
+.nz-faq-list {
+  width: min(850px,100%);
+
+  margin: 38px auto 0;
+}
+
+.nz-faq details {
+  background: white;
+
+  border-bottom: 1px solid #e1ddd3;
+
+  padding: 0 20px;
+}
+
+.nz-faq summary {
+  list-style: none;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 20px 0;
+
+  color: var(--nz-navy);
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.nz-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.nz-faq summary b {
+  color: var(--nz-gold);
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+  transition: transform .3s ease;
+}
+
+.nz-faq details[open] summary b {
+  transform: rotate(45deg);
+}
+
+.nz-faq details p {
+  color: var(--nz-muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  max-width: 720px;
+
+  padding: 0 0 20px;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.nz-final-cta {
+  min-height: 360px;
+
+  background-size: cover;
+
+  background-position: center;
+
+  display: flex;
+
+  align-items: center;
+
+  position: relative;
+}
+
+.nz-final-inner {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+}
+
+.nz-final-inner .nz-label {
+  justify-content: center;
+}
+
+.nz-final-inner h2 {
+  color: white;
+
+  font-size: clamp(38px,5vw,58px);
+
+  line-height: 1;
+
+  margin: 15px 0;
+}
+
+.nz-final-inner p {
+  color: rgba(255,255,255,.72);
+
+  font-size: 14px;
+
+  margin-bottom: 25px;
+}
+
+.nz-final-inner .nz-gold-btn {
+  margin: auto;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .nz-section {
+    padding: 60px 0;
+  }
+
+  .nz-intro-grid,
+  .nz-story-grid,
+  .nz-documents-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .nz-two-heading {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .nz-facts-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .nz-facts-grid > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .nz-experience-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .nz-experience-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .nz-experience-grid article:nth-child(3),
+  .nz-experience-grid article:nth-child(4) {
+    border-top: 1px solid #ddd8ca;
+  }
+
+  .nz-visa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nz-destination-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .nz-process-grid {
+    grid-template-columns: repeat(2,1fr);
+
+    row-gap: 30px;
+  }
+
+  .nz-process-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .nz-process-grid article:nth-child(3),
+  .nz-process-grid article:nth-child(4) {
+    border-top: 1px dashed #d4cdbb;
+
+    padding-top: 25px;
+  }
+
+  .nz-story-image {
+    height: 330px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .nz-container,
+  .nz-hero-inner {
+    width: calc(100% - 30px);
+  }
+
+  .nz-section {
+    padding: 48px 0;
+  }
+
+  .nz-hero {
+    height: 650px;
+
+    min-height: 0;
+
+    background-position: 58% center;
+  }
+
+  .nz-hero::after {
+    width: 210px;
+    height: 210px;
+
+    right: -70px;
+    top: 18%;
+  }
+
+  .nz-hero h1 {
+    font-size: 56px;
+  }
+
+  .nz-hero p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .nz-symbol {
+    display: none;
+  }
+
+  .nz-hero-actions {
+    gap: 8px;
+  }
+
+  .nz-gold-btn,
+  .nz-outline-btn {
+    padding: 12px 15px;
+
+    font-size: 11px;
+  }
+
+  .nz-heading h2,
+  .nz-two-heading h2 {
+    font-size: 34px;
+  }
+
+  .nz-facts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nz-facts-grid > div {
+    padding: 10px 12px;
+  }
+
+  .nz-experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nz-experience-grid article,
+  .nz-experience-grid article:nth-child(2),
+  .nz-experience-grid article:nth-child(3),
+  .nz-experience-grid article:nth-child(4) {
+    border-right: 0;
+
+    border-top: 1px solid #ddd8ca;
+  }
+
+  .nz-experience-grid article:first-child {
+    border-top: 0;
+  }
+
+  .nz-destination-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .nz-destination-image {
+    height: 190px;
+  }
+
+  .nz-story-image {
+    height: 270px;
+  }
+
+  .nz-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nz-process-grid article,
+  .nz-process-grid article:first-child,
+  .nz-process-grid article:nth-child(2),
+  .nz-process-grid article:nth-child(3),
+  .nz-process-grid article:nth-child(4) {
+    border-right: 0;
+
+    border-top: 1px dashed #d4cdbb;
+
+    padding: 22px 0 0;
+  }
+
+  .nz-process-grid article:first-child {
+    border-top: 0;
+
+    padding-top: 0;
+  }
+
+  .nz-documents-grid {
+    gap: 28px;
+  }
+
+  .nz-documents-grid h2 {
+    font-size: 36px;
+  }
+
+  .nz-final-cta {
+    min-height: 330px;
+  }
+
+  .nz-final-inner h2 {
+    font-size: 40px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .new-zealand-page *,
+  .new-zealand-page *::before,
+  .new-zealand-page *::after {
+    animation-duration: .01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: .01ms !important;
+  }
+}

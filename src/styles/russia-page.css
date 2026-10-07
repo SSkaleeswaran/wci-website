@@ -1,0 +1,1282 @@
+/* =========================================================
+   RUSSIA PAGE
+========================================================= */
+
+.russia-page {
+  --ru-navy: #0b2a5b;
+  --ru-deep: #061f47;
+  --ru-gold: #d9a441;
+  --ru-cream: #f7f5ef;
+  --ru-text: #27364d;
+  --ru-muted: #687386;
+
+  width: 100%;
+  overflow: hidden;
+
+  background: #fff;
+  color: var(--ru-text);
+
+  font-family: "Inter", sans-serif;
+}
+
+.russia-page h1,
+.russia-page h2,
+.russia-page h3 {
+  font-family: "Fraunces", serif;
+}
+
+.ru-container {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.ru-section {
+  padding: 76px 0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.ru-hero {
+  height: 78vh;
+  min-height: 640px;
+  max-height: 760px;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.ru-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  right: 7%;
+  top: 17%;
+
+  border: 1px solid rgba(217,164,65,.35);
+
+  border-radius: 50%;
+
+  animation: ruOrbit 17s linear infinite;
+}
+
+@keyframes ruOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.ru-hero-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.ru-hero-content {
+  width: min(620px, 100%);
+}
+
+.ru-eyebrow,
+.ru-label {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 10px;
+
+  color: var(--ru-gold);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+}
+
+.ru-eyebrow::before,
+.ru-label::before {
+  content: "";
+
+  width: 28px;
+  height: 1px;
+
+  background: var(--ru-gold);
+}
+
+.ru-hero h1 {
+  color: #fff;
+
+  font-size: clamp(55px, 7.5vw, 96px);
+
+  line-height: .9;
+
+  margin: 22px 0;
+
+  font-weight: 600;
+}
+
+.ru-hero h1 span {
+  display: block;
+
+  color: var(--ru-gold);
+
+  font-style: italic;
+}
+
+.ru-hero p {
+  max-width: 520px;
+
+  color: rgba(255,255,255,.86);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  margin-bottom: 28px;
+}
+
+.ru-hero-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.ru-gold-btn,
+.ru-outline-btn {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 18px;
+
+  padding: 13px 20px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: .3s ease;
+}
+
+.ru-gold-btn {
+  background: var(--ru-gold);
+
+  color: var(--ru-deep);
+}
+
+.ru-gold-btn:hover {
+  color: var(--ru-deep);
+
+  transform: translateY(-3px);
+}
+
+.ru-gold-btn span {
+  font-size: 18px;
+}
+
+.ru-outline-btn {
+  color: #fff;
+
+  border: 1px solid rgba(255,255,255,.45);
+}
+
+.ru-outline-btn:hover {
+  color: #fff;
+
+  border-color: var(--ru-gold);
+}
+
+.ru-symbol {
+  position: absolute;
+
+  right: 8%;
+  bottom: 15%;
+
+  width: 105px;
+  height: 105px;
+
+  border: 1px solid rgba(217,164,65,.6);
+
+  border-radius: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--ru-gold);
+
+  transform: rotate(-10deg);
+}
+
+.ru-symbol span {
+  font-family: "Fraunces", serif;
+
+  font-size: 30px;
+}
+
+.ru-symbol small {
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.ru-intro-grid {
+  display: grid;
+
+  grid-template-columns: .95fr 1.05fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.ru-heading h2 {
+  color: var(--ru-navy);
+
+  font-size: clamp(34px,4vw,50px);
+
+  line-height: 1.05;
+
+  margin: 16px 0 0;
+}
+
+.ru-heading h2 em,
+.ru-two-heading h2 em,
+.ru-story-content h2 em,
+.ru-documents-grid h2 em,
+.ru-final-inner h2 em {
+  display: block;
+
+  color: var(--ru-gold);
+
+  font-style: italic;
+}
+
+.ru-intro-copy p {
+  color: var(--ru-muted);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  margin: 0 0 15px;
+}
+
+.ru-mini-line {
+  display: flex;
+
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+.ru-mini-line span {
+  width: 35px;
+  height: 2px;
+
+  background: var(--ru-gold);
+}
+
+.ru-mini-line strong {
+  color: var(--ru-navy);
+
+  font-size: 9px;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   FACTS
+========================================================= */
+
+.ru-facts {
+  background: var(--ru-deep);
+
+  padding: 28px 0;
+}
+
+.ru-facts-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+}
+
+.ru-facts-grid > div {
+  padding: 10px 24px;
+
+  border-right: 1px solid rgba(255,255,255,.15);
+}
+
+.ru-facts-grid > div:last-child {
+  border-right: 0;
+}
+
+.ru-facts span {
+  display: block;
+
+  color: var(--ru-gold);
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.ru-facts strong {
+  display: block;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  margin-top: 7px;
+}
+
+.ru-facts p {
+  color: rgba(255,255,255,.62);
+
+  font-size: 12px;
+
+  margin: 4px 0 0;
+}
+
+
+/* =========================================================
+   EXPERIENCES
+========================================================= */
+
+.ru-experiences {
+  background: var(--ru-cream);
+}
+
+.ru-centered {
+  text-align: center;
+}
+
+.ru-centered .ru-label {
+  justify-content: center;
+}
+
+.ru-centered > p {
+  color: var(--ru-muted);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  max-width: 550px;
+
+  margin: 12px auto 0;
+}
+
+.ru-experience-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  margin-top: 40px;
+
+  border-top: 1px solid #ddd8ca;
+  border-bottom: 1px solid #ddd8ca;
+}
+
+.ru-experience-grid article {
+  padding: 28px 22px;
+
+  border-right: 1px solid #ddd8ca;
+}
+
+.ru-experience-grid article:last-child {
+  border-right: 0;
+}
+
+.ru-experience-grid span {
+  color: var(--ru-gold);
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+}
+
+.ru-experience-grid h3 {
+  color: var(--ru-navy);
+
+  font-size: 22px;
+
+  margin: 13px 0 8px;
+}
+
+.ru-experience-grid p {
+  color: var(--ru-muted);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   VISA SERVICES
+========================================================= */
+
+.ru-two-heading {
+  display: grid;
+
+  grid-template-columns: 1fr .8fr;
+
+  gap: 70px;
+
+  align-items: end;
+}
+
+.ru-two-heading h2 {
+  color: var(--ru-navy);
+
+  font-size: clamp(32px,4vw,46px);
+
+  line-height: 1.05;
+
+  margin: 15px 0 0;
+}
+
+.ru-two-heading > p {
+  color: var(--ru-muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+.ru-visa-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 18px;
+
+  margin-top: 38px;
+}
+
+.ru-visa-card {
+  background: var(--ru-cream);
+
+  padding: 28px;
+
+  display: grid;
+
+  grid-template-columns: auto 1fr;
+
+  gap: 22px;
+
+  border-left: 3px solid transparent;
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease;
+}
+
+.ru-visa-card:hover {
+  transform: translateY(-5px);
+
+  border-left-color: var(--ru-gold);
+}
+
+.ru-visa-number {
+  color: var(--ru-gold);
+
+  font-family: "Fraunces", serif;
+
+  font-size: 22px;
+}
+
+.ru-visa-card h3 {
+  color: var(--ru-navy);
+
+  font-size: 24px;
+
+  margin: 0 0 7px;
+}
+
+.ru-visa-card p {
+  color: var(--ru-muted);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+.ru-visa-card a {
+  grid-column: 2;
+
+  color: var(--ru-navy);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  margin-top: 5px;
+}
+
+.ru-visa-card a span {
+  color: var(--ru-gold);
+
+  margin-left: 8px;
+}
+
+
+/* =========================================================
+   DESTINATIONS
+========================================================= */
+
+.ru-destinations {
+  background: #faf9f6;
+}
+
+.ru-destination-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 18px;
+
+  margin-top: 38px;
+}
+
+.ru-destination-card {
+  background: #fff;
+
+  overflow: hidden;
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+.ru-destination-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 18px 45px rgba(6,31,71,.12);
+}
+
+.ru-destination-image {
+  height: 205px;
+
+  overflow: hidden;
+}
+
+.ru-destination-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform .8s ease;
+}
+
+.ru-destination-card:hover img {
+  transform: scale(1.07);
+}
+
+.ru-destination-content {
+  position: relative;
+
+  padding: 20px 21px 22px;
+}
+
+.ru-destination-content > span {
+  color: var(--ru-gold);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+.ru-destination-content h3 {
+  color: var(--ru-navy);
+
+  font-size: 25px;
+
+  margin: 6px 0;
+}
+
+.ru-destination-content p {
+  color: var(--ru-muted);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  margin: 0;
+
+  max-width: 310px;
+}
+
+.ru-destination-arrow {
+  position: absolute;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #ddd;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--ru-navy);
+
+  transition: .3s ease;
+}
+
+.ru-destination-card:hover .ru-destination-arrow {
+  background: var(--ru-gold);
+
+  border-color: var(--ru-gold);
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.ru-story-grid {
+  display: grid;
+
+  grid-template-columns: .95fr 1.05fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.ru-story-image {
+  position: relative;
+
+  height: 390px;
+
+  overflow: hidden;
+}
+
+.ru-story-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 1.2s ease;
+}
+
+.ru-story-image:hover img {
+  transform: scale(1.04);
+}
+
+.ru-story-caption {
+  position: absolute;
+
+  left: 18px;
+  bottom: 18px;
+
+  background: #fff;
+
+  padding: 12px 16px;
+
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+}
+
+.ru-story-caption span {
+  display: block;
+
+  color: var(--ru-gold);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+}
+
+.ru-story-caption strong {
+  color: var(--ru-navy);
+
+  font-family: "Fraunces", serif;
+
+  font-size: 20px;
+}
+
+.ru-story-content h2 {
+  color: var(--ru-navy);
+
+  font-size: clamp(32px,4vw,47px);
+
+  line-height: 1.05;
+
+  margin: 15px 0 20px;
+}
+
+.ru-story-content p {
+  color: var(--ru-muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  margin-bottom: 13px;
+}
+
+.ru-text-link {
+  display: inline-flex;
+
+  gap: 12px;
+
+  color: var(--ru-navy);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  margin-top: 10px;
+
+  border-bottom: 1px solid var(--ru-gold);
+
+  padding-bottom: 4px;
+}
+
+.ru-text-link span {
+  color: var(--ru-gold);
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.ru-process {
+  background: var(--ru-cream);
+}
+
+.ru-process-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  margin-top: 42px;
+}
+
+.ru-process-grid article {
+  padding: 0 20px;
+
+  border-right: 1px dashed #d4cdbb;
+}
+
+.ru-process-grid article:first-child {
+  padding-left: 0;
+}
+
+.ru-process-grid article:last-child {
+  border-right: 0;
+}
+
+.ru-process-number {
+  color: var(--ru-gold);
+
+  font-family: "Fraunces", serif;
+
+  font-size: 30px;
+}
+
+.ru-process-line {
+  height: 1px;
+
+  background: var(--ru-navy);
+
+  margin: 13px 0 18px;
+
+  opacity: .25;
+}
+
+.ru-process-grid h3 {
+  color: var(--ru-navy);
+
+  font-size: 20px;
+
+  margin-bottom: 7px;
+}
+
+.ru-process-grid p {
+  color: var(--ru-muted);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.ru-documents-grid {
+  display: grid;
+
+  grid-template-columns: .9fr 1.1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.ru-documents-grid h2 {
+  color: var(--ru-navy);
+
+  font-size: 44px;
+
+  line-height: 1.05;
+
+  margin: 15px 0;
+}
+
+.ru-documents-grid > div:first-child p {
+  color: var(--ru-muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  max-width: 420px;
+}
+
+.ru-document-list {
+  border-top: 1px solid #ddd;
+}
+
+.ru-document-item {
+  display: grid;
+
+  grid-template-columns: 45px 1fr auto;
+
+  align-items: center;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.ru-document-item span {
+  color: var(--ru-gold);
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.ru-document-item strong {
+  color: var(--ru-navy);
+
+  font-size: 13px;
+}
+
+.ru-document-item i {
+  color: var(--ru-gold);
+
+  font-style: normal;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.ru-faq {
+  background: #faf9f6;
+}
+
+.ru-faq-list {
+  width: min(850px,100%);
+
+  margin: 38px auto 0;
+}
+
+.ru-faq details {
+  background: #fff;
+
+  border-bottom: 1px solid #e1ddd3;
+
+  padding: 0 20px;
+}
+
+.ru-faq summary {
+  list-style: none;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 0;
+
+  color: var(--ru-navy);
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.ru-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.ru-faq summary b {
+  color: var(--ru-gold);
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+  transition: transform .3s ease;
+}
+
+.ru-faq details[open] summary b {
+  transform: rotate(45deg);
+}
+
+.ru-faq details p {
+  color: var(--ru-muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  max-width: 720px;
+
+  padding: 0 0 20px;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.ru-final-cta {
+  min-height: 360px;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.ru-final-inner {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+}
+
+.ru-final-inner .ru-label {
+  justify-content: center;
+}
+
+.ru-final-inner h2 {
+  color: #fff;
+
+  font-size: clamp(38px,5vw,58px);
+
+  line-height: 1;
+
+  margin: 15px 0;
+}
+
+.ru-final-inner p {
+  color: rgba(255,255,255,.72);
+
+  font-size: 14px;
+
+  margin-bottom: 25px;
+}
+
+.ru-final-inner .ru-gold-btn {
+  margin: auto;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .ru-section {
+    padding: 60px 0;
+  }
+
+  .ru-intro-grid,
+  .ru-story-grid,
+  .ru-documents-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .ru-two-heading {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .ru-facts-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .ru-facts-grid > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .ru-experience-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .ru-experience-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .ru-experience-grid article:nth-child(3),
+  .ru-experience-grid article:nth-child(4) {
+    border-top: 1px solid #ddd8ca;
+  }
+
+  .ru-visa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ru-destination-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .ru-process-grid {
+    grid-template-columns: repeat(2,1fr);
+
+    row-gap: 30px;
+  }
+
+  .ru-process-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .ru-process-grid article:nth-child(3),
+  .ru-process-grid article:nth-child(4) {
+    border-top: 1px dashed #d4cdbb;
+
+    padding-top: 25px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .ru-container {
+    width: calc(100% - 30px);
+  }
+
+  .ru-section {
+    padding: 48px 0;
+  }
+
+  .ru-hero {
+    height: 650px;
+
+    min-height: 0;
+
+    background-position: 58% center;
+  }
+
+  .ru-hero::after {
+    width: 210px;
+    height: 210px;
+
+    right: -70px;
+    top: 18%;
+  }
+
+  .ru-hero h1 {
+    font-size: 56px;
+  }
+
+  .ru-hero p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .ru-symbol {
+    display: none;
+  }
+
+  .ru-hero-actions {
+    gap: 8px;
+  }
+
+  .ru-gold-btn,
+  .ru-outline-btn {
+    padding: 12px 15px;
+
+    font-size: 11px;
+  }
+
+  .ru-heading h2,
+  .ru-two-heading h2 {
+    font-size: 34px;
+  }
+
+  .ru-facts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ru-facts-grid > div {
+    padding: 10px 12px;
+  }
+
+  .ru-experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ru-experience-grid article,
+  .ru-experience-grid article:nth-child(2),
+  .ru-experience-grid article:nth-child(3),
+  .ru-experience-grid article:nth-child(4) {
+    border-right: 0;
+
+    border-top: 1px solid #ddd8ca;
+  }
+
+  .ru-experience-grid article:first-child {
+    border-top: 0;
+  }
+
+  .ru-destination-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .ru-destination-image {
+    height: 190px;
+  }
+
+  .ru-story-image {
+    height: 270px;
+  }
+
+  .ru-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ru-process-grid article,
+  .ru-process-grid article:first-child,
+  .ru-process-grid article:nth-child(2),
+  .ru-process-grid article:nth-child(3),
+  .ru-process-grid article:nth-child(4) {
+    border-right: 0;
+
+    border-top: 1px dashed #d4cdbb;
+
+    padding: 22px 0 0;
+  }
+
+  .ru-process-grid article:first-child {
+    border-top: 0;
+
+    padding-top: 0;
+  }
+
+  .ru-documents-grid {
+    gap: 28px;
+  }
+
+  .ru-documents-grid h2 {
+    font-size: 36px;
+  }
+
+  .ru-final-cta {
+    min-height: 330px;
+  }
+
+  .ru-final-inner h2 {
+    font-size: 40px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .russia-page *,
+  .russia-page *::before,
+  .russia-page *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

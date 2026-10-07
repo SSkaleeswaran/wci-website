@@ -1,0 +1,1310 @@
+
+/* =========================================================
+   SOUTH KOREA PAGE
+   Compact editorial layout
+========================================================= */
+
+.south-korea-page {
+  --korea-navy: #0b2a5b;
+  --korea-deep: #061f47;
+  --korea-gold: #d9a441;
+  --korea-cream: #f7f5ef;
+  --korea-soft: #efede6;
+  --korea-text: #27364d;
+  --korea-muted: #687386;
+
+  width: 100%;
+  overflow: hidden;
+
+  background: #ffffff;
+  color: var(--korea-text);
+
+  font-family: "Inter", sans-serif;
+}
+
+.south-korea-page h1,
+.south-korea-page h2,
+.south-korea-page h3 {
+  font-family: "Fraunces", serif;
+}
+
+.korea-container {
+  width: min(1160px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.korea-section {
+  padding: 76px 0;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.korea-hero {
+  height: 78vh;
+  min-height: 640px;
+  max-height: 760px;
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.korea-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 330px;
+  height: 330px;
+
+  right: 8%;
+  top: 18%;
+
+  border: 1px solid rgba(217, 164, 65, 0.35);
+
+  border-radius: 50%;
+
+  animation: koreaOrbit 15s linear infinite;
+}
+
+@keyframes koreaOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.korea-hero-inner {
+  width: min(1160px, calc(100% - 48px));
+
+  margin: auto;
+
+  position: relative;
+  z-index: 2;
+}
+
+.korea-hero-content {
+  width: min(620px, 100%);
+}
+
+.korea-eyebrow,
+.korea-label {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 10px;
+
+  color: var(--korea-gold);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.korea-eyebrow::before,
+.korea-label::before {
+  content: "";
+
+  width: 28px;
+  height: 1px;
+
+  background: var(--korea-gold);
+}
+
+.korea-hero h1 {
+  color: white;
+
+  font-size: clamp(58px, 8vw, 100px);
+  line-height: 0.9;
+
+  margin: 22px 0;
+
+  font-weight: 600;
+}
+
+.korea-hero h1 span {
+  display: block;
+
+  color: var(--korea-gold);
+
+  font-style: italic;
+}
+
+.korea-hero p {
+  max-width: 520px;
+
+  color: rgba(255,255,255,.86);
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  margin-bottom: 28px;
+}
+
+.korea-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.korea-gold-btn,
+.korea-outline-btn {
+  display: inline-flex;
+
+  align-items: center;
+  gap: 18px;
+
+  padding: 13px 20px;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: .3s ease;
+}
+
+.korea-gold-btn {
+  background: var(--korea-gold);
+
+  color: var(--korea-deep);
+}
+
+.korea-gold-btn:hover {
+  color: var(--korea-deep);
+
+  transform: translateY(-3px);
+}
+
+.korea-gold-btn span {
+  font-size: 18px;
+}
+
+.korea-outline-btn {
+  color: white;
+
+  border: 1px solid rgba(255,255,255,.45);
+}
+
+.korea-outline-btn:hover {
+  color: white;
+
+  border-color: var(--korea-gold);
+}
+
+.korea-symbol {
+  position: absolute;
+
+  right: 8%;
+  bottom: 15%;
+
+  width: 105px;
+  height: 105px;
+
+  border: 1px solid rgba(217,164,65,.6);
+
+  border-radius: 50%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--korea-gold);
+
+  transform: rotate(-10deg);
+}
+
+.korea-symbol span {
+  font-family: "Fraunces", serif;
+
+  font-size: 30px;
+}
+
+.korea-symbol small {
+  font-size: 7px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.korea-intro {
+  background: white;
+}
+
+.korea-intro-grid {
+  display: grid;
+
+  grid-template-columns: .95fr 1.05fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.korea-heading h2 {
+  color: var(--korea-navy);
+
+  font-size: clamp(34px,4vw,50px);
+
+  line-height: 1.05;
+
+  margin: 16px 0 0;
+}
+
+.korea-heading h2 em,
+.korea-two-heading h2 em,
+.korea-story-content h2 em,
+.korea-documents-grid h2 em,
+.korea-final-inner h2 em {
+  display: block;
+
+  color: var(--korea-gold);
+
+  font-style: italic;
+}
+
+.korea-intro-copy p {
+  color: var(--korea-muted);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  margin: 0 0 15px;
+}
+
+.korea-mini-line {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+.korea-mini-line span {
+  width: 35px;
+  height: 2px;
+
+  background: var(--korea-gold);
+}
+
+.korea-mini-line strong {
+  color: var(--korea-navy);
+
+  font-size: 9px;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =========================================================
+   FACTS
+========================================================= */
+
+.korea-facts {
+  background: var(--korea-deep);
+
+  padding: 28px 0;
+}
+
+.korea-facts-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+}
+
+.korea-facts-grid > div {
+  padding: 10px 24px;
+
+  border-right: 1px solid rgba(255,255,255,.15);
+}
+
+.korea-facts-grid > div:last-child {
+  border-right: 0;
+}
+
+.korea-facts span {
+  display: block;
+
+  color: var(--korea-gold);
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.korea-facts strong {
+  display: block;
+
+  color: white;
+
+  font-size: 13px;
+
+  margin-top: 7px;
+}
+
+.korea-facts p {
+  color: rgba(255,255,255,.62);
+
+  font-size: 12px;
+
+  margin: 4px 0 0;
+}
+
+
+/* =========================================================
+   EXPERIENCES
+========================================================= */
+
+.korea-experiences {
+  background: var(--korea-cream);
+}
+
+.korea-centered {
+  text-align: center;
+}
+
+.korea-centered .korea-label {
+  justify-content: center;
+}
+
+.korea-centered > p {
+  color: var(--korea-muted);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  margin: 12px auto 0;
+
+  max-width: 550px;
+}
+
+.korea-experience-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  margin-top: 40px;
+
+  border-top: 1px solid #ddd8ca;
+  border-bottom: 1px solid #ddd8ca;
+}
+
+.korea-experience-grid article {
+  padding: 28px 22px;
+
+  border-right: 1px solid #ddd8ca;
+}
+
+.korea-experience-grid article:last-child {
+  border-right: 0;
+}
+
+.korea-experience-grid span {
+  color: var(--korea-gold);
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+}
+
+.korea-experience-grid h3 {
+  color: var(--korea-navy);
+
+  font-size: 22px;
+
+  margin: 13px 0 8px;
+}
+
+.korea-experience-grid p {
+  color: var(--korea-muted);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   VISA
+========================================================= */
+
+.korea-visa {
+  background: white;
+}
+
+.korea-two-heading {
+  display: grid;
+
+  grid-template-columns: 1fr .8fr;
+
+  gap: 70px;
+
+  align-items: end;
+}
+
+.korea-two-heading h2 {
+  color: var(--korea-navy);
+
+  font-size: clamp(32px,4vw,46px);
+
+  line-height: 1.05;
+
+  margin: 15px 0 0;
+}
+
+.korea-two-heading > p {
+  color: var(--korea-muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  margin: 0;
+}
+
+.korea-visa-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2,1fr);
+
+  gap: 18px;
+
+  margin-top: 38px;
+}
+
+.korea-visa-card {
+  background: var(--korea-cream);
+
+  padding: 28px;
+
+  display: grid;
+
+  grid-template-columns: auto 1fr;
+
+  gap: 22px;
+
+  border-left: 3px solid transparent;
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease;
+}
+
+.korea-visa-card:hover {
+  transform: translateY(-5px);
+
+  border-left-color: var(--korea-gold);
+}
+
+.korea-visa-number {
+  color: var(--korea-gold);
+
+  font-family: "Fraunces", serif;
+
+  font-size: 22px;
+}
+
+.korea-visa-card h3 {
+  color: var(--korea-navy);
+
+  font-size: 24px;
+
+  margin: 0 0 7px;
+}
+
+.korea-visa-card p {
+  color: var(--korea-muted);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+.korea-visa-card a {
+  grid-column: 2;
+
+  color: var(--korea-navy);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  margin-top: 5px;
+}
+
+.korea-visa-card a span {
+  color: var(--korea-gold);
+
+  margin-left: 8px;
+}
+
+
+/* =========================================================
+   DESTINATIONS
+========================================================= */
+
+.korea-destinations {
+  background: #faf9f6;
+}
+
+.korea-destination-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3,1fr);
+
+  gap: 18px;
+
+  margin-top: 38px;
+}
+
+.korea-destination-card {
+  background: white;
+
+  overflow: hidden;
+
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+.korea-destination-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: 0 18px 45px rgba(6,31,71,.12);
+}
+
+.korea-destination-image {
+  height: 205px;
+
+  overflow: hidden;
+}
+
+.korea-destination-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform .8s ease;
+}
+
+.korea-destination-card:hover img {
+  transform: scale(1.07);
+}
+
+.korea-destination-content {
+  position: relative;
+
+  padding: 20px 21px 22px;
+}
+
+.korea-destination-content > span {
+  color: var(--korea-gold);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  text-transform: uppercase;
+}
+
+.korea-destination-content h3 {
+  color: var(--korea-navy);
+
+  font-size: 25px;
+
+  margin: 6px 0;
+}
+
+.korea-destination-content p {
+  color: var(--korea-muted);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  margin: 0;
+
+  max-width: 310px;
+}
+
+.korea-destination-arrow {
+  position: absolute;
+
+  right: 20px;
+  bottom: 20px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid #ddd;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: var(--korea-navy);
+
+  transition: .3s ease;
+}
+
+.korea-destination-card:hover .korea-destination-arrow {
+  background: var(--korea-gold);
+
+  border-color: var(--korea-gold);
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.korea-story {
+  background: white;
+}
+
+.korea-story-grid {
+  display: grid;
+
+  grid-template-columns: .95fr 1.05fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.korea-story-image {
+  position: relative;
+
+  height: 390px;
+
+  overflow: hidden;
+}
+
+.korea-story-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 1.2s ease;
+}
+
+.korea-story-image:hover img {
+  transform: scale(1.04);
+}
+
+.korea-story-caption {
+  position: absolute;
+
+  left: 18px;
+  bottom: 18px;
+
+  background: white;
+
+  padding: 12px 16px;
+
+  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+}
+
+.korea-story-caption span {
+  display: block;
+
+  color: var(--korea-gold);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.6px;
+}
+
+.korea-story-caption strong {
+  color: var(--korea-navy);
+
+  font-family: "Fraunces",serif;
+
+  font-size: 20px;
+}
+
+.korea-story-content h2 {
+  color: var(--korea-navy);
+
+  font-size: clamp(32px,4vw,47px);
+
+  line-height: 1.05;
+
+  margin: 15px 0 20px;
+}
+
+.korea-story-content p {
+  color: var(--korea-muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  margin-bottom: 13px;
+}
+
+.korea-text-link {
+  display: inline-flex;
+
+  gap: 12px;
+
+  color: var(--korea-navy);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  margin-top: 10px;
+
+  border-bottom: 1px solid var(--korea-gold);
+
+  padding-bottom: 4px;
+}
+
+.korea-text-link span {
+  color: var(--korea-gold);
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.korea-process {
+  background: var(--korea-cream);
+}
+
+.korea-process-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4,1fr);
+
+  margin-top: 42px;
+}
+
+.korea-process-grid article {
+  padding: 0 20px;
+
+  border-right: 1px dashed #d4cdbb;
+}
+
+.korea-process-grid article:first-child {
+  padding-left: 0;
+}
+
+.korea-process-grid article:last-child {
+  border-right: 0;
+}
+
+.korea-process-number {
+  color: var(--korea-gold);
+
+  font-family: "Fraunces",serif;
+
+  font-size: 30px;
+}
+
+.korea-process-line {
+  height: 1px;
+
+  background: var(--korea-navy);
+
+  margin: 13px 0 18px;
+
+  opacity: .25;
+}
+
+.korea-process-grid h3 {
+  color: var(--korea-navy);
+
+  font-size: 20px;
+
+  margin-bottom: 7px;
+}
+
+.korea-process-grid p {
+  color: var(--korea-muted);
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   DOCUMENTS
+========================================================= */
+
+.korea-documents {
+  background: white;
+}
+
+.korea-documents-grid {
+  display: grid;
+
+  grid-template-columns: .9fr 1.1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.korea-documents-grid h2 {
+  color: var(--korea-navy);
+
+  font-size: 44px;
+
+  line-height: 1.05;
+
+  margin: 15px 0;
+}
+
+.korea-documents-grid > div:first-child p {
+  color: var(--korea-muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  max-width: 420px;
+}
+
+.korea-document-list {
+  border-top: 1px solid #ddd;
+}
+
+.korea-document-item {
+  display: grid;
+
+  grid-template-columns: 45px 1fr auto;
+
+  align-items: center;
+
+  padding: 13px 0;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.korea-document-item span {
+  color: var(--korea-gold);
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+.korea-document-item strong {
+  color: var(--korea-navy);
+
+  font-size: 13px;
+}
+
+.korea-document-item i {
+  color: var(--korea-gold);
+
+  font-style: normal;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.korea-faq {
+  background: #faf9f6;
+}
+
+.korea-faq-list {
+  width: min(850px,100%);
+
+  margin: 38px auto 0;
+}
+
+.korea-faq details {
+  background: white;
+
+  border-bottom: 1px solid #e1ddd3;
+
+  padding: 0 20px;
+}
+
+.korea-faq summary {
+  list-style: none;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 20px 0;
+
+  color: var(--korea-navy);
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.korea-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.korea-faq summary b {
+  color: var(--korea-gold);
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+  transition: transform .3s ease;
+}
+
+.korea-faq details[open] summary b {
+  transform: rotate(45deg);
+}
+
+.korea-faq details p {
+  color: var(--korea-muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+
+  max-width: 720px;
+
+  padding: 0 0 20px;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.korea-final-cta {
+  min-height: 360px;
+
+  background-size: cover;
+
+  background-position: center;
+
+  display: flex;
+
+  align-items: center;
+
+  position: relative;
+}
+
+.korea-final-inner {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+}
+
+.korea-final-inner .korea-label {
+  justify-content: center;
+}
+
+.korea-final-inner h2 {
+  color: white;
+
+  font-size: clamp(38px,5vw,58px);
+
+  line-height: 1;
+
+  margin: 15px 0;
+}
+
+.korea-final-inner p {
+  color: rgba(255,255,255,.72);
+
+  font-size: 14px;
+
+  margin-bottom: 25px;
+}
+
+.korea-final-inner .korea-gold-btn {
+  margin: auto;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .korea-section {
+    padding: 60px 0;
+  }
+
+  .korea-intro-grid,
+  .korea-story-grid,
+  .korea-documents-grid {
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+  }
+
+  .korea-two-heading {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .korea-facts-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .korea-facts-grid > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .korea-experience-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .korea-experience-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .korea-experience-grid article:nth-child(3),
+  .korea-experience-grid article:nth-child(4) {
+    border-top: 1px solid #ddd8ca;
+  }
+
+  .korea-visa-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .korea-destination-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .korea-process-grid {
+    grid-template-columns: repeat(2,1fr);
+
+    row-gap: 30px;
+  }
+
+  .korea-process-grid article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .korea-process-grid article:nth-child(3),
+  .korea-process-grid article:nth-child(4) {
+    border-top: 1px dashed #d4cdbb;
+
+    padding-top: 25px;
+  }
+
+  .korea-story-image {
+    height: 330px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .korea-container,
+  .korea-hero-inner {
+    width: calc(100% - 30px);
+  }
+
+  .korea-section {
+    padding: 48px 0;
+  }
+
+  .korea-hero {
+    height: 650px;
+
+    min-height: 0;
+
+    background-position: 58% center;
+  }
+
+  .korea-hero::after {
+    width: 210px;
+    height: 210px;
+
+    right: -70px;
+    top: 18%;
+  }
+
+  .korea-hero h1 {
+    font-size: 58px;
+  }
+
+  .korea-hero p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .korea-symbol {
+    display: none;
+  }
+
+  .korea-hero-actions {
+    gap: 8px;
+  }
+
+  .korea-gold-btn,
+  .korea-outline-btn {
+    padding: 12px 15px;
+
+    font-size: 11px;
+  }
+
+  .korea-heading h2,
+  .korea-two-heading h2 {
+    font-size: 34px;
+  }
+
+  .korea-facts-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .korea-facts-grid > div {
+    padding: 10px 12px;
+  }
+
+  .korea-experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .korea-experience-grid article,
+  .korea-experience-grid article:nth-child(2),
+  .korea-experience-grid article:nth-child(3),
+  .korea-experience-grid article:nth-child(4) {
+    border-right: 0;
+
+    border-top: 1px solid #ddd8ca;
+  }
+
+  .korea-experience-grid article:first-child {
+    border-top: 0;
+  }
+
+  .korea-destination-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .korea-destination-image {
+    height: 190px;
+  }
+
+  .korea-story-image {
+    height: 270px;
+  }
+
+  .korea-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .korea-process-grid article,
+  .korea-process-grid article:first-child,
+  .korea-process-grid article:nth-child(2),
+  .korea-process-grid article:nth-child(3),
+  .korea-process-grid article:nth-child(4) {
+    border-right: 0;
+
+    border-top: 1px dashed #d4cdbb;
+
+    padding: 22px 0 0;
+  }
+
+  .korea-process-grid article:first-child {
+    border-top: 0;
+
+    padding-top: 0;
+  }
+
+  .korea-documents-grid {
+    gap: 28px;
+  }
+
+  .korea-documents-grid h2 {
+    font-size: 36px;
+  }
+
+  .korea-final-cta {
+    min-height: 330px;
+  }
+
+  .korea-final-inner h2 {
+    font-size: 40px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .south-korea-page *,
+  .south-korea-page *::before,
+  .south-korea-page *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

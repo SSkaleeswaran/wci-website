@@ -19,7 +19,7 @@ function AboutPage() {
         style={{
           backgroundImage:
             "url('/images/banners/aboutPage.png')",
-        }}>
+        }}  data-aos="fade-up">
         <div className="about-orbit-copy">
           <span className="about-kicker">WELL CAREER IMMIGRATION</span>
           <h1>Beyond borders.<br /><em>Built around you.</em></h1>
@@ -43,7 +43,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section id="story" className="about-story">
+      <section id="story" className="about-story"  data-aos="fade-up">
         <div className="story-marker"> OUR STORY</div>
         <div className="story-grid">
           <div>
@@ -65,7 +65,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="about-services">
+      <section className="about-services"  data-aos="fade-up">
         <div className="service-intro">
           <span className="about-kicker">WHAT WE PROVIDE</span>
           <h2>One destination.<br /><em>Different reasons.</em></h2>
@@ -114,7 +114,7 @@ function AboutPage() {
 
       <About showLearnMore={false}/>
 
-      <section className="about-reach">
+      <section className="about-reach"  data-aos="fade-up">
         <div className="reach-heading">
           <span className="about-kicker">OUR GLOBAL REACH</span>
           <h2>Where could<br /><em>you go next?</em></h2>
@@ -128,7 +128,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="about-principles">
+      <section className="about-principles"  data-aos="fade-up">
         <div className="principle-number"></div>
         <div>
           <span className="about-kicker">WHY WCI</span>
@@ -141,7 +141,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="about-cta">
+      <section className="about-cta"  data-aos="fade-right">
         <div>
           <span className="about-kicker">YOUR NEXT CHAPTER</span>
           <h2>Ready to make<br /><em>the move?</em></h2>
