@@ -283,7 +283,7 @@ function CountryBlock({ country, index }) {
           </div>
 
           <Link to={`/countries/${country.slug}`} className="country-block-cta">
-            Contact Us <span>→</span>
+            Explore <span>→</span>
           </Link>
 
         </div>
