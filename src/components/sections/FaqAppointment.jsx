@@ -46,7 +46,7 @@ function FaqAppointment() {
           {/* =========================
               LEFT — FAQ
           ========================= */}
-          <div className="faq-content">
+          <div className="faq-content" data-aos="fade-right">
 
             <span className="faq-label">
               FREQUENTLY ASKED QUESTIONS
@@ -103,7 +103,7 @@ function FaqAppointment() {
           {/* =========================
               RIGHT — OFFICE MAP
           ========================= */}
-          <div className="faq-map-wrapper">
+          <div className="faq-map-wrapper" data-aos="fade-left">
 
             <div className="faq-map-card">
 

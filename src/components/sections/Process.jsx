@@ -28,7 +28,7 @@ const processSteps = [
 function Process() {
   return (
     <section className="process-section">
-      <div className="container">
+      <div className="container" >
 
         {/* Heading */}
         <div className="process-heading">
@@ -56,7 +56,7 @@ function Process() {
             <div className="process-item" key={step.number}>
 
               {/* Number */}
-              <div className="process-number">
+              <div className="process-number" data-aos="fade-down">
                 {step.number}
               </div>
 
@@ -66,7 +66,7 @@ function Process() {
               )}
 
               {/* Content */}
-              <div className="process-content">
+              <div className="process-content" data-aos="fade-up">
                 <h3>{step.title}</h3>
 
                 <p>{step.description}</p>

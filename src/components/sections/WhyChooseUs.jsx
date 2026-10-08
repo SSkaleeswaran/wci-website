@@ -80,9 +80,9 @@ function WhyChooseUs() {
   return (
     <section
       className={`why-section${inView ? " in-view" : ""}`}
-      ref={sectionRef}
+      ref={sectionRef} data-aos="fade-up"
     >
-      <div className="why-container">
+      <div className="why-container" data-aos="fade-up">
         <div className="why-intro">
            <span className="why-label">Why choose us</span>
           <div className="why-compass" aria-hidden="true">
