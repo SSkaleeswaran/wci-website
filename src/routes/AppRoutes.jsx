@@ -34,17 +34,10 @@ function AppRoutes() {
       <Route path="/visa-services" element={<ServicesPage />} />
       <Route path="/countries" element={<CountriesPage />} />
       <Route path="/contact" element={<ContactPage />} />
-      {/* <Route
-        path="/book-consultation"
-        element={<h1>Book Consultation Page</h1>}
-      /> */}
       <Route path="/faq" element={<FAQPage />} />
 
       {/* services route */}
-      <Route
-        path="/visa-services/tourist-visa"
-        element={<TouristVisaPage />}
-      />
+      <Route path="/visa-services/tourist-visa" element={<TouristVisaPage />} />
       <Route path="/visa-services/study-visa" element={<StudyVisaPage/>}/>
       <Route path="/visa-services/visitor-visa" element={<VisitorVisaPage/>}/>
       <Route path="/visa-services/business-visa" element={<BusinessVisaPage/>}/>

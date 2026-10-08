@@ -515,7 +515,7 @@ function SchengenPage() {
             </p>
 
             <Link
-              to="/book-consultation"
+              to="/contact"
               className="sc-text-link"
             >
               Plan Your Europe Trip
@@ -703,7 +703,7 @@ function SchengenPage() {
           </p>
 
           <Link
-            to="/book-consultation"
+            to="/contact"
             className="sc-gold-btn"
           >
             Book a Consultation
