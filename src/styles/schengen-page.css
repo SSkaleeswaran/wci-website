@@ -1,5 +1,6 @@
 /* =========================================================
    SCHENGEN PAGE
+   WCI - Well Career Immigration
 ========================================================= */
 
 .schengen-page {
@@ -11,9 +12,11 @@
   --sc-muted: #687386;
 
   width: 100%;
+
   overflow: hidden;
 
-  background: #fff;
+  background: #ffffff;
+
   color: var(--sc-text);
 
   font-family: "Inter", sans-serif;
@@ -27,6 +30,7 @@
 
 .sc-container {
   width: min(1160px, calc(100% - 48px));
+
   margin: 0 auto;
 }
 
@@ -40,18 +44,23 @@
 ========================================================= */
 
 .sc-hero {
+  position: relative;
+
   height: 78vh;
+
   min-height: 640px;
+
   max-height: 760px;
 
-  background-size: cover;
-  background-position: center;
-
   display: flex;
+
   align-items: center;
 
-  position: relative;
   overflow: hidden;
+
+  background-size: cover;
+
+  background-position: center;
 }
 
 .sc-hero::after {
@@ -60,12 +69,14 @@
   position: absolute;
 
   width: 360px;
+
   height: 360px;
 
   right: 7%;
+
   top: 16%;
 
-  border: 1px solid rgba(217,164,65,.35);
+  border: 1px solid rgba(217, 164, 65, 0.35);
 
   border-radius: 50%;
 
@@ -84,11 +95,12 @@
 
 .sc-hero-inner {
   position: relative;
+
   z-index: 2;
 }
 
 .sc-hero-content {
-  width: min(640px,100%);
+  width: min(650px, 100%);
 }
 
 .sc-eyebrow,
@@ -96,11 +108,13 @@
   display: inline-flex;
 
   align-items: center;
+
   gap: 10px;
 
   color: var(--sc-gold);
 
   font-size: 11px;
+
   font-weight: 700;
 
   letter-spacing: 2.5px;
@@ -113,19 +127,20 @@
   content: "";
 
   width: 28px;
+
   height: 1px;
 
   background: var(--sc-gold);
 }
 
 .sc-hero h1 {
-  color: #fff;
-
-  font-size: clamp(52px,7vw,92px);
-
-  line-height: .9;
-
   margin: 22px 0;
+
+  color: #ffffff;
+
+  font-size: clamp(52px, 7vw, 92px);
+
+  line-height: 0.9;
 
   font-weight: 600;
 }
@@ -139,15 +154,15 @@
 }
 
 .sc-hero p {
-  max-width: 530px;
+  max-width: 560px;
 
-  color: rgba(255,255,255,.86);
+  margin-bottom: 28px;
+
+  color: rgba(255, 255, 255, 0.86);
 
   font-size: 16px;
 
   line-height: 1.8;
-
-  margin-bottom: 28px;
 }
 
 .sc-hero-actions {
@@ -158,11 +173,17 @@
   gap: 12px;
 }
 
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
 .sc-gold-btn,
 .sc-outline-btn {
   display: inline-flex;
 
   align-items: center;
+
   gap: 18px;
 
   padding: 13px 20px;
@@ -170,9 +191,10 @@
   text-decoration: none;
 
   font-size: 13px;
+
   font-weight: 700;
 
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .sc-gold-btn {
@@ -192,36 +214,44 @@
 }
 
 .sc-outline-btn {
-  color: #fff;
+  color: #ffffff;
 
-  border: 1px solid rgba(255,255,255,.45);
+  border: 1px solid rgba(255, 255, 255, 0.45);
 }
 
 .sc-outline-btn:hover {
-  color: #fff;
+  color: #ffffff;
 
   border-color: var(--sc-gold);
 }
+
+
+/* =========================================================
+   HERO SYMBOL
+========================================================= */
 
 .sc-symbol {
   position: absolute;
 
   right: 8%;
+
   bottom: 15%;
 
   width: 110px;
+
   height: 110px;
-
-  border: 1px solid rgba(217,164,65,.6);
-
-  border-radius: 50%;
 
   display: flex;
 
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
+
+  border: 1px solid rgba(217, 164, 65, 0.6);
+
+  border-radius: 50%;
 
   color: var(--sc-gold);
 
@@ -248,7 +278,7 @@
 .sc-intro-grid {
   display: grid;
 
-  grid-template-columns: .95fr 1.05fr;
+  grid-template-columns: 0.95fr 1.05fr;
 
   gap: 80px;
 
@@ -256,13 +286,13 @@
 }
 
 .sc-heading h2 {
+  margin: 16px 0 0;
+
   color: var(--sc-navy);
 
-  font-size: clamp(34px,4vw,50px);
+  font-size: clamp(34px, 4vw, 50px);
 
   line-height: 1.05;
-
-  margin: 16px 0 0;
 }
 
 .sc-heading h2 em,
@@ -278,19 +308,20 @@
 }
 
 .sc-intro-copy p {
+  margin: 0 0 15px;
+
   color: var(--sc-muted);
 
   font-size: 15px;
 
   line-height: 1.8;
-
-  margin: 0 0 15px;
 }
 
 .sc-mini-line {
   display: flex;
 
   align-items: center;
+
   gap: 12px;
 
   margin-top: 24px;
@@ -298,6 +329,7 @@
 
 .sc-mini-line span {
   width: 35px;
+
   height: 2px;
 
   background: var(--sc-gold);
@@ -317,21 +349,21 @@
 ========================================================= */
 
 .sc-facts {
-  background: var(--sc-deep);
-
   padding: 28px 0;
+
+  background: var(--sc-deep);
 }
 
 .sc-facts-grid {
   display: grid;
 
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .sc-facts-grid > div {
   padding: 10px 24px;
 
-  border-right: 1px solid rgba(255,255,255,.15);
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .sc-facts-grid > div:last-child {
@@ -351,19 +383,19 @@
 .sc-facts strong {
   display: block;
 
-  color: #fff;
+  margin-top: 7px;
+
+  color: #ffffff;
 
   font-size: 13px;
-
-  margin-top: 7px;
 }
 
 .sc-facts p {
-  color: rgba(255,255,255,.62);
+  margin: 4px 0 0;
+
+  color: rgba(255, 255, 255, 0.62);
 
   font-size: 12px;
-
-  margin: 4px 0 0;
 }
 
 
@@ -384,25 +416,26 @@
 }
 
 .sc-centered > p {
+  max-width: 650px;
+
+  margin: 12px auto 0;
+
   color: var(--sc-muted);
 
   font-size: 14px;
 
   line-height: 1.7;
-
-  max-width: 560px;
-
-  margin: 12px auto 0;
 }
 
 .sc-experience-grid {
   display: grid;
 
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   margin-top: 40px;
 
   border-top: 1px solid #ddd8ca;
+
   border-bottom: 1px solid #ddd8ca;
 }
 
@@ -425,32 +458,32 @@
 }
 
 .sc-experience-grid h3 {
+  margin: 13px 0 8px;
+
   color: var(--sc-navy);
 
   font-size: 22px;
-
-  margin: 13px 0 8px;
 }
 
 .sc-experience-grid p {
+  margin: 0;
+
   color: var(--sc-muted);
 
   font-size: 13px;
 
   line-height: 1.7;
-
-  margin: 0;
 }
 
 
 /* =========================================================
-   VISA
+   VISA SERVICES
 ========================================================= */
 
 .sc-two-heading {
   display: grid;
 
-  grid-template-columns: 1fr .8fr;
+  grid-template-columns: 1fr 0.8fr;
 
   gap: 70px;
 
@@ -458,29 +491,29 @@
 }
 
 .sc-two-heading h2 {
+  margin: 15px 0 0;
+
   color: var(--sc-navy);
 
-  font-size: clamp(32px,4vw,46px);
+  font-size: clamp(32px, 4vw, 46px);
 
   line-height: 1.05;
-
-  margin: 15px 0 0;
 }
 
 .sc-two-heading > p {
+  margin: 0;
+
   color: var(--sc-muted);
 
   font-size: 14px;
 
   line-height: 1.8;
-
-  margin: 0;
 }
 
 .sc-visa-grid {
   display: grid;
 
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 
   gap: 18px;
 
@@ -488,21 +521,21 @@
 }
 
 .sc-visa-card {
-  background: var(--sc-cream);
-
-  padding: 28px;
-
   display: grid;
 
   grid-template-columns: auto 1fr;
 
   gap: 22px;
 
+  padding: 28px;
+
+  background: var(--sc-cream);
+
   border-left: 3px solid transparent;
 
   transition:
-    transform .35s ease,
-    border-color .35s ease;
+    transform 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .sc-visa-card:hover {
@@ -520,25 +553,27 @@
 }
 
 .sc-visa-card h3 {
+  margin: 0 0 7px;
+
   color: var(--sc-navy);
 
   font-size: 24px;
-
-  margin: 0 0 7px;
 }
 
 .sc-visa-card p {
+  margin: 0;
+
   color: var(--sc-muted);
 
   font-size: 13px;
 
   line-height: 1.7;
-
-  margin: 0;
 }
 
 .sc-visa-card a {
   grid-column: 2;
+
+  margin-top: 5px;
 
   color: var(--sc-navy);
 
@@ -547,14 +582,12 @@
   font-weight: 700;
 
   text-decoration: none;
-
-  margin-top: 5px;
 }
 
 .sc-visa-card a span {
-  color: var(--sc-gold);
-
   margin-left: 8px;
+
+  color: var(--sc-gold);
 }
 
 
@@ -566,10 +599,22 @@
   background: #faf9f6;
 }
 
+.sc-section-intro {
+  max-width: 650px;
+
+  margin-top: 14px;
+
+  color: var(--sc-muted);
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
 .sc-destination-grid {
   display: grid;
 
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 18px;
 
@@ -577,19 +622,19 @@
 }
 
 .sc-destination-card {
-  background: #fff;
-
   overflow: hidden;
 
+  background: #ffffff;
+
   transition:
-    transform .4s ease,
-    box-shadow .4s ease;
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 }
 
 .sc-destination-card:hover {
   transform: translateY(-7px);
 
-  box-shadow: 0 18px 45px rgba(6,31,71,.12);
+  box-shadow: 0 18px 45px rgba(6, 31, 71, 0.12);
 }
 
 .sc-destination-image {
@@ -600,11 +645,14 @@
 
 .sc-destination-image img {
   width: 100%;
+
   height: 100%;
+
+  display: block;
 
   object-fit: cover;
 
-  transition: transform .8s ease;
+  transition: transform 0.8s ease;
 }
 
 .sc-destination-card:hover img {
@@ -614,60 +662,71 @@
 .sc-destination-content {
   position: relative;
 
+  min-height: 190px;
+
   padding: 20px 21px 22px;
 }
 
 .sc-destination-content > span {
+  display: block;
+
+  max-width: 85%;
+
   color: var(--sc-gold);
 
   font-size: 9px;
 
   font-weight: 700;
 
-  letter-spacing: 1.8px;
+  letter-spacing: 1.4px;
+
+  line-height: 1.5;
 
   text-transform: uppercase;
 }
 
 .sc-destination-content h3 {
+  margin: 6px 0;
+
   color: var(--sc-navy);
 
   font-size: 25px;
-
-  margin: 6px 0;
 }
 
 .sc-destination-content p {
+  max-width: 310px;
+
+  margin: 0;
+
   color: var(--sc-muted);
 
   font-size: 12px;
 
   line-height: 1.7;
-
-  margin: 0;
-
-  max-width: 310px;
 }
 
 .sc-destination-arrow {
   position: absolute;
 
   right: 20px;
+
   bottom: 20px;
 
   width: 30px;
-  height: 30px;
 
-  border: 1px solid #ddd;
+  height: 30px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  border: 1px solid #dddddd;
 
   color: var(--sc-navy);
 
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
 .sc-destination-card:hover .sc-destination-arrow {
@@ -678,13 +737,13 @@
 
 
 /* =========================================================
-   STORY
+   STORY / EUROPE GUIDE
 ========================================================= */
 
 .sc-story-grid {
   display: grid;
 
-  grid-template-columns: .95fr 1.05fr;
+  grid-template-columns: 0.95fr 1.05fr;
 
   gap: 70px;
 
@@ -701,7 +760,10 @@
 
 .sc-story-image img {
   width: 100%;
+
   height: 100%;
+
+  display: block;
 
   object-fit: cover;
 
@@ -716,13 +778,14 @@
   position: absolute;
 
   left: 18px;
-  bottom: 18px;
 
-  background: #fff;
+  bottom: 18px;
 
   padding: 12px 16px;
 
-  box-shadow: 0 8px 30px rgba(0,0,0,.12);
+  background: #ffffff;
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
 .sc-story-caption span {
@@ -742,33 +805,39 @@
 
   font-family: "Fraunces", serif;
 
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .sc-story-content h2 {
+  margin: 15px 0 20px;
+
   color: var(--sc-navy);
 
-  font-size: clamp(32px,4vw,47px);
+  font-size: clamp(32px, 4vw, 47px);
 
   line-height: 1.05;
-
-  margin: 15px 0 20px;
 }
 
 .sc-story-content p {
+  margin-bottom: 13px;
+
   color: var(--sc-muted);
 
   font-size: 13px;
 
   line-height: 1.8;
-
-  margin-bottom: 13px;
 }
 
 .sc-text-link {
   display: inline-flex;
 
   gap: 12px;
+
+  margin-top: 10px;
+
+  padding-bottom: 4px;
+
+  border-bottom: 1px solid var(--sc-gold);
 
   color: var(--sc-navy);
 
@@ -777,12 +846,6 @@
   font-weight: 700;
 
   text-decoration: none;
-
-  margin-top: 10px;
-
-  border-bottom: 1px solid var(--sc-gold);
-
-  padding-bottom: 4px;
 }
 
 .sc-text-link span {
@@ -801,7 +864,7 @@
 .sc-process-grid {
   display: grid;
 
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   margin-top: 42px;
 }
@@ -831,29 +894,29 @@
 .sc-process-line {
   height: 1px;
 
-  background: var(--sc-navy);
-
   margin: 13px 0 18px;
 
-  opacity: .25;
+  background: var(--sc-navy);
+
+  opacity: 0.25;
 }
 
 .sc-process-grid h3 {
+  margin-bottom: 7px;
+
   color: var(--sc-navy);
 
   font-size: 20px;
-
-  margin-bottom: 7px;
 }
 
 .sc-process-grid p {
+  margin: 0;
+
   color: var(--sc-muted);
 
   font-size: 12px;
 
   line-height: 1.7;
-
-  margin: 0;
 }
 
 
@@ -864,7 +927,7 @@
 .sc-documents-grid {
   display: grid;
 
-  grid-template-columns: .9fr 1.1fr;
+  grid-template-columns: 0.9fr 1.1fr;
 
   gap: 80px;
 
@@ -872,27 +935,27 @@
 }
 
 .sc-documents-grid h2 {
+  margin: 15px 0;
+
   color: var(--sc-navy);
 
   font-size: 44px;
 
   line-height: 1.05;
-
-  margin: 15px 0;
 }
 
 .sc-documents-grid > div:first-child p {
+  max-width: 440px;
+
   color: var(--sc-muted);
 
   font-size: 13px;
 
   line-height: 1.8;
-
-  max-width: 420px;
 }
 
 .sc-document-list {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #dddddd;
 }
 
 .sc-document-item {
@@ -904,7 +967,7 @@
 
   padding: 13px 0;
 
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 .sc-document-item span {
@@ -924,9 +987,9 @@
 .sc-document-item i {
   color: var(--sc-gold);
 
-  font-style: normal;
-
   font-size: 14px;
+
+  font-style: normal;
 }
 
 
@@ -939,27 +1002,24 @@
 }
 
 .sc-faq-list {
-  width: min(850px,100%);
+  width: min(850px, 100%);
 
   margin: 38px auto 0;
 }
 
 .sc-faq details {
-  background: #fff;
+  padding: 0 20px;
+
+  background: #ffffff;
 
   border-bottom: 1px solid #e1ddd3;
-
-  padding: 0 20px;
 }
 
 .sc-faq summary {
-  list-style: none;
-
-  cursor: pointer;
-
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   padding: 20px 0;
@@ -969,6 +1029,10 @@
   font-size: 14px;
 
   font-weight: 700;
+
+  cursor: pointer;
+
+  list-style: none;
 }
 
 .sc-faq summary::-webkit-details-marker {
@@ -982,7 +1046,7 @@
 
   font-weight: 400;
 
-  transition: transform .3s ease;
+  transition: transform 0.3s ease;
 }
 
 .sc-faq details[open] summary b {
@@ -990,17 +1054,17 @@
 }
 
 .sc-faq details p {
+  max-width: 720px;
+
+  margin: 0;
+
+  padding: 0 0 20px;
+
   color: var(--sc-muted);
 
   font-size: 13px;
 
   line-height: 1.8;
-
-  max-width: 720px;
-
-  padding: 0 0 20px;
-
-  margin: 0;
 }
 
 
@@ -1009,15 +1073,17 @@
 ========================================================= */
 
 .sc-final-cta {
+  position: relative;
+
   min-height: 360px;
 
-  background-size: cover;
-  background-position: center;
-
   display: flex;
+
   align-items: center;
 
-  position: relative;
+  background-size: cover;
+
+  background-position: center;
 }
 
 .sc-final-inner {
@@ -1033,21 +1099,21 @@
 }
 
 .sc-final-inner h2 {
-  color: #fff;
+  margin: 15px 0;
 
-  font-size: clamp(38px,5vw,58px);
+  color: #ffffff;
+
+  font-size: clamp(38px, 5vw, 58px);
 
   line-height: 1;
-
-  margin: 15px 0;
 }
 
 .sc-final-inner p {
-  color: rgba(255,255,255,.72);
+  margin-bottom: 25px;
+
+  color: rgba(255, 255, 255, 0.72);
 
   font-size: 14px;
-
-  margin-bottom: 25px;
 }
 
 .sc-final-inner .sc-gold-btn {
@@ -1080,15 +1146,20 @@
   }
 
   .sc-facts-grid {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .sc-facts-grid > div:nth-child(2) {
     border-right: 0;
   }
 
+  .sc-facts-grid > div:nth-child(3),
+  .sc-facts-grid > div:nth-child(4) {
+    margin-top: 10px;
+  }
+
   .sc-experience-grid {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .sc-experience-grid article:nth-child(2) {
@@ -1105,11 +1176,11 @@
   }
 
   .sc-destination-grid {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .sc-process-grid {
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     row-gap: 30px;
   }
@@ -1120,9 +1191,9 @@
 
   .sc-process-grid article:nth-child(3),
   .sc-process-grid article:nth-child(4) {
-    border-top: 1px dashed #d4cdbb;
-
     padding-top: 25px;
+
+    border-top: 1px dashed #d4cdbb;
   }
 }
 
@@ -1151,9 +1222,11 @@
 
   .sc-hero::after {
     width: 210px;
+
     height: 210px;
 
     right: -70px;
+
     top: 18%;
   }
 
@@ -1212,6 +1285,16 @@
     border-top: 0;
   }
 
+  .sc-visa-card {
+    grid-template-columns: auto 1fr;
+
+    padding: 22px;
+  }
+
+  .sc-visa-card h3 {
+    font-size: 21px;
+  }
+
   .sc-destination-grid {
     grid-template-columns: 1fr;
 
@@ -1220,6 +1303,10 @@
 
   .sc-destination-image {
     height: 190px;
+  }
+
+  .sc-destination-content {
+    min-height: 175px;
   }
 
   .sc-story-image {
@@ -1235,17 +1322,17 @@
   .sc-process-grid article:nth-child(2),
   .sc-process-grid article:nth-child(3),
   .sc-process-grid article:nth-child(4) {
+    padding: 22px 0 0;
+
     border-right: 0;
 
     border-top: 1px dashed #d4cdbb;
-
-    padding: 22px 0 0;
   }
 
   .sc-process-grid article:first-child {
-    border-top: 0;
-
     padding-top: 0;
+
+    border-top: 0;
   }
 
   .sc-documents-grid {
@@ -1256,12 +1343,51 @@
     font-size: 36px;
   }
 
+  .sc-document-item {
+    grid-template-columns: 35px 1fr auto;
+  }
+
+  .sc-document-item strong {
+    font-size: 12px;
+  }
+
   .sc-final-cta {
     min-height: 330px;
   }
 
   .sc-final-inner h2 {
     font-size: 40px;
+  }
+
+  .sc-final-inner p {
+    font-size: 12px;
+
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .sc-hero h1 {
+    font-size: 45px;
+  }
+
+  .sc-heading h2,
+  .sc-two-heading h2 {
+    font-size: 30px;
+  }
+
+  .sc-documents-grid h2 {
+    font-size: 32px;
+  }
+
+  .sc-final-inner h2 {
+    font-size: 34px;
   }
 }
 
@@ -1275,8 +1401,10 @@
   .schengen-page *,
   .schengen-page *::before,
   .schengen-page *::after {
-    animation-duration: .01ms !important;
+    animation-duration: 0.01ms !important;
+
     animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
+
+    transition-duration: 0.01ms !important;
   }
 }

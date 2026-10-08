@@ -4,63 +4,63 @@ import "../../styles/schengen-page.css";
 
 const destinations = [
   {
-    title: "Paris",
-    subtitle: "France",
-    image: "/images/countries/schengen-paris.jpg",
-    text: "Explore iconic landmarks, elegant streets, museums, cafés and the atmosphere of the French capital.",
+    title: "Germany",
+    subtitle: "Berlin • Munich • Frankfurt",
+    image: "/images/countries/schengen-germany.jpg",
+    text: "A major European destination for higher education, business, technology, culture and international travel.",
   },
   {
-    title: "Rome",
-    subtitle: "Italy",
-    image: "/images/countries/schengen-rome.jpg",
-    text: "Discover ancient history, remarkable architecture, Italian cuisine and timeless city streets.",
+    title: "Netherlands",
+    subtitle: "Amsterdam • Rotterdam • Eindhoven",
+    image: "/images/countries/schengen-netherlands.jpg",
+    text: "Known for international education, innovative industries, historic cities and a highly connected European lifestyle.",
   },
   {
-    title: "Amsterdam",
-    subtitle: "Netherlands",
-    image: "/images/countries/schengen-amsterdam.jpg",
-    text: "Experience canals, historic architecture, museums and the distinctive character of Amsterdam.",
+    title: "France",
+    subtitle: "Paris • Lyon • Bordeaux",
+    image: "/images/countries/schengen-france.jpg",
+    text: "Explore world-renowned culture, universities, architecture, business centres and historic European destinations.",
   },
   {
-    title: "Zurich",
-    subtitle: "Switzerland",
-    image: "/images/countries/schengen-zurich.jpg",
-    text: "A gateway to Swiss landscapes, lakes, mountains and a sophisticated European city experience.",
+    title: "Italy",
+    subtitle: "Milan • Rome • Bologna",
+    image: "/images/countries/schengen-italy.jpg",
+    text: "A destination combining education, design, business, history, architecture and some of Europe's most recognised cities.",
   },
   {
-    title: "Vienna",
-    subtitle: "Austria",
-    image: "/images/countries/schengen-vienna.jpg",
-    text: "Explore imperial architecture, classical culture, museums and elegant historic districts.",
+    title: "Sweden",
+    subtitle: "Stockholm • Gothenburg • Lund",
+    image: "/images/countries/schengen-sweden.jpg",
+    text: "Discover a modern European destination known for innovation, technology, education and quality of life.",
   },
   {
-    title: "Prague",
-    subtitle: "Czech Republic",
-    image: "/images/countries/schengen-prague.jpg",
-    text: "Discover medieval streets, historic squares, bridges and one of Europe's most distinctive cityscapes.",
+    title: "Finland",
+    subtitle: "Helsinki • Tampere • Turku",
+    image: "/images/countries/schengen-finland.jpg",
+    text: "Explore a Nordic destination recognised for education, innovation, technology and distinctive natural landscapes.",
   },
 ];
 
 const experiences = [
   {
     number: "01",
-    title: "Multi-Country Travel",
-    text: "Plan a European itinerary that can include multiple Schengen destinations within the applicable visa conditions.",
+    title: "European Travel",
+    text: "Plan eligible short-stay travel across participating Schengen destinations according to the conditions of your visa.",
   },
   {
     number: "02",
-    title: "European Culture",
-    text: "Experience different languages, cuisines, architecture, traditions and historic cities in one journey.",
+    title: "Education Destinations",
+    text: "Explore European countries that are also popular destinations for international students and higher education.",
   },
   {
     number: "03",
-    title: "Historic Cities",
-    text: "Discover centuries of European history through landmarks, museums, castles and old towns.",
+    title: "Business Travel",
+    text: "Prepare for eligible meetings, conferences and other permitted short-term business activities in Europe.",
   },
   {
     number: "04",
-    title: "Scenic Journeys",
-    text: "Combine major cities with mountains, lakes, countryside and other European landscapes.",
+    title: "Culture & Lifestyle",
+    text: "Experience Europe's different languages, cuisines, architecture, traditions, cities and landscapes.",
   },
 ];
 
@@ -72,8 +72,18 @@ const visaServices = [
   },
   {
     number: "02",
-    title: "Business Travel",
-    text: "Support for eligible applicants travelling for meetings, conferences and other permitted business purposes.",
+    title: "Business Visa",
+    text: "Support for eligible applicants travelling for meetings, conferences and other permitted short-term business purposes.",
+  },
+  {
+    number: "03",
+    title: "Travel Planning",
+    text: "Understand your itinerary, main destination and supporting documents before preparing your application.",
+  },
+  {
+    number: "04",
+    title: "Study Pathway Guidance",
+    text: "If your goal is long-term education, WCI can help you understand that country's relevant study visa or permit pathway.",
   },
 ];
 
@@ -81,22 +91,22 @@ const process = [
   {
     number: "01",
     title: "Consultation",
-    text: "Understand your itinerary, travel purpose and the appropriate visa pathway.",
+    text: "Understand your purpose of travel, destination, itinerary and the pathway that best matches your plans.",
   },
   {
     number: "02",
-    title: "Itinerary & Documents",
-    text: "Organise your travel plan and supporting documents according to your circumstances.",
+    title: "Destination Planning",
+    text: "Review your main destination and organise the relevant travel or visa pathway.",
   },
   {
     number: "03",
-    title: "Application Review",
-    text: "Review the application and supporting information before submission.",
+    title: "Document Preparation",
+    text: "Organise the supporting documents relevant to your individual application.",
   },
   {
     number: "04",
-    title: "Decision",
-    text: "Follow the application process and receive the final decision.",
+    title: "Application",
+    text: "Review your application before submission and guide you through the next steps.",
   },
 ];
 
@@ -106,29 +116,41 @@ const documents = [
   "Recent photograph",
   "Travel itinerary",
   "Accommodation details",
-  "Travel insurance / financial evidence",
+  "Travel insurance",
+  "Financial evidence",
+  "Supporting documents",
 ];
 
 const faqs = [
   {
     question: "What is a Schengen visa?",
     answer:
-      "A Schengen visa can allow eligible short-stay travellers to visit participating Schengen countries subject to the conditions of the visa and applicable immigration rules.",
+      "A Schengen visa is generally used for eligible short stays in participating Schengen countries, subject to the conditions of the visa and applicable immigration rules.",
   },
   {
-    question: "Can I visit multiple European countries with one Schengen visa?",
+    question: "Can I visit multiple European countries?",
     answer:
       "Depending on the visa issued and your travel circumstances, a Schengen visa can allow travel across multiple participating countries. Your itinerary and applicable rules should be considered before applying.",
   },
   {
+    question: "Is a Schengen visa the same as a study visa?",
+    answer:
+      "No. A standard Schengen short-stay visa is not generally the route for long-term study. Students planning long-term education normally need to follow the relevant country's national study visa or residence permit pathway.",
+  },
+  {
+    question: "Can I travel to Germany with a Schengen visa?",
+    answer:
+      "Germany is part of the Schengen Area, so eligible short-stay travel to Germany can be possible under the conditions of an appropriate Schengen visa.",
+  },
+  {
     question: "Which country should I apply through?",
     answer:
-      "The appropriate consulate or visa authority generally depends on your main destination and the circumstances of your trip. WCI can help you understand the application pathway based on your itinerary.",
+      "The appropriate application authority generally depends on your main destination and the circumstances of your trip. WCI can help you understand the appropriate pathway based on your itinerary.",
   },
   {
     question: "What documents are required?",
     answer:
-      "Requirements vary according to the applicant and trip. Passport, application documents, itinerary, accommodation information, financial evidence and other supporting documents may be required.",
+      "Requirements vary according to the applicant, travel purpose and itinerary. Passport, application documents, itinerary, accommodation information, financial evidence, insurance and other supporting documents may be required.",
   },
 ];
 
@@ -144,7 +166,7 @@ function SchengenPage() {
         className="sc-hero"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(5,20,45,.94) 0%, rgba(5,20,45,.67) 48%, rgba(5,20,45,.12) 100%), url('/images/countries/schengen-nature.jpg')",
+            "linear-gradient(90deg, rgba(5,20,45,.95) 0%, rgba(5,20,45,.72) 48%, rgba(5,20,45,.16) 100%), url('/images/countries/schengen-nature.jpg')",
         }}
       >
         <div className="sc-container sc-hero-inner">
@@ -163,11 +185,13 @@ function SchengenPage() {
             </h1>
 
             <p>
-              Plan your European journey with professional Schengen
-              visa guidance, from your first itinerary to your application.
+              Explore European travel, business and education destinations
+              with professional guidance for your Schengen and country-specific
+              visa pathways.
             </p>
 
             <div className="sc-hero-actions">
+
               <Link
                 to="/book-consultation"
                 className="sc-gold-btn"
@@ -182,6 +206,7 @@ function SchengenPage() {
               >
                 Visa Services
               </Link>
+
             </div>
           </div>
 
@@ -214,8 +239,8 @@ function SchengenPage() {
             </span>
 
             <h2>
-              Europe becomes
-              <em>your itinerary.</em>
+              One European region.
+              <em>Many opportunities.</em>
             </h2>
           </div>
 
@@ -225,20 +250,27 @@ function SchengenPage() {
           >
             <p>
               The Schengen Area brings together participating European
-              countries under common short-stay travel rules, making it
-              possible for eligible travellers to plan journeys across
-              multiple destinations.
+              countries under common short-stay travel rules, allowing
+              eligible travellers to plan journeys across multiple
+              destinations.
             </p>
 
             <p>
-              Whether your itinerary focuses on one country or several
-              European cities, careful planning is important when preparing
-              your visa application.
+              Europe is also home to major education and business
+              destinations. Germany, the Netherlands, France, Italy,
+              Sweden and Finland are among the countries applicants may
+              consider for different long-term plans.
+            </p>
+
+            <p>
+              It is important to understand the difference between a
+              short-stay Schengen visa and the national visa or residence
+              pathway required for long-term study or other purposes.
             </p>
 
             <div className="sc-mini-line">
               <span></span>
-              <strong>WCI SCHENGEN VISA GUIDANCE</strong>
+              <strong>WCI EUROPE VISA GUIDANCE</strong>
             </div>
           </div>
 
@@ -264,7 +296,7 @@ function SchengenPage() {
             data-aos-delay="100"
           >
             <span>02</span>
-            <strong>Travel Type</strong>
+            <strong>Schengen Type</strong>
             <p>Short Stay</p>
           </div>
 
@@ -273,8 +305,8 @@ function SchengenPage() {
             data-aos-delay="200"
           >
             <span>03</span>
-            <strong>Known For</strong>
-            <p>Multi-Country Travel</p>
+            <strong>Popular For</strong>
+            <p>Travel • Business</p>
           </div>
 
           <div
@@ -282,8 +314,8 @@ function SchengenPage() {
             data-aos-delay="300"
           >
             <span>04</span>
-            <strong>Experience</strong>
-            <p>Culture • History • Nature</p>
+            <strong>Education</strong>
+            <p>Country-Specific Pathways</p>
           </div>
 
         </div>
@@ -291,7 +323,7 @@ function SchengenPage() {
 
 
       {/* =====================================================
-          WHY SCHENGEN
+          WHY EUROPE
       ===================================================== */}
 
       <section className="sc-section sc-experiences">
@@ -302,17 +334,18 @@ function SchengenPage() {
             data-aos="fade-up"
           >
             <span className="sc-label">
-              WHY CHOOSE SCHENGEN
+              WHY CONSIDER EUROPE
             </span>
 
             <h2>
-              One application journey.
-              <em>Countless experiences.</em>
+              One European region.
+              <em>Different possibilities.</em>
             </h2>
 
             <p>
-              Build a European itinerary around the destinations,
-              experiences and cultures that interest you most.
+              Whether your goal is a short European journey, business
+              travel or exploring long-term education opportunities,
+              understanding the right country and visa pathway is essential.
             </p>
           </div>
 
@@ -348,20 +381,22 @@ function SchengenPage() {
           <div className="sc-two-heading">
 
             <div data-aos="fade-right">
+
               <span className="sc-label">
                 WCI VISA SERVICES
               </span>
 
               <h2>
-                Your European journey
-                <em>starts with preparation.</em>
+                Choose the right
+                <em>European pathway.</em>
               </h2>
+
             </div>
 
             <p data-aos="fade-left">
-              WCI helps applicants understand their travel purpose,
-              organise their itinerary and prepare the supporting
-              documents required for their application.
+              WCI helps applicants understand their purpose of travel,
+              destination and supporting documentation before moving
+              forward with the appropriate visa pathway.
             </p>
 
           </div>
@@ -373,22 +408,26 @@ function SchengenPage() {
                 className="sc-visa-card"
                 key={visa.number}
                 data-aos="fade-up"
-                data-aos-delay={index * 120}
+                data-aos-delay={index * 100}
               >
+
                 <span className="sc-visa-number">
                   {visa.number}
                 </span>
 
                 <div>
+
                   <h3>{visa.title}</h3>
 
                   <p>{visa.text}</p>
+
                 </div>
 
                 <Link to="/book-consultation">
                   Explore Service
                   <span>↗</span>
                 </Link>
+
               </article>
             ))}
 
@@ -403,21 +442,31 @@ function SchengenPage() {
       ===================================================== */}
 
       <section className="sc-section sc-destinations">
+
         <div className="sc-container">
 
           <div
             className="sc-heading"
             data-aos="fade-up"
           >
+
             <span className="sc-label">
               EUROPEAN DESTINATIONS
             </span>
 
             <h2>
-              Start with these
-              <em>iconic cities.</em>
+              Explore Europe's
+              <em>leading destinations.</em>
             </h2>
+
+            <p className="sc-section-intro">
+              These countries offer a combination of education,
+              business, culture and travel opportunities. Long-term
+              study or residence requires the relevant national pathway.
+            </p>
+
           </div>
+
 
           <div className="sc-destination-grid">
 
@@ -430,20 +479,28 @@ function SchengenPage() {
               >
 
                 <div className="sc-destination-image">
+
                   <img
                     src={place.image}
-                    alt={`${place.title}, ${place.subtitle}`}
+                    alt={`${place.title} - ${place.subtitle}`}
                     loading="lazy"
                   />
+
                 </div>
 
                 <div className="sc-destination-content">
 
-                  <span>{place.subtitle}</span>
+                  <span>
+                    {place.subtitle}
+                  </span>
 
-                  <h3>{place.title}</h3>
+                  <h3>
+                    {place.title}
+                  </h3>
 
-                  <p>{place.text}</p>
+                  <p>
+                    {place.text}
+                  </p>
 
                   <div className="sc-destination-arrow">
                     ↗
@@ -457,74 +514,84 @@ function SchengenPage() {
           </div>
 
         </div>
+
       </section>
 
 
       {/* =====================================================
-          TRAVEL GUIDE
+          TRAVEL + EDUCATION GUIDE
       ===================================================== */}
 
       <section className="sc-section sc-story">
+
         <div className="sc-container sc-story-grid">
 
           <div
             className="sc-story-image"
             data-aos="fade-right"
           >
+
             <img
               src="/images/countries/schengen-nature.jpg"
-              alt="Schengen Europe"
+              alt="Europe travel and destinations"
               loading="lazy"
             />
 
             <div className="sc-story-caption">
-              <span>WCI TRAVEL GUIDE</span>
-              <strong>Schengen Europe</strong>
+              <span>WCI EUROPE GUIDE</span>
+              <strong>Travel • Study • Business</strong>
             </div>
+
           </div>
+
 
           <article
             className="sc-story-content"
             data-aos="fade-left"
           >
+
             <span className="sc-label">
-              TRAVEL ARTICLE
+              EUROPE GUIDE
             </span>
 
             <h2>
-              Planning your first
-              <em>European journey.</em>
+              Choose the country
+              <em>that matches your goal.</em>
             </h2>
 
             <p>
-              A Schengen trip can combine several European destinations,
-              but a strong itinerary starts with understanding where you
-              want to travel and how long you plan to stay.
+              Europe offers very different opportunities depending on
+              your purpose. Germany is well known for higher education,
+              technology and business, while the Netherlands offers
+              international education and innovative industries.
             </p>
 
             <p>
-              Paris can offer art, architecture and French culture.
-              Rome combines ancient history with Italian cuisine, while
-              Amsterdam provides canals, museums and historic streets.
+              France and Italy combine universities, business centres,
+              culture and historic cities. Sweden and Finland are also
+              recognised for education, technology and innovation.
             </p>
 
             <p>
-              Travellers interested in mountains and natural scenery
-              can consider Switzerland, while Vienna and Prague offer
-              distinctive historic and cultural experiences.
+              If your plan is a short visit, a Schengen visa may be the
+              appropriate pathway when you meet the applicable
+              requirements. If your goal is long-term study, the relevant
+              country's national study visa or residence pathway should
+              be considered instead.
             </p>
 
             <Link
               to="/contact"
               className="sc-text-link"
             >
-              Plan Your Europe Trip
+              Discuss Your Europe Plans
               <span>→</span>
             </Link>
 
           </article>
 
         </div>
+
       </section>
 
 
@@ -533,21 +600,25 @@ function SchengenPage() {
       ===================================================== */}
 
       <section className="sc-section sc-process">
+
         <div className="sc-container">
 
           <div
             className="sc-heading sc-centered"
             data-aos="fade-up"
           >
+
             <span className="sc-label">
               THE WCI PROCESS
             </span>
 
             <h2>
               Four steps towards
-              <em>your Schengen application.</em>
+              <em>your European pathway.</em>
             </h2>
+
           </div>
+
 
           <div className="sc-process-grid">
 
@@ -557,21 +628,28 @@ function SchengenPage() {
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
               >
+
                 <span className="sc-process-number">
                   {item.number}
                 </span>
 
                 <div className="sc-process-line"></div>
 
-                <h3>{item.title}</h3>
+                <h3>
+                  {item.title}
+                </h3>
 
-                <p>{item.text}</p>
+                <p>
+                  {item.text}
+                </p>
+
               </article>
             ))}
 
           </div>
 
         </div>
+
       </section>
 
 
@@ -580,6 +658,7 @@ function SchengenPage() {
       ===================================================== */}
 
       <section className="sc-section sc-documents">
+
         <div className="sc-container sc-documents-grid">
 
           <div data-aos="fade-right">
@@ -590,16 +669,18 @@ function SchengenPage() {
 
             <h2>
               Prepare your documents
-              <em>with your itinerary in mind.</em>
+              <em>for your chosen pathway.</em>
             </h2>
 
             <p>
-              Requirements can vary depending on the applicant,
-              travel purpose and itinerary. WCI can help you understand
-              the supporting documents relevant to your application.
+              Requirements vary depending on your destination,
+              travel purpose and individual circumstances. WCI can
+              help you understand the documents relevant to your
+              application.
             </p>
 
           </div>
+
 
           <div
             className="sc-document-list"
@@ -611,21 +692,26 @@ function SchengenPage() {
                 className="sc-document-item"
                 key={document}
               >
+
                 <span>
-                  0{index + 1}
+                  {String(index + 1).padStart(2, "0")}
                 </span>
 
                 <strong>
                   {document}
                 </strong>
 
-                <i>✓</i>
+                <i>
+                  ✓
+                </i>
+
               </div>
             ))}
 
           </div>
 
         </div>
+
       </section>
 
 
@@ -634,20 +720,24 @@ function SchengenPage() {
       ===================================================== */}
 
       <section className="sc-section sc-faq">
+
         <div className="sc-container">
 
           <div
             className="sc-heading sc-centered"
             data-aos="fade-up"
           >
+
             <span className="sc-label">
-              SCHENGEN VISA FAQ
+              EUROPE VISA FAQ
             </span>
 
             <h2>
               Common questions.
             </h2>
+
           </div>
+
 
           <div className="sc-faq-list">
 
@@ -657,23 +747,35 @@ function SchengenPage() {
                 data-aos="fade-up"
                 data-aos-delay={index * 80}
               >
+
                 <summary>
-                  <span>{faq.question}</span>
-                  <b>+</b>
+
+                  <span>
+                    {faq.question}
+                  </span>
+
+                  <b>
+                    +
+                  </b>
+
                 </summary>
 
-                <p>{faq.answer}</p>
+                <p>
+                  {faq.answer}
+                </p>
+
               </details>
             ))}
 
           </div>
 
         </div>
+
       </section>
 
 
       {/* =====================================================
-          CTA
+          FINAL CTA
       ===================================================== */}
 
       <section
@@ -683,13 +785,14 @@ function SchengenPage() {
             "linear-gradient(90deg, rgba(5,20,45,.95), rgba(5,20,45,.68)), url('/images/countries/schengen-nature.jpg')",
         }}
       >
+
         <div
           className="sc-container sc-final-inner"
           data-aos="fade-up"
         >
 
           <span className="sc-label">
-            READY TO GO?
+            READY TO PLAN?
           </span>
 
           <h2>
@@ -698,8 +801,8 @@ function SchengenPage() {
           </h2>
 
           <p>
-            Speak with WCI about your Schengen visa requirements
-            and European travel plans.
+            Speak with WCI about your European travel,
+            business or education plans.
           </p>
 
           <Link
@@ -711,6 +814,7 @@ function SchengenPage() {
           </Link>
 
         </div>
+
       </section>
 
     </main>
