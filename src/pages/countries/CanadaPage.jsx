@@ -7,37 +7,37 @@ const destinations = [
     number: "01",
     title: "Toronto",
     text: "A vibrant international city known for its skyline, multicultural communities, shopping and business environment.",
-    image: "/images/countries/canada-toronto.jpg",
+    image: "/images/countryDetailIMG/toranto.jpg",
   },
   {
     number: "02",
     title: "Vancouver",
     text: "A beautiful coastal city surrounded by mountains, combining urban life with spectacular natural scenery.",
-    image: "/images/countries/canada-vancouver.jpg",
+    image: "/images/countryDetailIMG/vancouver.jpg",
   },
   {
     number: "03",
     title: "Montreal",
     text: "A culturally rich city known for its historic neighbourhoods, architecture, food and European character.",
-    image: "/images/countries/canada-montreal.jpg",
+    image: "/images/countryDetailIMG/montreal.jpg",
   },
   {
     number: "04",
     title: "Banff",
     text: "A spectacular destination in the Canadian Rockies, famous for mountains, lakes and outdoor experiences.",
-    image: "/images/countries/canada-banff.jpg",
+    image: "/images/countryDetailIMG/banff.jpg",
   },
   {
     number: "05",
     title: "Niagara Falls",
     text: "One of Canada's most famous natural attractions and a popular destination for visitors from around the world.",
-    image: "/images/countries/canada-niagara.jpg",
+    image: "/images/countryDetailIMG/NiagaraFalls.jpg",
   },
   {
     number: "06",
     title: "Calgary",
     text: "A modern western Canadian city offering access to the Rockies and a strong connection to outdoor adventure.",
-    image: "/images/countries/canada-calgary.jpg",
+    image: "/images/countryDetailIMG/Calgary.jpg",
   },
 ];
 

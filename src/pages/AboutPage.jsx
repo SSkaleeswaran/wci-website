@@ -65,7 +65,7 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="about-services"  data-aos="fade-up">
+      <section className="about-services"  >
         <div className="service-intro">
           <span className="about-kicker">WHAT WE PROVIDE</span>
           <h2>One destination.<br /><em>Different reasons.</em></h2>
