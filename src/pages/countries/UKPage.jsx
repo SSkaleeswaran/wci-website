@@ -7,37 +7,37 @@ const destinations = [
     number: "01",
     title: "London",
     subtitle: "History, culture & modern life",
-    image: "/images/countries/uk-london.jpg",
+    image: "/images/countryDetailIMG/london.jpg",
   },
   {
     number: "02",
     title: "Edinburgh",
     subtitle: "Castles, heritage & Scottish character",
-    image: "/images/countries/uk-edinburgh.jpg",
+    image: "/images/countryDetailIMG/Edinburgh.jpg",
   },
   {
     number: "03",
     title: "Manchester",
     subtitle: "Sport, music & city culture",
-    image: "/images/countries/uk-manchester.jpg",
+    image: "/images/countryDetailIMG/Manchester.jpg",
   },
   {
     number: "04",
     title: "Bath",
     subtitle: "Roman history & elegant architecture",
-    image: "/images/countries/uk-bath.jpg",
+    image: "/images/countryDetailIMG/bathUSA.jpg",
   },
   {
     number: "05",
     title: "Oxford",
     subtitle: "Academic heritage & architecture",
-    image: "/images/countries/uk-oxford.jpg",
+    image: "/images/countryDetailIMG/Oxford.jpg",
   },
   {
     number: "06",
     title: "Scotland",
     subtitle: "Highlands, landscapes & tradition",
-    image: "/images/countries/uk-scotland.jpg",
+    image: "/images/countryDetailIMG/Scotland.jpg",
   },
 ];
 
