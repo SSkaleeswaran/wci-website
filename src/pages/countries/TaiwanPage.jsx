@@ -6,31 +6,42 @@ const attractions = [
   {
     number: "01",
     title: "Taipei 101",
+    image: "/images/countryDetailIMG/Taipei.jpg",
     text: "Experience one of Taiwan's most recognizable landmarks and enjoy panoramic views across Taipei.",
   },
   {
     number: "02",
     title: "Jiufen",
+    image: "/images/countryDetailIMG/Jiufen.jpg",
+
     text: "Explore the atmospheric mountain town known for its historic streets, tea houses and traditional character.",
   },
   {
     number: "03",
     title: "Sun Moon Lake",
+    image: "/images/countryDetailIMG/SunMoonLake.jpg",
+
     text: "Discover one of Taiwan's most scenic destinations, surrounded by mountains and peaceful lake views.",
   },
   {
     number: "04",
     title: "Taroko",
+    image: "/images/countryDetailIMG/Taroko.jpg",
+
     text: "Experience dramatic landscapes, marble cliffs and spectacular natural scenery in one of Taiwan's famous regions.",
   },
   {
     number: "05",
     title: "Shilin Night Market",
+    image: "/images/countryDetailIMG/ShilinNightMarket.jpg",
+
     text: "Discover Taiwanese street food, shopping and the lively atmosphere of one of Taipei's best-known night markets.",
   },
   {
     number: "06",
     title: "Longshan Temple",
+    image: "/images/countryDetailIMG/LongshanTemple.jpg",
+
     text: "Explore an important cultural and spiritual landmark and experience a different side of Taipei.",
   },
 ];
@@ -389,18 +400,25 @@ function TaiwanPage() {
                 data-aos="fade-up"
                 data-aos-delay={index * 80}
               >
-                <span className="taiwan-attraction-number">
+                 <div className="taiwan-destination-image">
+                  <img
+                    src={place.image}
+                    alt={place.title}
+                    loading="lazy"
+                  />
+                </div>
+                {/* <span className="taiwan-attraction-number">
                   {place.number}
-                </span>
+                </span> */}
 
                 <h3>{place.title}</h3>
 
                 <p>{place.text}</p>
 
-                <span className="taiwan-attraction-link">
+                {/* <span className="taiwan-attraction-link">
                   Explore
                   <span>→</span>
-                </span>
+                </span> */}
               </article>
             ))}
 

@@ -394,7 +394,7 @@ function AustraliaPage() {
                   <p>{destination.subtitle}</p>
                 </div>
 
-                <span>↗</span>
+                {/* <span>↗</span> */}
               </div>
             </article>
           ))}

@@ -6,37 +6,37 @@ const destinations = [
   {
     title: "Auckland",
     subtitle: "City & Harbour",
-    image: "/images/countries/nz-auckland.jpg",
+    image: "/images/countryDetailIMG/Auckland.jpg",
     text: "New Zealand's largest city, surrounded by harbours, islands, restaurants and urban attractions.",
   },
   {
     title: "Queenstown",
     subtitle: "Adventure Capital",
-    image: "/images/countries/nz-queenstown.jpg",
+    image: "/images/countryDetailIMG/Queenstown.jpg",
     text: "A spectacular alpine destination known for adventure activities, mountains and lake views.",
   },
   {
     title: "Rotorua",
     subtitle: "Culture & Geothermal",
-    image: "/images/countries/nz-rotorua.jpg",
+    image: "/images/countryDetailIMG/Rotorua.jpg",
     text: "Experience geothermal landscapes and discover Māori culture in one of New Zealand's distinctive regions.",
   },
   {
     title: "Wellington",
     subtitle: "Culture & Capital",
-    image: "/images/countries/nz-wellington.jpg",
+    image: "/images/countryDetailIMG/Wellington.jpg",
     text: "A compact waterfront capital known for culture, museums, cafés and creative industries.",
   },
   {
     title: "Milford Sound",
     subtitle: "Wild New Zealand",
-    image: "/images/countries/nz-milford.jpg",
+    image: "/images/countryDetailIMG/MilfordSound.jpg",
     text: "Dramatic mountains, waterfalls and waterways make Milford Sound one of the country's iconic landscapes.",
   },
   {
     title: "Christchurch",
     subtitle: "South Island",
-    image: "/images/countries/nz-christchurch.jpg",
+    image: "/images/countryDetailIMG/Christchurch.jpg",
     text: "A gateway to the South Island with gardens, outdoor experiences and access to spectacular landscapes.",
   },
 ];
@@ -169,7 +169,7 @@ function NewZealandPage() {
 
             <div className="nz-hero-actions">
               <Link
-                to="/book-consultation"
+                to="/contact"
                 className="nz-gold-btn"
               >
                 Start Your Journey
@@ -383,7 +383,7 @@ function NewZealandPage() {
                   <p>{visa.text}</p>
                 </div>
 
-                <Link to="/book-consultation">
+                <Link to="/contact">
                   Explore Service
                   <span>↗</span>
                 </Link>
@@ -444,9 +444,9 @@ function NewZealandPage() {
 
                   <p>{place.text}</p>
 
-                  <div className="nz-destination-arrow">
+                  {/* <div className="nz-destination-arrow">
                     ↗
-                  </div>
+                  </div> */}
 
                 </div>
 
@@ -706,7 +706,7 @@ function NewZealandPage() {
           </p>
 
           <Link
-            to="/book-consultation"
+            to="/contact"
             className="nz-gold-btn"
           >
             Book a Consultation

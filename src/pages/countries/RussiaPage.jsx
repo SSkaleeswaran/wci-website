@@ -6,37 +6,37 @@ const destinations = [
   {
     title: "Moscow",
     subtitle: "Capital City",
-    image: "/images/countries/russia-moscow.jpg",
+    image: "/images/countryDetailIMG/Moscow.jpg",
     text: "Explore Russia's historic capital, famous landmarks, grand architecture and vibrant city life.",
   },
   {
     title: "St. Petersburg",
     subtitle: "Culture & History",
-    image: "/images/countries/russia-st-petersburg.jpg",
+    image: "/images/countryDetailIMG/Petersburg.jpg",
     text: "Discover magnificent architecture, museums, canals and one of Russia's most culturally significant cities.",
   },
   {
     title: "Kazan",
     subtitle: "Culture & Heritage",
-    image: "/images/countries/russia-kazan.jpg",
+    image: "/images/countryDetailIMG/Kazan.jpg",
     text: "Experience the meeting of Russian and Tatar cultures through architecture, food and history.",
   },
   {
     title: "Sochi",
     subtitle: "Black Sea",
-    image: "/images/countries/russia-sochi.jpg",
+    image: "/images/countryDetailIMG/Sochi.jpg",
     text: "A popular Black Sea destination combining coastal scenery, mountains and outdoor experiences.",
   },
   {
     title: "Lake Baikal",
     subtitle: "Natural Wonder",
-    image: "/images/countries/russia-baikal.jpg",
+    image: "/images/countryDetailIMG/LakeBaikal.jpg",
     text: "Experience one of the world's most remarkable freshwater environments surrounded by dramatic landscapes.",
   },
   {
     title: "Golden Ring",
     subtitle: "Historic Russia",
-    image: "/images/countries/russia-golden-ring.jpg",
+    image: "/images/countryDetailIMG/GoldenRing.jpg",
     text: "Explore historic towns, traditional architecture and important cultural sites beyond the major cities.",
   },
 ];
@@ -167,7 +167,7 @@ function RussiaPage() {
 
             <div className="ru-hero-actions">
               <Link
-                to="/book-consultation"
+                to="/contact"
                 className="ru-gold-btn"
               >
                 Start Your Journey
@@ -175,7 +175,7 @@ function RussiaPage() {
               </Link>
 
               <Link
-                to="/services"
+                to="/visa-services"
                 className="ru-outline-btn"
               >
                 Visa Services
@@ -369,7 +369,7 @@ function RussiaPage() {
                   <p>{visa.text}</p>
                 </div>
 
-                <Link to="/book-consultation">
+                <Link to="/visa-services">
                   Explore Service
                   <span>↗</span>
                 </Link>
@@ -425,10 +425,10 @@ function RussiaPage() {
                   <h3>{place.title}</h3>
 
                   <p>{place.text}</p>
-
+{/* 
                   <div className="ru-destination-arrow">
                     ↗
-                  </div>
+                  </div> */}
 
                 </div>
 
@@ -495,7 +495,7 @@ function RussiaPage() {
             </p>
 
             <Link
-              to="/book-consultation"
+              to="/contact"
               className="ru-text-link"
             >
               Plan Your Russia Trip
@@ -671,7 +671,7 @@ function RussiaPage() {
           </p>
 
           <Link
-            to="/book-consultation"
+            to="/contact"
             className="ru-gold-btn"
           >
             Book a Consultation

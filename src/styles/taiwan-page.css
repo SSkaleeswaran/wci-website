@@ -24,6 +24,30 @@
 /* =========================================================
    COMMON
 ========================================================= */
+.taiwan-destination-image {
+  height: 215px;
+
+  overflow: hidden;
+}
+
+.taiwan-destination-image img {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.8s ease;
+}
+
+.taiwan-destination-card:hover img {
+  transform: scale(1.07);
+}
+
+
+
 
 .taiwan-page h1,
 .taiwan-page h2,
