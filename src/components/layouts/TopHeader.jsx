@@ -24,8 +24,8 @@ function TopHeader() {
 
             <div>
               <span>Email Us</span>
-              <a href="mailto:wellcareerimmigration.com">
-                wellcareerimmigration.com
+              <a href="mailto:wellcareerimmigration@gmail.com">
+                wellcareerimmigration@gmail.com
               </a>
             </div>
           </div>
