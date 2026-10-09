@@ -8,37 +8,37 @@ const destinations = [
   {
     title: "Tokyo",
     subtitle: "Modern Japan",
-    image: "/images/countries/japan-tokyo.jpg",
+    image: "/images/countryDetailIMG/Tokyo.jpg",
     text: "A fast-moving city where technology, culture, shopping and traditional neighbourhoods exist side by side.",
   },
   {
     title: "Kyoto",
     subtitle: "Traditional Japan",
-    image: "/images/countries/japan-kyoto.jpg",
+    image: "/images/countryDetailIMG/Kyoto.jpg",
     text: "Historic temples, quiet gardens, traditional streets and Japan's classical cultural heritage.",
   },
   {
     title: "Osaka",
     subtitle: "Food & Energy",
-    image: "/images/countries/japan-osaka.jpg",
+    image: "/images/countryDetailIMG/Osaka.jpg",
     text: "A lively destination known for food, entertainment, shopping and a relaxed urban atmosphere.",
   },
   {
     title: "Mount Fuji",
     subtitle: "Iconic Japan",
-    image: "/images/countries/japan-fuji.jpg",
+    image: "/images/countryDetailIMG/MountFuji.jpg",
     text: "Japan's most recognisable landmark, surrounded by lakes, viewpoints and mountain scenery.",
   },
   {
     title: "Nara",
     subtitle: "Ancient Japan",
-    image: "/images/countries/japan-nara.jpg",
+    image: "/images/countryDetailIMG/Nara.jpg",
     text: "A historic city famous for temples, cultural landmarks and its peaceful park surroundings.",
   },
   {
     title: "Hiroshima",
     subtitle: "History & Reflection",
-    image: "/images/countries/japan-hiroshima.jpg",
+    image: "/images/countryDetailIMG/Hiroshima.jpg",
     text: "A meaningful destination combining history, remembrance, culture and beautiful nearby islands.",
   },
 ];

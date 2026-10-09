@@ -7,37 +7,37 @@ const destinations = [
     number: "01",
     title: "Sydney",
     subtitle: "Harbour, beaches & city life",
-    image: "/images/countries/aus-sydney.jpg",
+    image: "/images/countryDetailIMG/Sydney.jpg",
   },
   {
     number: "02",
     title: "Melbourne",
     subtitle: "Culture, cafés & creative life",
-    image: "/images/countries/aus-melbourne.jpg",
+    image: "/images/countryDetailIMG/Melbourne.jpg",
   },
   {
     number: "03",
     title: "Gold Coast",
     subtitle: "Beaches, sunshine & adventure",
-    image: "/images/countries/aus-goldcoast.jpg",
+    image: "/images/countryDetailIMG/GoldCoast.jpg",
   },
   {
     number: "04",
     title: "Great Barrier Reef",
     subtitle: "One of Australia's natural icons",
-    image: "/images/countries/aus-reef.jpg",
+    image: "/images/countryDetailIMG/GreatBarrierReef.jpg",
   },
   {
     number: "05",
     title: "Perth",
     subtitle: "Coastline, lifestyle & western Australia",
-    image: "/images/countries/aus-perth.jpg",
+    image: "/images/countryDetailIMG/Perth.jpg",
   },
   {
     number: "06",
     title: "Uluru",
     subtitle: "Landscape, culture & ancient heritage",
-    image: "/images/countries/aus-uluru.jpg",
+    image: "/images/countryDetailIMG/Uluru.jpg",
   },
 ];
 
