@@ -210,7 +210,7 @@ function CountriesPage() {
 
       <section
         className="countries-page-hero"
-        style={{ backgroundImage: "url('/images/banners/bigBanner.jpeg')" }}
+        style={{ backgroundImage: "url('/images/banners/countriesBn.png')" }}
       >
         <div className="countries-page-hero-overlay"></div>
 
