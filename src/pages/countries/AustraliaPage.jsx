@@ -19,7 +19,7 @@ const destinations = [
     number: "03",
     title: "Gold Coast",
     subtitle: "Beaches, sunshine & adventure",
-    image: "/images/countryDetailIMG/GoldCoast.jpg",
+    image: "/images/countryDetailIMG/Goldcoast.jpg",
   },
   {
     number: "04",
