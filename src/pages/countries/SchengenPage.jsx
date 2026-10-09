@@ -6,37 +6,37 @@ const destinations = [
   {
     title: "Germany",
     subtitle: "Berlin • Munich • Frankfurt",
-    image: "/images/countries/schengen-germany.jpg",
+    image: "/images/countryDetailIMG/germany.jpg",
     text: "A major European destination for higher education, business, technology, culture and international travel.",
   },
   {
     title: "Netherlands",
     subtitle: "Amsterdam • Rotterdam • Eindhoven",
-    image: "/images/countries/schengen-netherlands.jpg",
+    image: "/images/countryDetailIMG/Netherlands.jpg",
     text: "Known for international education, innovative industries, historic cities and a highly connected European lifestyle.",
   },
   {
     title: "France",
     subtitle: "Paris • Lyon • Bordeaux",
-    image: "/images/countries/schengen-france.jpg",
+    image: "/images/countryDetailIMG/France.jpg",
     text: "Explore world-renowned culture, universities, architecture, business centres and historic European destinations.",
   },
   {
     title: "Italy",
     subtitle: "Milan • Rome • Bologna",
-    image: "/images/countries/schengen-italy.jpg",
+    image: "/images/countryDetailIMG/Italy.jpg",
     text: "A destination combining education, design, business, history, architecture and some of Europe's most recognised cities.",
   },
   {
     title: "Sweden",
     subtitle: "Stockholm • Gothenburg • Lund",
-    image: "/images/countries/schengen-sweden.jpg",
+    image: "/images/countryDetailIMG/Sweden.jpg",
     text: "Discover a modern European destination known for innovation, technology, education and quality of life.",
   },
   {
     title: "Finland",
     subtitle: "Helsinki • Tampere • Turku",
-    image: "/images/countries/schengen-finland.jpg",
+    image: "/images/countryDetailIMG/Finland.jpg",
     text: "Explore a Nordic destination recognised for education, innovation, technology and distinctive natural landscapes.",
   },
 ];
