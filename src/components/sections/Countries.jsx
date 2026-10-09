@@ -13,6 +13,7 @@ const countries = [
     name: "United States",
     region: "America",
     tagline: "Business & tourism visas",
+    directLink: "/countries/usa",
   },
   {
     flag: "/images/flags/united-kingdom.png",
@@ -20,6 +21,7 @@ const countries = [
     name: "United Kingdom",
     region: "Europe",
     tagline: "Study, work & family visas",
+    directLink: "/countries/uk",
   },
   {
     flag: "/images/flags/canada.png",
@@ -27,6 +29,7 @@ const countries = [
     name: "Canada",
     region: "North America",
     tagline: "Study & migration visas",
+    directLink: "/countries/canada",
   },
   {
     flag: "/images/flags/schengen.png",
@@ -34,6 +37,7 @@ const countries = [
     name: "Schengen Area",
     region: "Europe",
     tagline: "29 countries, one visa",
+    directLink: "/countries/schengen",
   },
   {
     flag: "/images/flags/south-korea.png",
@@ -41,6 +45,7 @@ const countries = [
     name: "South Korea",
     region: "Asia",
     tagline: "Tourism & business visas",
+    directLink: "/countries/south-korea",
   },
   {
     flag: "/images/flags/japan.png",
@@ -48,6 +53,7 @@ const countries = [
     name: "Japan",
     region: "Asia",
     tagline: "Tourism & business visas",
+    directLink: "/countries/japan",
   },
   {
     flag: "/images/flags/australia.png",
@@ -55,6 +61,7 @@ const countries = [
     name: "Australia",
     region: "Oceania",
     tagline: "Study, work & tourism visas",
+    directLink: "/countries/australia",
   },
  
   {
@@ -63,6 +70,7 @@ const countries = [
     name: "Taiwan",
     region:"Taiwan",
     tagline: "Tourism & business",
+    directLink: "/countries/taiwan",
   },
    {
     flag: "/images/flags/new-z-flag.png",
@@ -70,6 +78,7 @@ const countries = [
     name: "New Zealand",
     region: "zealand",
     tagline: "Study, work & tourism",
+    directLink: "/countries/new-zealand",
   },
   {
     flag: "/images/flags/russia-flag.png",
@@ -77,6 +86,7 @@ const countries = [
     name: "Russia",
     region: "Russia",
     tagline: "Tourism & business",
+    directLink: "/countries/russia",
   }
 ];
 
@@ -93,7 +103,7 @@ function CountryCard({ country, index }) {
           {country.region}
         </span>
 
-        <Link to="/countries" className="wave-card-hover">
+        <Link to={country.directLink} className="wave-card-hover">
           <span>Read More</span>
         </Link>
       </div>
