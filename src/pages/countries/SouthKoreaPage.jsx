@@ -6,37 +6,37 @@ const destinations = [
   {
     title: "Seoul",
     subtitle: "Modern Korea",
-    image: "/images/countries/korea-seoul.jpg",
+    image: "/images/countryDetailIMG/seol.jpg",
     text: "A dynamic capital where skyscrapers, palaces, shopping districts and Korean culture come together.",
   },
   {
     title: "Busan",
     subtitle: "Coastal Korea",
-    image: "/images/countries/korea-busan.jpg",
+    image: "/images/countryDetailIMG/Busan.jpg",
     text: "A vibrant coastal city known for beaches, seafood, markets and scenic waterfront views.",
   },
   {
     title: "Jeju Island",
     subtitle: "Island Escape",
-    image: "/images/countries/korea-jeju.jpg",
+    image: "/images/countryDetailIMG/JejuIsland.jpg",
     text: "A volcanic island offering dramatic landscapes, beaches, waterfalls and a slower travel experience.",
   },
   {
     title: "Gyeongju",
     subtitle: "Historic Korea",
-    image: "/images/countries/korea-gyeongju.jpg",
+    image: "/images/countryDetailIMG/Gyeongju.jpg",
     text: "A historic destination filled with temples, cultural landmarks and remnants of ancient Korea.",
   },
   {
     title: "Nami Island",
     subtitle: "Nature & Leisure",
-    image: "/images/countries/korea-nami.jpg",
+    image: "/images/countryDetailIMG/NamiIsland.jpg",
     text: "A popular day-trip destination known for tree-lined paths, seasonal scenery and peaceful surroundings.",
   },
   {
     title: "Incheon",
     subtitle: "Gateway to Korea",
-    image: "/images/countries/korea-incheon.jpg",
+    image: "/images/countryDetailIMG/Incheon.jpg",
     text: "A modern international gateway with waterfront areas, cultural attractions and easy access to Seoul.",
   },
 ];
@@ -706,7 +706,7 @@ function SouthKoreaPage() {
           </p>
 
           <Link
-            to="/book-consultation"
+            to="/contact"
             className="korea-gold-btn"
           >
             Book a Consultation
