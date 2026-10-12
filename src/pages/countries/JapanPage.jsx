@@ -48,11 +48,13 @@ const visaServices = [
     number: "01",
     title: "Tourist Visa",
     text: "Guidance for travellers planning holidays, sightseeing and short visits to Japan.",
+    link: "/visa-services/tourist-visa",
   },
   {
     number: "02",
     title: "Business Visa",
     text: "Support for eligible short-term business visits, meetings and professional activities.",
+    link: "/visa-services/business-visa",
   },
 ];
 
@@ -380,7 +382,7 @@ function JapanPage() {
                   <p>{visa.text}</p>
                 </div>
 
-                <Link to="/book-consultation">
+                <Link to={visa.link} >
                   Explore Service
                   <span>↗</span>
                 </Link>
@@ -438,9 +440,7 @@ function JapanPage() {
 
                   <p>{place.text}</p>
 
-                  <div className="destination-arrow">
-                    ↗
-                  </div>
+                 
                 </div>
 
               </article>
@@ -677,7 +677,7 @@ function JapanPage() {
           </p>
 
           <Link
-            to="/book-consultation"
+            to="/contact"
             className="japan-gold-btn"
           >
             Book a Consultation

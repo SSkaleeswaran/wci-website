@@ -46,26 +46,26 @@ const visaServices = [
     number: "01",
     title: "Study Visa",
     text: "Guidance for students planning to pursue education in Canada, from profile assessment through application preparation.",
-    link: "/services/study-visa",
+    link: "/visa-services/study-visa",
   },
   {
     number: "02",
     title: "Visitor Visa",
     text: "Support for travellers planning to visit Canada for tourism, family visits or other eligible temporary purposes.",
-    link: "/services/tourist-visa",
+    link: "/visa-services/tourist-visa",
   },
   {
     number: "03",
     title: "Business Visa",
     text: "Assistance for eligible business travellers visiting Canada for meetings, conferences and related activities.",
-    link: "/services/business-visa",
+    link: "/visa-services/business-visa",
   },
-  {
-    number: "04",
-    title: "Work Visa",
-    text: "Professional guidance for applicants exploring eligible work-related opportunities and documentation.",
-    link: "/contact",
-  },
+  // {
+  //   number: "04",
+  //   title: "Work Visa",
+  //   text: "Professional guidance for applicants exploring eligible work-related opportunities and documentation.",
+  //   link: "/contact",
+  // },
 ];
 
 const faqs = [
@@ -137,7 +137,7 @@ function CanadaPage() {
 
           <div className="canada-hero-actions">
             <Link
-              to="/book-consultation"
+              to="/contact"
               className="canada-primary-btn"
             >
               Start Your Journey
@@ -145,7 +145,7 @@ function CanadaPage() {
             </Link>
 
             <a
-              href="#canada-about"
+              href="#canada-why"
               className="canada-text-link"
             >
               Explore Canada
@@ -749,7 +749,7 @@ function CanadaPage() {
           </p>
 
           <Link
-            to="/book-consultation"
+            to="/contact"
             className="canada-final-btn"
           >
             Book a Consultation

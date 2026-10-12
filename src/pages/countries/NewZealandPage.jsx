@@ -46,12 +46,20 @@ const visaServices = [
     number: "01",
     title: "Visitor Visa",
     text: "Guidance for eligible travellers planning holidays, family visits and short stays in New Zealand.",
+    link: "/visa-services/visitor-visa",
   },
   {
     number: "02",
     title: "Business Visa",
     text: "Support for eligible applicants travelling for meetings, professional activities and business purposes.",
+    link: "/visa-services/business-visa",
   },
+  {
+    number: "03",
+    title: "Travel Visa",
+    text: "Assistance for eligible travellers planning short-term visits for tourism and recreational activities.",
+    link: "/visa-services/travel-visa",
+  }
 ];
 
 const experiences = [
@@ -383,7 +391,7 @@ function NewZealandPage() {
                   <p>{visa.text}</p>
                 </div>
 
-                <Link to="/contact">
+                <Link to={visa.link}>
                   Explore Service
                   <span>↗</span>
                 </Link>
@@ -516,7 +524,7 @@ function NewZealandPage() {
             </p>
 
             <Link
-              to="/book-consultation"
+              to="/contact"
               className="nz-text-link"
             >
               Plan Your New Zealand Trip

@@ -39,6 +39,144 @@ const destinations = [
     image: "/images/countryDetailIMG/Finland.jpg",
     text: "Explore a Nordic destination recognised for education, innovation, technology and distinctive natural landscapes.",
   },
+  {
+    title: "Austria",
+    subtitle: "Vienna • Salzburg • Innsbruck",
+    image: "/images/countryDetailIMG/Austria.jpg",
+    text: "Discover elegant historic cities, classical music, Alpine scenery, cultural attractions and European education opportunities.",
+  },
+  {
+    title: "Belgium",
+    subtitle: "Brussels • Bruges • Antwerp",
+    image: "/images/countryDetailIMG/Belgium.jpg",
+    text: "Explore historic architecture, international institutions, cultural landmarks and vibrant business centres.",
+  },
+  {
+    title: "Bulgaria",
+    subtitle: "Sofia • Plovdiv • Varna",
+    image: "/images/countryDetailIMG/Bulgaria.jpg",
+    text: "Experience historic towns, mountain landscapes, Black Sea coastlines and a rich cultural heritage.",
+  },
+  {
+    title: "Croatia",
+    subtitle: "Dubrovnik • Split • Zagreb",
+    image: "/images/countryDetailIMG/Croatia.jpg",
+    text: "Discover Adriatic coastal towns, historic architecture, national parks and distinctive Mediterranean scenery.",
+  },
+  {
+    title: "Czech Republic",
+    subtitle: "Prague • Brno • Český Krumlov",
+    image: "/images/countryDetailIMG/CzechRepublic.jpg",
+    text: "Explore medieval streets, historic castles, cultural attractions and established university cities.",
+  },
+  {
+    title: "Denmark",
+    subtitle: "Copenhagen • Aarhus • Odense",
+    image: "/images/countryDetailIMG/Denmark.jpg",
+    text: "Discover modern Scandinavian design, sustainable cities, coastal scenery and international education opportunities.",
+  },
+  {
+    title: "Estonia",
+    subtitle: "Tallinn • Tartu • Pärnu",
+    image: "/images/countryDetailIMG/Estonia.jpg",
+    text: "Explore medieval architecture, digital innovation, university life and the natural beauty of the Baltic region.",
+  },
+  {
+    title: "Greece",
+    subtitle: "Athens • Santorini • Thessaloniki",
+    image: "/images/countryDetailIMG/Greece.jpg",
+    text: "Experience ancient landmarks, Mediterranean islands, archaeological sites and vibrant coastal destinations.",
+  },
+  {
+    title: "Hungary",
+    subtitle: "Budapest • Debrecen • Szeged",
+    image: "/images/countryDetailIMG/Hungary.jpg",
+    text: "Discover grand architecture, thermal baths, cultural traditions and university cities with international communities.",
+  },
+  {
+    title: "Iceland",
+    subtitle: "Reykjavík • Akureyri • Vík",
+    image: "/images/countryDetailIMG/Iceland.jpg",
+    text: "Explore dramatic volcanic landscapes, glaciers, waterfalls, geothermal attractions and distinctive Nordic culture.",
+  },
+  {
+    title: "Latvia",
+    subtitle: "Riga • Liepāja • Jūrmala",
+    image: "/images/countryDetailIMG/Latvia.jpg",
+    text: "Discover Art Nouveau architecture, Baltic beaches, historic towns and a growing international education environment.",
+  },
+  {
+    title: "Liechtenstein",
+    subtitle: "Vaduz • Schaan • Balzers",
+    image: "/images/countryDetailIMG/Liechtenstein.jpg",
+    text: "Experience a small Alpine country known for mountain scenery, castles, outdoor activities and picturesque villages.",
+  },
+  {
+    title: "Lithuania",
+    subtitle: "Vilnius • Kaunas • Klaipėda",
+    image: "/images/countryDetailIMG/Lithuania.jpg",
+    text: "Explore historic old towns, contemporary cultural scenes, Baltic coastlines and international university destinations.",
+  },
+  {
+    title: "Luxembourg",
+    subtitle: "Luxembourg City • Echternach • Vianden",
+    image: "/images/countryDetailIMG/Luxembourg.jpg",
+    text: "Discover a multicultural European destination known for international institutions, historic fortifications and business opportunities.",
+  },
+  {
+    title: "Malta",
+    subtitle: "Valletta • Mdina • Sliema",
+    image: "/images/countryDetailIMG/Malta.jpg",
+    text: "Experience Mediterranean coastlines, historic fortresses, English-language learning environments and island culture.",
+  },
+  {
+    title: "Norway",
+    subtitle: "Oslo • Bergen • Tromsø",
+    image: "/images/countryDetailIMG/Norway.jpg",
+    text: "Discover spectacular fjords, mountain landscapes, Northern Lights destinations and modern Scandinavian cities.",
+  },
+  {
+    title: "Poland",
+    subtitle: "Warsaw • Kraków • Wrocław",
+    image: "/images/countryDetailIMG/Poland.jpg",
+    text: "Explore historic city centres, cultural landmarks, expanding business hubs and diverse university destinations.",
+  },
+  {
+    title: "Portugal",
+    subtitle: "Lisbon • Porto • Faro",
+    image: "/images/countryDetailIMG/Portugal.jpg",
+    text: "Discover Atlantic coastlines, historic neighbourhoods, vibrant cities, Portuguese culture and scenic landscapes.",
+  },
+  {
+    title: "Romania",
+    subtitle: "Bucharest • Brașov • Cluj-Napoca",
+    image: "/images/countryDetailIMG/Romania.jpg",
+    text: "Explore medieval towns, Carpathian mountain scenery, historic castles and lively cultural destinations.",
+  },
+  {
+    title: "Slovakia",
+    subtitle: "Bratislava • Košice • High Tatras",
+    image: "/images/countryDetailIMG/Slovakia.jpg",
+    text: "Discover historic towns, mountain trails, castles and Central European culture.",
+  },
+  {
+    title: "Slovenia",
+    subtitle: "Ljubljana • Lake Bled • Piran",
+    image: "/images/countryDetailIMG/Slovenia.jpg",
+    text: "Experience Alpine lakes, green landscapes, charming towns and a scenic Adriatic coastline.",
+  },
+  {
+    title: "Spain",
+    subtitle: "Madrid • Barcelona • Seville",
+    image: "/images/countryDetailIMG/Spain.jpg",
+    text: "Explore celebrated architecture, art, historic cities, Mediterranean beaches and lively cultural traditions.",
+  },
+  {
+    title: "Switzerland",
+    subtitle: "Zurich • Geneva • Lucerne",
+    image: "/images/countryDetailIMG/Switzerland.jpg",
+    text: "Discover Alpine mountains, beautiful lakes, historic cities and renowned scenic rail journeys.",
+  },
 ];
 
 const experiences = [
@@ -69,21 +207,25 @@ const visaServices = [
     number: "01",
     title: "Tourist Visa",
     text: "Guidance for eligible travellers planning tourism and short stays within the Schengen Area.",
+    link: "/visa-services/tourist-visa",
   },
   {
     number: "02",
     title: "Business Visa",
     text: "Support for eligible applicants travelling for meetings, conferences and other permitted short-term business purposes.",
+    link: "/visa-services/business-visa",
   },
   {
     number: "03",
     title: "Travel Planning",
     text: "Understand your itinerary, main destination and supporting documents before preparing your application.",
+    link: "/visa-services/visitor-visa",
   },
   {
     number: "04",
     title: "Study Pathway Guidance",
     text: "If your goal is long-term education, WCI can help you understand that country's relevant study visa or permit pathway.",
+    link: "/visa-services/study-visa",
   },
 ];
 
@@ -423,7 +565,7 @@ function SchengenPage() {
 
                 </div>
 
-                <Link to="/book-consultation">
+                <Link to={visa.link} className="sc-visa-link">
                   Explore Service
                   <span>↗</span>
                 </Link>
@@ -502,9 +644,9 @@ function SchengenPage() {
                     {place.text}
                   </p>
 
-                  <div className="sc-destination-arrow">
+                  {/* <div className="sc-destination-arrow">
                     ↗
-                  </div>
+                  </div> */}
 
                 </div>
 

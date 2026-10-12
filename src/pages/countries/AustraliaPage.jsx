@@ -46,21 +46,25 @@ const visaServices = [
     number: "01",
     title: "Visitor Visa",
     text: "Guidance for eligible travellers planning a visit to Australia for tourism, holidays or visiting family and friends.",
+    link: "/visa-services/visitor-visa",
   },
   {
     number: "02",
     title: "Tourist Visa",
     text: "Support with application preparation for travellers who want to explore Australia's cities, coastline and natural attractions.",
+    link: "/visa-services/tourist-visa",
   },
   {
     number: "03",
     title: "Business Visa",
     text: "Guidance for eligible business travellers attending meetings, events or other permitted professional activities.",
+    link: "/visa-services/business-visa",
   },
   {
     number: "04",
     title: "Study Visa",
     text: "Guidance for students planning to pursue eligible educational opportunities in Australia.",
+    link: "/visa-services/study-visa",
   },
 ];
 
@@ -330,7 +334,9 @@ function AustraliaPage() {
             >
               <div className="australia-service-top">
                 <span>{service.number}</span>
-                <i>↗</i>
+                <Link to={service.link}>
+                  <i>↗</i>
+                </Link>
               </div>
 
               <h3>{service.title}</h3>

@@ -69,11 +69,13 @@ const visaServices = [
     number: "01",
     title: "Visitor Visa",
     text: "Guidance for eligible travellers planning tourism, sightseeing and short visits to Russia.",
+    link: "/visa-services/visitor-visa",
   },
   {
     number: "02",
     title: "Business Visa",
     text: "Support for eligible applicants travelling for meetings, professional activities and business purposes.",
+    link: "/visa-services/business-visa",
   },
 ];
 
@@ -174,12 +176,11 @@ function RussiaPage() {
                 <span>→</span>
               </Link>
 
-              <Link
-                to="/visa-services"
+              <a href="#ru-visa-grid"
                 className="ru-outline-btn"
               >
                 Visa Services
-              </Link>
+              </a>
             </div>
           </div>
 
@@ -369,7 +370,7 @@ function RussiaPage() {
                   <p>{visa.text}</p>
                 </div>
 
-                <Link to="/visa-services">
+                <Link to={visa.link}>
                   Explore Service
                   <span>↗</span>
                 </Link>
