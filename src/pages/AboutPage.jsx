@@ -80,7 +80,7 @@ function AboutPage() {
                 onClick={() => setActiveService(index)}
               >
                 <span>0{index + 1}</span>{service.title}
-                {/* <b>↗</b> */}
+               
               </button>
             ))}
           </div>
