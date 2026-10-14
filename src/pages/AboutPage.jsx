@@ -79,7 +79,8 @@ function AboutPage() {
                 className={activeService === index ? "service-tab active" : "service-tab"}
                 onClick={() => setActiveService(index)}
               >
-                <span>0{index + 1}</span>{service.title}<b>↗</b>
+                <span>0{index + 1}</span>{service.title}
+                {/* <b>↗</b> */}
               </button>
             ))}
           </div>
