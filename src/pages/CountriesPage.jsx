@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import "../styles/countries-page.css";
+
+// Gap between the fixed mobile menu and the bottom of the screen (px).
+// Keep this equal to the `bottom` value of .board-list.is-fixed in the CSS.
+const MENU_BOTTOM_GAP = 12;
 
 const countries = [
   {
@@ -198,8 +202,76 @@ const countries = [
 
 function CountriesPage() {
   const [activeId, setActiveId] = useState(countries[0].id);
+  const [menuFixed, setMenuFixed] = useState(false);
+  const [menuHeight, setMenuHeight] = useState(0);
+
+  const sectionRef = useRef(null);
+  const menuWrapRef = useRef(null);
+  const menuRef = useRef(null);
+
   const active = countries.find((c) => c.id === activeId);
   const activeIndex = countries.findIndex((c) => c.id === activeId);
+
+  /* =========================================================
+     MOBILE MENU: fixed to the bottom of the screen while the
+     board section is on screen. Once the menu's natural spot
+     (right before the CTA section) scrolls into view, it drops
+     back into normal flow and stays there.
+  ========================================================= */
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 767px)");
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+
+      const section = sectionRef.current;
+      const wrap = menuWrapRef.current;
+      const menu = menuRef.current;
+
+      if (!section || !wrap || !menu) return;
+
+      // Desktop / tablet: menu is a normal left column, never fixed.
+      if (!mobileQuery.matches) {
+        setMenuFixed(false);
+        setMenuHeight(0);
+        return;
+      }
+
+      const viewportHeight = window.innerHeight;
+      const sectionTop = section.getBoundingClientRect().top;
+      const wrapBottom = wrap.getBoundingClientRect().bottom;
+
+      // Reserve the menu's height so the page doesn't jump when it
+      // leaves the flow and becomes fixed.
+      setMenuHeight(menu.offsetHeight);
+
+      // The board section has entered the screen...
+      const sectionInView = sectionTop < viewportHeight * 0.6;
+
+      // ...and the menu's natural position is still below the screen.
+      const menuBelowScreen = wrapBottom > viewportHeight - MENU_BOTTOM_GAP;
+
+      setMenuFixed(sectionInView && menuBelowScreen);
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+
+    update();
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [activeId]);
 
   return (
     <main className="countries-page">
@@ -236,10 +308,10 @@ function CountriesPage() {
 
 
       {/* =====================================================
-          BOARD EXPLORER — clickable list + detail panel
+          BOARD EXPLORER: separate menu card + detail card
       ===================================================== */}
 
-      <section className="board-section">
+      <section className="board-section" ref={sectionRef}>
         <div className="container">
 
           <div className="board-heading">
@@ -249,31 +321,42 @@ function CountriesPage() {
 
           <div className="board-layout">
 
-            {/* LIST — left on desktop, bottom + sticky on mobile */}
-            <div className="board-list" role="tablist" aria-label="Destinations">
-              {countries.map((country, i) => (
-                <button
-                  key={country.id}
-                  role="tab"
-                  aria-selected={country.id === activeId}
-                  className={`board-row${country.id === activeId ? " active" : ""}`}
-                  onClick={() => setActiveId(country.id)}
-                >
-                  <span className="board-row-index">{String(i + 1).padStart(2, "0")}</span>
+            {/* MENU: left on desktop, fixed to screen bottom on mobile */}
+            <div
+              className="board-list-wrap"
+              ref={menuWrapRef}
+              style={{ minHeight: menuHeight || undefined }}
+            >
+              <div
+                className={`board-list${menuFixed ? " is-fixed" : ""}`}
+                ref={menuRef}
+                role="tablist"
+                aria-label="Destinations"
+              >
+                {countries.map((country, i) => (
+                  <button
+                    key={country.id}
+                    role="tab"
+                    aria-selected={country.id === activeId}
+                    className={`board-row${country.id === activeId ? " active" : ""}`}
+                    onClick={() => setActiveId(country.id)}
+                  >
+                    <span className="board-row-index">{String(i + 1).padStart(2, "0")}</span>
 
-                  <span className="board-row-flag">
-                    <img src={country.flag} alt="" />
-                  </span>
+                    <span className="board-row-flag">
+                      <img src={country.flag} alt="" />
+                    </span>
 
-                  <span className="board-row-name">
-                    <strong>{country.name}</strong>
-                    <small>{country.tagline}</small>
-                  </span>
-                </button>
-              ))}
+                    <span className="board-row-name">
+                      <strong>{country.name}</strong>
+                      <small>{country.tagline}</small>
+                    </span>
+                  </button>
+                ))}
+              </div>
             </div>
 
-            {/* DETAIL PANEL — right on desktop, top on mobile */}
+            {/* DETAIL CARD: right on desktop, top on mobile */}
             <div className="board-panel" key={active.id}>
 
               <div className="board-panel-image">
@@ -288,8 +371,25 @@ function CountriesPage() {
 
               <div className="board-panel-body">
 
-                <h3>{active.name}</h3>
-                <p className="board-panel-tagline">{active.tagline}</p>
+                <div className="board-panel-head">
+
+                  <div className="board-panel-titlewrap">
+                    <div className="board-panel-titleline">
+                      <h3>{active.name}</h3>
+
+                      <span className="board-panel-count">
+                        {String(activeIndex + 1).padStart(2, "0")} / {String(countries.length).padStart(2, "0")}
+                      </span>
+                    </div>
+
+                    <p className="board-panel-tagline">{active.tagline}</p>
+                  </div>
+
+                  <Link to={`/countries/${active.slug}`} className="board-panel-cta">
+                    Explore <span>→</span>
+                  </Link>
+
+                </div>
 
                 <div className="board-panel-columns">
 
@@ -317,16 +417,6 @@ function CountriesPage() {
                     </ul>
                   </div>
 
-                </div>
-
-                <div className="board-panel-footer">
-                  <span className="board-panel-count">
-                    {String(activeIndex + 1).padStart(2, "0")} / {String(countries.length).padStart(2, "0")}
-                  </span>
-
-                  <Link to={`/countries/${active.slug}`} className="board-panel-cta">
-                    Explore <span>→</span>
-                  </Link>
                 </div>
 
               </div>

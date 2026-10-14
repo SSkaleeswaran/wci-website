@@ -13,8 +13,6 @@
 
   width: 100%;
   background: #ffffff;
-  /* overflow is intentionally NOT hidden on the page itself —
-     required for the mobile sticky list to work correctly. */
 }
 
 .countries-page .container {
@@ -80,8 +78,7 @@
   margin: 0;
   color: #ffffff;
   font-size: clamp(42px, 5.6vw, 68px);
-     font-family: "Fraunces", serif;
-
+  font-family: "Fraunces", serif;
   line-height: 1.08;
   font-weight: 800;
   letter-spacing: -1.5px;
@@ -113,14 +110,14 @@
 ========================================================= */
 
 .board-section {
-  padding: 80px 0 100px;
+  padding: 70px 0 90px;
   background: #f5f8fd;
 }
 
 .board-heading {
   text-align: center;
   max-width: 560px;
-  margin: 0 auto 48px;
+  margin: 0 auto 38px;
 }
 
 .board-eyebrow {
@@ -139,36 +136,42 @@
   font-weight: 800;
 }
 
+/* Two separate cards with a gap between them */
+
 .board-layout {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 0;
-  background: #ffffff;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 28px 70px rgba(6, 31, 71, 0.11);
-  border: 1px solid #e5ebf5;
+  grid-template-columns: 290px 1fr;
+  gap: 28px;
+  align-items: start;
+  max-width: 1080px;
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.board-list-wrap {
+  min-width: 0;
 }
 
 
 /* =========================================================
-   LIST (left on desktop)
+   MENU CARD (left on desktop): all 10 visible, no scroll
 ========================================================= */
 
 .board-list {
   background: var(--navy);
-  max-height: 640px;
-  overflow-y: auto;
-  padding: 10px 0;
+  border-radius: 18px;
+  padding: 8px 0;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(6, 31, 71, 0.14);
 }
 
 .board-row {
   width: 100%;
   display: grid;
-  grid-template-columns: 32px 42px 1fr;
+  grid-template-columns: 24px 34px 1fr;
   align-items: center;
-  gap: 16px;
-  padding: 18px 26px;
+  gap: 12px;
+  padding: 10px 18px;
   border: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background: transparent;
@@ -178,18 +181,22 @@
   transition: background 0.2s ease, padding-left 0.2s ease;
 }
 
+.board-row:last-child {
+  border-bottom: 0;
+}
+
 .board-row:hover {
   background: rgba(255, 255, 255, 0.04);
 }
 
 .board-row.active {
   background: rgba(217, 164, 65, 0.14);
-  padding-left: 30px;
+  padding-left: 22px;
   border-left: 3px solid var(--gold);
 }
 
 .board-row-index {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   color: rgba(255, 255, 255, 0.4);
   font-family: "Courier New", monospace;
@@ -200,10 +207,10 @@
 }
 
 .board-row-flag img {
-  width: 32px;
-  height: 22px;
+  width: 30px;
+  height: 20px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 3px;
   display: block;
 }
 
@@ -214,24 +221,30 @@
 }
 
 .board-row-name strong {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .board-row-name small {
-  font-size: 11.5px;
+  font-size: 11px;
   color: rgba(255, 255, 255, 0.5);
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 
 /* =========================================================
-   DETAIL PANEL (right on desktop)
+   DETAIL CARD (right on desktop): compact
 ========================================================= */
 
 .board-panel {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #e5ebf5;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(6, 31, 71, 0.08);
   animation: panelFadeIn 0.4s ease;
 }
 
@@ -243,7 +256,7 @@
 .board-panel-image {
   position: relative;
   width: 100%;
-  height: 340px;
+  height: 270px;
   overflow: hidden;
 }
 
@@ -262,61 +275,128 @@
 
 .board-panel-flagchip {
   position: absolute;
-  left: 26px;
-  bottom: 22px;
+  left: 18px;
+  bottom: 16px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 9px 18px;
+  gap: 9px;
+  padding: 7px 14px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 30px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .board-panel-flagchip img {
-  width: 28px;
-  height: 19px;
+  width: 24px;
+  height: 16px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
 .board-panel-flagchip span {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   color: var(--navy);
   letter-spacing: 1px;
 }
 
 .board-panel-body {
-  padding: 40px 44px 34px;
+  padding: 24px 28px 26px;
+}
+
+
+/* ---------- Heading row: name + counter, Explore at the top right ---------- */
+
+.board-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed #e5ebf5;
+}
+
+.board-panel-titleline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
 }
 
 .board-panel-body h3 {
   margin: 0;
   color: var(--navy);
-  font-size: 34px;
+  font-size: 26px;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.4px;
+}
+
+.board-panel-count {
+  padding: 3px 10px;
+  border: 1px solid #e5ebf5;
+  border-radius: 20px;
+  background: #f5f8fd;
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  color: #8a95ac;
+  letter-spacing: 1px;
 }
 
 .board-panel-tagline {
-  margin: 8px 0 28px;
+  margin: 5px 0 0;
   color: var(--gold);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
 }
+
+.board-panel-cta {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  height: 40px;
+  border-radius: 9px;
+  background: var(--navy);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.board-panel-cta:hover {
+  background: var(--gold);
+  color: var(--navy);
+  transform: translateY(-2px);
+}
+
+.board-panel-cta span {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.board-panel-cta:hover span {
+  transform: translateX(3px);
+}
+
+
+/* ---------- Columns ---------- */
 
 .board-panel-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 36px;
+  gap: 28px;
 }
 
 .board-panel-col-label {
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   color: #8a95ac;
-  font-size: 11px;
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -331,16 +411,20 @@
 .board-panel-col li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 14px;
+  gap: 9px;
+  margin-bottom: 11px;
   color: #4a5a75;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.55;
 }
 
+.board-panel-col li:last-child {
+  margin-bottom: 0;
+}
+
 .board-check {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -349,55 +433,8 @@
   border-radius: 50%;
   background: var(--gold-tint);
   color: var(--gold);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 800;
-}
-
-.board-panel-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 30px;
-  padding-top: 24px;
-  border-top: 1px dashed #e5ebf5;
-}
-
-.board-panel-count {
-  font-family: "Courier New", monospace;
-  font-size: 12px;
-  font-weight: 700;
-  color: #a3adbf;
-  letter-spacing: 1px;
-}
-
-.board-panel-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 0 26px;
-  height: 48px;
-  border-radius: 9px;
-  background: var(--navy);
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 800;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.board-panel-cta:hover {
-  background: var(--gold);
-  color: var(--navy);
-  transform: translateY(-2px);
-}
-
-.board-panel-cta span {
-  font-size: 17px;
-  transition: transform 0.2s ease;
-}
-
-.board-panel-cta:hover span {
-  transform: translateX(3px);
 }
 
 
@@ -482,16 +519,25 @@
   .board-section { padding: 55px 0 70px; }
 
   .board-layout {
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 250px 1fr;
+    gap: 20px;
   }
 
-  .board-panel-image { height: 280px; }
-  .board-panel-body { padding: 32px 30px 28px; }
-  .board-panel-body h3 { font-size: 28px; }
+  .board-row {
+    grid-template-columns: 22px 30px 1fr;
+    gap: 10px;
+    padding: 10px 14px;
+  }
+
+  .board-row.active { padding-left: 16px; }
+
+  .board-panel-image { height: 190px; }
+  .board-panel-body { padding: 22px 22px 24px; }
+  .board-panel-body h3 { font-size: 23px; }
 
   .board-panel-columns {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 18px;
   }
 
   .countries-page-cta { padding: 80px 20px; }
@@ -502,9 +548,11 @@
 
 /* =========================================================
    MOBILE
-   List moves to the BOTTOM and becomes sticky, riding
-   along while scrolling through this section. It releases
-   naturally once the section ends — right before the CTA.
+   The menu is fixed to the bottom of the screen while the
+   board section is on screen (class .is-fixed, toggled in
+   the JSX). Once its natural spot, right before the
+   "Need Help?" section, scrolls into view it drops back
+   into normal flow and stays there.
 ========================================================= */
 
 @media (max-width: 767px) {
@@ -514,63 +562,91 @@
   .countries-page-hero h1 { font-size: 34px; }
   .countries-page-hero p { font-size: 13px; }
 
-  .board-section { padding: 45px 0 60px; }
+  .board-section {
+    padding: 45px 0 60px;
+    overflow-x: clip;          /* nothing inside can widen the page */
+  }
 
-  .board-heading { margin-bottom: 28px; }
+  .board-heading { margin-bottom: 26px; }
 
   .board-layout {
     display: flex;
     flex-direction: column;
-    border-radius: 16px;
+    gap: 16px;
+    max-width: none;
+    width: 100%;
   }
 
   .board-panel {
     order: 1;
   }
 
-  .board-panel-image { height: 220px; }
-  .board-panel-body { padding: 28px 22px 24px; }
-  .board-panel-body h3 { font-size: 26px; }
-  .board-panel-col li { font-size: 13.5px; }
+  .board-panel-image { height: 200px; }
+  .board-panel-body { padding: 20px 18px 22px; }
+  .board-panel-body h3 { font-size: 22px; }
+  .board-panel-col li { font-size: 13px; }
 
-  .board-panel-footer {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+  .board-list-wrap {
+    order: 2;
+    width: 100%;
   }
 
-  .board-panel-cta { width: 100%; justify-content: center; }
-
+  /* Normal (in-flow) state: horizontal strip */
   .board-list {
-    order: 2;
-    position: sticky;
-    bottom: 0;
-    z-index: 5;
-
-    max-height: none;
     display: flex;
+    width: 100%;
+    max-width: 100%;
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
     gap: 8px;
-    padding: 12px;
+    padding: 10px;
+    border-radius: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
 
-    box-shadow: 0 -10px 24px rgba(6, 31, 71, 0.18);
+  .board-list::-webkit-scrollbar { display: none; }
+
+  /* Fixed to the bottom of the screen */
+  .board-list.is-fixed {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;          /* keep equal to MENU_BOTTOM_GAP in the JSX */
+    width: auto;
+    z-index: 50;
+    box-shadow: 0 10px 30px rgba(6, 31, 71, 0.35);
   }
 
   .board-row {
     flex: 0 0 auto;
-    width: 190px;
+    width: 172px;
     grid-template-columns: auto 30px 1fr;
+    gap: 10px;
     border-bottom: none;
     border-radius: 12px;
-    padding: 12px 14px;
+    padding: 10px 12px;
+  }
+
+  .board-row:last-child { border-bottom: none; }
+
+  .board-row-name strong,
+  .board-row-name small {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .board-row.active {
-    padding-left: 14px;
+    padding-left: 12px;
     border-left: none;
     border: 1px solid var(--gold);
   }
+
+  .countries-page-cta { padding: 65px 18px; }
+  .countries-page-cta-content h2 { font-size: 28px; }
+  .countries-page-cta-content p { font-size: 13px; }
+  .countries-page-cta-button { width: 100%; }
 
 }
 
