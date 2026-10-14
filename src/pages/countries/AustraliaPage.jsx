@@ -254,7 +254,7 @@ function AustraliaPage() {
       <section className="australia-experiences">
         <div className="australia-experience-image" data-aos="fade-right">
           <img
-            src="/images/countries/aus-sydny.jpg"
+            src="/images/countries/sydny.jpg"
             alt="Sydney Australia"
           />
 

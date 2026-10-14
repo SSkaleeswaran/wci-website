@@ -46,21 +46,25 @@ const visaServices = [
     number: "01",
     title: "Tourist Visa",
     text: "For travellers visiting the United States for tourism, holidays, sightseeing and personal travel.",
+    link: "/visa-services/tourist-visa",
   },
   {
     number: "02",
     title: "Business Visa",
     text: "For eligible business-related visits, meetings, conferences and professional activities.",
+    link: "/visa-services/business-visa",
   },
   {
     number: "03",
     title: "Visitor Visa Guidance",
     text: "Structured assistance with documentation, application preparation and interview readiness.",
+    link: "/visa-services/visitor-visa",
   },
   {
     number: "04",
     title: "Study Visa Guidance",
     text: "Guidance for students planning to pursue eligible academic opportunities in the United States.",
+    link: "/visa-services/study-visa",
   },
 ];
 
@@ -121,7 +125,7 @@ function USAPage() {
         className="usa-hero"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(4,20,45,.94) 0%, rgba(4,20,45,.76) 42%, rgba(4,20,45,.18) 82%), url('/images/countries/usa-statue.avif')",
+            "linear-gradient(90deg, rgba(4, 20, 45, 0.42) 0%, rgba(4, 20, 45, 0.44) 42%, rgba(4,20,45,.18) 82%), url('/images/countries/usabanner.jpg')",
         }}
       >
         <div className="usa-hero-grid"></div>
@@ -316,6 +320,7 @@ function USAPage() {
 
         <div className="usa-visa-grid">
           {visaServices.map((visa, index) => (
+            <Link to={visa.link}>
             <div
               className="usa-visa-card"
               key={visa.number}
@@ -326,12 +331,14 @@ function USAPage() {
 
               <div className="usa-card-arrow">↗</div>
 
-              <h3>{visa.title}</h3>
+              <h3 style={{ marginBottom: '10px', fontSize: '2rem' , marginTop: '10px', color: '#D9A441'
+              }}>{visa.title}</h3>
 
               <p>{visa.text}</p>
 
               <div className="usa-card-line"></div>
             </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -588,7 +595,7 @@ function USAPage() {
             to="/contact"
             className="usa-final-btn"
             data-aos="fade-up"
-            data-aos-delay="300"
+            data-aos-delay="200"
           >
             Talk to WCI
             <span>↗</span>

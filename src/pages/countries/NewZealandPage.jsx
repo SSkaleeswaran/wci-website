@@ -185,7 +185,7 @@ function NewZealandPage() {
               </Link>
 
               <Link
-                to="/services"
+                to="/visa-services"
                 className="nz-outline-btn"
               >
                 Visa Services

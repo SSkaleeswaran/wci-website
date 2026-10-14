@@ -46,11 +46,13 @@ const visaServices = [
     number: "01",
     title: "Tourist Visa",
     text: "Guidance for eligible travellers planning holidays, sightseeing and short visits to South Korea.",
+    link: "/visa-services/tourist-visa",
   },
   {
     number: "02",
     title: "Business Visa",
     text: "Support for eligible applicants travelling for meetings, business activities and professional purposes.",
+    link: "/visa-services/business-visa",
   },
 ];
 
@@ -177,7 +179,7 @@ function SouthKoreaPage() {
               </Link>
 
               <Link
-                to="/services"
+                to="/visa-services"
                 className="korea-outline-btn"
               >
                 Visa Services
@@ -385,7 +387,7 @@ function SouthKoreaPage() {
                   <p>{visa.text}</p>
                 </div>
 
-                <Link to="/book-consultation">
+                <Link to={visa.link}>
                   Explore Service
                   <span>↗</span>
                 </Link>
@@ -445,10 +447,10 @@ function SouthKoreaPage() {
                   <h3>{place.title}</h3>
 
                   <p>{place.text}</p>
-
+{/* 
                   <div className="korea-destination-arrow">
                     ↗
-                  </div>
+                  </div> */}
 
                 </div>
 
@@ -516,10 +518,11 @@ function SouthKoreaPage() {
             </p>
 
             <Link
-              to="/book-consultation"
+              to="/contact"
               className="korea-text-link"
             >
               Plan Your Korea Trip
+
               <span>→</span>
             </Link>
 

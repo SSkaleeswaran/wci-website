@@ -335,19 +335,20 @@ function SchengenPage() {
             <div className="sc-hero-actions">
 
               <Link
-                to="/book-consultation"
+                to="/contact"
                 className="sc-gold-btn"
               >
                 Start Your Journey
                 <span>→</span>
               </Link>
 
-              <Link
-                to="/services"
+              <a
+                href="#sc-section-intro"
                 className="sc-outline-btn"
               >
-                Visa Services
-              </Link>
+                Learn More
+                <span>↓</span>
+              </a>
 
             </div>
           </div>

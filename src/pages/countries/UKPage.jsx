@@ -46,21 +46,25 @@ const visaServices = [
     number: "01",
     title: "Visitor Visa",
     text: "Guidance for eligible visitors travelling to the UK for holidays, family visits and other permitted purposes.",
+    link: "/visa-services/visitor-visa",
   },
   {
     number: "02",
     title: "Tourist Visa",
     text: "Support with preparation for travellers planning to discover Britain's cities, heritage and attractions.",
+    link: "/visa-services/tourist-visa",
   },
   {
     number: "03",
     title: "Business Visa",
     text: "Application guidance for eligible business-related visits, meetings and professional activities.",
+    link: "/visa-services/business-visa",
   },
   {
     number: "04",
     title: "Study Visa",
     text: "Guidance for students planning to pursue eligible education opportunities in the United Kingdom.",
+    link: "/visa-services/study-visa",
   },
 ];
 

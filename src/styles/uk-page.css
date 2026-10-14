@@ -62,6 +62,8 @@
   background-position: center;
   color: #fff;
   overflow: hidden;
+  background-attachment: fixed;
+
 }
 
 .uk-hero-pattern {

@@ -164,12 +164,12 @@ function JapanPage() {
             </p>
 
             <div className="japan-hero-actions">
-              <Link to="/book-consultation" className="japan-gold-btn">
+              <Link to="/contact" className="japan-gold-btn">
                 Start Your Journey
                 <span>→</span>
               </Link>
 
-              <Link to="/services" className="japan-outline-btn">
+              <Link to="/visa-services" className="japan-outline-btn">
                 Visa Services
               </Link>
             </div>

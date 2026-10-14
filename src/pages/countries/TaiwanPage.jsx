@@ -51,11 +51,13 @@ const visaServices = [
     number: "01",
     title: "Tourist Visa",
     text: "Guidance for travellers planning a holiday, sightseeing trip or personal visit to Taiwan.",
+    link: "/visa-services/tourist-visa",
   },
   {
     number: "02",
     title: "Business Visa",
     text: "Support for eligible business-related travel and professional visits to Taiwan.",
+    link: "/visa-services/business-visa",
   },
 ];
 
@@ -328,9 +330,10 @@ function TaiwanPage() {
             </div>
 
 
-            <div className="taiwan-visa-cards">
+            <div className="taiwan-visa-cards" data-aos="fade-right">
 
               {visaServices.map((service, index) => (
+                <Link to={service.link} key={service.title}>
                 <div
                   className="taiwan-visa-card"
                   key={service.title}
@@ -343,12 +346,17 @@ function TaiwanPage() {
 
                   <div>
                     <h3>{service.title}</h3>
-
                     <p>{service.text}</p>
+                    
                   </div>
+                <span className="aro">
+                  →</span>
+
+                
 
                   <div className="taiwan-visa-card-line"></div>
                 </div>
+                </Link>
               ))}
 
             </div>
