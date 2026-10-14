@@ -43,9 +43,9 @@
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(4, 9, 111, 0.405) 0%,
+    rgba(4, 9, 111, 0.127) 0%,
     rgba(4, 9, 111, 0.24) 43%,
-    rgba(4, 10, 111, 0.18) 100%
+    rgba(4, 9, 111, 0.136) 100%
   );
 }
 
@@ -57,7 +57,7 @@
     linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
   background-size: 70px 70px;
-  mask-image: linear-gradient(to right, black, transparent 75%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.607), transparent 75%);
 }
 
 .business-hero-content {

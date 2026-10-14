@@ -209,7 +209,7 @@ function BusinessVisaPage() {
         </div>
 
         {/* KPI stat bar */}
-        <div
+        {/* <div
           className={`business-stat-bar${statInView ? " in-view" : ""}`}
           ref={statRef}
         >
@@ -218,7 +218,7 @@ function BusinessVisaPage() {
               <StatCell stat={stat} inView={statInView} delay={i * 120} key={stat.label} />
             ))}
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* BUSINESS PURPOSE */}
