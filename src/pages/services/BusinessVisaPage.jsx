@@ -38,12 +38,12 @@ const destinations = [
   "Schengen / Europe",
 ];
 
-const stats = [
-  { value: "24+", label: "Countries Covered" },
-  { value: "1,200+", label: "Business Travellers Assisted" },
-  { value: "96%", label: "Application Success Rate" },
-  { value: "5–20", label: "Working Days Processing" },
-];
+// const stats = [
+//   { value: "24+", label: "Countries Covered" },
+//   { value: "1,200+", label: "Business Travellers Assisted" },
+//   { value: "96%", label: "Application Success Rate" },
+//   { value: "5–20", label: "Working Days Processing" },
+// ];
 
 const agenda = [
   { time: "STEP 01", title: "Assess", text: "Understand requirements" },
@@ -101,42 +101,42 @@ function useReveal(threshold = 0.15) {
   return [ref, inView];
 }
 
-function useCountUp(target, inView, duration = 1400) {
-  const [display, setDisplay] = useState("0");
+// function useCountUp(target, inView, duration = 1400) {
+//   const [display, setDisplay] = useState("0");
 
-  useEffect(() => {
-    if (!inView) return;
+//   useEffect(() => {
+//     if (!inView) return;
 
-    const numeric = parseInt(String(target).replace(/[^\d]/g, ""), 10);
-    if (isNaN(numeric)) {
-      setDisplay(target);
-      return;
-    }
+//     const numeric = parseInt(String(target).replace(/[^\d]/g, ""), 10);
+//     if (isNaN(numeric)) {
+//       setDisplay(target);
+//       return;
+//     }
 
-    const suffix = String(target).replace(/[\d,]/g, "");
-    let start = null;
+//     const suffix = String(target).replace(/[\d,]/g, "");
+//     let start = null;
 
-    const step = (timestamp) => {
-      if (!start) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const current = Math.floor(progress * numeric);
-      setDisplay(current.toLocaleString() + suffix);
-      if (progress < 1) requestAnimationFrame(step);
-    };
+//     const step = (timestamp) => {
+//       if (!start) start = timestamp;
+//       const progress = Math.min((timestamp - start) / duration, 1);
+//       const current = Math.floor(progress * numeric);
+//       setDisplay(current.toLocaleString() + suffix);
+//       if (progress < 1) requestAnimationFrame(step);
+//     };
 
-    const raf = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(raf);
-  }, [inView, target, duration]);
+//     const raf = requestAnimationFrame(step);
+//     return () => cancelAnimationFrame(raf);
+//   }, [inView, target, duration]);
 
-  return display;
-}
+//   return display;
+// }
 
 function BusinessVisaPage() {
   const heroRef = useRef(null);
   const [activePurpose, setActivePurpose] = useState("meetings");
   const [openFaq, setOpenFaq] = useState(null);
 
-  const [statRef, statInView] = useReveal(0.3);
+  // const [statRef, statInView] = useReveal(0.3);
   const [purposeRef, purposeInView] = useReveal(0.15);
   const [destRef, destInView] = useReveal(0.15);
   const [supportRef, supportInView] = useReveal(0.15);
@@ -489,15 +489,15 @@ function BusinessVisaPage() {
   );
 }
 
-function StatCell({ stat, inView, delay }) {
-  const display = useCountUp(stat.value, inView);
+// function StatCell({ stat, inView, delay }) {
+//   const display = useCountUp(stat.value, inView);
 
-  return (
-    <div className="business-stat reveal-stat" style={{ transitionDelay: `${delay}ms` }}>
-      <strong>{display}</strong>
-      <span>{stat.label}</span>
-    </div>
-  );
-}
+//   return (
+//     <div className="business-stat reveal-stat" style={{ transitionDelay: `${delay}ms` }}>
+//       <strong>{display}</strong>
+//       <span>{stat.label}</span>
+//     </div>
+//   );
+// }
 
 export default BusinessVisaPage;
