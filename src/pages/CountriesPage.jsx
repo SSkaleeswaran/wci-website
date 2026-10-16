@@ -358,6 +358,7 @@ function CountriesPage() {
 
             {/* DETAIL CARD: right on desktop, top on mobile */}
             <div className="board-panel" key={active.id}>
+<Link to={`/countries/${active.slug}`}>
 
               <div className="board-panel-image">
                 <img src={active.image} alt={active.name} />
@@ -368,6 +369,7 @@ function CountriesPage() {
                   <span>{active.code}</span>
                 </div>
               </div>
+              </Link>
 
               <div className="board-panel-body">
 
