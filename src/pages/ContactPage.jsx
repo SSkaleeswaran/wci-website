@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
 const initialForm = {
@@ -23,9 +23,9 @@ const MAP_DIRECTIONS_HREF =
 
 // ── EmailJS config ───────────────────────────────────────────
 // Replace these three with the values from your EmailJS dashboard.
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const EMAILJS_SERVICE_ID = "service_mzkwota";
+const EMAILJS_TEMPLATE_ID = "template_7mtgexe";
+const EMAILJS_PUBLIC_KEY = "3jDqtkBBkCOLxCmYy";
 
 // Basic front-end rate limit: block resubmission for 60s
 const RATE_LIMIT_MS = 60000;
@@ -256,7 +256,7 @@ function ContactPage() {
               <span>VISIT OUR OFFICE</span>
               <h2>Let&apos;s meet and discuss your future.</h2>
               <p>Prefer a personal discussion? Contact us to arrange a convenient time to speak with our team.</p>
-              <Link to="/book-consultation">Book a Consultation <i>→</i></Link>
+              
             </div>
           </section>
         </div>
