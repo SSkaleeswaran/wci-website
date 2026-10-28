@@ -12,7 +12,7 @@ const countries = [
     id: 1,
     slug: "usa",
     flag: "/images/flags/united-states-of-america.png",
-    image: "/images/countries/usa-statue.avif",
+    image: "/images/countries/usabanner.jpg",
     name: "United States",
     code: "USA",
     tagline: "Business & tourism",
