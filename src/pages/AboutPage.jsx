@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import About from "../components/sections/About.jsx"
+import { Link } from "react-router-dom";
 
 const services = [
   { title: "Visitor Visa", text: "Guidance for visiting family, friends and destinations abroad.", icon: "✈", img: "/images/banners/visitBanner.png" },
@@ -8,7 +9,18 @@ const services = [
   { title: "Study Visa", text: "Guidance for students planning to study and build their future overseas.", icon: "⌘",img: "/images/banners/eduBanner.png" },
 ];
 
-const countries = ["Canada", "USA", "UK", "Japan", "Australia", "Schengen", "South Korea", "Taiwan", "New Zealand","Russia"];
+const countries = [
+  "Canada", 
+  "USA", 
+  "UK",
+   "Japan",
+    "Australia", 
+    "Schengen", 
+    "South Korea",
+     "Taiwan",
+      "New Zealand",
+      "Russia"
+    ];
 
 function AboutPage() {
   const [activeService, setActiveService] = useState(0);
@@ -122,9 +134,12 @@ function AboutPage() {
         </div>
         <div className="country-cloud">
           {countries.map((country, index) => (
-            <div className="country-chip" key={country} style={{ "--i": index }}>
-              <span>{String(index + 1).padStart(2, "0")}</span>{country}
-            </div>
+           <Link to={`/countries/${country.toLowerCase()}`} key={country}>
+              <div className="country-chip" style={{ "--i": index }}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                {country}
+              </div>
+            </Link>
           ))}
         </div>
       </section>

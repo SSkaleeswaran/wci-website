@@ -119,7 +119,9 @@ function FAQPage() {
           HERO
       ========================= */}
 
-      <section className="faq-hero">
+      <section className="faq-hero" 
+      style={{ backgroundImage: "url('/images/banners/faq-banner.jpg')" }}
+      >
         <div className="faq-hero-glow" aria-hidden="true"></div>
 
         <div className="container faq-hero-reveal">
